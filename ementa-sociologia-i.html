@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa - Sociologia I</title>
+
+<style>
+  :root{
+    --paper:#e9dfcc;
+    --paper2:#f1e8d8;
+    --bg:#d7cdbb;
+    --navy:#12325a;
+    --olive:#667439;
+    --bluegray:#5f7284;
+    --wine:#7b2f3a;
+    --rust:#9b4b2d;
+    --gold:#b18428;
+    --ink:#20262d;
+    --line:#cfc4b1;
+    --shadow:rgba(39,45,52,.16);
+  }
+
+  *{box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Trebuchet MS","Arial Narrow",Arial,sans-serif;
+    line-height:1.62;
+  }
+
+  .page{
+    width:min(1040px,100%);
+    margin:0 auto;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 18% 5%,rgba(255,255,255,.34),transparent 25%),
+      linear-gradient(180deg,#eee4d2 0%,#e6dac5 100%);
+    box-shadow:0 0 38px var(--shadow);
+  }
+
+  header{
+    padding:38px 46px 24px;
+    text-align:center;
+  }
+
+  .section-title{
+    margin:0;
+    color:var(--gold);
+    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
+    font-size:clamp(54px,8vw,90px);
+    line-height:.94;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .project-title{
+    margin:14px 0 0;
+    color:var(--navy);
+    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
+    font-size:clamp(28px,4vw,44px);
+    line-height:1;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+  }
+
+  .kicker{
+    width:fit-content;
+    margin:12px auto 0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--olive);
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.4px;
+  }
+
+  .kicker::before,
+  .kicker::after{
+    content:"";
+    width:54px;
+    height:2px;
+    background:var(--olive);
+  }
+
+  .meta{
+    margin:9px 0 0;
+    color:var(--wine);
+    font-size:17px;
+    font-weight:700;
+  }
+
+  .top-nav{
+    margin:20px auto 0;
+    padding:10px 0;
+    border-top:2px solid var(--olive);
+    border-bottom:2px solid var(--olive);
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .home-button,
+  .nav-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:36px;
+    padding:7px 12px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      background .18s ease,
+      color .18s ease;
+  }
+
+  .home-button{
+    color:var(--navy);
+    background:var(--paper);
+    border:1px solid rgba(18,50,90,.18);
+    box-shadow:0 2px 6px rgba(18,50,90,.07);
+  }
+
+  .nav-link{
+    color:var(--bluegray);
+    background:rgba(255,255,255,.14);
+    border:1px solid transparent;
+  }
+
+  .home-button:hover,
+  .nav-link:hover{
+    transform:translateY(-2px);
+    background:#f5ecdc;
+    color:var(--navy);
+    box-shadow:0 5px 10px rgba(18,50,90,.09);
+  }
+
+  main{
+    padding:4px 44px 40px;
+  }
+
+  .ementa-box{
+    margin:14px 0 24px;
+    padding:22px 24px;
+    background:rgba(241,232,216,.82);
+    border:1px solid rgba(18,50,90,.10);
+    border-left:7px solid var(--gold);
+    border-radius:12px;
+    box-shadow:0 5px 14px rgba(18,50,90,.06);
+  }
+
+  .ementa-box h2,
+  .content-card h2{
+    margin:0 0 12px;
+    color:var(--navy);
+    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    font-weight:500;
+  }
+
+  .ementa-box h2{font-size:28px}
+
+  .ementa-box p{
+    margin:0;
+    font-size:17px;
+    text-align:justify;
+  }
+
+  .content-card{
+    --accent:var(--olive);
+    margin:14px 0;
+    padding:20px 22px;
+    background:rgba(235,225,207,.72);
+    border:1px solid rgba(18,50,90,.10);
+    border-left:6px solid var(--accent);
+    border-radius:11px;
+    box-shadow:0 4px 12px rgba(18,50,90,.05);
+  }
+
+  .content-card:nth-of-type(3n+1){--accent:var(--olive)}
+  .content-card:nth-of-type(3n+2){--accent:var(--rust)}
+  .content-card:nth-of-type(3n+3){--accent:#445b86}
+
+  .content-card h2{
+    color:var(--accent);
+    font-size:25px;
+  }
+
+  .content-card h3{
+    margin:18px 0 7px;
+    color:var(--navy);
+    font-size:18px;
+  }
+
+  .content-card p{
+    margin:8px 0;
+    text-align:justify;
+  }
+
+  .content-card ul{
+    margin:8px 0 0;
+    padding-left:23px;
+  }
+
+  .content-card li{
+    margin:7px 0;
+  }
+
+  .content-list{
+    counter-reset:grupo;
+  }
+
+  .content-group{
+    margin:15px 0 0;
+    padding:0 0 0 15px;
+    border-left:3px solid rgba(102,116,57,.35);
+  }
+
+  .content-group h3{
+    margin-top:0;
+  }
+
+  .subitem{
+    margin:5px 0;
+    padding-left:3px;
+  }
+
+  .bibliografia{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+
+  .bibliografia li{
+    margin:0;
+    padding:12px 0;
+    border-bottom:1px solid rgba(18,50,90,.10);
+  }
+
+  .bibliografia li:last-child{
+    border-bottom:0;
+  }
+
+  footer{
+    margin-top:10px;
+    padding:20px 24px;
+    text-align:center;
+    background:var(--navy);
+    color:#fff7e6;
+  }
+
+  footer span{
+    color:#e7b95d;
+    font-family:Impact,"Arial Black",sans-serif;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    font-size:20px;
+  }
+
+  @media(max-width:680px){
+    header{padding:28px 16px 20px}
+    .section-title{font-size:clamp(44px,14vw,66px)}
+    .project-title{font-size:clamp(25px,8vw,36px)}
+    .kicker{font-size:14px}
+    .kicker::before,.kicker::after{width:28px}
+    main{padding:2px 14px 28px}
+    .ementa-box,.content-card{padding:17px 16px}
+    .ementa-box p,.content-card p{text-align:left}
+    .top-nav{gap:6px}
+    .nav-link,.home-button{font-size:13px;padding:6px 9px}
+  }
+
+  @media print{
+    body{background:#fff}
+    .page{width:100%;box-shadow:none}
+    .top-nav{display:none}
+    .content-card,.ementa-box{break-inside:avoid}
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <h1 class="section-title">Sociologia I</h1>
+    <div class="project-title">Ementa</div>
+    <div class="kicker">Prof. Eliaquim Timóteo</div>
+    <div class="meta">Carga horária: 30h</div>
+
+    <nav class="top-nav" aria-label="Navegação da ementa">
+      <a href="index.html" class="home-button">⌂ Início</a>
+      <a href="#ementa" class="nav-link">Ementa</a>
+      <a href="#objetivos" class="nav-link">Objetivos</a>
+      <a href="#conteudos" class="nav-link">Conteúdos</a>
+      <a href="#metodologia" class="nav-link">Metodologia</a>
+      <a href="#avaliacao" class="nav-link">Avaliação</a>
+      <a href="#bibliografia" class="nav-link">Bibliografia</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="ementa-box" id="ementa">
+      <h2>Ementa</h2>
+      <p>
+        Sociologia como ciência, perspectiva sociológica e senso comum. Teorias sociológicas e modernidade.
+        Conceitos sociológicos fundamentais. Relação indivíduo-sociedade, instituições, processos de socialização
+        e interação social. Estratificação social. Marcadores sociais da diferença e as múltiplas desigualdades em
+        uma perspectiva interseccional. Perspectivas teóricas e diagnósticos do mundo social contemporâneo.
+        Perspectivas da formação sócio-histórica do Brasil. O Brasil contemporâneo e a sociologia brasileira.
+      </p>
+    </section>
+
+    <section class="content-card" id="objetivos">
+      <h2>1. Objetivos</h2>
+      <ul>
+        <li>Compreender a Sociologia como ciência voltada para a análise e a compreensão das estruturas e relações sociais;</li>
+        <li>Desenvolver uma visão científica, crítica e reflexiva das realidades sociais que envolvem os indivíduos, seus comportamentos e interações;</li>
+        <li>Conhecer os principais conceitos sociológicos necessários para interpretar as especificidades sociais da sociedade moderna e contemporânea;</li>
+        <li>Entender análises, diagnósticos e pesquisas sociológicas sobre problemas e dilemas do mundo atual e da sociedade brasileira, especialmente aqueles relacionados às múltiplas desigualdades, tais como classe, gênero e raça, com base em uma perspectiva interseccional.</li>
+      </ul>
+    </section>
+
+    <section class="content-card" id="conteudos">
+      <h2>2. Bases científico-tecnológicas (conteúdos)</h2>
+
+      <div class="content-group">
+        <h3>1. Sociologia: ciência da sociedade</h3>
+        <div class="subitem">1.1. Ciência, senso comum e o conhecimento do mundo social;</div>
+        <div class="subitem">1.2. Teorias sociológicas e modernidade;</div>
+        <div class="subitem">1.3. Perspectiva e imaginação sociológicas.</div>
+      </div>
+
+      <div class="content-group">
+        <h3>2. Compreender a sociedade</h3>
+        <div class="subitem">2.1. Conceitos sociológicos fundamentais;</div>
+        <div class="subitem">2.2. Relações indivíduo-sociedade: instituições, processos de socialização, relações sociais e interação social;</div>
+        <div class="subitem">2.3. Estratificação social, marcadores sociais da diferença, estigmas e estereótipos.</div>
+      </div>
+
+      <div class="content-group">
+        <h3>3. A sociedade e a sociologia contemporânea</h3>
+        <div class="subitem">3.1 Perspectivas teóricas e diagnósticos sociológicos do mundo contemporâneo;</div>
+        <div class="subitem">3.2. Transformações, dilemas e desafios do mundo contemporâneo.</div>
+      </div>
+
+      <div class="content-group">
+        <h3>4. A sociedade e a sociologia brasileira</h3>
+        <div class="subitem">4.1. Perspectivas da formação sócio-histórica do Brasil;</div>
+        <div class="subitem">4.2. As múltiplas desigualdades na sociedade brasileira em perspectiva interseccional;</div>
+        <div class="subitem">4.3. Transformações, dilemas e desafios sociais do Brasil contemporâneo.</div>
+      </div>
+    </section>
+
+    <section class="content-card" id="metodologia">
+      <h2>3. Procedimentos metodológicos</h2>
+      <ul>
+        <li>Aulas expositivas e dialogadas; leitura, compreensão e análise de textos; estudo dirigido; seminário e debates; ensino por meio de pesquisas sociológicas; exibições de vídeos seguidos de debates; exposições fotográficas, de poesias e de músicas; criação de ambientes virtuais; aulas de campo, visitas técnicas e produção de diagnósticos sociológicos.</li>
+        <li>O desenvolvimento dos conteúdos pode estar relacionado às demais disciplinas do Ensino Básico e também do Ensino Técnico, permitindo o desenvolvimento de projetos interdisciplinares e integradores de acordo com a realidade de cada curso e campus.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>4. Recursos didáticos</h2>
+      <p>
+        Quadro branco, pincéis para quadro branco, livro didático, bibliografia especializada, livros (diversos),
+        revistas, jornais (impressos e on-line), computadores, internet, equipamento multimídia completo.
+      </p>
+    </section>
+
+    <section class="content-card" id="avaliacao">
+      <h2>5. Avaliação</h2>
+      <p>
+        O processo avaliativo ocorrerá de forma contínua, diagnóstica, mediadora, formativa e somativa. Nessa
+        perspectiva, como formas de avaliação do aprendizado na disciplina, serão utilizados diferentes instrumentos
+        avaliativos: avaliações escritas e orais; trabalhos escritos individuais e em grupos; participação em seminários,
+        debates, júris simulados; confecção de cadernos temáticos; relatórios de aulas de campo, de visitas técnicas ou
+        de pesquisas.
+      </p>
+    </section>
+
+    <section class="content-card" id="bibliografia">
+      <h2>6. Bibliografia básica</h2>
+      <ul class="bibliografia">
+        <li>BODART, Cristiano das Neves (Org.). Conceitos e categorias fundamentais do ensino de Sociologia. vol. 1. Maceió: Editora Café com Sociologia, 2021.</li>
+        <li>CASTRO, Celso. Textos básicos de sociologia. Rio de Janeiro: Zahar, 2014.</li>
+        <li>CASTRO, Celso. Para além do cânone: para ampliar e diversificar as Ciências Sociais. Rio de Janeiro: FGV, 2022.</li>
+        <li>COLLINS, Patricia Hill; BILGE, Sirma. Interseccionalidade. São Paulo: Boitempo, 2021</li>
+        <li>PINHEL, André Marega; ALVES, Benno Warken. Sociologia brasileira. Curitiba/PR: Editora Intersaberes, 2019.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>7. Bibliografia complementar</h2>
+      <ul class="bibliografia">
+        <li>BAUMAN, Zygmunt. Para uma sociologia crítica: um ensaio sobre o senso comum e a emancipação. São Paulo: Unesp, 2023.</li>
+        <li>BODART, Cristiano das Neves (Org). Conceitos e categorias fundamentais do ensino de Sociologia. vol.2. Maceió: Editora Café com Sociologia, 2021.</li>
+        <li>DURKHEIM, Émile. A Sociologia e as Ciências Sociais. São Paulo: WMF; Martins Fontes, 2021.</li>
+        <li>MEDEIROS, Marcelo. Os ricos e os pobres: o Brasil e a desigualdade. São Paulo: Companhia das Letras, 2023.</li>
+        <li>SIMMEL, Georg. Questões fundamentais da Sociologia: indivíduo e sociedade. Rio de Janeiro: Zahar, 2006.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Sociologia I</span>
+  </footer>
+
+</div>
+</body>
+</html>
