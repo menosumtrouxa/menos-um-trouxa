@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#161b18">
+  <script>
+    // Aplicar a preferência antes de renderizar a página evita o piscar de cores.
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('caderno-pomodoro-tema-v1') === 'light' ? 'light' : 'dark';
+    } catch (_) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
   <meta name="description" content="Pomodoro offline com sino, calendário horizontal e explicação retrátil da técnica.">
   <title>Pomodoro | Foco e constância</title>
   <style>
@@ -197,13 +205,140 @@
     .week-hint{color:#c4aa7d}
     @media(max-width:760px){.week-panel{padding:18px 13px}.week-header{align-items:start}.week-track{margin-top:16px}.week-days{grid-template-columns:repeat(7,164px);min-width:1202px;gap:7px}.week-day{min-height:190px;padding:10px 8px}.week-task-name{font-size:.81rem}.week-task-time{font-size:.68rem}.week-day-head{padding-bottom:9px}.week-bottom{font-size:.71rem}}
     @media(max-width:390px){.week-controls{gap:5px}.week-controls button{height:35px;min-width:35px}.week-days{grid-template-columns:repeat(7,155px);min-width:1133px}.week-header h2{font-size:1.43rem}.week-track{margin-top:14px}}
-</style>
+
+    /* Alternância de aparência: o esquema noturno original permanece intacto. */
+    .header-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:9px 12px;border:1px solid #64705e;border-radius:9px;background:#283329;color:#e7e5d7;font:600 .77rem/1.2 Arial,sans-serif;white-space:nowrap}
+    .theme-toggle:hover{background:#344135}
+    .theme-icon{flex:none}
+    @media(max-width:530px){
+      .header-inner{flex-wrap:wrap;gap:9px}
+      .header-inner>div:first-child{min-width:0;flex:1}
+      .header-tools{gap:6px;flex-direction:column;align-items:flex-end}
+      .theme-toggle{min-height:38px;padding:8px 10px;font-size:.72rem}
+      h1{font-size:clamp(1.15rem,5vw,1.35rem)}
+      #currentDate{max-width:none;text-align:right;font-size:.67rem}
+    }
+    html[data-theme="light"]{
+      color-scheme:light;
+      --bg:#f4f3ec;--card:#fffdf8;--raised:#f0f1e9;--stroke:#cbd3c6;
+      --text:#27352b;--muted:#506258;--gold:#836137;--gold-deep:#745429;
+      --olive:#57765c;--olive-soft:#dce9d7;--danger:#a14747;
+      --shadow:0 12px 36px #455d4718;
+      background:var(--bg);
+    }
+    html[data-theme="light"] body{background:var(--bg);color:var(--text)}
+    html[data-theme="light"] .site-header{background:#fffdf8;border-bottom-color:#cbd4c6}
+    html[data-theme="light"] .theme-toggle{background:#eef2e9;border-color:#b8c7b6;color:#254331}
+    html[data-theme="light"] .theme-toggle:hover{background:#e1eadf}
+    html[data-theme="light"] .panel{background:var(--card);border-color:var(--stroke)}
+    html[data-theme="light"] .modes{background:#e9eee7;border-color:#c6d1c3}
+    html[data-theme="light"] .mode{color:#475d4c}
+    html[data-theme="light"] .mode small{color:#617264}
+    html[data-theme="light"] .mode[aria-pressed="true"]{background:#d4e3cf;border-color:#8ca488;color:#183f28}
+    html[data-theme="light"] .mode[aria-pressed="true"] small{color:#34583d}
+    html[data-theme="light"] .ring-base{stroke:#dce6d9}
+    html[data-theme="light"] .clock-digits{color:#263a2b}
+    html[data-theme="light"] .clock-state{color:#576858}
+    html[data-theme="light"] .btn{color:#293c2b;border-color:#b3c6b3;background:#e5eee2}
+    html[data-theme="light"] .btn:hover{background:#d4e3d1}
+    html[data-theme="light"] .btn-primary{background:#c7a875;color:#241d13;border-color:#ac8a56}
+    html[data-theme="light"] .btn-primary:hover{background:#b99968}
+    html[data-theme="light"] .btn-light{color:#304731;background:#f9faf6;border-color:#bccbbb}
+    html[data-theme="light"] .btn-light:hover{background:#edf2e9}
+    html[data-theme="light"] .cycles{color:#465b49}
+    html[data-theme="light"] .cycle-dot{border-color:#8da38b}
+    html[data-theme="light"] .metric{background:#f5f7f1;border-color:#d0d9ca}
+    html[data-theme="light"] .metric-value{color:#64502c}
+    html[data-theme="light"] .metric-label{color:#536253}
+    html[data-theme="light"] .settings{border-top-color:#d7ded2}
+    html[data-theme="light"] .settings summary{color:#415644}
+    html[data-theme="light"] .settings-grid label{color:#4b604d}
+    html[data-theme="light"] .settings-grid input{background:#fffefb;border-color:#aab9a8;color:#24382c}
+    html[data-theme="light"] #announcement{color:#73522b}
+    html[data-theme="light"] .about-pomodoro{background:#f5f7f0;border-color:#c3d0bc}
+    html[data-theme="light"] .about-pomodoro summary{color:#644b29}
+    html[data-theme="light"] .about-pomodoro summary::after{color:#705027}
+    html[data-theme="light"] .about-pomodoro summary:hover{background:#e9efe4}
+    html[data-theme="light"] .about-pomodoro[open] summary{border-bottom-color:#cdd8c7}
+    html[data-theme="light"] .about-pomodoro p{color:#394d3e}
+    html[data-theme="light"] .week-header h2{color:#283c2e}
+    html[data-theme="light"] .week-controls button{background:#eef3e9;color:#2a4a33;border-color:#b8cbb8}
+    html[data-theme="light"] .week-controls button:hover{background:#e0ebdd}
+    html[data-theme="light"] .week-track{scrollbar-color:#a48d65 #e3e8de}
+    html[data-theme="light"] .week-track::-webkit-scrollbar-track{background:#e3e8de}
+    html[data-theme="light"] .week-track::-webkit-scrollbar-thumb{background:#ac9169;border-color:#e1d0af}
+    html[data-theme="light"] .week-day{background:#f4f6f0;border-color:#cbd5c5}
+    html[data-theme="light"] .week-day.is-today{border-color:#977449;box-shadow:inset 0 0 0 1px #d2bc8f}
+    html[data-theme="light"] .week-day-head{border-bottom-color:#d4dfd0}
+    html[data-theme="light"] .week-day-name{color:#364e39}
+    html[data-theme="light"] .week-day-date{color:#586958}
+    html[data-theme="light"] .week-task{background:#e9f0e7;border-color:#c9d8c6}
+    html[data-theme="light"] .week-task.k-custom{background:#e6eee3;border-color:#b8d0b2}
+    html[data-theme="light"] .week-task input[type="checkbox"]{background:#fffefb;border-color:#77917a}
+    html[data-theme="light"] .week-task input[type="checkbox"]:checked{background:#68876a;border-color:#506e53}
+    html[data-theme="light"] .week-task input[type="checkbox"]:checked::after{color:#fff}
+    html[data-theme="light"] .week-task-time{color:#66502e}
+    html[data-theme="light"] .week-task-name{color:#273b2b}
+    html[data-theme="light"] .week-task-actions button{color:#3a573f}
+    html[data-theme="light"] .week-task-actions button:hover{background:#dce7d7;border-color:#abc0aa}
+    html[data-theme="light"] .week-empty{color:#607363}
+    html[data-theme="light"] .week-add{background:#ebf0e7;border-color:#9bb29a;color:#3c5a40}
+    html[data-theme="light"] .week-add:hover{background:#dae8d8}
+    html[data-theme="light"] .week-form{background:#e6ede2;border-color:#a9bca6}
+    html[data-theme="light"] .week-form label{color:#375039}
+    html[data-theme="light"] .week-form input{background:#fff;color:#24382b;border-color:#a9bda8}
+    html[data-theme="light"] .week-form-actions button{background:#e2ebe0;border-color:#abc0a9;color:#304936}
+    html[data-theme="light"] .week-form-actions button:first-child{background:#c7a875;border-color:#a88a5d;color:#241f15}
+    html[data-theme="light"] .week-bottom{border-top-color:#d2dbce;color:#526654}
+    html[data-theme="light"] .week-hint{color:#6f552f}
+    html[data-theme="light"] .section-header h2{color:#5c492c}
+    html[data-theme="light"] .year-switch{color:#3a503d}
+    html[data-theme="light"] .year-switch button{background:#edf2e9;border-color:#b8c9b7;color:#304d36}
+    html[data-theme="light"] .year-switch button:hover:not(:disabled){background:#deeadd}
+    html[data-theme="light"] .months{scrollbar-color:#a98d63 #e7ece2}
+    html[data-theme="light"] .months::-webkit-scrollbar-track{background:#e7ece2}
+    html[data-theme="light"] .months::-webkit-scrollbar-thumb{background:#a98d63;border-color:#d1b78d}
+    html[data-theme="light"] .month-slider::-webkit-slider-runnable-track{background:#d5ded1}
+    html[data-theme="light"] .month-slider::-moz-range-track{background:#d5ded1}
+    html[data-theme="light"] .month-slider::-webkit-slider-thumb{background:#9a7b4f;border-color:#735730}
+    html[data-theme="light"] .month-slider::-moz-range-thumb{background:#9a7b4f;border-color:#735730}
+    html[data-theme="light"] .month h3{color:#615037}
+    html[data-theme="light"] .day{background:#e7ebe2;border-color:#d2dad0;color:#3c4d3f}
+    html[data-theme="light"] .day-blank{background:transparent;border:0}
+    html[data-theme="light"] .day.future{background:#f7f8f3;border-color:#e5eae2;color:#9aa79a}
+    html[data-theme="light"] .day.used{background:#607b61;border-color:#426a4b;color:#fff}
+    html[data-theme="light"] .day.done1{background:#a6c39f;border-color:#7da67e;color:#233e28}
+    html[data-theme="light"] .day.done3{background:#d3d79e;border-color:#afbb7b;color:#344026}
+    html[data-theme="light"] .calendar-bottom{border-top-color:#d9e1d6}
+    html[data-theme="light"] .calendar-summary{color:#475a49}
+    html[data-theme="light"] .history-legend{color:#4c6350}
+    html[data-theme="light"] .history-legend summary{text-decoration-color:#91aa8e}
+    html[data-theme="light"] .legend{color:#4a624e}
+    html[data-theme="light"] .swatch{background:#e7ebe2;border-color:#cdd7ca}
+    html[data-theme="light"] .swatch.used{background:#607b61}
+    html[data-theme="light"] .swatch.done1{background:#a6c39f}
+    html[data-theme="light"] .swatch.done3{background:#d3d79e}
+    html[data-theme="light"] .day-detail{background:#eef4ec;border-color:#c4d4c0;color:#344936}
+    html[data-theme="light"] .privacy{color:#657669}
+    html[data-theme="light"] button:focus-visible,
+    html[data-theme="light"] input:focus-visible,
+    html[data-theme="light"] summary:focus-visible,
+    html[data-theme="light"] .used-day:focus-visible{outline-color:#936d3a}
+
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div><div class="kicker">DICIONÁRIO PARA NÃO SER TROUXA</div><h1>Foco e constância</h1></div>
-      <div id="currentDate" aria-label="Data de hoje"></div>
+      <div><div class="kicker">Caderno de estudos</div><h1>Foco e constância</h1></div>
+      <div class="header-tools">
+        <div id="currentDate" aria-label="Data de hoje"></div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar para modo claro" title="Alternar aparência da página" aria-pressed="false">
+          <svg class="theme-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"></path></svg>
+          <span id="themeLabel">Modo escuro</span>
+        </button>
+      </div>
     </div>
   </header>
   <main class="shell">
@@ -702,5 +837,30 @@
   render();
 })();
 </script>
+
+  <script>
+  (() => {
+    'use strict';
+    const STORAGE = 'caderno-pomodoro-tema-v1';
+    const button = document.getElementById('themeToggle');
+    const label = document.getElementById('themeLabel');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    function applyTheme(theme) {
+      const light = theme === 'light';
+      document.documentElement.dataset.theme = light ? 'light' : 'dark';
+      label.textContent = light ? 'Modo claro' : 'Modo escuro';
+      button.setAttribute('aria-pressed', String(light));
+      button.setAttribute('aria-label', light ? 'Modo claro ativo. Alternar para o modo escuro' : 'Modo escuro ativo. Alternar para o modo claro');
+      button.title = light ? 'Ativar modo escuro' : 'Ativar modo claro';
+      if (meta) meta.content = light ? '#f4f3ec' : '#161b18';
+    }
+    applyTheme(document.documentElement.dataset.theme);
+    button.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      try { localStorage.setItem(STORAGE, next); } catch (_) {}
+    });
+  })();
+  </script>
 </body>
 </html>
