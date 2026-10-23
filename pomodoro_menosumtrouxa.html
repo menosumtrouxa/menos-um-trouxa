@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-layout="atelier">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,7 +7,7 @@
   <script>
     // Aplicar a preferência antes de renderizar a página evita o piscar de cores.
     try {
-      document.documentElement.dataset.theme = localStorage.getItem('caderno-pomodoro-tema-v1') === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = localStorage.getItem('pomodoro-atelier-tema-v1') === 'light' ? 'light' : 'dark';
     } catch (_) {
       document.documentElement.dataset.theme = 'dark';
     }
@@ -326,12 +326,145 @@
     html[data-theme="light"] summary:focus-visible,
     html[data-theme="light"] .used-day:focus-visible{outline-color:#936d3a}
 
+
+
+/* OPÇÃO B: ATELIÊ ESCURO - painel lateral modular */
+html[data-layout="atelier"][data-theme="dark"]{
+ color-scheme:dark;--v-bg:#121719;--v-paper:#1a2225;--v-secondary:#222e31;--v-text:#e9efed;--v-muted:#a6b5b1;--v-border:#344448;--v-accent:#c9b18a;--v-fill:#83a99b;--v-active:#334f4b;
+}
+html[data-layout="atelier"][data-theme="light"]{
+ color-scheme:light;--v-bg:#eef2f0;--v-paper:#ffffff;--v-secondary:#f2f5f3;--v-text:#233534;--v-muted:#536965;--v-border:#c5d4cf;--v-accent:#795e39;--v-fill:#4d8274;--v-active:#dce9e2;
+}
+html[data-layout="atelier"]{background:var(--v-bg)}
+html[data-layout="atelier"] body{background:var(--v-bg);color:var(--v-text);font-family:Arial,'Helvetica Neue',sans-serif}
+html[data-layout="atelier"] .site-header{background:var(--v-bg);border-color:var(--v-border)}
+html[data-layout="atelier"] .header-inner{max-width:1440px;padding-block:18px}
+html[data-layout="atelier"] .kicker{color:var(--v-accent);font-size:.62rem;letter-spacing:.17em}
+html[data-layout="atelier"] h1{font-family:Arial,sans-serif;letter-spacing:-.045em;font-weight:600;font-size:clamp(1.4rem,2vw,1.95rem)}
+html[data-layout="atelier"] #currentDate{color:var(--v-muted)}
+html[data-layout="atelier"] .theme-toggle{background:var(--v-paper);color:var(--v-text);border:1px solid var(--v-border);border-radius:4px}
+html[data-layout="atelier"] .theme-toggle:hover{background:var(--v-secondary)}
+html[data-layout="atelier"] .shell{max-width:1440px}
+html[data-layout="atelier"] .layout{display:grid;grid-template-columns:minmax(315px,360px) minmax(0,1fr);grid-template-rows:auto auto;gap:16px;padding-top:20px;align-items:start}
+html[data-layout="atelier"] .panel{background:var(--v-paper);color:var(--v-text);border:1px solid var(--v-border);box-shadow:none;border-radius:5px}
+html[data-layout="atelier"] .timer-panel{width:100%;margin:0;grid-column:1;grid-row:1/span 2;padding:20px 18px 17px;position:sticky;top:16px}
+html[data-layout="atelier"] .week-panel{grid-column:2;grid-row:1;width:100%;padding:20px 17px 15px}
+html[data-layout="atelier"] .calendar-panel{grid-column:2;grid-row:2;width:100%;padding:19px 17px 15px}
+html[data-layout="atelier"] .eyebrow{color:var(--v-accent);letter-spacing:.14em;font-size:.65rem}
+html[data-layout="atelier"] .modes{background:var(--v-secondary);border:1px solid var(--v-border);padding:4px;border-radius:5px;margin:16px 0 11px;gap:3px}
+html[data-layout="atelier"] .mode{border-radius:3px;color:var(--v-muted);font-size:.73rem;min-height:48px}
+html[data-layout="atelier"] .mode small{font-size:.68rem;color:var(--v-muted)}
+html[data-layout="atelier"] .mode[aria-pressed="true"]{background:var(--v-active);border:1px solid var(--v-border);color:var(--v-text)}
+html[data-layout="atelier"] .mode[aria-pressed="true"] small{color:var(--v-text)}
+html[data-layout="atelier"] .clock-wrap{margin:0}
+html[data-layout="atelier"] .clock{width:210px;max-width:100%}
+html[data-layout="atelier"] .ring-base{stroke:var(--v-border);stroke-width:3}
+html[data-layout="atelier"] .ring-progress{stroke:var(--v-accent);stroke-width:4}
+html[data-layout="atelier"] .clock-label{color:var(--v-accent);font-size:.58rem;letter-spacing:.08em}
+html[data-layout="atelier"] .clock-digits{font:500 3.65rem/1 Arial,sans-serif;color:var(--v-text);letter-spacing:-.075em}
+html[data-layout="atelier"] .clock-state{color:var(--v-muted);font-size:.68rem}
+html[data-layout="atelier"] .mode-description{font-size:.75rem;color:var(--v-muted);margin:0 0 13px;min-height:0}
+html[data-layout="atelier"] .controls{gap:5px}
+html[data-layout="atelier"] .btn{border:1px solid var(--v-border);border-radius:4px;background:var(--v-secondary);color:var(--v-text);font-size:.71rem;min-height:44px;padding:9px 5px}
+html[data-layout="atelier"] .btn:hover{filter:brightness(1.08)}
+html[data-layout="atelier"] .btn-primary{background:var(--v-accent);border-color:var(--v-accent);color:var(--v-bg)}
+html[data-layout="atelier"] .btn-primary:hover{background:var(--v-accent)}
+html[data-layout="atelier"] .cycles{margin-top:15px;color:var(--v-muted);font-size:.72rem}
+html[data-layout="atelier"] .cycle-dot{border-color:var(--v-muted)}
+html[data-layout="atelier"] .cycle-dot.done{background:var(--v-fill);border-color:var(--v-fill)}
+html[data-layout="atelier"] .metrics{gap:7px;margin-top:15px}
+html[data-layout="atelier"] .metric{border:1px solid var(--v-border);background:var(--v-secondary);border-radius:4px;padding:11px 10px}
+html[data-layout="atelier"] .metric-value{color:var(--v-text);font:600 1.3rem Arial,sans-serif}
+html[data-layout="atelier"] .metric-label{color:var(--v-muted);font-size:.67rem}
+html[data-layout="atelier"] .about-pomodoro{margin-top:13px;background:transparent;border:1px solid var(--v-border);border-radius:4px}
+html[data-layout="atelier"] .about-pomodoro summary{font-size:.75rem;color:var(--v-accent);padding:10px;min-height:39px}
+html[data-layout="atelier"] .about-pomodoro summary:hover{background:var(--v-secondary)}
+html[data-layout="atelier"] .about-pomodoro summary::after{color:var(--v-accent)}
+html[data-layout="atelier"] .about-pomodoro[open] summary{border-color:var(--v-border)}
+html[data-layout="atelier"] .about-pomodoro p{font-size:.77rem;color:var(--v-muted)}
+html[data-layout="atelier"] .settings{border-color:var(--v-border);margin-top:12px}
+html[data-layout="atelier"] .settings summary{color:var(--v-muted)}
+html[data-layout="atelier"] .settings-description{color:var(--v-muted)}
+html[data-layout="atelier"] .settings-grid label{color:var(--v-muted)}
+html[data-layout="atelier"] .settings-grid input{background:var(--v-bg);border-color:var(--v-border);color:var(--v-text)}
+html[data-layout="atelier"] #announcement{color:var(--v-accent)}
+html[data-layout="atelier"] .week-header h2{font:600 1.55rem/1.12 Arial,sans-serif;letter-spacing:-.04em;color:var(--v-text)}
+html[data-layout="atelier"] .week-header p{color:var(--v-muted)}
+html[data-layout="atelier"] .week-controls button,html[data-layout="atelier"] .year-switch button{border-radius:4px;background:var(--v-secondary);color:var(--v-text);border:1px solid var(--v-border)}
+html[data-layout="atelier"] .week-controls button:hover,html[data-layout="atelier"] .year-switch button:hover:not(:disabled){filter:brightness(1.15)}
+html[data-layout="atelier"] .week-track,html[data-layout="atelier"] .months{scrollbar-color:var(--v-accent) var(--v-secondary)}
+html[data-layout="atelier"] .week-track::-webkit-scrollbar-track,html[data-layout="atelier"] .months::-webkit-scrollbar-track{background:var(--v-secondary)}
+html[data-layout="atelier"] .week-track::-webkit-scrollbar-thumb,html[data-layout="atelier"] .months::-webkit-scrollbar-thumb{background:var(--v-accent);border-color:var(--v-bg)}
+html[data-layout="atelier"] .week-days{grid-template-columns:repeat(7,154px);min-width:1130px;gap:8px}
+html[data-layout="atelier"] .week-day{min-height:178px;border-radius:4px;padding:10px 8px;background:var(--v-secondary);border:1px solid var(--v-border)}
+html[data-layout="atelier"] .week-day.is-today{border-color:var(--v-accent);box-shadow:inset 0 0 0 1px var(--v-accent)}
+html[data-layout="atelier"] .week-day-head{border-color:var(--v-border)}
+html[data-layout="atelier"] .week-day-name{color:var(--v-text);font-size:.67rem}
+html[data-layout="atelier"] .week-day-date{color:var(--v-muted)}
+html[data-layout="atelier"] .week-task{border-color:var(--v-border);border-radius:4px;background:var(--v-paper)}
+html[data-layout="atelier"] .week-task.k-custom{background:var(--v-paper);border-color:var(--v-border)}
+html[data-layout="atelier"] .week-task-time{color:var(--v-accent)}
+html[data-layout="atelier"] .week-task-name{color:var(--v-text)}
+html[data-layout="atelier"] .week-task input[type="checkbox"]{background:var(--v-paper);border-color:var(--v-muted)}
+html[data-layout="atelier"] .week-task input[type="checkbox"]:checked{background:var(--v-fill);border-color:var(--v-fill)}
+html[data-layout="atelier"] .week-task input[type="checkbox"]:checked::after{color:var(--v-bg)}
+html[data-layout="atelier"] .week-task-actions button{color:var(--v-text)}
+html[data-layout="atelier"] .week-task-actions button:hover{background:var(--v-secondary);border-color:var(--v-border)}
+html[data-layout="atelier"] .week-empty{color:var(--v-muted)}
+html[data-layout="atelier"] .week-add{background:transparent;border:1px dashed var(--v-muted);border-radius:4px;color:var(--v-text)}
+html[data-layout="atelier"] .week-add:hover{background:var(--v-paper)}
+html[data-layout="atelier"] .week-form{background:var(--v-paper);border:1px solid var(--v-border)}
+html[data-layout="atelier"] .week-form label{color:var(--v-text)}
+html[data-layout="atelier"] .week-form input{background:var(--v-secondary);border-color:var(--v-border);color:var(--v-text)}
+html[data-layout="atelier"] .week-form-actions button{background:var(--v-secondary);border-color:var(--v-border);color:var(--v-text)}
+html[data-layout="atelier"] .week-form-actions button:first-child{background:var(--v-accent);color:var(--v-bg)}
+html[data-layout="atelier"] .week-bottom,html[data-layout="atelier"] .calendar-bottom{color:var(--v-muted);border-color:var(--v-border)}
+html[data-layout="atelier"] .week-hint{color:var(--v-accent)}
+html[data-layout="atelier"] .section-header h2{color:var(--v-text);font-size:.7rem}
+html[data-layout="atelier"] .year-switch{color:var(--v-text)}
+html[data-layout="atelier"] .month h3{color:var(--v-muted)}
+html[data-layout="atelier"] .months{gap:15px}
+html[data-layout="atelier"] .month{flex-basis:136px;width:136px}
+html[data-layout="atelier"] .days{grid-template-columns:repeat(7,16px);grid-auto-rows:16px;gap:3px}
+html[data-layout="atelier"] .day,html[data-layout="atelier"] .day-blank{height:16px;min-height:16px;width:16px;font-size:.48rem}
+html[data-layout="atelier"] .day{background:var(--v-secondary);border-color:var(--v-border);color:var(--v-text);border-radius:2px}
+html[data-layout="atelier"] .day-blank{background:transparent;border:0}
+html[data-layout="atelier"] .day.future{background:var(--v-paper);border-color:var(--v-border);color:var(--v-muted);opacity:.5}
+html[data-layout="atelier"] .day.used{background:var(--v-fill);color:var(--v-bg);border-color:var(--v-fill)}
+html[data-layout="atelier"] .day.done1{background:var(--v-active);border-color:var(--v-fill);color:var(--v-text)}
+html[data-layout="atelier"] .day.done3{background:var(--v-accent);color:var(--v-bg);border-color:var(--v-accent)}
+html[data-layout="atelier"] .month-slider::-webkit-slider-runnable-track{background:var(--v-secondary)}
+html[data-layout="atelier"] .month-slider::-moz-range-track{background:var(--v-secondary)}
+html[data-layout="atelier"] .month-slider::-webkit-slider-thumb{background:var(--v-accent);border-color:var(--v-accent)}
+html[data-layout="atelier"] .month-slider::-moz-range-thumb{background:var(--v-accent);border-color:var(--v-accent)}
+html[data-layout="atelier"] .calendar-summary,html[data-layout="atelier"] .history-legend,html[data-layout="atelier"] .legend,html[data-layout="atelier"] .privacy{color:var(--v-muted)}
+html[data-layout="atelier"] .swatch{background:var(--v-secondary);border-color:var(--v-border)}
+html[data-layout="atelier"] .swatch.used{background:var(--v-fill)}
+html[data-layout="atelier"] .swatch.done1{background:var(--v-active)}
+html[data-layout="atelier"] .swatch.done3{background:var(--v-accent)}
+html[data-layout="atelier"] .day-detail{background:var(--v-secondary);border-color:var(--v-border);color:var(--v-text)}
+@media(max-width:920px){
+ html[data-layout="atelier"] .layout{display:flex;flex-direction:column;gap:14px}
+ html[data-layout="atelier"] .timer-panel{position:static;width:100%;max-width:610px;margin:0 auto;padding:20px}
+ html[data-layout="atelier"] .clock{width:210px}
+ html[data-layout="atelier"] .calendar-panel,html[data-layout="atelier"] .week-panel{width:100%}
+}
+@media(max-width:490px){
+ html[data-layout="atelier"] .shell{padding-inline:12px}
+ html[data-layout="atelier"] .header-inner{padding-inline:13px}
+ html[data-layout="atelier"] .timer-panel{padding:16px 12px}
+ html[data-layout="atelier"] .clock{width:198px}
+ html[data-layout="atelier"] .clock-digits{font-size:3.3rem}
+ html[data-layout="atelier"] .week-panel,html[data-layout="atelier"] .calendar-panel{padding:16px 12px}
+ html[data-layout="atelier"] .week-header h2{font-size:1.4rem}
+}
+
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div><div class="kicker">Caderno de estudos</div><h1>Foco e constância</h1></div>
+      <div><div class="kicker">DICIONÁRIO PARA NÃO SER TROUXA</div><h1>paciência e perseverança</h1></div>
       <div class="header-tools">
         <div id="currentDate" aria-label="Data de hoje"></div>
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar para modo claro" title="Alternar aparência da página" aria-pressed="false">
@@ -344,7 +477,7 @@
   <main class="shell">
     <div class="layout">
       <section class="panel timer-panel" aria-labelledby="timer-title">
-        <div class="eyebrow" id="timer-title">Cronômetro Pomodoro</div>
+        <div class="eyebrow" id="timer-title"></div>
         <div class="modes" role="group" aria-label="Etapa do Pomodoro">
           <button class="mode" type="button" data-mode="focus" aria-pressed="true">Foco <small id="focus-mode-length">25 min</small></button>
           <button class="mode" type="button" data-mode="short" aria-pressed="false">Pausa curta <small id="short-mode-length">5 min</small></button>
@@ -402,7 +535,7 @@
   <section class="panel week-panel" id="weeklyPlanner" aria-labelledby="weeklyTitle">
     <div class="week-header">
       <div>
-        <div class="eyebrow">Planejamento semanal</div>
+        <div class="eyebrow"></div>
         <h2 id="weeklyTitle">Semana 43</h2>
         <p id="weeklyDates">19 a 25 de outubro de 2026</p>
       </div>
@@ -440,13 +573,13 @@
         </div>
       </section>
     </div>
-    <p class="privacy">O histórico é salvo apenas neste navegador. Limpar os dados do site ou usar outro dispositivo pode apagar ou ocultar os registros. Funciona sem internet.</p>
+    <p class="privacy"></p>
   </main>
   <script>
   (() => {
     'use strict';
     const $ = id => document.getElementById(id);
-    const KEY = 'caderno-pomodoro-calendario-v1';
+    const KEY = 'pomodoro-atelier-calendario-v1';
     const now = () => Date.now();
     const dayKey = (date=new Date()) => `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
     const names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
@@ -765,7 +898,7 @@
 (()=>{
   'use strict';
   const $=id=>document.getElementById(id);
-  const STORAGE='caderno-planejamento-semanal-v1';
+  const STORAGE='pomodoro-atelier-planejamento-v1';
   const WEEKDAYS=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];
   function localDay(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
   function mondayOf(d){let r=new Date(d.getFullYear(),d.getMonth(),d.getDate(),12);r.setDate(r.getDate()-((r.getDay()+6)%7));return r}
@@ -841,7 +974,7 @@
   <script>
   (() => {
     'use strict';
-    const STORAGE = 'caderno-pomodoro-tema-v1';
+    const STORAGE = 'pomodoro-atelier-tema-v1';
     const button = document.getElementById('themeToggle');
     const label = document.getElementById('themeLabel');
     const meta = document.querySelector('meta[name="theme-color"]');
