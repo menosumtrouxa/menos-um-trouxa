@@ -153,12 +153,56 @@
     .about-pomodoro[open] summary{border-bottom:1px solid #3c493c}
     .about-pomodoro summary:hover{background:#293329}
     .about-pomodoro p{margin:0;padding:13px 14px 16px;color:#d0d2c6;font:400 .87rem/1.65 Arial,sans-serif}
-  </style>
+  
+    /* Planejamento semanal horizontal: uma faixa de sete dias sem empilhamento no celular. */
+    .week-panel{width:100%;padding:clamp(16px,2.4vw,26px)}
+    .week-header{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
+    .week-header h2{font:normal clamp(1.3rem,2.3vw,1.8rem)/1.15 Georgia,serif;color:#f4efe1;margin:7px 0 4px}
+    .week-header p{font:400 .8rem/1.5 Arial,sans-serif;color:var(--muted);margin:0}
+    .week-controls{display:flex;align-items:center;gap:7px}
+    .week-controls button{height:38px;min-width:38px;padding:0 11px;color:#ebe4d5;background:#273329;border:1px solid #566655;border-radius:9px;font:600 1.15rem Arial,sans-serif}
+    .week-controls button:hover{background:#3b4a3d}
+    .week-controls .week-today{font:600 .73rem Arial,sans-serif;padding-inline:12px;white-space:nowrap}
+    .week-track{width:100%;max-width:100%;margin-top:20px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#9d8763 #303b32;scrollbar-width:auto;touch-action:pan-x pan-y;padding-bottom:14px;scroll-snap-type:x proximity}
+    .week-track::-webkit-scrollbar{height:9px}.week-track::-webkit-scrollbar-track{background:#303b32;border-radius:8px}.week-track::-webkit-scrollbar-thumb{background:#a38c69;border:1px solid #c0a984;border-radius:8px}
+    .week-days{display:grid;grid-template-columns:repeat(7,minmax(145px,1fr));gap:9px;min-width:1100px;align-items:stretch}
+    .week-day{min-width:0;min-height:190px;display:flex;flex-direction:column;gap:9px;padding:11px 9px 10px;border-radius:11px;background:#19221c;border:1px solid #3b483b;scroll-snap-align:start}
+    .week-day.is-today{border-color:#b8a47b;box-shadow:inset 0 0 0 1px #736d4e}
+    .week-day-head{display:flex;align-items:baseline;justify-content:space-between;gap:5px;padding:0 3px 10px;border-bottom:1px solid #39483c}
+    .week-day-name{color:#e9d4b4;font:700 .75rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+    .week-day-date{color:#aeb8a6;font:600 .7rem Arial,sans-serif;white-space:nowrap}
+    .week-tasklist{display:flex;flex-direction:column;gap:6px;flex:1}
+    .week-task{display:flex;align-items:flex-start;gap:7px;border:1px solid #3e5041;background:#28392e;border-radius:8px;padding:9px 7px;min-height:49px;overflow-wrap:anywhere}
+    .week-task.k-custom{background:#2a392e;border-color:#526c55}
+    .week-task.is-done{opacity:.62}.week-task.is-done .week-task-name{text-decoration:line-through;text-decoration-thickness:1px}
+    .week-task input[type="checkbox"]{flex:none;appearance:none;-webkit-appearance:none;border:1.5px solid #c9c9b7;border-radius:5px;width:20px;height:20px;background:#152019;margin:1px 0 0;position:relative;cursor:pointer}
+    .week-task input[type="checkbox"]:checked{background:#c3ad81;border-color:#dbc89d}
+    .week-task input[type="checkbox"]:checked:after{content:'✓';display:block;position:absolute;inset:0;text-align:center;color:#1b261d;font:bold .9rem/18px Arial,sans-serif}
+    .week-task label{min-width:0;flex:1;cursor:pointer;display:block}
+    .week-task-time{display:block;margin-bottom:3px;color:#d2c0a3;font:700 .64rem/1.3 Arial,sans-serif}
+    .week-task-name{display:block;color:#f3efe6;font:500 .76rem/1.32 Arial,sans-serif}
+    .week-task-actions{display:flex;flex-direction:column;gap:3px;margin:-3px -2px -3px 0}
+    .week-task-actions button{width:27px;height:25px;background:transparent;border:1px solid transparent;border-radius:5px;color:#d6d8c9;font:700 .78rem Arial,sans-serif;padding:0}
+    .week-task-actions button:hover{background:#ffffff19;border-color:#ffffff40}
+    .week-empty{font:400 .75rem/1.5 Arial,sans-serif;color:#849988;padding:5px 3px}
+    .week-add{border:1px dashed #667a65;border-radius:8px;background:#242f27;color:#e3d3b5;min-height:42px;padding:7px;font:600 .74rem/1.3 Arial,sans-serif;width:100%}
+    .week-add:hover{background:#344436}
+    .week-form{display:grid;gap:7px;background:#26332a;border:1px solid #788467;border-radius:9px;padding:9px}
+    .week-form label{font:600 .68rem Arial,sans-serif;color:#d8dccb;display:grid;gap:4px}
+    .week-form input{background:#121c16;color:#fff;border:1px solid #6b826c;border-radius:6px;padding:8px 7px;max-width:100%;width:100%;font:.79rem Arial,sans-serif;min-height:38px}
+    .week-form-actions{display:flex;gap:5px;justify-content:space-between}
+    .week-form-actions button{border-radius:6px;border:1px solid #6e806b;min-height:37px;flex:1;background:#263c2e;color:#f2ecd9;font:600 .7rem Arial,sans-serif;padding:5px}
+    .week-form-actions button:first-child{background:#c8ac7c;color:#201c18;border-color:#d9c192}
+    .week-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:9px;border-top:1px solid #354535;color:#b9c5b5;font:400 .74rem/1.4 Arial,sans-serif}
+    .week-hint{color:#c4aa7d}
+    @media(max-width:760px){.week-panel{padding:18px 13px}.week-header{align-items:start}.week-track{margin-top:16px}.week-days{grid-template-columns:repeat(7,164px);min-width:1202px;gap:7px}.week-day{min-height:190px;padding:10px 8px}.week-task-name{font-size:.81rem}.week-task-time{font-size:.68rem}.week-day-head{padding-bottom:9px}.week-bottom{font-size:.71rem}}
+    @media(max-width:390px){.week-controls{gap:5px}.week-controls button{height:35px;min-width:35px}.week-days{grid-template-columns:repeat(7,155px);min-width:1133px}.week-header h2{font-size:1.43rem}.week-track{margin-top:14px}}
+</style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div><div class="kicker">MENOS UM TROUXA</div><h1>Foco e constância</h1></div>
+      <div><div class="kicker">DICIONÁRIO PARA NÃO SER TROUXA</div><h1>Foco e constância</h1></div>
       <div id="currentDate" aria-label="Data de hoje"></div>
     </div>
   </header>
@@ -219,7 +263,26 @@
         </details>
         <p id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
       </section>
-      <section class="panel calendar-panel" aria-labelledby="calendarTitle">
+    
+  <section class="panel week-panel" id="weeklyPlanner" aria-labelledby="weeklyTitle">
+    <div class="week-header">
+      <div>
+        <div class="eyebrow">Planejamento semanal</div>
+        <h2 id="weeklyTitle">Semana 43</h2>
+        <p id="weeklyDates">19 a 25 de outubro de 2026</p>
+      </div>
+      <div class="week-controls" role="group" aria-label="Navegação entre semanas">
+        <button id="weekPrev" type="button" aria-label="Semana anterior" title="Semana anterior">‹</button>
+        <button id="weekToday" class="week-today" type="button">Esta semana</button>
+        <button id="weekNext" type="button" aria-label="Próxima semana" title="Próxima semana">›</button>
+      </div>
+    </div>
+    <div id="weekTrack" class="week-track" tabindex="0" aria-label="Planejamento de segunda a domingo. Deslize horizontalmente para visualizar todos os dias.">
+      <div id="weekDays" class="week-days"></div>
+    </div>
+    <div class="week-bottom"><span id="weekProgress" aria-live="polite">0 atividades concluídas</span><span class="week-hint">Deslize para ver os sete dias</span></div>
+  </section>
+  <section class="panel calendar-panel" aria-labelledby="calendarTitle">
         <div class="section-header">
           <div><h2 id="calendarTitle">Histórico</h2></div>
           <div class="year-switch" role="group" aria-label="Navegar entre anos">
@@ -562,5 +625,82 @@
     renderAll();
   })();
   </script>
+<script>
+/* Grade semanal: dados independentes do histórico Pomodoro existente. */
+(()=>{
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const STORAGE='caderno-planejamento-semanal-v1';
+  const WEEKDAYS=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];
+  function localDay(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+  function mondayOf(d){let r=new Date(d.getFullYear(),d.getMonth(),d.getDate(),12);r.setDate(r.getDate()-((r.getDay()+6)%7));return r}
+  function datePlus(d,n){const r=new Date(d.getFullYear(),d.getMonth(),d.getDate(),12);r.setDate(r.getDate()+n);return r}
+  function isoWeek(d){const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));t.setUTCDate(t.getUTCDate()+4-(t.getUTCDay()||7));const year=t.getUTCFullYear();const yearStart=new Date(Date.UTC(year,0,1));return {year,week:Math.ceil((((t-yearStart)/86400000)+1)/7)}}
+  const today=new Date();const state={currentMonday:mondayOf(today),records:{completed:{},custom:{}}};
+  try{
+    const stored=JSON.parse(localStorage.getItem(STORAGE)||'null');
+    if(stored&&typeof stored==='object'){
+      for(const key of ['completed','custom'])if(stored[key]&&typeof stored[key]==='object'&&!Array.isArray(stored[key]))state.records[key]=stored[key];
+    }
+  }catch{}
+  function save(){try{localStorage.setItem(STORAGE,JSON.stringify(state.records))}catch(err){console.warn('Armazenamento do histórico indisponível',err)}}
+  function make(tag,props={},text=null){const e=document.createElement(tag);for(const [k,v] of Object.entries(props)){if(k==='className')e.className=v;else if(k==='dataset')for(const [a,b] of Object.entries(v))e.dataset[a]=b;else if(k==='checked')e.checked=v;else e.setAttribute(k,v)}if(text!==null)e.textContent=text;return e}
+  const headingDate=(d)=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+  let editing=null; // {date,id} ou novo cadastro por data.
+  function showEditor(date,id=null){editing={date,id};render(false);const f=$('weekDays').querySelector(`form[data-date="${date}"]`);if(f)f.querySelector('input[name="title"]').focus()}
+  function removeEditor(){editing=null;render(false)}
+  function addForm(dayCard,date){
+    const custom=((state.records.custom[date])||[]);
+    const item=editing.id===null?null:custom.find(q=>q.id===editing.id);
+    const f=make('form',{className:'week-form',dataset:{date}});
+    const nameLabel=make('label',{},'Atividade');const name=make('input',{name:'title',required:'',maxlength:'100',placeholder:'Nome da atividade','aria-label':'Nome da nova atividade'});name.value=item?.title||'';nameLabel.append(name);
+    const timeLabel=make('label',{},'Horário (opcional)');const time=make('input',{name:'time',maxlength:'30',placeholder:'Ex.: 15:00–16:00','aria-label':'Horário da atividade'});time.value=item?.time||'';timeLabel.append(time);
+    const actions=make('div',{className:'week-form-actions'});
+    const submit=make('button',{type:'submit'},'Salvar');const cancel=make('button',{type:'button'},'Cancelar');cancel.addEventListener('click',removeEditor);actions.append(submit,cancel);f.append(nameLabel,timeLabel,actions);
+    f.addEventListener('submit',ev=>{ev.preventDefault();const title=name.value.trim();if(!title)return;const timeValue=time.value.trim();const list=state.records.custom[date]||[];if(editing?.date===date&&editing?.id){const found=list.find(q=>q.id===editing.id);if(found){found.title=title;found.time=timeValue}}else{list.push({id:'t'+Date.now().toString(36)+Math.random().toString(36).slice(2,7),title,time:timeValue})}state.records.custom[date]=list;save();editing=null;render(false)});
+    dayCard.append(f);
+  }
+  function setChecked(date,id,checked){if(!state.records.completed[date])state.records.completed[date]={};if(checked)state.records.completed[date][id]=true;else delete state.records.completed[date][id];save();render(false)}
+  function taskElement(date,task){
+    const completed=!!state.records.completed[date]?.[task.id];
+    const article=make('div',{className:'week-task k-'+task.category+(completed?' is-done':'')});
+    const cb=make('input',{type:'checkbox','aria-label':'Marcar '+task.title+' em '+date,checked:completed});
+    const label=make('label');const uid='w'+date.replaceAll('-','')+task.id.replace(/[^a-zA-Z0-9]/g,'');cb.id=uid;label.setAttribute('for',uid);
+    if(task.time)label.append(make('span',{className:'week-task-time'},task.time));label.append(make('span',{className:'week-task-name'},task.title));
+    cb.addEventListener('change',()=>setChecked(date,task.id,cb.checked));article.append(cb,label);
+    if(task.custom){const group=make('div',{className:'week-task-actions'});
+      const edit=make('button',{type:'button','aria-label':'Editar '+task.title,title:'Editar atividade'},'✎');edit.addEventListener('click',()=>showEditor(date,task.id));
+      const remove=make('button',{type:'button','aria-label':'Excluir '+task.title,title:'Excluir atividade'},'×');remove.addEventListener('click',()=>{if(!window.confirm('Excluir esta atividade desta semana?'))return;state.records.custom[date]=(state.records.custom[date]||[]).filter(q=>q.id!==task.id);delete state.records.completed[date]?.[task.id];save();render(false)});
+      group.append(edit,remove);article.append(group);
+    }
+    return article;
+  }
+  function render(resetScroll=true){
+    const m=state.currentMonday,week=isoWeek(m),end=datePlus(m,6);
+    $('weeklyTitle').textContent=`Semana ${week.week} · ${week.year}`;
+    const startText=m.toLocaleDateString('pt-BR',{day:'numeric',month:'long'});
+    const endText=end.toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+    $('weeklyDates').textContent=`${startText} a ${endText}`;
+    const track=$('weekTrack');const prevScroll=track.scrollLeft;const box=$('weekDays');box.replaceChildren();let total=0,done=0;
+    for(let i=0;i<7;i++){
+      const d=datePlus(m,i),date=localDay(d),card=make('section',{className:'week-day'+(date===localDay(new Date())?' is-today':'')});
+      const header=make('div',{className:'week-day-head'});header.append(make('span',{className:'week-day-name'},WEEKDAYS[i]),make('span',{className:'week-day-date'},headingDate(d)));card.append(header);
+      const tasks=[];
+      for(const entry of (state.records.custom[date]||[]))if(entry&&typeof entry.title==='string')tasks.push({id:entry.id,time:entry.time||'',title:entry.title,category:'custom',custom:true});
+      tasks.sort((a,b)=>{if(!a.time)return 1;if(!b.time)return -1;return a.time.localeCompare(b.time,'pt-BR')});
+      const list=make('div',{className:'week-tasklist'});if(!tasks.length)list.append(make('div',{className:'week-empty'},'Dia livre para planejar.'));
+      for(const task of tasks){list.append(taskElement(date,task));total++;if(state.records.completed[date]?.[task.id])done++}card.append(list);
+      if(editing?.date===date){addForm(card,date)}else{const add=make('button',{type:'button',className:'week-add'},'+ Adicionar atividade');add.setAttribute('aria-label',`Adicionar atividade na ${WEEKDAYS[i]}`);add.addEventListener('click',()=>showEditor(date));card.append(add)}
+      box.append(card);
+    }
+    $('weekProgress').textContent=`${done} de ${total} atividades concluídas nesta semana`;
+    if(resetScroll)track.scrollLeft=0;else track.scrollLeft=prevScroll;
+  }
+  $('weekPrev').addEventListener('click',()=>{state.currentMonday=datePlus(state.currentMonday,-7);editing=null;render()});
+  $('weekNext').addEventListener('click',()=>{state.currentMonday=datePlus(state.currentMonday,7);editing=null;render()});
+  $('weekToday').addEventListener('click',()=>{state.currentMonday=mondayOf(new Date());editing=null;render()});
+  render();
+})();
+</script>
 </body>
 </html>
