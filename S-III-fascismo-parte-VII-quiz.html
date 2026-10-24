@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Quiz interativo da Parte VII: 12 questões; primeiro leia cada enunciado, depois libere as alternativas e inicie 30 segundos para responder." name="description"/>
+<title>Quiz · Parte VII · Trabalho e autoritarismo: direitos, exploração e resistência</title>
+<style>
+:root{--ink:#182529;--muted:#586e68;--bg:#f6f4ef;--paper:#fffdf9;--dark:#172e2b;--deep:#26483e;--line:#d8ded5;--accent:#ba7d57;--answer1:#ac3346;--answer2:#206a9a;--answer3:#956700;--answer4:#28734a;--shadow:0 20px 48px #24392d14}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #b88255;outline-offset:3px}[hidden]{display:none!important}
+.top{background:#f9f7f2;border-bottom:1px solid var(--line);position:relative;z-index:1}.topin{max-width:1180px;padding:12px 24px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.brand{display:flex;align-items:center;gap:12px;font-weight:730;color:#253b34;text-decoration:none;letter-spacing:.055em;font-size:12px}.stamp{display:grid;place-items:center;width:34px;height:34px;border:1px solid #253b34;font:19px Georgia,serif;letter-spacing:0}.toplinks{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.toplinks a{padding:7px 11px;font-weight:750;font-size:12px;color:#56665f;text-decoration:none;border-radius:4px}.toplinks a:hover{background:#e2e8dd}.toplinks .selected{background:#29483f;color:#fff}.toplinks .selected:hover{background:#29483f}.muted{color:#62716b}
+.main{max-width:1080px;margin:0 auto;padding:34px 24px 65px;min-height:calc(100vh - 130px)}.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:7px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#a77551}.display{font:400 clamp(2.8rem,7vw,5.8rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.052em;margin:14px 0 20px}.display em{font-style:normal;color:#b28560}.intro{background:var(--dark);color:#f9f4e9;padding:clamp(32px,6vw,70px);position:relative;overflow:hidden}.intro::after{content:"VII";font:350px Georgia,serif;position:absolute;right:-8px;bottom:-145px;color:#ffffff06;pointer-events:none}.intro>*{position:relative;z-index:1}.intro .eyebrow{color:#e5bc90}.intro p{color:#e4eae4;max-width:690px;font-size:18px}.intro .display{max-width:800px}.intro small{color:#d2ddd4}.meta{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.meta span{font-size:12px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #78908675;padding:8px 12px;color:#ebeee3}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 23px;border:1px solid #d4ab7e;background:#d4ab7e;color:#1c332a;text-decoration:none;font-weight:800;border-radius:3px;gap:10px}.btn:hover{filter:brightness(.95)}.btn.ghost{background:transparent;color:#f7eee4;border-color:#91a59c}.btn.dark{background:#29483f;border-color:#29483f;color:white}.btn.dark:hover{background:#385c51}
+.note{background:#e8ede5;border-left:3px solid #5e7b65;padding:19px 23px;margin-top:20px;font-size:14px}.note strong{display:block;margin-bottom:5px}.note p{margin:0}.level{font:400 28px/1.2 Georgia,serif;margin:8px 0 0}.play{overflow:hidden}.gamehead{background:#203934;color:#fff;padding:25px 30px 21px}.row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.counter,.scoresmall{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:#e5dbcb}.scorebig{font:400 24px Georgia,serif;color:#fff}.progressbar{height:6px;border-radius:100px;background:#466159;overflow:hidden;margin-top:15px}.progressbar>span{display:block;height:100%;background:#d6ba91;width:0%;transition:width .24s linear}.timerset{display:flex;align-items:center;gap:16px;justify-content:space-between}.clockbox{display:flex;align-items:center;gap:10px}.clock{background:#fbfaf4;border-radius:50%;width:72px;height:72px;display:grid;place-items:center;position:relative;color:#18372c;font:700 28px Georgia,serif;font-variant-numeric:tabular-nums;border:5px solid #e4e6d9;transition:color .15s}.clock.low{color:#a13f38}.clockbar{height:9px;background:#cbd2c9;flex:1;border-radius:50px;overflow:hidden}.clockbar span{display:block;height:100%;width:100%;background:#85a18d;transition:width .12s linear, background .12s}.clockbar span.low{background:#bc6b58}
+.prompt{padding:32px 30px 23px}.kicker{font-size:12px;font-weight:780;text-transform:uppercase;letter-spacing:.13em;color:#9a6448}.question{font:400 clamp(23px,3.5vw,36px)/1.2 Georgia,serif;margin:15px 0 10px;letter-spacing:-.019em;max-width:920px}.select-hint{font-size:13px;color:#68756f;margin:0}.answers{padding:0 30px 30px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{min-height:112px;display:flex;align-items:center;text-align:left;gap:16px;color:#fff;border:3px solid transparent;border-radius:5px;padding:15px 18px;font-weight:730;font-size:16px;line-height:1.37;transition:transform .12s ease,filter .12s ease,border-color .12s ease}.answer:hover:not(:disabled){filter:brightness(1.075);transform:translateY(-2px)}.answer:disabled{cursor:default}.answer:nth-child(1){background:var(--answer1)}.answer:nth-child(2){background:var(--answer2)}.answer:nth-child(3){background:var(--answer3)}.answer:nth-child(4){background:var(--answer4)}.letter{display:grid;place-items:center;flex:0 0 41px;height:41px;border:2px solid #ffffff9a;border-radius:4px;font:700 21px Georgia,serif}.answer.correct{border-color:#e7e7b8;box-shadow:inset 0 0 0 2px #e7e7b8}.answer.wrong{opacity:.57}.answer.notpicked{opacity:.45}.answer.correct .letter:after{content:" ✓";font:700 15px system-ui}.feedback{padding:22px 30px 30px;background:#eef0e7;border-top:1px solid #dce1d6}.feedbackline{font:400 25px Georgia,serif;margin:0 0 8px}.feedbackline.good{color:#255c43}.feedbackline.bad{color:#9b4544}.feedback p{margin:0 0 18px;font-size:15px;max-width:800px}.feedback .row{align-items:end}.feedback .earned{font:400 23px Georgia,serif}.feedback .earned small{font:600 11px system-ui;letter-spacing:.1em;text-transform:uppercase;display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:760px;margin:25px 0}.stat{background:#fffdf6;border:1px solid #536b59;padding:17px}.stat strong{display:block;font:400 36px Georgia,serif}.stat span{font-size:11px;text-transform:uppercase;font-weight:750;letter-spacing:.08em}.end{padding:clamp(28px,5vw,56px)}.end h1{font:400 clamp(2.8rem,7vw,4.8rem)/1 Georgia,serif;margin:16px 0}.end .level{color:#617568}.end p{max-width:780px}.end .btn{margin:6px 10px 8px 0}.review{margin:28px 0 0}.review h2{font:400 29px Georgia,serif;margin:0 0 16px}.review details{border:1px solid #d6dfd5;background:#fffefa;margin:8px 0}.review summary{cursor:pointer;font-size:14px;font-weight:730;padding:14px 17px;list-style:none;display:flex;justify-content:space-between;gap:12px}.review summary::-webkit-details-marker{display:none}.review .exp{padding:0 17px 16px;font-size:14px}.review .exp p{margin:7px 0}.review .exp strong{color:#315944}.footer{padding:25px 24px;background:#172b27;color:#c9d5cd;font-size:12px}.footin{max-width:1080px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}.footer a{color:#f0d3ae}
+@media(max-width:650px){.main{padding:18px 12px 45px}.topin{padding:10px 12px}.intro{padding:35px 24px}.intro .display{font-size:clamp(2.5rem,12vw,4rem)}.gamehead{padding:20px 17px}.prompt{padding:24px 18px}.answers{padding:0 15px 18px;grid-template-columns:1fr;gap:9px}.answer{min-height:81px;padding:11px 13px;font-size:15px}.clock{height:58px;width:58px;font-size:23px}.feedback{padding:21px 18px}.end{padding:29px 21px}.stats{grid-template-columns:1fr 1fr}.brand{letter-spacing:0;font-size:11px}.toplinks a{padding:6px 7px}.note{margin-top:14px}}
+@media(max-width:360px){.toplinks{gap:1px}.toplinks a{font-size:11px}.answer{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.answer,.progressbar>span,.clockbar span{transition:none!important}}
+@media print{.top,.footer,.btn,.clockbar,.clockbox,.answers,.gamehead{display:none!important}.main{max-width:100%}.intro{color:#111;background:#fff}.intro p{color:#222}.review details{break-inside:avoid}.review .exp{display:block!important}}
+
+
+/* Duas etapas distintas: leitura da pergunta e resposta cronometrada */
+.reading{padding:0 30px 30px;display:flex;flex-wrap:wrap;align-items:center;gap:15px;background:var(--paper)}
+.reading .btn{min-height:55px;font-size:16px;padding:15px 24px}
+.reading-caption{font-size:13px;color:var(--muted);max-width:370px}
+.state-label{display:inline-flex;gap:8px;align-items:center;background:#e8ede5;color:#375745;padding:7px 10px;border-radius:3px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.10em}
+.state-label::before{content:'';width:9px;height:9px;border-radius:50%;background:#748e77}
+.gamehead .timerset[hidden],.reading[hidden],.answers[hidden]{display:none!important}
+.gamehead.timing{background:#213f38}
+#question{scroll-margin-top:22px}
+.end .level{margin-top:10px}
+#stageHint{font-size:13px;color:#596e65;margin-top:10px}
+@media(max-width:650px){.reading{padding:0 18px 23px;display:block}.reading .btn{width:100%}.reading-caption{margin:12px 0 0}.prompt{padding-bottom:19px}.gamehead .timerset{gap:12px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><a class="brand" href="S-III-fascismo-parte-VII-aula-sociologia-trabalho.html"><span class="stamp">VII</span><span>DICIONÁRIO PARA NÃO SER TROUXA<br/><span class="muted">Prof. Dr. Eliaquim Timóteo · Sociologia III</span></span></a><nav aria-label="Quizzes das partes" class="toplinks"><a href="S-III-fascismo-parte-I-quiz(1).html">Parte I</a><a href="S-III-fascismo-parte-II-quiz(1).html">Parte II</a><a href="S-III-fascismo-parte-III-quiz(1).html">Parte III</a><a href="S-III-fascismo-parte-IV-quiz(1).html">Parte IV</a><a href="S-III-fascismo-parte-V-quiz.html">Parte V</a><a href="S-III-fascismo-parte-VI-quiz.html">Parte VI</a><a aria-current="page" class="selected" href="S-III-fascismo-parte-VII-quiz.html">Parte VII</a></nav></div></header>
+<main class="main">
+<section class="card intro" id="start"><div class="eyebrow">Sociologia III · Quiz interativo · Parte VII</div><h1 class="display">Trabalho e autoritarismo: direitos, exploração e resistência</h1><p>Sindicatos, legislação trabalhista, repressão e resistência no campo e nas fábricas.</p><div class="meta"><span>12 questões</span><span>30 segundos por questão</span><span>Até 1.000 pontos por acerto</span></div><p>Primeiro aparece somente o enunciado, sem limite de tempo. Quando você clicar em “Ver alternativas e iniciar tempo”, surgirão quatro respostas e os 30 segundos começarão. Cada acerto vale de 500 a 1.000 pontos conforme a rapidez; depois, confira a explicação.</p><button class="btn" id="startBtn" type="button">Começar quiz <span aria-hidden="true">→</span></button></section>
+<section class="note" id="introNote"><strong>Como funciona a pontuação?</strong><p>A leitura do enunciado não tem cronômetro. Ao revelar as alternativas, cada questão oferece 30 segundos. Acertos valem entre 500 e 1.000 pontos; erros ou tempo esgotado valem zero. Máximo de 12.000 pontos. Você pode consultar o gabarito comentado ao final.</p></section>
+<section aria-label="Questionário" class="card play" hidden="" id="game">
+<div class="gamehead"><div class="row"><div><div class="counter" id="counter">Questão 1 de 12</div><div class="scorebig" id="scoreTop">0 pontos</div></div><div class="scoresmall" id="statusTop">Acertos: 0</div></div><div aria-label="Progresso de questões" class="progressbar"><span id="progress"></span></div><div class="timerset" hidden="" id="timerRow" style="margin-top:17px"><div class="clockbox"><div aria-label="Segundos restantes" class="clock" id="seconds" role="timer">30</div></div><div aria-hidden="true" class="clockbar"><span id="clockFill"></span></div></div></div>
+<div class="prompt"><div class="kicker" id="topic">Contexto histórico</div><h2 class="question" id="question" tabindex="-1"></h2><p class="select-hint" id="stageHint">Leia o enunciado com calma. O tempo só começa quando as alternativas forem exibidas.</p></div><div class="reading" id="readingStage"><button class="btn dark" id="revealBtn" type="button">Ver alternativas e iniciar 30 s →</button><span class="reading-caption">Nesta etapa, você pode pensar livremente antes de começar o cronômetro.</span></div>
+<div aria-label="Alternativas de resposta" class="answers" hidden="" id="answers" role="group"></div>
+<div aria-live="polite" class="feedback" hidden="" id="feedback"><h3 class="feedbackline" id="feedbackTitle"></h3><p id="feedbackText"></p><div class="row"><div class="earned"><small>Pontos nesta questão</small><span id="earned">0</span></div><button class="btn dark" id="nextBtn" type="button">Próxima pergunta →</button></div></div>
+</section>
+<section class="card end" hidden="" id="end"><div class="eyebrow">Resultado · Parte VII</div><h1 id="endTitle">Quiz concluído.</h1><p id="endMessage"></p><div class="stats"><div class="stat"><strong id="total">0</strong><span>Pontos</span></div><div class="stat"><strong id="hits">0/12</strong><span>Acertos</span></div><div class="stat"><strong id="rate">0%</strong><span>Aproveitamento</span></div></div><button class="btn dark" id="restartBtn" type="button">Jogar novamente</button><a class="btn dark" href="S-III-fascismo-parte-VII-aula-sociologia-trabalho.html">Voltar à Parte VII</a><div class="review"><h2>Gabarito comentado</h2><div id="reviewList"></div></div></section>
+</main>
+<footer class="footer"><div class="footin"><span>Dicionário para não ser trouxa · Fascismo e regimes autoritários · Parte VII</span><a href="S-III-fascismo-parte-VII-aula-sociologia-trabalho.html">Retornar ao texto da aula</a></div></footer>
+<script>"use strict";
+const QUESTIONS=[{"area":"Direitos e autonomia","text":"Qual situação demonstra que a existência de direitos trabalhistas escritos não garante liberdade efetiva?","choices":["Um regime regulamenta jornada e contrato, mas reprime sindicatos independentes e greves.","Trabalhadores elegem livremente representantes e negociam coletivamente sem coerção.","Uma lei reconhece também o direito de associação e assegura seu exercício.","Um sindicato participa autonomamente da negociação salarial."],"correct":0,"explain":"Direitos previstos em lei e possibilidades reais de associação e negociação são dimensões distintas; alguns regimes concederam proteções e restringiram autonomia coletiva."},{"area":"Corporativismo italiano","text":"Como a organização do trabalho no fascismo italiano articulava a Carta del Lavoro (1927) e a legislação de 1926?","choices":["Pela implantação de sindicatos independentes sem fiscalização estatal.","Pela proibição da intervenção do Estado nas relações entre patrões e empregados.","Pela extinção de toda regulamentação trabalhista e social.","Pelo reconhecimento de entidades subordinadas ao Estado e pela proibição de greve e locaute."],"correct":3,"explain":"A Lei nº 563/1926 e a Carta del Lavoro/1927 enquadraram a representação sindical; a retórica de colaboração entre capital e trabalho coexistiu com restrições de autonomia."},{"area":"Alemanha, 1933","text":"O que aconteceu com os sindicatos independentes alemães em maio de 1933?","choices":["Tornaram-se a oposição parlamentar oficial dentro do regime nazista.","Foram atacados e suprimidos, e a Frente Trabalhista Alemã passou a enquadrar trabalhadores e empregadores.","Obtiveram liberdade para negociar greves gerais sem repressão.","Foram transformados por eleições em partidos autônomos de trabalhadores."],"correct":1,"explain":"Em 2 de maio de 1933, sindicatos independentes foram reprimidos. A Frente Trabalhista Alemã (DAF) organizou a participação laboral subordinada ao nazismo."},{"area":"Trabalho forçado","text":"Como interpretar o registro de mais de 7,5 milhões de trabalhadores não alemães no Reich em agosto de 1944?","choices":["Como o total de sindicatos autorizados durante toda a história alemã.","Como número de eleitores estrangeiros presentes numa votação de 1944.","Como registro de pessoas em data específica, majoritariamente sob trabalho forçado, e não total acumulado da guerra.","Como contagem das greves industriais ocorridas ao longo da Segunda Guerra Mundial."],"correct":2,"explain":"O número é referente a agosto de 1944; muitos eram deportados, prisioneiros e vítimas de perseguição. Não representa o total de indivíduos mobilizados durante toda a guerra."},{"area":"CLT, 1943","text":"Que limitação é essencial considerar ao estudar a CLT em sua redação original de 1943?","choices":["A CLT abrangia exclusivamente militares e servidores públicos federais.","A CLT proibiu qualquer proteção jurídica para trabalhadores de fábricas.","A CLT foi editada somente em 1964 para substituir o Estatuto do Trabalhador Rural.","A CLT excluía, como regra, empregados domésticos e trabalhadores rurais de sua aplicação."],"correct":3,"explain":"A consolidação reuniu proteções e normas sindicais para parte dos trabalhadores, mas não incluía universalmente domésticos e rurais, cujas trajetórias jurídicas eram distintas."},{"area":"Trabalhismo e agência","text":"Qual interpretação é compatível com a leitura de Ângela de Castro Gomes sobre o trabalhismo?","choices":["Os trabalhadores não possuíam demandas nem experiências anteriores às leis de Vargas.","A construção de direitos envolveu legitimação estatal, negociação e apropriação da linguagem de direitos por trabalhadores.","Todos os sindicatos atuavam em plena autonomia durante o Estado Novo.","A legislação social extinguiu a desigualdade de raça, classe e território."],"correct":1,"explain":"O trabalhismo não se compreende apenas como dádiva unilateral: também envolve disputas, experiências e formas de participação e interpretação dos trabalhadores."},{"area":"Greves e 1964","text":"Qual descrição articula a Lei nº 4.330/1964 e a intervenção em organizações trabalhistas após o golpe?","choices":["A lei e as intervenções garantiram autonomia sindical sem fiscalização política.","A lei aboliu as restrições de organização e permitiu toda greve sem condições.","A lei impôs limitações ao exercício da greve enquanto dirigentes e sindicatos sofreram intervenções do regime.","A lei foi editada pelo governo Goulart durante as greves do ABC em 1978."],"correct":2,"explain":"A legislação de junho de 1964 estabeleceu requisitos e restrições, e o período posterior ao golpe conheceu intervenções estatais em entidades sindicais."},{"area":"FGTS e estabilidade","text":"Qual mudança está associada à Lei nº 5.107, de 1966, durante a ditadura brasileira?","choices":["A criação do FGTS, modificando a estrutura da proteção contra dispensa e sua relação com a estabilidade decenal.","A implantação da CLT pela primeira vez no Brasil.","A revogação definitiva de toda modalidade de proteção aos contratos de trabalho.","A proibição da contratação formal no setor privado."],"correct":0,"explain":"O FGTS foi instituído em 1966 e reorganizou formas de proteção e os incentivos à dispensa, sem significar que todas as proteções trabalhistas foram eliminadas."},{"area":"Direitos rurais","text":"Qual cronologia está correta para dois marcos da regulamentação do trabalho rural no Brasil?","choices":["Lei rural de 1973 antes do Estatuto do Trabalhador Rural de 1963.","Criação do Estatuto do Trabalhador Rural em 1943 como parte da Carta del Lavoro.","Extinção da legislação rural após 1964, sem novas leis até 1988.","Estatuto do Trabalhador Rural em 1963 e Lei nº 5.889 durante a ditadura, em 1973."],"correct":3,"explain":"O Estatuto do Trabalhador Rural é anterior ao golpe de 1964; a Lei nº 5.889/1973 regulamentou relações rurais durante o regime militar."},{"area":"Mata Sul pernambucana","text":"O que a pesquisa de Lygia Sigaud sobre conflitos trabalhistas na Zona da Mata pernambucana permite investigar?","choices":["A ideia de que todos os conflitos de trabalho rural eram resolvidos sem relações de poder.","Como dependência de moradia, emprego e relações pessoais pode limitar o exercício de direitos juridicamente previstos.","A impossibilidade histórica de trabalhadores acionarem tribunais ou sindicatos.","A ausência de conflito entre proprietários e trabalhadores nos canaviais."],"correct":1,"explain":"A análise sociológica compara o direito escrito com as condições de vida que afetam o acesso à Justiça e a possibilidade de reivindicar."},{"area":"Greves e resistência","text":"Qual associação entre período e mobilização operária está correta?","choices":["Contagem e Osasco foram greves articuladas exclusivamente depois da Constituição de 1988.","O movimento da Scania em São Bernardo do Campo ocorreu antes da CLT de 1943.","Greves de Contagem e Osasco ocorreram em 1968; a paralisação na Scania em São Bernardo ocorreu em 1978.","Os trabalhadores de Contagem lideraram a greve alemã de maio de 1933."],"correct":2,"explain":"Contagem e Osasco marcaram resistências em 1968; a paralisação na Scania em maio de 1978 impulsionou uma nova onda de greves no ABC paulista."},{"area":"Empresas e ditaduras","text":"Qual cuidado é necessário ao estudar a colaboração de empresas com a repressão em ditaduras como as do Brasil e da Argentina?","choices":["Analisar os casos documentados de vigilância e participação empresarial, sem generalizar automaticamente para todas as empresas.","Supor que qualquer empregador daquele período dirigia pessoalmente serviços secretos.","Descartar registros empresariais e depoimentos de trabalhadores como fontes históricas.","Concluir que formas de repressão foram idênticas nos países estudados."],"correct":0,"explain":"Pesquisas históricas documentam casos e diferentes modalidades de participação de empresas, mas a atribuição de responsabilidades requer provas específicas."}];
+const TIME=30;
+const el=id=>document.getElementById(id);
+const fmt=n=>new Intl.NumberFormat('pt-BR').format(n);
+const toLabel=['A','B','C','D'];
+let current=0,total=0,hits=0,chosen=[],stopped=true,phase='intro',deadline=0,timerId=null,secondsLeft=TIME,order=[];
+function shuffle(array){const a=[...array];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function display(id){for(const k of ['start','introNote','game','end'])el(k).hidden=(k!==id && !(id==='start' && k==='introNote'));}
+function scrollUp(){window.scrollTo({top:0,behavior:'instant'});}
+function begin(){
+ clearInterval(timerId);current=0;total=0;hits=0;chosen=[];phase='reading';stopped=true;
+ order=QUESTIONS.map(q=>({...q,variant:shuffle(q.choices.map((txt,index)=>({txt,index})))}));
+ display('game');showQuestion();scrollUp();
+}
+function updateClock(remaining){
+ const count=Math.ceil(remaining);el('seconds').textContent=String(count);
+ el('seconds').classList.toggle('low',count<=10);
+ el('clockFill').style.width=`${remaining/TIME*100}%`;
+ el('clockFill').classList.toggle('low',count<=10);
+}
+function showQuestion(){
+ clearInterval(timerId);stopped=true;phase='reading';secondsLeft=TIME;
+ const q=order[current];
+ el('counter').textContent=`Questão ${current+1} de ${order.length}`;
+ el('scoreTop').textContent=`${fmt(total)} pontos`;
+ el('statusTop').textContent=`Acertos: ${hits}`;
+ el('progress').style.width=`${current/order.length*100}%`;
+ el('topic').textContent=q.area;
+ el('question').textContent=q.text;
+ el('feedback').hidden=true;
+ el('readingStage').hidden=false;
+ el('timerRow').hidden=true;
+ el('answers').hidden=true;
+ el('stageHint').hidden=false;
+ el('stageHint').textContent='Leia o enunciado com calma. O tempo só começa quando as alternativas forem exibidas.';
+ el('game').querySelector('.gamehead').classList.remove('timing');
+ updateClock(TIME);
+ el('answers').replaceChildren();
+ el('question').focus({preventScroll:true});
+}
+function reveal(){
+ if(phase!=='reading')return;
+ phase='answering';stopped=false;
+ const q=order[current];
+ const box=el('answers');box.replaceChildren();
+ q.variant.forEach(({txt},slot)=>{
+  const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.slot=slot;
+  b.setAttribute('aria-label',`Alternativa ${toLabel[slot]}: ${txt}`);
+  const c=document.createElement('span');c.className='letter';c.textContent=toLabel[slot];c.setAttribute('aria-hidden','true');
+  const t=document.createElement('span');t.textContent=txt;b.append(c,t);
+  b.addEventListener('click',()=>select(slot));box.appendChild(b);
+ });
+ el('readingStage').hidden=true;
+ el('timerRow').hidden=false;
+ el('answers').hidden=false;
+ el('stageHint').textContent='O cronômetro está em andamento. Selecione uma alternativa ou use as teclas de 1 a 4.';
+ el('game').querySelector('.gamehead').classList.add('timing');
+ // Define o prazo somente após a revelação das alternativas.
+ deadline=performance.now()+TIME*1000;secondsLeft=TIME;
+ updateClock(secondsLeft);
+ timerId=setInterval(tick,60);
+ box.firstElementChild?.focus({preventScroll:true});
+ tick();
+}
+function tick(){
+ if(phase!=='answering'||stopped)return;
+ secondsLeft=Math.max(0,(deadline-performance.now())/1000);
+ updateClock(secondsLeft);
+ if(secondsLeft<=0)select(-1);
+}
+function select(slot){
+ if(phase!=='answering'||stopped)return;
+ const q=order[current];
+ secondsLeft=Math.max(0,(deadline-performance.now())/1000);
+ if(secondsLeft<=0)slot=-1;
+ stopped=true;phase='feedback';clearInterval(timerId);
+ const variant=q.variant;
+ const correctSlot=variant.findIndex(v=>v.index===q.correct);
+ const correct=(slot===correctSlot);
+ const earned=correct?Math.min(1000,500+Math.round(500*secondsLeft/TIME)):0;
+ total+=earned;if(correct)hits++;
+ chosen.push({question:q.text,answer:slot===-1?null:variant[slot].txt,correct:q.choices[q.correct],explain:q.explain,earned,isCorrect:correct});
+ Array.from(el('answers').children).forEach((b,k)=>{
+  b.disabled=true;b.classList.toggle('correct',k===correctSlot);
+  b.classList.toggle('wrong',k===slot && !correct);
+  b.classList.toggle('notpicked',k!==correctSlot && k!==slot);
+ });
+ el('scoreTop').textContent=`${fmt(total)} pontos`;
+ el('statusTop').textContent=`Acertos: ${hits}`;
+ el('stageHint').hidden=true;
+ el('feedback').hidden=false;
+ el('feedbackTitle').className=`feedbackline ${correct?'good':'bad'}`;
+ el('feedbackTitle').textContent=correct?'Resposta correta!':slot===-1?'Tempo esgotado.':'Resposta incorreta.';
+ el('feedbackText').textContent=`Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+ el('earned').textContent=`+ ${fmt(earned)}`;
+ el('nextBtn').textContent=current===order.length-1?'Ver resultado →':'Próxima pergunta →';
+ el('progress').style.width=`${(current+1)/order.length*100}%`;
+ el('nextBtn').focus({preventScroll:true});
+}
+function next(){
+ if(phase!=='feedback')return;
+ if(current+1<order.length){current++;showQuestion();scrollUp();}else{finish();}
+}
+function finish(){
+ clearInterval(timerId);stopped=true;phase='end';display('end');
+ el('total').textContent=fmt(total);el('hits').textContent=`${hits}/${order.length}`;
+ el('rate').textContent=`${Math.round(hits/order.length*100)}%`;
+ el('endTitle').textContent=hits===order.length?'Todas as respostas corretas!':'Quiz concluído.';
+ el('endMessage').textContent=`Você acertou ${hits} de ${order.length} questões e alcançou ${fmt(total)} dos ${fmt(order.length*1000)} pontos possíveis. Reveja abaixo as explicações, inclusive das respostas corretas.`;
+ const box=el('reviewList');box.replaceChildren();
+ chosen.forEach((entry,i)=>{
+  const d=document.createElement('details');const s=document.createElement('summary');s.textContent=`${i+1}. ${entry.question}`;
+  const ex=document.createElement('div');ex.className='exp';
+  const p1=document.createElement('p');p1.textContent=`Sua resposta: ${entry.answer??'Não respondida (tempo esgotado)'}.`;
+  const p2=document.createElement('p');const strong=document.createElement('strong');strong.textContent='Resposta correta: ';
+  p2.append(strong,document.createTextNode(entry.correct));
+  const p3=document.createElement('p');p3.textContent=entry.explain;
+  ex.append(p1,p2,p3);d.append(s,ex);box.appendChild(d);
+ });
+ scrollUp();
+}
+el('startBtn').addEventListener('click',begin);
+el('revealBtn').addEventListener('click',reveal);
+el('nextBtn').addEventListener('click',next);
+el('restartBtn').addEventListener('click',begin);
+document.addEventListener('keydown',e=>{
+ if(el('game').hidden||e.altKey||e.ctrlKey||e.metaKey)return;
+ if(phase==='answering'&&/^[1-4]$/.test(e.key)){e.preventDefault();select(Number(e.key)-1);}
+});
+</script>
+</body>
+</html>

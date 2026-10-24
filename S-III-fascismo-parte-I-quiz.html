@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="description" content="Quiz educativo da série Fascismo e regimes autoritários: 12 questões, 30 segundos por questão, pontuação até 1.000 pontos por acerto.">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Quiz interativo da Parte I: 12 questões; primeiro leia cada enunciado, depois libere as alternativas e inicie 30 segundos para responder." name="description"/>
 <title>Quiz · Parte I · Como nasce o fascismo?</title>
 <style>
 :root{--ink:#182529;--muted:#586e68;--bg:#f6f4ef;--paper:#fffdf9;--dark:#172e2b;--deep:#26483e;--line:#d8ded5;--accent:#ba7d57;--answer1:#ac3346;--answer2:#206a9a;--answer3:#956700;--answer4:#28734a;--shadow:0 20px 48px #24392d14}
@@ -17,40 +18,166 @@
 @media(max-width:360px){.toplinks{gap:1px}.toplinks a{font-size:11px}.answer{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.answer,.progressbar>span,.clockbar span{transition:none!important}}
 @media print{.top,.footer,.btn,.clockbar,.clockbox,.answers,.gamehead{display:none!important}.main{max-width:100%}.intro{color:#111;background:#fff}.intro p{color:#222}.review details{break-inside:avoid}.review .exp{display:block!important}}
+
+
+/* Duas etapas distintas: leitura da pergunta e resposta cronometrada */
+.reading{padding:0 30px 30px;display:flex;flex-wrap:wrap;align-items:center;gap:15px;background:var(--paper)}
+.reading .btn{min-height:55px;font-size:16px;padding:15px 24px}
+.reading-caption{font-size:13px;color:var(--muted);max-width:370px}
+.state-label{display:inline-flex;gap:8px;align-items:center;background:#e8ede5;color:#375745;padding:7px 10px;border-radius:3px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.10em}
+.state-label::before{content:'';width:9px;height:9px;border-radius:50%;background:#748e77}
+.gamehead .timerset[hidden],.reading[hidden],.answers[hidden]{display:none!important}
+.gamehead.timing{background:#213f38}
+#question{scroll-margin-top:22px}
+.end .level{margin-top:10px}
+#stageHint{font-size:13px;color:#596e65;margin-top:10px}
+@media(max-width:650px){.reading{padding:0 18px 23px;display:block}.reading .btn{width:100%}.reading-caption{margin:12px 0 0}.prompt{padding-bottom:19px}.gamehead .timerset{gap:12px}}
 </style>
 </head>
 <body>
-<header class="top"><div class="topin"><a class="brand" href="S-III-fascismo-parte-I-aula.html"><span class="stamp">I</span><span>DICIONÁRIO PARA NÃO SER TROUXA<br><span class="muted">Prof. Dr. Eliaquim Timóteo · Sociologia III</span></span></a><nav class="toplinks" aria-label="Quizzes das partes"><a href="S-III-fascismo-parte-I-quiz.html" aria-current="page" class="selected">Parte I</a><a href="S-III-fascismo-parte-II-quiz.html" >Parte II</a><a href="S-III-fascismo-parte-III-quiz.html" >Parte III</a><a href="S-III-fascismo-parte-IV-quiz.html" >Parte IV</a></nav></div></header>
+<header class="top"><div class="topin"><a class="brand" href="S-III-fascismo-parte-I-aula(2).html"><span class="stamp">I</span><span>DICIONÁRIO PARA NÃO SER TROUXA<br/><span class="muted">Prof. Dr. Eliaquim Timóteo · Sociologia III</span></span></a><nav aria-label="Quizzes das partes" class="toplinks"><a aria-current="page" class="selected" href="S-III-fascismo-parte-I-quiz(1).html">Parte I</a><a href="S-III-fascismo-parte-II-quiz(1).html">Parte II</a><a href="S-III-fascismo-parte-III-quiz(1).html">Parte III</a><a href="S-III-fascismo-parte-IV-quiz(1).html">Parte IV</a><a href="S-III-fascismo-parte-V-quiz.html">Parte V</a><a href="S-III-fascismo-parte-VI-quiz.html">Parte VI</a><a href="S-III-fascismo-parte-VII-quiz.html">Parte VII</a></nav></div></header>
 <main class="main">
-<section id="start" class="card intro"><div class="eyebrow">Sociologia III · Quiz interativo · Parte I</div><h1 class="display">Como nasce o fascismo?</h1><p>Crises, conflitos sociais e conquista do poder.</p><div class="meta"><span>12 questões</span><span>30 segundos por questão</span><span>Até 1.000 pontos por acerto</span></div><p>Escolha uma entre quatro alternativas. O tempo começa assim que a pergunta aparece. Acertar rapidamente aumenta a pontuação; erros e respostas não enviadas não pontuam. Após responder, você verá uma explicação.</p><button class="btn" id="startBtn" type="button">Começar quiz <span aria-hidden="true">→</span></button></section>
-<section class="note" id="introNote"><strong>Como funciona a pontuação?</strong><p>Resposta correta: de 500 a 1.000 pontos, conforme o tempo restante. Resposta incorreta ou tempo esgotado: 0 ponto. Total possível: 12.000 pontos. Não há classificação de outros participantes.</p></section>
-<section class="card play" id="game" aria-label="Questionário" hidden>
-<div class="gamehead"><div class="row"><div><div class="counter" id="counter">Questão 1 de 12</div><div class="scorebig" id="scoreTop">0 pontos</div></div><div class="scoresmall" id="statusTop">Acertos: 0</div></div><div class="progressbar" aria-label="Progresso de questões"><span id="progress"></span></div><div class="timerset" style="margin-top:17px"><div class="clockbox"><div class="clock" id="seconds" role="timer" aria-label="Segundos restantes">30</div></div><div class="clockbar" aria-hidden="true"><span id="clockFill"></span></div></div></div>
-<div class="prompt"><div class="kicker" id="topic">Contexto histórico</div><h2 class="question" id="question" tabindex="-1"></h2><p class="select-hint" id="tip">Selecione uma alternativa. No teclado, utilize as teclas 1, 2, 3 ou 4.</p></div>
-<div class="answers" id="answers" role="group" aria-label="Alternativas de resposta"></div>
-<div class="feedback" id="feedback" aria-live="polite" hidden><h3 class="feedbackline" id="feedbackTitle"></h3><p id="feedbackText"></p><div class="row"><div class="earned"><small>Pontos nesta questão</small><span id="earned">0</span></div><button type="button" class="btn dark" id="nextBtn">Próxima pergunta →</button></div></div>
+<section class="card intro" id="start"><div class="eyebrow">Sociologia III · Quiz interativo · Parte I</div><h1 class="display">Como nasce o fascismo?</h1><p>Crises do pós-guerra, classes sociais, violência e a formação do fascismo.</p><div class="meta"><span>12 questões</span><span>30 segundos por questão</span><span>Até 1.000 pontos por acerto</span></div><p>Primeiro aparece somente o enunciado, sem limite de tempo. Quando você clicar em “Ver alternativas e iniciar tempo”, surgirão quatro respostas e os 30 segundos começarão. Cada acerto vale de 500 a 1.000 pontos conforme a rapidez; depois, confira a explicação.</p><button class="btn" id="startBtn" type="button">Começar quiz <span aria-hidden="true">→</span></button></section>
+<section class="note" id="introNote"><strong>Como funciona a pontuação?</strong><p>A leitura do enunciado não tem cronômetro. Ao revelar as alternativas, cada questão oferece 30 segundos. Acertos valem entre 500 e 1.000 pontos; erros ou tempo esgotado valem zero. Máximo de 12.000 pontos. Você pode consultar o gabarito comentado ao final.</p></section>
+<section aria-label="Questionário" class="card play" hidden="" id="game">
+<div class="gamehead"><div class="row"><div><div class="counter" id="counter">Questão 1 de 12</div><div class="scorebig" id="scoreTop">0 pontos</div></div><div class="scoresmall" id="statusTop">Acertos: 0</div></div><div aria-label="Progresso de questões" class="progressbar"><span id="progress"></span></div><div class="timerset" hidden="" id="timerRow" style="margin-top:17px"><div class="clockbox"><div aria-label="Segundos restantes" class="clock" id="seconds" role="timer">30</div></div><div aria-hidden="true" class="clockbar"><span id="clockFill"></span></div></div></div>
+<div class="prompt"><div class="kicker" id="topic">Contexto histórico</div><h2 class="question" id="question" tabindex="-1"></h2><p class="select-hint" id="stageHint">Leia o enunciado com calma. O tempo só começa quando as alternativas forem exibidas.</p></div><div class="reading" id="readingStage"><button class="btn dark" id="revealBtn" type="button">Ver alternativas e iniciar 30 s →</button><span class="reading-caption">Nesta etapa, você pode pensar livremente antes de começar o cronômetro.</span></div>
+<div aria-label="Alternativas de resposta" class="answers" hidden="" id="answers" role="group"></div>
+<div aria-live="polite" class="feedback" hidden="" id="feedback"><h3 class="feedbackline" id="feedbackTitle"></h3><p id="feedbackText"></p><div class="row"><div class="earned"><small>Pontos nesta questão</small><span id="earned">0</span></div><button class="btn dark" id="nextBtn" type="button">Próxima pergunta →</button></div></div>
 </section>
-<section class="card end" id="end" hidden><div class="eyebrow">Resultado · Parte I</div><h1 id="endTitle">Quiz concluído.</h1><p id="endMessage"></p><div class="stats"><div class="stat"><strong id="total">0</strong><span>Pontos</span></div><div class="stat"><strong id="hits">0/12</strong><span>Acertos</span></div><div class="stat"><strong id="rate">0%</strong><span>Aproveitamento</span></div></div><button class="btn dark" type="button" id="restartBtn">Jogar novamente</button><a class="btn dark" href="S-III-fascismo-parte-I-aula.html">Voltar à Parte I</a><div class="review"><h2>Gabarito comentado</h2><div id="reviewList"></div></div></section>
+<section class="card end" hidden="" id="end"><div class="eyebrow">Resultado · Parte I</div><h1 id="endTitle">Quiz concluído.</h1><p id="endMessage"></p><div class="stats"><div class="stat"><strong id="total">0</strong><span>Pontos</span></div><div class="stat"><strong id="hits">0/12</strong><span>Acertos</span></div><div class="stat"><strong id="rate">0%</strong><span>Aproveitamento</span></div></div><button class="btn dark" id="restartBtn" type="button">Jogar novamente</button><a class="btn dark" href="S-III-fascismo-parte-I-aula(2).html">Voltar à Parte I</a><div class="review"><h2>Gabarito comentado</h2><div id="reviewList"></div></div></section>
 </main>
-<footer class="footer"><div class="footin"><span>Dicionário para não ser trouxa · Fascismo e regimes autoritários · Parte I</span><a href="S-III-fascismo-parte-I-aula.html">Retornar ao texto da aula</a></div></footer>
-<script>
-'use strict';
-const QUESTIONS=[{"area": "Crise e causalidade", "text": "Por que a crise europeia após 1918 não explica, por si só, a ascensão fascista?", "choices": ["Porque os conflitos de classe desapareceram com o fim da guerra.", "Porque o resultado dependeu também de organizações, alianças e decisões políticas.", "Porque o fascismo já governava todos os países europeus em 1918.", "Porque o liberalismo parlamentar deixou de existir em toda a Europa."], "correct": 1, "explain": "A aula mostra que guerras e crises abriram disputas entre projetos políticos; a ascensão fascista exigiu organizações, violência e decisões institucionais específicas."}, {"area": "Revolução Russa", "text": "Que efeito político da Revolução Russa de 1917 aparece no estudo do pós-guerra?", "choices": ["Eliminou os movimentos trabalhistas europeus.", "Tornou obrigatório o socialismo em todas as repúblicas.", "Serviu de referência à transformação social e ampliou receios entre grupos proprietários.", "Provocou diretamente a nomeação de Mussolini em 1922."], "correct": 2, "explain": "A Revolução de 1917 se tornou uma referência concreta de mudança nas relações de propriedade, estimulando mobilizações operárias e o temor de setores antissocialistas."}, {"area": "Gramsci", "text": "Na leitura de Antonio Gramsci, o que caracteriza uma crise de hegemonia?", "choices": ["A perda de capacidade dos grupos dirigentes de produzir direção e consentimento.", "A substituição obrigatória de governos civis por governos militares.", "A eliminação de todos os conflitos entre classes sociais.", "O crescimento automático de movimentos fascistas após crises econômicas."], "correct": 0, "explain": "Crise de hegemonia é a dificuldade de exercer direção política e cultural; ela não determina um desfecho fascista inevitável."}, {"area": "Biennio Rosso", "text": "O que caracterizou o Biennio Rosso italiano, entre 1919 e 1920?", "choices": ["A instituição da ditadura de Mussolini e do partido único.", "A adoção italiana das Leis de Nuremberg.", "O início da Segunda Guerra Mundial em território italiano.", "Greves, ocupações de fábricas e mobilizações operárias e camponesas."], "correct": 3, "explain": "O Biennio Rosso foi um período de intensa mobilização trabalhista e camponesa, um dos contextos da reação de setores conservadores e fascistas."}, {"area": "Violência paramilitar", "text": "Qual era um efeito político dos ataques dos squadristi a sindicatos e cooperativas?", "choices": ["Ampliar a negociação autônoma entre trabalhadores e empresários.", "Desorganizar a participação coletiva e a capacidade de reivindicação trabalhista.", "Reforçar a liberdade de imprensa dos partidos de oposição.", "Criar mecanismos de votação direta para as assembleias sindicais."], "correct": 1, "explain": "A violência dos camisas-negras atingia espaços e recursos de organização coletiva, não apenas dirigentes individuais."}, {"area": "Marcha sobre Roma", "text": "Como Mussolini chegou à chefia do governo italiano em outubro de 1922?", "choices": ["Por nomeação do rei, em contexto de pressão e intimidação fascistas.", "Por eleição direta com maioria absoluta do eleitorado.", "Por um referendo nacional sobre o fim da monarquia.", "Pela vitória militar em uma batalha convencional em Roma."], "correct": 0, "explain": "O rei Vítor Emanuel III nomeou Mussolini em 30 de outubro de 1922; a Marcha sobre Roma envolveu pressão paramilitar e decisões das elites estatais."}, {"area": "Instituições", "text": "Qual conclusão a nomeação de Mussolini permite tirar sobre legalidade e democracia?", "choices": ["Um procedimento previsto em lei sempre protege o pluralismo.", "A monarquia já havia sido extinta antes de 1922.", "Um ato formalmente legal pode ocorrer sob coerção e favorecer uma ruptura democrática.", "A presença de um rei impedia qualquer movimento autoritário."], "correct": 2, "explain": "A nomeação formal ocorreu em ambiente de intimidação, demonstrando que legalidade procedimental e preservação democrática não são equivalentes."}, {"area": "Escalada ditatorial", "text": "Qual episódio de 1924 agravou a crise italiana antes da consolidação da ditadura?", "choices": ["A fundação do Partido Nazista na Alemanha.", "A derrota da Itália na Segunda Guerra Mundial.", "A criação da República de Weimar.", "O assassinato do deputado socialista Giacomo Matteotti."], "correct": 3, "explain": "Matteotti denunciara violência e irregularidades eleitorais; seu assassinato em junho de 1924 aprofundou a crise política italiana."}, {"area": "Weimar e propaganda", "text": "No contexto alemão do pós-guerra, qual narrativa nacionalista foi historicamente falsa?", "choices": ["A República de Weimar possuía instituições parlamentares.", "A Alemanha foi traída por inimigos internos e, por isso, perdeu a guerra.", "O Tratado de Versalhes gerou ressentimento entre nacionalistas.", "O Partido Nazista participou de eleições antes de 1933."], "correct": 1, "explain": "O mito da “punhalada pelas costas” falsamente atribuía a derrota militar a inimigos internos e foi usado para desacreditar a república."}, {"area": "Antissemitismo nazista", "text": "O que o programa nazista de 1920 evidencia sobre o antissemitismo?", "choices": ["Foi incorporado pela primeira vez somente após 1941.", "Não fazia parte das posições políticas do movimento antes do governo.", "Já integrava o projeto nazista antes da nomeação de Hitler em 1933.", "Foi abandonado pelo partido durante sua campanha eleitoral."], "correct": 2, "explain": "O programa de 1920 já propunha restrições à cidadania judaica, demonstrando que o antissemitismo era parte estrutural do movimento."}, {"area": "Dados eleitorais", "text": "O NSDAP obteve cerca de 37,3% dos votos em julho de 1932. O que se pode concluir?", "choices": ["Era a maior força eleitoral, mas não alcançara maioria absoluta dos votos válidos.", "Recebeu o apoio de mais de dois terços do eleitorado.", "Já havia conquistado a chefia do governo federal naquele momento.", "O apoio nazista havia diminuído em comparação com 1928."], "correct": 0, "explain": "Os 37,3% indicam crescimento expressivo, porém estão abaixo de 50%; Hitler só foi nomeado chanceler em janeiro de 1933."}, {"area": "Interpretações", "text": "Qual associação entre autor e abordagem está de acordo com a aula?", "choices": ["Griffin: crise bancária de 1929 como explicação exclusiva do nazismo.", "Paxton: liderança carismática como único fator do fascismo.", "Gramsci: destino inevitável de todas as sociedades capitalistas.", "Griffin: promessa de renascimento nacional no ultranacionalismo palingenético."], "correct": 3, "explain": "Griffin destaca o mito de regeneração nacional. Paxton analisa etapas e práticas do movimento; Gramsci ajuda a discutir direção política e relações de força."}];
+<footer class="footer"><div class="footin"><span>Dicionário para não ser trouxa · Fascismo e regimes autoritários · Parte I</span><a href="S-III-fascismo-parte-I-aula(2).html">Retornar ao texto da aula</a></div></footer>
+<script>"use strict";
+const QUESTIONS=[{"area":"Crise e causalidade","text":"Por que a crise europeia após 1918 não explica, por si só, a ascensão fascista?","choices":["Porque os conflitos de classe desapareceram com o fim da guerra.","Porque o resultado dependeu também de organizações, alianças e decisões políticas.","Porque o fascismo já governava todos os países europeus em 1918.","Porque o liberalismo parlamentar deixou de existir em toda a Europa."],"correct":1,"explain":"A aula mostra que guerras e crises abriram disputas entre projetos políticos; a ascensão fascista exigiu organizações, violência e decisões institucionais específicas."},{"area":"Revolução Russa","text":"Que efeito político da Revolução Russa de 1917 aparece no estudo do pós-guerra?","choices":["Eliminou os movimentos trabalhistas europeus.","Tornou obrigatório o socialismo em todas as repúblicas.","Serviu de referência à transformação social e ampliou receios entre grupos proprietários.","Provocou diretamente a nomeação de Mussolini em 1922."],"correct":2,"explain":"A Revolução de 1917 se tornou uma referência concreta de mudança nas relações de propriedade, estimulando mobilizações operárias e o temor de setores antissocialistas."},{"area":"Gramsci","text":"Na leitura de Antonio Gramsci, o que caracteriza uma crise de hegemonia?","choices":["A perda de capacidade dos grupos dirigentes de produzir direção e consentimento.","A substituição obrigatória de governos civis por governos militares.","A eliminação de todos os conflitos entre classes sociais.","O crescimento automático de movimentos fascistas após crises econômicas."],"correct":0,"explain":"Crise de hegemonia é a dificuldade de exercer direção política e cultural; ela não determina um desfecho fascista inevitável."},{"area":"Biennio Rosso","text":"O que caracterizou o Biennio Rosso italiano, entre 1919 e 1920?","choices":["A instituição da ditadura de Mussolini e do partido único.","A adoção italiana das Leis de Nuremberg.","O início da Segunda Guerra Mundial em território italiano.","Greves, ocupações de fábricas e mobilizações operárias e camponesas."],"correct":3,"explain":"O Biennio Rosso foi um período de intensa mobilização trabalhista e camponesa, um dos contextos da reação de setores conservadores e fascistas."},{"area":"Violência paramilitar","text":"Qual era um efeito político dos ataques dos squadristi a sindicatos e cooperativas?","choices":["Ampliar a negociação autônoma entre trabalhadores e empresários.","Desorganizar a participação coletiva e a capacidade de reivindicação trabalhista.","Reforçar a liberdade de imprensa dos partidos de oposição.","Criar mecanismos de votação direta para as assembleias sindicais."],"correct":1,"explain":"A violência dos camisas-negras atingia espaços e recursos de organização coletiva, não apenas dirigentes individuais."},{"area":"Marcha sobre Roma","text":"Como Mussolini chegou à chefia do governo italiano em outubro de 1922?","choices":["Por nomeação do rei, em contexto de pressão e intimidação fascistas.","Por eleição direta com maioria absoluta do eleitorado.","Por um referendo nacional sobre o fim da monarquia.","Pela vitória militar em uma batalha convencional em Roma."],"correct":0,"explain":"O rei Vítor Emanuel III nomeou Mussolini em 30 de outubro de 1922; a Marcha sobre Roma envolveu pressão paramilitar e decisões das elites estatais."},{"area":"Instituições","text":"Qual conclusão a nomeação de Mussolini permite tirar sobre legalidade e democracia?","choices":["Um procedimento previsto em lei sempre protege o pluralismo.","A monarquia já havia sido extinta antes de 1922.","Um ato formalmente legal pode ocorrer sob coerção e favorecer uma ruptura democrática.","A presença de um rei impedia qualquer movimento autoritário."],"correct":2,"explain":"A nomeação formal ocorreu em ambiente de intimidação, demonstrando que legalidade procedimental e preservação democrática não são equivalentes."},{"area":"Escalada ditatorial","text":"Qual episódio de 1924 agravou a crise italiana antes da consolidação da ditadura?","choices":["A fundação do Partido Nazista na Alemanha.","A derrota da Itália na Segunda Guerra Mundial.","A criação da República de Weimar.","O assassinato do deputado socialista Giacomo Matteotti."],"correct":3,"explain":"Matteotti denunciara violência e irregularidades eleitorais; seu assassinato em junho de 1924 aprofundou a crise política italiana."},{"area":"Weimar e propaganda","text":"No contexto alemão do pós-guerra, qual narrativa nacionalista foi historicamente falsa?","choices":["A República de Weimar possuía instituições parlamentares.","A Alemanha foi traída por inimigos internos e, por isso, perdeu a guerra.","O Tratado de Versalhes gerou ressentimento entre nacionalistas.","O Partido Nazista participou de eleições antes de 1933."],"correct":1,"explain":"O mito da “punhalada pelas costas” falsamente atribuía a derrota militar a inimigos internos e foi usado para desacreditar a república."},{"area":"Antissemitismo nazista","text":"O que o programa nazista de 1920 evidencia sobre o antissemitismo?","choices":["Foi incorporado pela primeira vez somente após 1941.","Não fazia parte das posições políticas do movimento antes do governo.","Já integrava o projeto nazista antes da nomeação de Hitler em 1933.","Foi abandonado pelo partido durante sua campanha eleitoral."],"correct":2,"explain":"O programa de 1920 já propunha restrições à cidadania judaica, demonstrando que o antissemitismo era parte estrutural do movimento."},{"area":"Dados eleitorais","text":"O NSDAP obteve cerca de 37,3% dos votos em julho de 1932. O que se pode concluir?","choices":["Era a maior força eleitoral, mas não alcançara maioria absoluta dos votos válidos.","Recebeu o apoio de mais de dois terços do eleitorado.","Já havia conquistado a chefia do governo federal naquele momento.","O apoio nazista havia diminuído em comparação com 1928."],"correct":0,"explain":"Os 37,3% indicam crescimento expressivo, porém estão abaixo de 50%; Hitler só foi nomeado chanceler em janeiro de 1933."},{"area":"Interpretações","text":"Qual associação entre autor e abordagem está de acordo com a aula?","choices":["Griffin: crise bancária de 1929 como explicação exclusiva do nazismo.","Paxton: liderança carismática como único fator do fascismo.","Gramsci: destino inevitável de todas as sociedades capitalistas.","Griffin: promessa de renascimento nacional no ultranacionalismo palingenético."],"correct":3,"explain":"Griffin destaca o mito de regeneração nacional. Paxton analisa etapas e práticas do movimento; Gramsci ajuda a discutir direção política e relações de força."}];
 const TIME=30;
 const el=id=>document.getElementById(id);
 const fmt=n=>new Intl.NumberFormat('pt-BR').format(n);
-let current=0,total=0,hits=0,chosen=[],stopped=true,deadline=0,timerId=null,secondsLeft=TIME,order=[];
 const toLabel=['A','B','C','D'];
+let current=0,total=0,hits=0,chosen=[],stopped=true,phase='intro',deadline=0,timerId=null,secondsLeft=TIME,order=[];
 function shuffle(array){const a=[...array];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function display(id){for(const k of ['start','introNote','game','end'])el(k).hidden=(k!==id && !(id==='start' && k==='introNote'));}
-function begin(){current=0;total=0;hits=0;chosen=[];order=QUESTIONS.map(q=>({...q,variant:shuffle(q.choices.map((txt,index)=>({txt,index})))}));display('game');showQuestion();window.scrollTo({top:0,behavior:'instant'});}
-function showQuestion(){stopped=false;clearInterval(timerId);secondsLeft=TIME;const q=order[current];el('counter').textContent=`Questão ${current+1} de ${order.length}`;el('scoreTop').textContent=`${fmt(total)} pontos`;el('statusTop').textContent=`Acertos: ${hits}`;el('progress').style.width=`${current/order.length*100}%`;el('topic').textContent=q.area;el('question').textContent=q.text;el('feedback').hidden=true;el('tip').hidden=false;el('seconds').textContent='30';el('seconds').classList.remove('low');el('clockFill').style.width='100%';el('clockFill').classList.remove('low');const box=el('answers');box.replaceChildren();q.variant.forEach(({txt},slot)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.slot=slot;b.setAttribute('aria-label',`Alternativa ${toLabel[slot]}: ${txt}`);const c=document.createElement('span');c.className='letter';c.textContent=toLabel[slot];c.setAttribute('aria-hidden','true');const t=document.createElement('span');t.textContent=txt;b.append(c,t);b.addEventListener('click',()=>select(slot));box.appendChild(b);});deadline=performance.now()+TIME*1000;timerId=setInterval(tick,90);tick();el('question').focus({preventScroll:true});}
-function tick(){if(stopped)return;secondsLeft=Math.max(0,(deadline-performance.now())/1000);const count=Math.ceil(secondsLeft);el('seconds').textContent=String(count);el('seconds').classList.toggle('low',count<=10);el('clockFill').style.width=`${secondsLeft/TIME*100}%`;el('clockFill').classList.toggle('low',count<=10);if(secondsLeft<=0)select(-1);}
-function select(slot){if(stopped)return;const q=order[current];if(slot!==-1){secondsLeft=Math.max(0,(deadline-performance.now())/1000);if(secondsLeft<=0)slot=-1;}stopped=true;clearInterval(timerId);const variant=q.variant;const correctSlot=variant.findIndex(v=>v.index===q.correct);const correct=slot===correctSlot;const earned=correct?Math.min(1000,500+Math.round(500*secondsLeft/TIME)):0;total+=earned;if(correct)hits++;chosen.push({question:q.text,answer:slot===-1?null:variant[slot].txt,correct:q.choices[q.correct],explain:q.explain,earned,isCorrect:correct});Array.from(el('answers').children).forEach((b,k)=>{b.disabled=true;b.classList.toggle('correct',k===correctSlot);b.classList.toggle('wrong',k===slot && !correct);b.classList.toggle('notpicked',k!==correctSlot && k!==slot);});el('scoreTop').textContent=`${fmt(total)} pontos`;el('statusTop').textContent=`Acertos: ${hits}`;el('tip').hidden=true;el('feedback').hidden=false;el('feedbackTitle').className=`feedbackline ${correct?'good':'bad'}`;el('feedbackTitle').textContent=correct?'Resposta correta!':slot===-1?'Tempo esgotado.':'Resposta incorreta.';el('feedbackText').textContent=`Resposta: ${q.choices[q.correct]}. ${q.explain}`;el('earned').textContent=`+ ${fmt(earned)}`;el('nextBtn').textContent=current===order.length-1?'Ver resultado →':'Próxima pergunta →';el('progress').style.width=`${(current+1)/order.length*100}%`;el('nextBtn').focus({preventScroll:true});}
-function next(){if(!stopped)return;if(current+1<order.length){current++;showQuestion();window.scrollTo({top:0,behavior:'smooth'});}else{finish();}}
-function finish(){clearInterval(timerId);stopped=true;display('end');el('total').textContent=fmt(total);el('hits').textContent=`${hits}/${order.length}`;const pct=Math.round(hits/order.length*100);el('rate').textContent=`${pct}%`;el('endTitle').textContent=hits===order.length?'Todas as respostas corretas!':'Quiz concluído.';el('endMessage').textContent=`Você acertou ${hits} de ${order.length} questões e alcançou ${fmt(total)} dos ${fmt(order.length*1000)} pontos possíveis. Reveja abaixo as explicações, inclusive das respostas corretas.`;const box=el('reviewList');box.replaceChildren();chosen.forEach((entry,i)=>{const d=document.createElement('details');const s=document.createElement('summary');s.textContent=`${i+1}. ${entry.question}`;const ex=document.createElement('div');ex.className='exp';const p1=document.createElement('p');p1.textContent=`Sua resposta: ${entry.answer??'Não respondida (tempo esgotado)'}.`;const p2=document.createElement('p');const strong=document.createElement('strong');strong.textContent='Resposta correta: ';p2.append(strong,document.createTextNode(entry.correct));const p3=document.createElement('p');p3.textContent=entry.explain;ex.append(p1,p2,p3);d.append(s,ex);box.appendChild(d);});window.scrollTo({top:0,behavior:'instant'});}
-el('startBtn').addEventListener('click',begin);el('nextBtn').addEventListener('click',next);el('restartBtn').addEventListener('click',begin);
-document.addEventListener('keydown',e=>{if(el('game').hidden)return;if(!stopped && /^[1-4]$/.test(e.key) && !e.altKey&&!e.ctrlKey&&!e.metaKey){e.preventDefault();select(Number(e.key)-1);}else if(stopped&&e.key==='Enter'&&document.activeElement!==el('nextBtn')&&!e.altKey&&!e.ctrlKey&&!e.metaKey){e.preventDefault();next();}});
+function scrollUp(){window.scrollTo({top:0,behavior:'instant'});}
+function begin(){
+ clearInterval(timerId);current=0;total=0;hits=0;chosen=[];phase='reading';stopped=true;
+ order=QUESTIONS.map(q=>({...q,variant:shuffle(q.choices.map((txt,index)=>({txt,index})))}));
+ display('game');showQuestion();scrollUp();
+}
+function updateClock(remaining){
+ const count=Math.ceil(remaining);el('seconds').textContent=String(count);
+ el('seconds').classList.toggle('low',count<=10);
+ el('clockFill').style.width=`${remaining/TIME*100}%`;
+ el('clockFill').classList.toggle('low',count<=10);
+}
+function showQuestion(){
+ clearInterval(timerId);stopped=true;phase='reading';secondsLeft=TIME;
+ const q=order[current];
+ el('counter').textContent=`Questão ${current+1} de ${order.length}`;
+ el('scoreTop').textContent=`${fmt(total)} pontos`;
+ el('statusTop').textContent=`Acertos: ${hits}`;
+ el('progress').style.width=`${current/order.length*100}%`;
+ el('topic').textContent=q.area;
+ el('question').textContent=q.text;
+ el('feedback').hidden=true;
+ el('readingStage').hidden=false;
+ el('timerRow').hidden=true;
+ el('answers').hidden=true;
+ el('stageHint').hidden=false;
+ el('stageHint').textContent='Leia o enunciado com calma. O tempo só começa quando as alternativas forem exibidas.';
+ el('game').querySelector('.gamehead').classList.remove('timing');
+ updateClock(TIME);
+ el('answers').replaceChildren();
+ el('question').focus({preventScroll:true});
+}
+function reveal(){
+ if(phase!=='reading')return;
+ phase='answering';stopped=false;
+ const q=order[current];
+ const box=el('answers');box.replaceChildren();
+ q.variant.forEach(({txt},slot)=>{
+  const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.slot=slot;
+  b.setAttribute('aria-label',`Alternativa ${toLabel[slot]}: ${txt}`);
+  const c=document.createElement('span');c.className='letter';c.textContent=toLabel[slot];c.setAttribute('aria-hidden','true');
+  const t=document.createElement('span');t.textContent=txt;b.append(c,t);
+  b.addEventListener('click',()=>select(slot));box.appendChild(b);
+ });
+ el('readingStage').hidden=true;
+ el('timerRow').hidden=false;
+ el('answers').hidden=false;
+ el('stageHint').textContent='O cronômetro está em andamento. Selecione uma alternativa ou use as teclas de 1 a 4.';
+ el('game').querySelector('.gamehead').classList.add('timing');
+ // Define o prazo somente após a revelação das alternativas.
+ deadline=performance.now()+TIME*1000;secondsLeft=TIME;
+ updateClock(secondsLeft);
+ timerId=setInterval(tick,60);
+ box.firstElementChild?.focus({preventScroll:true});
+ tick();
+}
+function tick(){
+ if(phase!=='answering'||stopped)return;
+ secondsLeft=Math.max(0,(deadline-performance.now())/1000);
+ updateClock(secondsLeft);
+ if(secondsLeft<=0)select(-1);
+}
+function select(slot){
+ if(phase!=='answering'||stopped)return;
+ const q=order[current];
+ secondsLeft=Math.max(0,(deadline-performance.now())/1000);
+ if(secondsLeft<=0)slot=-1;
+ stopped=true;phase='feedback';clearInterval(timerId);
+ const variant=q.variant;
+ const correctSlot=variant.findIndex(v=>v.index===q.correct);
+ const correct=(slot===correctSlot);
+ const earned=correct?Math.min(1000,500+Math.round(500*secondsLeft/TIME)):0;
+ total+=earned;if(correct)hits++;
+ chosen.push({question:q.text,answer:slot===-1?null:variant[slot].txt,correct:q.choices[q.correct],explain:q.explain,earned,isCorrect:correct});
+ Array.from(el('answers').children).forEach((b,k)=>{
+  b.disabled=true;b.classList.toggle('correct',k===correctSlot);
+  b.classList.toggle('wrong',k===slot && !correct);
+  b.classList.toggle('notpicked',k!==correctSlot && k!==slot);
+ });
+ el('scoreTop').textContent=`${fmt(total)} pontos`;
+ el('statusTop').textContent=`Acertos: ${hits}`;
+ el('stageHint').hidden=true;
+ el('feedback').hidden=false;
+ el('feedbackTitle').className=`feedbackline ${correct?'good':'bad'}`;
+ el('feedbackTitle').textContent=correct?'Resposta correta!':slot===-1?'Tempo esgotado.':'Resposta incorreta.';
+ el('feedbackText').textContent=`Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+ el('earned').textContent=`+ ${fmt(earned)}`;
+ el('nextBtn').textContent=current===order.length-1?'Ver resultado →':'Próxima pergunta →';
+ el('progress').style.width=`${(current+1)/order.length*100}%`;
+ el('nextBtn').focus({preventScroll:true});
+}
+function next(){
+ if(phase!=='feedback')return;
+ if(current+1<order.length){current++;showQuestion();scrollUp();}else{finish();}
+}
+function finish(){
+ clearInterval(timerId);stopped=true;phase='end';display('end');
+ el('total').textContent=fmt(total);el('hits').textContent=`${hits}/${order.length}`;
+ el('rate').textContent=`${Math.round(hits/order.length*100)}%`;
+ el('endTitle').textContent=hits===order.length?'Todas as respostas corretas!':'Quiz concluído.';
+ el('endMessage').textContent=`Você acertou ${hits} de ${order.length} questões e alcançou ${fmt(total)} dos ${fmt(order.length*1000)} pontos possíveis. Reveja abaixo as explicações, inclusive das respostas corretas.`;
+ const box=el('reviewList');box.replaceChildren();
+ chosen.forEach((entry,i)=>{
+  const d=document.createElement('details');const s=document.createElement('summary');s.textContent=`${i+1}. ${entry.question}`;
+  const ex=document.createElement('div');ex.className='exp';
+  const p1=document.createElement('p');p1.textContent=`Sua resposta: ${entry.answer??'Não respondida (tempo esgotado)'}.`;
+  const p2=document.createElement('p');const strong=document.createElement('strong');strong.textContent='Resposta correta: ';
+  p2.append(strong,document.createTextNode(entry.correct));
+  const p3=document.createElement('p');p3.textContent=entry.explain;
+  ex.append(p1,p2,p3);d.append(s,ex);box.appendChild(d);
+ });
+ scrollUp();
+}
+el('startBtn').addEventListener('click',begin);
+el('revealBtn').addEventListener('click',reveal);
+el('nextBtn').addEventListener('click',next);
+el('restartBtn').addEventListener('click',begin);
+document.addEventListener('keydown',e=>{
+ if(el('game').hidden||e.altKey||e.ctrlKey||e.metaKey)return;
+ if(phase==='answering'&&/^[1-4]$/.test(e.key)){e.preventDefault();select(Number(e.key)-1);}
+});
 </script>
 </body>
 </html>
