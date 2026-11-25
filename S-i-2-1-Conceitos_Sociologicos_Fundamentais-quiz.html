@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Quiz de Sociologia I, unidade 2.1: fato social, solidariedade, ação social, classe social e estatísticas do IBGE. Dez questões comentadas, quatro alternativas e 30 segundos por rodada." name="description"/>
+<title>Quiz | 2.1. Conceitos sociológicos fundamentais | Sociologia I</title>
+<style>
+   /* QUIZ CONCEITOS SOCIOLÓGICOS FUNDAMENTAIS | MESMA MECÂNICA DO MODELO */
+/* ================================================================
+   QUIZ — CIÊNCIA, SENSO COMUM E CONHECIMENTO DO MUNDO SOCIAL
+   01. PALETA E CONFIGURAÇÕES GERAIS
+   Para modificar a identidade visual, edite as variáveis abaixo.
+   ================================================================ */
+:root {
+  --ink: #182529;
+  --muted: #586e68;
+  --bg: #f6f4ef;
+  --paper: #fffdf9;
+  --dark: #172e2b;
+  --deep: #26483e;
+  --line: #d8ded5;
+  --accent: #ba7d57;
+  --answer1: #ac3346;
+  --answer2: #206a9a;
+  --answer3: #956700;
+  --answer4: #28734a;
+  --shadow: 0 20px 48px #24392d14;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+button, a {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid #b88255;
+  outline-offset: 3px;
+}
+[hidden] {
+  display: none !important;
+}
+/* 02. CABEÇALHO E NAVEGAÇÃO */
+.top {
+  background: #f9f7f2;
+  border-bottom: 1px solid var(--line);
+}
+.topin {
+  max-width: 1180px;
+  padding: 12px 24px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 730;
+  color: #253b34;
+  text-decoration: none;
+  letter-spacing: .055em;
+  font-size: 12px;
+}
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #253b34;
+  font: 19px Georgia, serif;
+  letter-spacing: 0;
+}
+.toplinks {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.toplinks a {
+  padding: 7px 12px;
+  font-weight: 750;
+  font-size: 12px;
+  color: #56665f;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.toplinks a:hover {
+  background: #e2e8dd;
+}
+.toplinks .selected, .toplinks .selected:hover {
+  background: #29483f;
+  color: #fff;
+}
+.muted {
+  color: #62716b;
+}
+/* 03. INTRODUÇÃO, TEXTO E BOTÕES */
+.main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 24px 65px;
+  min-height: calc(100vh - 130px);
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a77551;
+}
+.display {
+  font: 400 clamp(2.7rem, 6.6vw, 5.5rem)/1.06 Georgia, "Times New Roman", serif;
+  letter-spacing: -.04em;
+  margin: 14px 0 20px;
+}
+.display em {
+  font-style: normal;
+  color: #ddb28b;
+}
+.intro {
+  background: var(--dark);
+  color: #f9f4e9;
+  padding: clamp(32px, 6vw, 70px);
+  position: relative;
+  overflow: hidden;
+}
+.intro::after {
+  content: "J";
+  font: 350px Georgia, serif;
+  position: absolute;
+  right: -8px;
+  bottom: -145px;
+  color: #ffffff06;
+  pointer-events: none;
+}
+.intro > * {
+  position: relative;
+  z-index: 1;
+}
+.intro .eyebrow {
+  color: #e5bc90;
+}
+.intro p {
+  color: #e4eae4;
+  max-width: 690px;
+  font-size: 18px;
+}
+.intro .display {
+  max-width: 800px;
+}
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.meta span {
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border: 1px solid #78908675;
+  padding: 8px 12px;
+  color: #ebeee3;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 23px;
+  border: 1px solid #d4ab7e;
+  background: #d4ab7e;
+  color: #1c332a;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 3px;
+  gap: 10px;
+}
+.btn:hover {
+  filter: brightness(.95);
+}
+.btn.ghost {
+  background: transparent;
+  color: #f7eee4;
+  border-color: #91a59c;
+}
+.btn.dark {
+  background: #29483f;
+  border-color: #29483f;
+  color: white;
+}
+.btn.dark:hover {
+  background: #385c51;
+}
+.note {
+  background: #e8ede5;
+  border-left: 3px solid #5e7b65;
+  padding: 19px 23px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.note strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.note p {
+  margin: 0;
+}
+/* 04. JOGO, CRONÔMETRO E PROGRESSO */
+.play {
+  overflow: hidden;
+}
+.gamehead {
+  background: #203934;
+  color: #fff;
+  padding: 25px 30px 21px;
+}
+.gamehead.timing {
+  background: #213f38;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.counter, .scoresmall {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 750;
+  color: #e5dbcb;
+}
+.scorebig {
+  font: 400 24px Georgia, serif;
+  color: #fff;
+}
+.progressbar {
+  height: 6px;
+  border-radius: 100px;
+  background: #466159;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.progressbar > span {
+  display: block;
+  height: 100%;
+  background: #d6ba91;
+  width: 0%;
+  transition: width .24s linear;
+}
+.timerset {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+.clockbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.clock {
+  background: #fbfaf4;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: #18372c;
+  font: 700 28px Georgia, serif;
+  font-variant-numeric: tabular-nums;
+  border: 5px solid #e4e6d9;
+}
+.clock.low {
+  color: #a13f38;
+}
+.clockbar {
+  height: 9px;
+  background: #cbd2c9;
+  flex: 1;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.clockbar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #85a18d;
+  transition: width .12s linear, background .12s;
+}
+.clockbar span.low {
+  background: #bc6b58;
+}
+.prompt {
+  padding: 32px 30px 23px;
+}
+.kicker {
+  font-size: 12px;
+  font-weight: 780;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: #9a6448;
+}
+.question {
+  font: 400 clamp(23px, 3.5vw, 36px)/1.2 Georgia, serif;
+  margin: 15px 0 10px;
+  letter-spacing: -.019em;
+  max-width: 920px;
+  scroll-margin-top: 22px;
+}
+.select-hint {
+  font-size: 13px;
+  color: #68756f;
+  margin: 0;
+}
+.reading {
+  padding: 0 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  background: var(--paper);
+}
+.reading .btn {
+  min-height: 55px;
+  font-size: 16px;
+  padding: 15px 24px;
+}
+.reading-caption {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 370px;
+}
+/* 05. QUATRO ALTERNATIVAS COLORIDAS */
+.answers {
+  padding: 0 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.answer {
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+  color: #fff;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 15px 18px;
+  font-weight: 730;
+  font-size: 16px;
+  line-height: 1.37;
+  transition: transform .12s ease, filter .12s ease, border-color .12s ease;
+}
+.answer:hover:not(:disabled) {
+  filter: brightness(1.075);
+  transform: translateY(-2px);
+}
+.answer:disabled {
+  cursor: default;
+}
+.answer:nth-child(1) {
+  background: var(--answer1);
+}
+.answer:nth-child(2) {
+  background: var(--answer2);
+}
+.answer:nth-child(3) {
+  background: var(--answer3);
+}
+.answer:nth-child(4) {
+  background: var(--answer4);
+}
+.letter {
+  display: grid;
+  place-items: center;
+  flex: 0 0 41px;
+  height: 41px;
+  border: 2px solid #ffffff9a;
+  border-radius: 4px;
+  font: 700 21px Georgia, serif;
+}
+.answer.correct {
+  border-color: #e7e7b8;
+  box-shadow: inset 0 0 0 2px #e7e7b8;
+}
+.answer.wrong {
+  opacity: .57;
+}
+.answer.notpicked {
+  opacity: .45;
+}
+.answer.correct .letter::after {
+  content: " ✓";
+  font: 700 15px system-ui;
+}
+/* 06. RESPOSTA, PONTUAÇÃO E GABARITO COMENTADO */
+.feedback {
+  padding: 22px 30px 30px;
+  background: #eef0e7;
+  border-top: 1px solid #dce1d6;
+}
+.feedbackline {
+  font: 400 25px Georgia, serif;
+  margin: 0 0 8px;
+}
+.feedbackline.good {
+  color: #255c43;
+}
+.feedbackline.bad {
+  color: #9b4544;
+}
+.feedback p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  max-width: 850px;
+}
+.feedback .row {
+  align-items: end;
+}
+.feedback .earned {
+  font: 400 23px Georgia, serif;
+}
+.feedback .earned small {
+  font: 600 11px system-ui;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: block;
+}
+.feedback details {
+  margin: 0 0 16px;
+  border-left: 3px solid #8a9b7c;
+  padding: 3px 0 3px 14px;
+}
+.feedback summary {
+  cursor: pointer;
+  font-weight: 720;
+  font-size: 14px;
+}
+.feedback ul {
+  padding-left: 19px;
+  margin: 10px 0 0;
+}
+.feedback li {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 760px;
+  margin: 25px 0;
+}
+.stat {
+  background: #fffdf6;
+  border: 1px solid #536b59;
+  padding: 17px;
+}
+.stat strong {
+  display: block;
+  font: 400 36px Georgia, serif;
+}
+.stat span {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 750;
+  letter-spacing: .08em;
+}
+.end {
+  padding: clamp(28px, 5vw, 56px);
+}
+.end h1 {
+  font: 400 clamp(2.8rem, 7vw, 4.8rem)/1 Georgia, serif;
+  margin: 16px 0;
+}
+.end p {
+  max-width: 780px;
+}
+.end .btn {
+  margin: 6px 10px 8px 0;
+}
+.review {
+  margin: 28px 0 0;
+}
+.review h2 {
+  font: 400 29px Georgia, serif;
+  margin: 0 0 16px;
+}
+.review details {
+  border: 1px solid #d6dfd5;
+  background: #fffefa;
+  margin: 8px 0;
+}
+.review summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 730;
+  padding: 14px 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.review .exp {
+  padding: 0 17px 16px;
+  font-size: 14px;
+}
+.review .exp p {
+  margin: 7px 0;
+}
+.review .exp strong {
+  color: #315944;
+}
+.review ul {
+  padding-left: 22px;
+}
+.review li {
+  margin: 8px 0;
+}
+.review li[data-state="correct"] {
+  color: #285b41;
+}
+.review li[data-state="chosen-wrong"] {
+  color: #9b4544;
+}
+.footer {
+  padding: 25px 24px;
+  background: #172b27;
+  color: #c9d5cd;
+  font-size: 12px;
+}
+.footin {
+  max-width: 1080px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footer a {
+  color: #f0d3ae;
+}
+/* 07. RESPONSIVIDADE E MOVIMENTO REDUZIDO */
+@media (max-width: 650px) {
+  .main {
+    padding: 18px 12px 45px;
+  }
+  .topin {
+    padding: 10px 12px;
+  }
+  .intro {
+    padding: 35px 24px;
+  }
+  .intro .display {
+    font-size: clamp(2.4rem, 10vw, 3.9rem);
+  }
+  .gamehead {
+    padding: 20px 17px;
+  }
+  .prompt {
+    padding: 24px 18px 19px;
+  }
+  .answers {
+    padding: 0 15px 18px;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .answer {
+    min-height: 81px;
+    padding: 11px 13px;
+    font-size: 15px;
+  }
+  .reading {
+    padding: 0 18px 23px;
+    display: block;
+  }
+  .reading .btn {
+    width: 100%;
+  }
+  .reading-caption {
+    margin: 12px 0 0;
+  }
+  .clock {
+    height: 58px;
+    width: 58px;
+    font-size: 23px;
+  }
+  .feedback {
+    padding: 21px 18px;
+  }
+  .end {
+    padding: 29px 21px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand {
+    letter-spacing: 0;
+    font-size: 11px;
+  }
+  .toplinks a {
+    padding: 6px 7px;
+  }
+  .note {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .toplinks {
+    gap: 1px;
+  }
+  .toplinks a {
+    font-size: 11px;
+  }
+  .answer {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .answer, .progressbar > span, .clockbar span {
+    transition: none !important;
+  }
+}
+@media print {
+  .top, .footer, .btn, .clockbar, .clockbox, .answers, .gamehead {
+    display: none !important;
+  }
+  .main {
+    max-width: 100%;
+  }
+  .intro {
+    color: #111;
+    background: #fff;
+  }
+  .intro p {
+    color: #222;
+  }
+  .review details {
+    break-inside: avoid;
+  }
+  .review .exp {
+    display: block !important;
+  }
+}
+/* ================================================================
+   QUIZ SOCIOLOGIA I · CONCEITOS SOCIOLÓGICOS FUNDAMENTAIS · PALETA
+   O modelo estrutural e suas interações foram preservados.
+   Para alterar tempo e pontos: edite TIME, POINTS_MIN e POINTS_MAX
+   no JavaScript, abaixo do vetor QUESTIONS.
+   ================================================================ */
+:root {
+  --bg: #f5f0e6;
+  --paper: #fffaf1;
+  --dark: #193b30;
+  --deep: #285447;
+  --accent: #ad8051;
+  --line: #d5c7b5;
+  --answer1: #9a3940;
+  --answer2: #276184;
+  --answer3: #95702b;
+  --answer4: #31724e;
+}
+.intro .display em {
+  color: #e2b88e;
+}
+.intro::after {
+  content: "S";
+}
+.question {
+  max-width: 970px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+@media(max-width: 650px) {
+  .toplinks {
+    justify-content: flex-start;
+  }
+  .topin {
+    align-items: flex-start;
+  }
+  .intro .display {
+    overflow-wrap: break-word;
+  }
+}
+  
+/* PERSONALIZAÇÃO DA AULA: MARFIM, VERDE-MUSGO, BORDÔ E MARROM */
+:root {
+  --ink: #252c28;
+  --muted: #5e625c;
+  --bg: #f3eee3;
+  --paper: #fffaf1;
+  --dark: #213b34;
+  --deep: #315b49;
+  --line: #d6c8b6;
+  --accent: #89563d;
+  --answer1: #8e3546;
+  --answer2: #245f80;
+  --answer3: #8d662e;
+  --answer4: #2e704c;
+}
+.intro .display { font-size: clamp(2.4rem, 5.7vw, 4.9rem); line-height: 1.09; overflow-wrap: break-word; }
+.intro .display em { color: #e7bc99; }
+.intro::after { content: "C"; }
+.eyebrow, .kicker { color: #875236; }
+.intro .eyebrow { color: #ebc3a3; }
+.note { border-left-color: #823946; }
+.btn:not(.dark):not(.ghost) { background: #d6ae82; border-color: #d6ae82; }
+.feedbackline.bad { color: #813b45; }
+@media (max-width:650px) { .intro .display { font-size: clamp(2.1rem, 8.6vw, 3.8rem); } }
+
+/* IDENTIDADE VISUAL | SOCIOLOGIA I 2.1 */
+:root {
+  --ink:#1f2926; --muted:#5c6964; --bg:#f3efe7; --paper:#fffcf6;
+  --dark:#183b36; --deep:#326057; --line:#d9d1c4; --accent:#b88655;
+  --answer1:#854255; --answer2:#246879; --answer3:#9b6e32; --answer4:#35684f;
+  --shadow:0 20px 45px #253e3414;
+}
+.intro {background:linear-gradient(125deg,#173a36 0%,#21483e 62%,#1a3a35 100%);}
+.intro::after {content:"2.1";right:-45px;bottom:-110px;font-size:275px;color:#ffffff07;}
+.intro .display {font-size:clamp(2.7rem,5.7vw,5rem);max-width:870px;line-height:1.08;overflow-wrap:anywhere;}
+.intro .display em{color:#d7b694;}
+.unit-id{display:block;font:700 13px/1.2 system-ui,sans-serif;letter-spacing:.2em;color:#e1bd93;margin-bottom:18px;}
+.gamehead {background:#1e403b;}
+.gamehead.timing {background:#214a40;}
+.eyebrow, .kicker{color:#985f42;}
+.intro .eyebrow{color:#e5bd91;}
+.btn:not(.dark):not(.ghost){background:#d9b183;border-color:#d9b183;}
+.btn.dark{background:#285449;border-color:#285449;}
+.btn.dark:hover{background:#37695a;}
+.answer {overflow-wrap:anywhere;}
+.answer:nth-child(1){background:var(--answer1);}
+.answer:nth-child(2){background:var(--answer2);}
+.answer:nth-child(3){background:var(--answer3);}
+.answer:nth-child(4){background:var(--answer4);}
+.feedback {background:#edf0e9;}
+.note{background:#e8ede5;border-left-color:#3c685a;}
+.footer{background:#193b34;}
+.brand .stamp{border-color:#234c40;color:#234c40;}
+@media(max-width:650px){.intro .display{font-size:clamp(2.35rem,9.7vw,3.8rem);} .intro::after{font-size:190px;bottom:-66px;right:-35px;}}
+</style>
+</head>
+<body>
+<!-- 08. CABEÇALHO DO SITE E LINKS PARA A AULA -->
+<header class="top">
+<div class="topin">
+<a class="brand" href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_V05.html">
+<span aria-hidden="true" class="stamp">
+      S
+     </span>
+<span>
+      DICIONÁRIO PARA NÃO SER TROUXA
+      <br/>
+<span class="muted">
+       Prof. Dr. Eliaquim Timóteo
+      </span>
+</span>
+</a>
+<nav aria-label="Navegação da aula" class="toplinks">
+<a href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_V05.html">Texto da aula</a>
+<a href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_V05.html#sintese">Síntese da aula</a>
+<a aria-current="page" class="selected" href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_Quiz.html">Quiz cronometrado</a>
+</nav>
+</div>
+</header>
+<main class="main">
+<!-- 09. TELA DE APRESENTAÇÃO -->
+<section class="card intro" id="start">
+<div class="eyebrow">Sociologia I · Unidade 2.1 · Quiz cronometrado</div>
+<h1 aria-label="2.1. Conceitos sociológicos fundamentais" class="display"><span class="unit-id">2.1.</span> Conceitos <em>sociológicos fundamentais</em></h1>
+<p>Fato social e solidariedade em Durkheim; ação social em Weber; classes sociais em Marx; interpretação de dados do Censo e da PNAD.</p>
+<div class="meta">
+<span>10 questões</span>
+<span>30 segundos por questão</span>
+<span>Até 1.000 pontos por acerto</span>
+</div>
+<p>Leia cada pergunta antes de iniciar a contagem. Ao selecionar “Ver alternativas e iniciar 30 s”, as quatro respostas aparecerão e o cronômetro começará. A correção comentada é apresentada após cada resposta.</p>
+<button class="btn" id="startBtn" type="button">
+     Começar quiz
+     <span aria-hidden="true">
+      →
+     </span>
+</button>
+</section>
+<section class="note" id="introNote">
+<strong>
+     Como funciona a pontuação?
+    </strong>
+<p>
+     Cada resposta correta vale de 500 a 1.000 pontos conforme o tempo restante. Respostas incorretas ou não respondidas valem zero. Ao terminar, o gabarito comenta a resposta correta e cada um dos distratores.
+    </p>
+</section>
+<!-- 10. ETAPAS DO JOGO: LEITURA, RESPOSTA E COMENTÁRIO -->
+<section aria-label="Questionário de Sociologia" class="card play" hidden="" id="game">
+<div class="gamehead">
+<div class="row">
+<div>
+<div class="counter" id="counter">
+        Questão 1 de 10
+       </div>
+<div class="scorebig" id="scoreTop">
+        0 pontos
+       </div>
+</div>
+<div class="scoresmall" id="statusTop">
+       Acertos: 0
+      </div>
+</div>
+<div aria-label="Progresso do quiz" aria-valuemax="10" aria-valuemin="0" aria-valuenow="0" class="progressbar" id="progressContainer" role="progressbar">
+<span id="progress">
+</span>
+</div>
+<div class="timerset" hidden="" id="timerRow">
+<div class="clockbox">
+<div aria-label="Tempo restante, em segundos" class="clock" id="seconds" role="timer">
+        30
+       </div>
+</div>
+<div aria-hidden="true" class="clockbar">
+<span id="clockFill">
+</span>
+</div>
+</div>
+</div>
+<div class="prompt">
+<div class="kicker" id="topic">Fato social</div>
+<h2 class="question" id="question" tabindex="-1">
+</h2>
+<p class="select-hint" id="stageHint">
+</p>
+</div>
+<div class="reading" id="readingStage">
+<button class="btn dark" id="revealBtn" type="button">
+      Ver alternativas e iniciar 30 s →
+     </button>
+<span class="reading-caption">
+      Leia o enunciado antes de começar. O cronômetro ainda não está funcionando.
+     </span>
+</div>
+<div aria-label="Alternativas de resposta" class="answers" hidden="" id="answers" role="group">
+</div>
+<div aria-live="polite" class="feedback" hidden="" id="feedback">
+<h3 class="feedbackline" id="feedbackTitle">
+</h3>
+<p id="feedbackText">
+</p>
+<details id="currentReasons">
+<summary>
+       Por que as outras alternativas estão incorretas?
+      </summary>
+<ul id="reasonsList">
+</ul>
+</details>
+<div class="row">
+<div class="earned">
+<small>
+        Pontos nesta questão
+       </small>
+<span id="earned">
+        0
+       </span>
+</div>
+<button class="btn dark" id="nextBtn" type="button">
+       Próxima pergunta →
+      </button>
+</div>
+</div>
+</section>
+<!-- 11. RESULTADO E GABARITO DETALHADO -->
+<section class="card end" hidden="" id="end">
+<div class="eyebrow">Resultado · Unidade 2.1</div>
+<h1 id="endTitle">
+     Quiz concluído.
+    </h1>
+<p id="endMessage">
+</p>
+<div class="stats">
+<div class="stat">
+<strong id="total">
+       0
+      </strong>
+<span>
+       Pontos
+      </span>
+</div>
+<div class="stat">
+<strong id="hits">
+       0/10
+      </strong>
+<span>
+       Acertos
+      </span>
+</div>
+<div class="stat">
+<strong id="rate">
+       0%
+      </strong>
+<span>
+       Aproveitamento
+      </span>
+</div>
+</div>
+<button class="btn dark" id="restartBtn" type="button">
+     Jogar novamente
+    </button>
+<a class="btn dark" href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_V05.html">Voltar à aula</a>
+<div class="review">
+<h2>
+      Gabarito comentado
+     </h2>
+<p>
+      Consulte a justificativa da resposta correta e as explicações das demais alternativas.
+     </p>
+<div id="reviewList">
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footin">
+<span>Dicionário para não ser trouxa · Unidade 2.1 · Sociologia I</span>
+<a href="Sociologia_I_2_1_Conceitos_Sociologicos_Fundamentais_V05.html">Retornar ao texto da aula</a>
+</div>
+</footer>
+<!-- 12. DADOS DO QUIZ E INTERAÇÕES EM JAVASCRIPT -->
+<script>
+   "use strict";
+
+/* ================================================================
+   13. QUESTÕES: MATRIZ DE CONTEÚDOS DA AULA V03
+   Questões elaboradas sobre os temas do capítulo.
+   Para editar uma pergunta: altere os campos text, choices, correct,
+   explain e reasons do objeto correspondente.
+   correct é o índice da alternativa certa, começando por ZERO.
+   ================================================================ */
+const QUESTIONS = [
+  {
+    "area": "Émile Durkheim · fato social",
+    "text": "Em uma cidade, regras de trânsito já existiam antes de uma pessoa começar a dirigir, são conhecidas coletivamente e seu descumprimento pode resultar em multa. Que interpretação corresponde ao conceito de fato social?",
+    "choices": [
+      "É uma escolha estritamente individual, pois cada motorista determina o conteúdo das regras.",
+      "É um fato social, pois as regras preexistem aos indivíduos, são difundidas e podem exercer coerção.",
+      "É uma disposição natural, pois as normas de trânsito surgem espontaneamente em qualquer sociedade.",
+      "É um costume sem efeitos coletivos, pois as sanções atingem somente quem descumpre a regra."
+    ],
+    "correct": 1,
+    "explain": "Para Durkheim, os fatos sociais são maneiras coletivas de agir, pensar e sentir exteriores aos indivíduos e dotadas de poder coercitivo. Sua generalidade está associada à difusão na coletividade, e não à concordância de todos.",
+    "reasons": [
+      "A pessoa escolhe como agir, mas não cria individualmente as normas que encontra socialmente estabelecidas.",
+      "O exemplo reúne exterioridade, generalidade e possibilidade de coerção, características do fato social.",
+      "Normas de trânsito são instituições historicamente produzidas, e não disposições biológicas universais.",
+      "Uma sanção dirigida a um infrator pode expressar o poder coletivo de uma regra, não sua ausência."
+    ]
+  },
+  {
+    "area": "Émile Durkheim · solidariedade social",
+    "text": "O funcionamento de um hospital depende de profissionais de enfermagem, medicina, limpeza, laboratório, manutenção e administração. Qual interpretação corresponde à solidariedade orgânica em Durkheim?",
+    "choices": [
+      "A coesão decorre da realização de tarefas idênticas por todos os profissionais.",
+      "A especialização elimina conflitos entre profissões e garante condições de trabalho iguais.",
+      "A interdependência entre atividades diferenciadas contribui para a organização do serviço.",
+      "O vínculo coletivo depende de todos compartilharem exatamente os mesmos hábitos e crenças."
+    ],
+    "correct": 2,
+    "explain": "Durkheim relaciona a solidariedade orgânica à divisão social do trabalho e à dependência recíproca entre funções especializadas. Essa interdependência não elimina conflitos, hierarquias ou desigualdades.",
+    "reasons": [
+      "A solidariedade orgânica está ligada à diferenciação das funções, e não à identidade das tarefas.",
+      "A interdependência não produz automaticamente igualdade de remuneração nem ausência de conflito.",
+      "A divisão do trabalho articula funções distintas cuja cooperação torna possível o funcionamento do hospital.",
+      "A ênfase na semelhança de crenças e valores está associada à solidariedade mecânica."
+    ]
+  },
+  {
+    "area": "Censo 2022 · território e sociedade",
+    "text": "No Censo 2022, 46,4% dos moradores da Região Norte e 90,7% dos moradores da Região Sudeste viviam em domicílios com esgoto destinado à rede coletora, rede pluvial ou fossa séptica. Qual conclusão é sustentada por esses dados?",
+    "choices": [
+      "Os percentuais indicam que todo o esgoto desses domicílios recebeu tratamento adequado.",
+      "A diferença revela exclusivamente escolhas individuais dos moradores sobre infraestrutura.",
+      "O percentual menor demonstra ausência de divisão social do trabalho na Região Norte.",
+      "Há desigualdade regional no indicador medido, cuja provisão envolve instituições e trabalho interdependente."
+    ],
+    "correct": 3,
+    "explain": "Os valores mostram desigualdade territorial nas modalidades de esgotamento consideradas pelo Censo. Eles não medem diretamente todo o tratamento de esgoto nem, isoladamente, as causas dessa desigualdade. Infraestrutura depende de decisões e atividades coletivas.",
+    "reasons": [
+      "O indicador reúne destinos do esgoto e não demonstra, por si só, que todo o volume tenha recebido tratamento adequado.",
+      "O acesso a redes e infraestrutura depende de processos sociais, históricos e de políticas públicas, não apenas de escolhas privadas.",
+      "Um percentual de acesso não mede a presença ou ausência de especialização profissional em uma região.",
+      "A comparação aponta desigualdade territorial de acesso às modalidades medidas, exigindo investigação de suas condições de produção."
+    ]
+  },
+  {
+    "area": "Max Weber · sentido da ação",
+    "text": "Duas pessoas participam de uma mobilização por transporte público. Uma espera aumentar as linhas de ônibus; outra considera o transporte um direito coletivo. Como a Sociologia compreensiva de Weber investigaria essa participação?",
+    "choices": [
+      "Atribuiria uma motivação única, pois a participação observada é a mesma.",
+      "Investigaria os sentidos atribuídos pelos participantes e sua orientação em relação a outras pessoas.",
+      "Classificaria as duas ações como tradicionais, porque as cidades possuem transporte há décadas.",
+      "Trataria a intenção declarada como irrelevante, analisando somente a quantidade de participantes."
+    ],
+    "correct": 1,
+    "explain": "Para Weber, ação social envolve sentido subjetivamente visado e orientação ao comportamento de outras pessoas. Um mesmo comportamento observável pode expressar motivações diferentes, a serem investigadas empiricamente.",
+    "reasons": [
+      "Comportamentos semelhantes não implicam sentidos subjetivos idênticos.",
+      "A interpretação da ação exige compreender o sentido visado e a relação com a conduta alheia.",
+      "O fato de um serviço existir há muito tempo não torna tradicional toda ação relacionada a ele.",
+      "A quantidade de participantes pode ser útil, mas não substitui o estudo dos sentidos atribuídos às ações."
+    ]
+  },
+  {
+    "area": "Max Weber · quatro tipos ideais",
+    "text": "Uma comerciante compara preços de fornecedores para reduzir custos. Em outra situação, uma família mantém uma celebração conforme um costume transmitido entre gerações. Quais tipos ideais de Weber descrevem, respectivamente, essas ações?",
+    "choices": [
+      "Ação racional com relação a valores e ação afetiva.",
+      "Ação afetiva e ação racional com relação a fins.",
+      "Ação racional com relação a fins e ação tradicional.",
+      "Ação tradicional e ação racional com relação a valores."
+    ],
+    "correct": 2,
+    "explain": "O cálculo de meios para alcançar um resultado aproxima a primeira situação da ação racional com relação a fins. A reprodução de um costume arraigado aproxima a segunda da ação tradicional. Os tipos ideais são instrumentos analíticos, não rótulos fixos para pessoas.",
+    "reasons": [
+      "A primeira ação destaca o cálculo de custos e resultados, não a fidelidade a um princípio; a segunda destaca um costume, não a emoção.",
+      "O cálculo econômico não é, nesse exemplo, orientação afetiva; a celebração não é apresentada como cálculo de meios para um objetivo.",
+      "O cálculo de fornecedores está orientado a fins, enquanto a manutenção da celebração decorre de um costume transmitido.",
+      "A primeira conduta não é explicada por repetição habitual, e a segunda não foi caracterizada como adesão reflexiva a um princípio."
+    ]
+  },
+  {
+    "area": "Max Weber · eleições e interpretação",
+    "text": "Uma fotografia registra duas pessoas votando na mesma candidatura. Qual procedimento é mais adequado para investigar sociologicamente os sentidos dessas ações?",
+    "choices": [
+      "Entrevistar os eleitores e examinar suas justificativas, sem deduzir motivos apenas da imagem.",
+      "Concluir que ambos votaram por convicção moral, pois escolheram a mesma candidatura.",
+      "Considerar os dois votos ações afetivas, porque eleições mobilizam emoções.",
+      "Classificar os votos como tradicionais, porque eleições acontecem periodicamente."
+    ],
+    "correct": 0,
+    "explain": "A imagem registra uma conduta, mas não revela sozinha os sentidos subjetivamente visados. Em Weber, compreender a ação requer interpretar as motivações e sua orientação social a partir de evidências pertinentes.",
+    "reasons": [
+      "Justificativas, contextos e evidências ajudam a interpretar os sentidos que não são visíveis no simples ato de votar.",
+      "Escolher a mesma candidatura não demonstra que as pessoas compartilhem a mesma convicção.",
+      "A presença de emoções no processo eleitoral não permite atribuir automaticamente orientação afetiva a cada voto.",
+      "A periodicidade institucional das eleições não prova que a escolha individual tenha sido motivada por costume."
+    ]
+  },
+  {
+    "area": "Karl Marx · relações de produção e classes",
+    "text": "Em uma fábrica, a proprietária controla instalações e máquinas, enquanto outras pessoas dependem da venda de sua força de trabalho para receber salários. Que aspecto é central para analisar suas posições de classe em Marx?",
+    "choices": [
+      "A semelhança entre hábitos familiares dos empregados e da proprietária.",
+      "A distribuição das preferências individuais de consumo dentro da fábrica.",
+      "O valor do salário como único critério necessário para definir classe social.",
+      "As relações de propriedade e controle dos meios de produção e a posição diante do trabalho assalariado."
+    ],
+    "correct": 3,
+    "explain": "Na análise marxiana do capitalismo, a posição de classe está ligada às relações de produção. A burguesia controla os meios de produção; o proletariado depende predominantemente da venda da força de trabalho. Rendimento, isoladamente, não substitui esse critério.",
+    "reasons": [
+      "Hábitos e costumes podem ser pesquisados, mas não definem a posição de classe nas relações capitalistas de produção.",
+      "Preferências de consumo não revelam, por si, quem controla os meios de produção ou vende força de trabalho.",
+      "O salário é relevante para estudar desigualdade, mas não identifica sozinho a relação de classe na teoria marxiana.",
+      "A propriedade e o controle dos meios de produção distinguem posições estruturais nas relações de trabalho capitalistas."
+    ]
+  },
+  {
+    "area": "Karl Marx · trabalho por plataformas",
+    "text": "Em um serviço de entregas por aplicativo, a plataforma organiza pedidos e remunerações, enquanto entregadores realizam as entregas e podem arcar com custos do veículo. Qual pergunta expressa uma investigação das relações de produção?",
+    "choices": [
+      "Como a plataforma controla a atividade, como o valor gerado é distribuído e quais conflitos de trabalho surgem?",
+      "Qual sentimento aparece com maior frequência quando um entregador recebe elogios?",
+      "Que tradições familiares influenciam a escolha dos horários de entrega de cada pessoa?",
+      "Que norma de etiqueta determina como o entregador cumprimenta seus clientes?"
+    ],
+    "correct": 0,
+    "explain": "Uma análise marxiana pergunta pelo controle dos recursos produtivos, pela organização do trabalho, pela apropriação dos resultados e pelos conflitos daí decorrentes. A classificação concreta dos vínculos precisa de investigação, e não pode ser presumida pelo simples uso de um aplicativo.",
+    "reasons": [
+      "A pergunta investiga controle da produção, distribuição do valor e tensões entre as posições envolvidas no trabalho.",
+      "A dimensão emocional pode ser investigada, mas não substitui a análise de propriedade, controle e apropriação.",
+      "Os costumes individuais podem orientar condutas, porém não explicam diretamente a estrutura econômica da plataforma.",
+      "Normas de interação ajudam a estudar relações sociais, mas não identificam quem controla e se apropria dos resultados da produção."
+    ]
+  },
+  {
+    "area": "IBGE · desigualdade e interpretação de indicadores",
+    "text": "O IBGE registrou índice de Gini do rendimento domiciliar real per capita de 0,511 em 2025. Qual interpretação respeita os limites desse indicador e do conceito marxiano de classe social?",
+    "choices": [
+      "O valor 0,511 corresponde à proporção exata de pessoas pertencentes ao proletariado.",
+      "O indicador descreve desigualdade de rendimentos, mas não identifica sozinho propriedade dos meios de produção.",
+      "O valor revela a parcela de trabalhadores que são proprietários das empresas em que trabalham.",
+      "O índice demonstra que todos os domicílios brasileiros possuíam rendimentos equivalentes."
+    ],
+    "correct": 1,
+    "explain": "O índice de Gini sintetiza a desigualdade na distribuição dos rendimentos; teoricamente, 0 indica igualdade e 1 indica desigualdade máxima. Ele não mede diretamente relações de propriedade, controle ou exploração, essenciais na análise de classes em Marx.",
+    "reasons": [
+      "O índice de Gini não expressa uma porcentagem de pertencimento a uma classe social.",
+      "O índice mede dispersão distributiva dos rendimentos e não substitui dados sobre propriedade ou relações de produção.",
+      "A propriedade de empresas não é informação inferível diretamente do coeficiente de Gini.",
+      "Um Gini diferente de zero indica desigualdade na distribuição, não igualdade de rendimentos entre os domicílios."
+    ]
+  },
+  {
+    "area": "Síntese · três perspectivas sociológicas",
+    "text": "Durante uma paralisação de trabalhadores do transporte, existem normas do serviço, participantes com motivos diferentes e conflitos sobre salários e jornadas. Que articulação respeita as contribuições de Durkheim, Weber e Marx?",
+    "choices": [
+      "Durkheim investiga somente os motivos privados; Weber explica classes pela propriedade; Marx estuda sobretudo sanções.",
+      "Durkheim examina as emoções individuais; Weber explica a divisão do trabalho; Marx classifica os tipos de ação.",
+      "Durkheim analisa normas e interdependência; Weber interpreta sentidos da ação; Marx examina produção e conflito.",
+      "Durkheim identifica posições de classe; Weber estuda coerção coletiva; Marx interpreta escolhas eleitorais afetivas."
+    ],
+    "correct": 2,
+    "explain": "O mesmo acontecimento admite perguntas diferentes: Durkheim investiga fatos sociais, regras e vínculos coletivos; Weber interpreta sentidos da ação; Marx analisa relações de produção e antagonismos de classe. Essas perspectivas possuem diferenças teóricas que não devem ser apagadas.",
+    "reasons": [
+      "As motivações subjetivas são centrais em Weber; propriedade e classes pertencem ao problema marxiano; coerção é conceito durkheimiano.",
+      "Os tipos ideais da ação são de Weber, a divisão do trabalho é tema de Durkheim e conflitos econômicos são centrais em Marx.",
+      "Cada associação corresponde ao problema analítico principal da tradição destacada nesta unidade.",
+      "A formulação troca os objetos predominantes das três abordagens e não preserva suas diferenças."
+    ]
+  }
+];
+
+/* 14. CONFIGURAÇÃO DO TEMPO E DA PONTUAÇÃO */
+const TIME = 30;                  // segundos por pergunta
+const POINTS_MIN = 500;          // acerto no final do tempo
+const POINTS_MAX = 1000;         // acerto imediato
+const ANSWER_LETTERS = ["A", "B", "C", "D"];
+
+const el = (id) => document.getElementById(id);
+const fmt = (n) => new Intl.NumberFormat("pt-BR").format(n);
+let current = 0;
+let total = 0;
+let hits = 0;
+let responses = [];
+let phase = "intro";             // intro, reading, answering, feedback, end
+let deadline = 0;
+let timerId = null;
+let secondsLeft = TIME;
+let order = [];
+
+// Embaralha somente as alternativas, mantendo a ordem temática das questões.
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/* 15. MUDANÇA DE TELA E INÍCIO DA PARTIDA */
+function display(sectionId) {
+  for (const id of ["start", "introNote", "game", "end"]) {
+    el(id).hidden = id !== sectionId && !(sectionId === "start" && id === "introNote");
+  }
+}
+
+function scrollUp() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function begin() {
+  clearInterval(timerId);
+  current = 0;
+  total = 0;
+  hits = 0;
+  responses = [];
+  phase = "reading";
+  order = QUESTIONS.map(q => ({
+    ...q,
+    variant: shuffle(q.choices.map((txt, index) => ({ txt, index })))
+  }));
+  display("game");
+  showQuestion();
+  scrollUp();
+}
+
+/* 16. LEITURA LIVRE, SEM EXIBIÇÃO PREMATURA DE ALTERNATIVAS */
+function updateClock(remaining) {
+  const sec = Math.ceil(remaining);
+  el("seconds").textContent = String(sec);
+  el("seconds").classList.toggle("low", sec <= 10);
+  el("clockFill").style.width = `${remaining / TIME * 100}%`;
+  el("clockFill").classList.toggle("low", sec <= 10);
+}
+
+function showQuestion() {
+  clearInterval(timerId);
+  phase = "reading";
+  secondsLeft = TIME;
+  const q = order[current];
+  el("counter").textContent = `Questão ${current + 1} de ${order.length}`;
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("progress").style.width = `${current / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current));
+  el("topic").textContent = q.area;
+  el("question").textContent = q.text;
+  el("readingStage").hidden = false;
+  el("timerRow").hidden = true;
+  el("answers").hidden = true;
+  el("feedback").hidden = true;
+  el("stageHint").textContent = "";
+  el("answers").replaceChildren();
+  el("game").querySelector(".gamehead").classList.remove("timing");
+  updateClock(TIME);
+  el("question").focus({ preventScroll: true });
+}
+
+/* 17. REVELAÇÃO DAS ALTERNATIVAS E INÍCIO DOS 30 SEGUNDOS */
+function reveal() {
+  if (phase !== "reading") return;
+  phase = "answering";
+  const q = order[current];
+  const box = el("answers");
+  box.replaceChildren();
+  q.variant.forEach(({ txt }, slot) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    button.dataset.slot = String(slot);
+    button.setAttribute("aria-label", `Alternativa ${ANSWER_LETTERS[slot]}: ${txt}`);
+
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.textContent = ANSWER_LETTERS[slot];
+    letter.setAttribute("aria-hidden", "true");
+    const content = document.createElement("span");
+    content.textContent = txt;
+    button.append(letter, content);
+    button.addEventListener("click", () => select(slot));
+    box.appendChild(button);
+  });
+
+  el("readingStage").hidden = true;
+  el("timerRow").hidden = false;
+  box.hidden = false;
+  el("stageHint").textContent = "O cronômetro está em andamento. Responda com um clique ou use as teclas de 1 a 4.";
+  el("game").querySelector(".gamehead").classList.add("timing");
+
+  // performance.now() evita contagem imprecisa causada por atrasos do intervalo.
+  deadline = performance.now() + TIME * 1000;
+  secondsLeft = TIME;
+  updateClock(secondsLeft);
+  timerId = setInterval(tick, 60);
+  box.firstElementChild?.focus({ preventScroll: true });
+  tick();
+}
+
+function tick() {
+  if (phase !== "answering") return;
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  updateClock(secondsLeft);
+  if (secondsLeft <= 0) select(-1);
+}
+
+/* 18. CORREÇÃO E FEEDBACK IMEDIATO */
+function select(slot) {
+  if (phase !== "answering") return;
+  const q = order[current];
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  if (secondsLeft <= 0) slot = -1;
+  phase = "feedback";
+  clearInterval(timerId);
+
+  const correctSlot = q.variant.findIndex(option => option.index === q.correct);
+  const correct = slot === correctSlot;
+  const earned = correct
+    ? Math.min(POINTS_MAX, POINTS_MIN + Math.round((POINTS_MAX - POINTS_MIN) * secondsLeft / TIME))
+    : 0;
+  total += earned;
+  if (correct) hits++;
+
+  responses.push({
+    q, slot, chosenIndex: slot >= 0 ? q.variant[slot].index : -1,
+    correct, earned
+  });
+  Array.from(el("answers").children).forEach((button, i) => {
+    button.disabled = true;
+    button.classList.toggle("correct", i === correctSlot);
+    button.classList.toggle("wrong", i === slot && !correct);
+    button.classList.toggle("notpicked", i !== correctSlot && i !== slot);
+  });
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("stageHint").textContent = "";
+  el("feedback").hidden = false;
+  el("feedbackTitle").className = `feedbackline ${correct ? "good" : "bad"}`;
+  el("feedbackTitle").textContent = correct ? "Resposta correta!" : slot === -1 ? "Tempo esgotado." : "Resposta incorreta.";
+  el("feedbackText").textContent = `Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+  el("earned").textContent = `+ ${fmt(earned)}`;
+
+  const reasonsList = el("reasonsList");
+  reasonsList.replaceChildren();
+  q.reasons.forEach((reason, i) => {
+    if (i === q.correct) return;
+    const li = document.createElement("li");
+    li.textContent = `${q.choices[i]} — ${reason}`;
+    reasonsList.appendChild(li);
+  });
+  el("currentReasons").open = false;
+  el("nextBtn").textContent = current === order.length - 1 ? "Ver resultado →" : "Próxima pergunta →";
+  el("progress").style.width = `${(current + 1) / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current + 1));
+  el("nextBtn").focus({ preventScroll: true });
+}
+
+/* 19. PRÓXIMA QUESTÃO E TELA DE RESULTADOS */
+function next() {
+  if (phase !== "feedback") return;
+  if (current + 1 < order.length) {
+    current++;
+    showQuestion();
+    scrollUp();
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  clearInterval(timerId);
+  phase = "end";
+  display("end");
+  el("total").textContent = fmt(total);
+  el("hits").textContent = `${hits}/${order.length}`;
+  el("rate").textContent = `${Math.round(hits / order.length * 100)}%`;
+  el("endTitle").textContent = hits === order.length ? "Todas as respostas corretas!" : "Quiz concluído.";
+  el("endMessage").textContent = `Você acertou ${hits} de ${order.length} questões e obteve ${fmt(total)} dos ${fmt(order.length * POINTS_MAX)} pontos possíveis. Reveja abaixo o gabarito e as justificativas.`;
+
+  const box = el("reviewList");
+  box.replaceChildren();
+  responses.forEach((entry, i) => {
+    const q = entry.q;
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `${i + 1}. ${q.text}`;
+    const exp = document.createElement("div");
+    exp.className = "exp";
+    const personal = document.createElement("p");
+    personal.textContent = `Sua resposta: ${entry.chosenIndex === -1 ? "Não respondida (tempo esgotado)" : q.choices[entry.chosenIndex]}.`;
+    const answer = document.createElement("p");
+    const b = document.createElement("strong");
+    b.textContent = "Resposta correta: ";
+    answer.append(b, document.createTextNode(q.choices[q.correct]));
+    const explanation = document.createElement("p");
+    explanation.textContent = q.explain;
+    const title = document.createElement("p");
+    const titleStrong = document.createElement("strong");
+    titleStrong.textContent = "Análise das alternativas";
+    title.append(titleStrong);
+    const list = document.createElement("ul");
+    q.choices.forEach((choice, n) => {
+      const li = document.createElement("li");
+      li.dataset.state = n === q.correct ? "correct" : n === entry.chosenIndex ? "chosen-wrong" : "other";
+      li.textContent = `${choice} — ${q.reasons[n]}`;
+      list.appendChild(li);
+    });
+    exp.append(personal, answer, explanation, title, list);
+    details.append(summary, exp);
+    box.appendChild(details);
+  });
+  scrollUp();
+}
+
+/* 20. EVENTOS E ATALHOS DE TECLADO */
+el("startBtn").addEventListener("click", begin);
+el("revealBtn").addEventListener("click", reveal);
+el("nextBtn").addEventListener("click", next);
+el("restartBtn").addEventListener("click", begin);
+document.addEventListener("keydown", event => {
+  if (el("game").hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (phase === "answering" && /^[1-4]$/.test(event.key)) {
+    event.preventDefault();
+    select(Number(event.key) - 1);
+  }
+});
+  </script>
+</body>
+</html>
