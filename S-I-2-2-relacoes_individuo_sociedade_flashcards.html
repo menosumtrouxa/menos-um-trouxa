@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Caderno independente de 18 flashcards revisados da aula 2.2 de Sociologia I: definição, funcionamento e dois exemplos por conceito.">
+<meta name="theme-color" content="#f5f0e6">
+<title>Flashcards 2.2 | Relações indivíduo-sociedade | Sociologia I</title>
+<style>
+/* 00. IDENTIDADE EDITORIAL DO CADERNO AUTÔNOMO */
+:root { --page: #f5f0e6; --surface: #fffaf1; --ink: #213b31; --muted: #5e665e; --border: #d8cbbc; --accent: #833c33; }
+html[data-theme="dark"] { --page:#172621; --surface:#28382f; --ink:#f6eee0; --muted:#c7cdc3; --border:#52665a; --accent:#f0b8a1; }
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font:16px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif; }
+a { color:var(--accent); }
+button,input,select { font: inherit; }
+button,summary { cursor: pointer; }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #d9a56c; outline-offset:3px; }
+[hidden] { display:none !important; }
+.skip { position:absolute; top:-100px; left:12px; background:var(--surface); padding:12px; z-index:99; }
+.skip:focus { top:10px; }
+.shell { width:min(1290px,calc(100% - 48px)); margin-inline:auto; }
+.masthead { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0; border-bottom:1px solid var(--border); }
+.brand { font:800 11px/1.5 system-ui,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.nav-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.nav-actions a,.nav-actions button { border:1px solid var(--border); border-radius:4px; text-decoration:none; color:var(--ink); background:var(--surface); padding:9px 14px; font-size:12px; font-weight:750; }
+.nav-actions a:hover,.nav-actions button:hover { border-color:var(--accent); }
+.hero { display:grid; grid-template-columns:1fr auto; gap:25px; align-items:end; padding:60px 0 46px; }
+.eyebrow { font-size:11px; font-weight:800; letter-spacing:.18em; color:var(--accent); text-transform:uppercase; }
+h1 { margin:17px 0 18px; font:500 clamp(3.2rem,7.7vw,6.3rem)/.97 Georgia,serif; letter-spacing:-.055em; max-width:950px; }
+h1 em { font-weight:400; font-style:normal; color:var(--accent); }
+.hero p { max-width:75ch; font-size:17px; margin:0; line-height:1.65; color:var(--muted); }
+.hero-stat { border-top:3px solid var(--accent); padding:18px 24px; min-width:175px; background:var(--surface); box-shadow:0 6px 25px #213b3115; }
+.hero-stat strong { font:500 72px/1 Georgia,serif; display:block; }
+.hero-stat span { font-size:11px; font-weight:750; text-transform:uppercase; letter-spacing:.1em; }
+.toolbar { display:grid; grid-template-columns:minmax(200px,1.3fr) minmax(200px,1fr); gap:16px; background:var(--surface); border:1px solid var(--border); padding:22px; border-radius:4px; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field label { font:800 11px system-ui,sans-serif; text-transform:uppercase; letter-spacing:.07em; }
+.field input,.field select { width:100%; height:46px; border:1px solid var(--border); color:var(--ink); background:var(--page); border-radius:3px; padding:0 12px; font-size:14px; }
+.helper { display:flex; gap:15px; flex-wrap:wrap; justify-content:space-between; font-size:12px; color:var(--muted); margin:13px 0 24px; }
+.fc22-unit-head { border-color: var(--border); }
+.fc22-unit-head h2 { color:var(--ink); }
+.fc22-unit-note { color:var(--muted); }
+.empty { padding:32px; text-align:center; border:1px dashed var(--border); }
+.fc22-sources { margin:55px 0 42px; border-top:1px solid var(--border); padding-top:30px; }
+.fc22-sources h2 { font:500 29px Georgia,serif; margin:0 0 12px; }
+.fc22-sources p,.fc22-sources li { font-size:13px; line-height:1.7; }
+.fc22-sources ul { padding-left:20px; }
+.fc22-sources li { margin:8px 0; }
+.footer { padding:21px 0 42px; border-top:1px solid var(--border); display:flex; gap:17px; flex-wrap:wrap; justify-content:space-between; font-size:12px; }
+@media(max-width:700px) { .shell { width:calc(100% - 30px); } .hero { grid-template-columns:1fr; padding:39px 0; } .hero-stat { display:none; } .toolbar { grid-template-columns:1fr; } .masthead { flex-direction:column; align-items:flex-start; } }
+@media print { .masthead,.toolbar,.helper,.fc22-sources,.footer { display:none; } .hero { padding:15px 0; } .shell { width:100%; } }
+
+/* =======================================================================
+   SOCIOLOGIA I · AULA 2.2
+   COMPONENTE COMPARTILHADO: FLASHCARDS (VERSÃO 04)
+   Edição: cores aqui; textos em cartoes.json; geração em gerar_paginas.py.
+   A mesma folha é incorporada nas duas páginas HTML para uso offline.
+   ======================================================================= */
+:root {
+  --fc22-text: #24322c;
+  --fc22-muted: #657068;
+  --fc22-paper: #fffaf1;
+  --fc22-line: #d8cbbc;
+  --fc22-gold: #e3c79c;
+  --fc22-shadow: 0 12px 30px rgba(30, 37, 30, .14);
+  --fc22-serif: Georgia, 'Times New Roman', serif;
+  --fc22-sans: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+
+/* 01. Grade comum: mesma aparência na aula e no caderno independente. */
+.fc22-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 36px;
+}
+.fc22-card { --fc22-tone: #244f3e; --fc22-tone-2: #15382e; min-width: 0; }
+.fc22-card.tone-wine { --fc22-tone: #923e35; --fc22-tone-2: #612a2b; }
+.fc22-card.tone-earth { --fc22-tone: #936b43; --fc22-tone-2: #68472e; }
+.fc22-card.tone-petrol { --fc22-tone: #34656c; --fc22-tone-2: #173e48; }
+.fc22-card > summary {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 226px;
+  padding: 23px 19px 22px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-top: 5px solid var(--fc22-gold);
+  background: linear-gradient(150deg, var(--fc22-tone), var(--fc22-tone-2));
+  box-shadow: var(--fc22-shadow);
+  color: #fffef8;
+  border-radius: 5px;
+  cursor: pointer;
+  list-style: none;
+  transition: box-shadow .2s, transform .2s;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.fc22-card > summary::-webkit-details-marker { display: none; }
+.fc22-card > summary::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.fc22-card > summary:hover { transform: translateY(-3px); box-shadow: 0 18px 35px rgba(25,35,32,.22); }
+.fc22-card > summary:focus-visible { outline: 3px solid #e8ba78; outline-offset: 4px; }
+.fc22-num {
+  align-self: flex-start;
+  font: 700 10px/1.4 var(--fc22-sans);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #f2e6d1;
+}
+.fc22-term {
+  display: block;
+  text-align: center;
+  font: 500 clamp(1.38rem, 2.1vw, 1.87rem)/1.14 var(--fc22-serif);
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+.fc22-cue {
+  display: block;
+  font: 700 10px/1.45 var(--fc22-sans);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #f4e9d9;
+  text-align: center;
+}
+
+/* 02. Leitura nativa sem JavaScript e conteúdo integral selecionável. */
+.fc22-card[open] { grid-column: 1 / -1; }
+.fc22-card[open] > summary { min-height: 100px; padding: 16px 22px; flex-direction: row; text-align: left; }
+.fc22-card[open] .fc22-term { text-align: left; }
+.fc22-card[open] .fc22-num { align-self: center; flex: none; }
+.fc22-card[open] .fc22-cue { flex: none; }
+.fc22-body {
+  background: var(--fc22-paper);
+  border: 1px solid var(--fc22-line);
+  color: var(--fc22-text);
+  padding: 27px clamp(20px, 3vw, 42px) 33px;
+  font-family: var(--fc22-sans);
+  text-align: left;
+}
+.fc22-body section + section { margin-top: 20px; padding-top: 17px; border-top: 1px solid var(--fc22-line); }
+.fc22-body h4, .fc22-body h3 {
+  font: 650 clamp(1.15rem, 2vw, 1.38rem)/1.2 var(--fc22-serif);
+  color: #315746;
+  margin: 0 0 9px;
+  letter-spacing: -.012em;
+}
+.fc22-body p { font: 400 15px/1.74 var(--fc22-sans); margin: 0; max-width: 77ch; color: var(--fc22-text); text-align: left; }
+.fc22-body ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  padding: 0;
+  margin: 14px 0 0;
+  counter-reset: fc22-exemplo;
+}
+.fc22-body li {
+  counter-increment: fc22-exemplo;
+  background: #f3ecdf;
+  border: 1px solid #e3d7c6;
+  border-radius: 7px;
+  padding: 17px 18px 18px;
+  font: 400 13px/1.65 var(--fc22-sans);
+  color: #28392f;
+}
+.fc22-body li::before {
+  content: counter(fc22-exemplo, decimal-leading-zero);
+  display: block;
+  font: 800 10px var(--fc22-sans);
+  letter-spacing: .12em;
+  color: #82573f;
+  margin-bottom: 10px;
+}
+.fc22-body li strong { display: block; margin: 0 0 6px; font-size: 13px; }
+
+/* 03. Janela de leitura: acessível por teclado, com Esc e foco restaurado. */
+.fc22-dialog {
+  width: min(920px, calc(100vw - 40px));
+  max-width: none;
+  max-height: 91dvh;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--fc22-line);
+  border-radius: 14px;
+  color: var(--fc22-text);
+  background: var(--fc22-paper);
+  box-shadow: 0 25px 90px rgba(0,0,0,.37);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.fc22-dialog::backdrop { background: rgba(13,27,24,.79); backdrop-filter: blur(4px); }
+.fc22-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 26px 31px 25px;
+  background: #244637;
+  border-top: 5px solid #d9ba8c;
+  color: #fff9ec;
+}
+.fc22-dialog-label { font: 800 10px/1.5 var(--fc22-sans); letter-spacing: .15em; text-transform: uppercase; color: #ebd4b8; }
+.fc22-dialog h2 { font: 500 clamp(2rem,4.1vw,3.1rem)/1.12 var(--fc22-serif); letter-spacing: -.035em; margin: 8px 0 0; color: #fff9ec; }
+.fc22-close { flex: none; border: 1px solid #b3c5b6; color: #fff; background: transparent; padding: 10px 14px; border-radius: 4px; cursor: pointer; font: 800 12px var(--fc22-sans); }
+.fc22-close:hover { background: rgba(255,255,255,.14); }
+.fc22-close:focus-visible { outline: 3px solid #f3c88a; outline-offset: 3px; }
+.fc22-dialog .fc22-body { border: 0; }
+.fc22-dialog-footer { padding: 14px 31px 20px; border-top: 1px solid var(--fc22-line); font: 12px/1.6 var(--fc22-sans); color: #57625b; }
+
+/* 04. Resumo editorial e referências no caderno autônomo. */
+.fc22-unit { scroll-margin-top: 85px; }
+.fc22-unit-head { display: flex; gap: 15px; align-items: baseline; margin: 40px 0 6px; border-bottom: 1px solid var(--fc22-line); padding-bottom: 14px; }
+.fc22-unit-index { font: 500 22px var(--fc22-serif); color: #98633b; }
+.fc22-unit-head h2 { font: 500 clamp(1.75rem,3.1vw,2.75rem)/1.15 var(--fc22-serif); letter-spacing: -.026em; margin: 0; }
+.fc22-unit-note { color: var(--fc22-muted); font: 13px/1.65 var(--fc22-sans); max-width: 80ch; }
+
+/* 05. Estilos responsivos e impressão. */
+@media(max-width: 1100px) { .fc22-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(max-width: 810px) { .fc22-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .fc22-card > summary { min-height: 212px; } }
+@media(max-width: 530px) {
+  .fc22-grid { grid-template-columns: 1fr; gap: 13px; }
+  .fc22-card > summary { min-height: 169px; }
+  .fc22-card[open] > summary { gap: 9px; }
+  .fc22-card[open] .fc22-num { display: none; }
+  .fc22-card[open] .fc22-cue { font-size: 9px; }
+  .fc22-body ol { grid-template-columns: 1fr; }
+  .fc22-body { padding: 20px; }
+  .fc22-dialog { width: calc(100vw - 16px); max-height: 96dvh; border-radius: 9px; }
+  .fc22-dialog-head { padding: 23px 19px; gap: 11px; }
+  .fc22-close { padding: 9px; }
+  .fc22-dialog-footer { padding-inline: 20px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .fc22-card > summary { transition: none; }
+  .fc22-dialog::backdrop { backdrop-filter: none; }
+}
+@media print {
+  .fc22-grid { grid-template-columns: 1fr 1fr; }
+  .fc22-card { break-inside: avoid; }
+  .fc22-card[open] { grid-column: auto; }
+  .fc22-card > summary, .fc22-card[open] > summary { min-height: 90px; padding: 14px; box-shadow: none; }
+  .fc22-dialog { display: none !important; }
+  .fc22-body { padding: 12px; }
+  .fc22-body ol { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para os flashcards</a>
+<div class="shell">
+<header class="masthead">
+  <div class="brand">SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA<br>Prof. Dr. Eliaquim Timóteo</div>
+  <nav class="nav-actions" aria-label="Navegação"><a href="S-I-2-2-relacoes_individuo_sociedade_aula.html">Voltar à aula</a><a href="S-I-2-2-relacoes_individuo_sociedade_quiz.html">Quiz 2.2</a><button type="button" id="fc22-theme" aria-pressed="false">Modo escuro</button></nav>
+</header>
+<section class="hero" aria-labelledby="titulo">
+ <div><div class="eyebrow">AULA 2.2 · CADERNO DE CONCEITOS</div>
+ <h1 id="titulo">Flashcards <em>2.2</em></h1>
+ <p>Relações indivíduo-sociedade: instituições, socialização, relações sociais e interação social. </p></div>
+ <div class="hero-stat" aria-hidden="true"><strong></strong><span>Conceitos comentados</span></div>
+</section>
+<main id="conteudo">
+<section class="toolbar" aria-label="Pesquisar e filtrar os conceitos">
+ <div class="field"><label for="fc22-search">Pesquisar conceitos, definições e exemplos</label><input id="fc22-search" type="search" placeholder="Ex.: reciprocidade, escola, fontes..." autocomplete="off"></div>
+ <div class="field"><label for="fc22-unit-filter">Seção da aula</label><select id="fc22-unit-filter"><option value="all">Todas as seções</option><option value="instituicoes">Instituições: o que organiza a vida coletiva?</option><option value="socializacao">Socialização: como nos tornamos quem somos?</option><option value="relacoes">Relações sociais e interação social</option><option value="dados">Jovens também ensinam adultos</option><option value="conceitos">Quatro dimensões da vida social</option></select></div>
+</section>
+<div class="helper"><span>Selecione um cartão para ler seu conceito completo. Use Esc para fechar a leitura.</span><span id="fc22-count" role="status" aria-live="polite">18 cartões encontrados</span></div>
+<section class="fc22-unit" id="unidade-instituicoes" aria-labelledby="titulo-instituicoes">
+          <header class="fc22-unit-head"><span class="fc22-unit-index">02</span><h2 id="titulo-instituicoes">Instituições: o que organiza a vida coletiva?</h2></header>
+          <p class="fc22-unit-note">Normas, responsabilidades, permanências e mudanças históricas.</p>
+          <div class="fc22-grid"><details class="fc22-card tone-leaf" data-fc22-index="1" data-term="Instituição social" data-fc22-id="instituicao-social">
+      <summary aria-label="Flashcard 1: Instituição social. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 01/18</span>
+        <strong class="fc22-term">Instituição social</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É um conjunto historicamente constituído de normas, práticas, posições e expectativas relativamente estáveis que organiza determinadas dimensões da vida coletiva. Uma instituição social não se confunde com um prédio ou uma organização específica.</p></section>
+      <section><h4>Como funciona?</h4><p>As instituições orientam comportamentos, estabelecem responsabilidades e organizam relações de autoridade e participação. Sua continuidade depende da reprodução cotidiana de práticas e normas, mas elas também podem ser transformadas por conflitos, negociações e conquistas sociais.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Educação escolar</strong>A escola organiza currículos, avaliações, responsabilidades e relações entre estudantes, docentes e gestores. Essas práticas continuam existindo mesmo quando a instituição muda de endereço.</li><li><strong>Famílias</strong>Diferentes arranjos familiares organizam relações de cuidado, convivência e pertencimento. Não é necessário que todas as famílias tenham a mesma composição para exercerem funções institucionais.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-wine" data-fc22-index="2" data-term="Regra institucional" data-fc22-id="regra-institucional">
+      <summary aria-label="Flashcard 2: Regra institucional. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 02/18</span>
+        <strong class="fc22-term">Regra institucional</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É uma norma ou expectativa de conduta reconhecida e sustentada no funcionamento de uma instituição. Pode estar formalizada em documentos ou ser reproduzida por práticas coletivamente reconhecidas.</p></section>
+      <section><h4>Como funciona?</h4><p>As regras orientam comportamentos, delimitam responsabilidades e estabelecem procedimentos para a convivência. Seu cumprimento pode ser acompanhado por mecanismos de supervisão, reconhecimento ou sanção. Entretanto, a existência de uma regra não significa que todas as pessoas a interpretem ou cumpram da mesma maneira.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Matrícula escolar</strong>Uma instituição estabelece critérios, documentos e prazos que estudantes e responsáveis devem observar para realizar matrículas.</li><li><strong>Assembleia estudantil</strong>Um grêmio estabelece procedimentos de inscrição para falas e votação, orientando como seus participantes tomam decisões coletivas.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-earth" data-fc22-index="3" data-term="Mudança institucional" data-fc22-id="mudanca-institucional">
+      <summary aria-label="Flashcard 3: Mudança institucional. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 03/18</span>
+        <strong class="fc22-term">Mudança institucional</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É a transformação histórica de normas, práticas, formas de organização ou relações de autoridade que estruturam uma instituição social.</p></section>
+      <section><h4>Como funciona?</h4><p>As instituições se transformam em resposta a conflitos, reivindicações, novas condições históricas e decisões coletivas. Algumas mudanças ocorrem por reformas formais, enquanto outras se desenvolvem gradualmente nas práticas cotidianas. Uma alteração legal não garante, por si só, transformação imediata das relações sociais.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Participação escolar</strong>Uma escola modifica seu regimento para ampliar a representação estudantil nos espaços de decisão. A efetividade da mudança depende também das condições reais de participação.</li><li><strong>Associação comunitária</strong>Moradores reformulam as regras de uma associação para incluir novos grupos nas decisões sobre atividades e utilização de espaços coletivos.</li></ol></section>
+    </div>
+    </details></div>
+        </section><section class="fc22-unit" id="unidade-socializacao" aria-labelledby="titulo-socializacao">
+          <header class="fc22-unit-head"><span class="fc22-unit-index">03</span><h2 id="titulo-socializacao">Socialização: como nos tornamos quem somos?</h2></header>
+          <p class="fc22-unit-note">Aprendizagens, interpretações e circulação de conhecimentos entre gerações.</p>
+          <div class="fc22-grid"><details class="fc22-card tone-leaf" data-fc22-index="4" data-term="Socialização" data-fc22-id="socializacao">
+      <summary aria-label="Flashcard 4: Socialização. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 04/18</span>
+        <strong class="fc22-term">Socialização</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É o processo contínuo pelo qual as pessoas aprendem, interpretam, incorporam e reelaboram linguagens, conhecimentos, valores, normas e maneiras de agir em sociedade.</p></section>
+      <section><h4>Como funciona?</h4><p>A socialização ocorre nas relações familiares, escolares, profissionais, comunitárias e em outros contextos de convivência. Os indivíduos não apenas recebem influências: interpretam experiências, questionam expectativas e podem transformar práticas sociais. Por isso, a socialização não termina na infância e não produz necessariamente pessoas com comportamentos idênticos.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Convivência escolar</strong>Ao ingressar em uma turma, uma estudante aprende as formas de participação nos debates, observa como os colegas organizam atividades e passa a negociar maneiras de trabalhar coletivamente.</li><li><strong>Associação comunitária</strong>Uma pessoa que começa a participar de uma associação aprende procedimentos de decisão, formas de cooperação e maneiras de resolver divergências entre moradores.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-wine" data-fc22-index="5" data-term="Socialização primária" data-fc22-id="socializacao-primaria">
+      <summary aria-label="Flashcard 5: Socialização primária. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 05/18</span>
+        <strong class="fc22-term">Socialização primária</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>Na perspectiva de Peter Berger e Thomas Luckmann, é o processo inicial de inserção dos indivíduos no mundo social, especialmente durante a infância, por meio de relações próximas que participam da formação de suas primeiras referências de realidade.</p></section>
+      <section><h4>Como funciona?</h4><p>Nas primeiras relações de cuidado e convivência, a criança aprende linguagens, interpreta comportamentos e começa a compreender expectativas sociais. Essas experiências ajudam a formar referências iniciais de pertencimento e de interpretação do mundo, mas não determinam de maneira definitiva sua trajetória. A socialização primária pode ocorrer em diferentes configurações familiares e comunitárias.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Aprendizagem da linguagem</strong>Uma criança aprende uma ou mais línguas nas interações cotidianas com familiares ou outras pessoas responsáveis por seus cuidados.</li><li><strong>Convivência na infância</strong>Durante brincadeiras com pessoas próximas, uma criança começa a aprender maneiras de compartilhar objetos, manifestar necessidades e responder às expectativas dos demais participantes.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-earth" data-fc22-index="6" data-term="Socialização secundária" data-fc22-id="socializacao-secundaria">
+      <summary aria-label="Flashcard 6: Socialização secundária. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 06/18</span>
+        <strong class="fc22-term">Socialização secundária</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>Na perspectiva de Berger e Luckmann, é o processo de aprendizagem de conhecimentos, papéis, regras e repertórios específicos relacionados à participação em diferentes instituições e espaços da vida social.</p></section>
+      <section><h4>Como funciona?</h4><p>Ao ingressar em novos contextos, os indivíduos aprendem formas de agir e interpretar situações que não faziam parte de suas experiências anteriores. Essas aprendizagens podem complementar, modificar ou entrar em tensão com referências já incorporadas. A socialização secundária pode ocorrer durante a infância, a juventude e a vida adulta.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Atividade esportiva</strong>Ao integrar uma equipe de voleibol, uma estudante aprende regras específicas, responsabilidades de cada posição e expectativas de cooperação entre participantes.</li><li><strong>Ingresso no trabalho</strong>Ao iniciar um estágio, um jovem aprende procedimentos profissionais, normas de segurança e formas de comunicação próprias daquele ambiente.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-petrol" data-fc22-index="7" data-term="Aprendizagem entre gerações" data-fc22-id="aprendizagem-entre-geracoes">
+      <summary aria-label="Flashcard 7: Aprendizagem entre gerações. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 07/18</span>
+        <strong class="fc22-term">Aprendizagem entre gerações</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É a circulação de conhecimentos, experiências, valores e práticas entre pessoas pertencentes a diferentes gerações. Essa aprendizagem pode ocorrer em mais de uma direção.</p></section>
+      <section><h4>Como funciona?</h4><p>As relações entre gerações envolvem transmissão, interpretação e reelaboração de conhecimentos. Pessoas mais jovens podem ensinar práticas recentes a pessoas mais velhas, assim como estas podem compartilhar experiências acumuladas em diferentes contextos históricos. Essas trocas não eliminam automaticamente diferenças de autoridade, recursos e oportunidades.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Tecnologia digital</strong>Uma adolescente ensina sua mãe a configurar recursos de privacidade e segurança de um aplicativo que ela começou a utilizar.</li><li><strong>Conhecimentos sobre cultivo</strong>Uma avó compartilha com o neto práticas de cultivo de uma horta, explicando técnicas aprendidas em sua experiência com o trabalho agrícola.</li></ol></section>
+    </div>
+    </details></div>
+        </section><section class="fc22-unit" id="unidade-relacoes" aria-labelledby="titulo-relacoes">
+          <header class="fc22-unit-head"><span class="fc22-unit-index">04</span><h2 id="titulo-relacoes">Relações sociais e interação social</h2></header>
+          <p class="fc22-unit-note">Vínculos, orientações recíprocas e encontros socialmente situados.</p>
+          <div class="fc22-grid"><details class="fc22-card tone-leaf" data-fc22-index="8" data-term="Relação social" data-fc22-id="relacao-social">
+      <summary aria-label="Flashcard 8: Relação social. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 08/18</span>
+        <strong class="fc22-term">Relação social</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>Na sociologia de Max Weber, ocorre quando as condutas de duas ou mais pessoas se orientam reciprocamente pelos sentidos atribuídos às ações umas das outras.</p></section>
+      <section><h4>Como funciona?</h4><p>As pessoas levam em consideração comportamentos e expectativas alheias ao orientar suas próprias ações. Essa orientação pode envolver cooperação, amizade, autoridade, concorrência ou conflito. A relação não exige acordo, proximidade física ou duração prolongada, embora possa permanecer ao longo do tempo.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Amizade à distância</strong>Duas pessoas que vivem em cidades diferentes mantêm expectativas de apoio e confiança, orientando suas decisões pela existência do vínculo, mesmo quando não conversam diariamente.</li><li><strong>Disputa estudantil</strong>Duas chapas concorrentes ao grêmio acompanham as propostas uma da outra e ajustam suas estratégias em função das posições dos adversários.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-wine" data-fc22-index="9" data-term="Interação social" data-fc22-id="interacao-social">
+      <summary aria-label="Flashcard 9: Interação social. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 09/18</span>
+        <strong class="fc22-term">Interação social</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É um processo situado em que pessoas interpretam as condutas umas das outras e respondem por meio de palavras, gestos, comportamentos, silêncios ou outros sinais socialmente reconhecidos.</p></section>
+      <section><h4>Como funciona?</h4><p>Uma interação se desenvolve em situações concretas, nas quais as respostas dos participantes podem modificar o andamento do encontro. Pode ocorrer presencialmente ou por meios de comunicação, embora as condições de interpretação sejam diferentes. As interações podem expressar relações anteriores ou participar da formação de novos vínculos.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Debate escolar</strong>Durante uma apresentação, uma estudante responde a uma pergunta, percebe a reação dos colegas e modifica sua explicação para esclarecer um argumento.</li><li><strong>Comunicação digital</strong>Duas pessoas negociam por mensagens o horário de uma atividade, respondendo às propostas e justificativas apresentadas uma pela outra.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-earth" data-fc22-index="10" data-term="Reciprocidade" data-fc22-id="reciprocidade">
+      <summary aria-label="Flashcard 10: Reciprocidade. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 10/18</span>
+        <strong class="fc22-term">Reciprocidade</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>No estudo das relações sociais, refere-se à orientação mútua entre condutas e expectativas de diferentes participantes.</p></section>
+      <section><h4>Como funciona?</h4><p>Uma pessoa considera as ações de outra ao orientar seu comportamento, enquanto a segunda também toma a primeira como referência. Essa reciprocidade não exige igualdade de posições, benefícios equivalentes ou concordância. Pode existir em relações cooperativas, competitivas e conflituosas.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Trabalho coletivo</strong>Durante a elaboração de um projeto, uma estudante modifica a distribuição das tarefas após perceber as dificuldades enfrentadas por seus colegas. O grupo reorganiza suas atividades em resposta à nova divisão.</li><li><strong>Concorrência entre grupos</strong>Duas equipes que disputam uma eleição estudantil reformulam suas propostas conforme acompanham as críticas e decisões da equipe adversária.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-petrol" data-fc22-index="11" data-term="Apresentação de si" data-fc22-id="apresentacao-de-si">
+      <summary aria-label="Flashcard 11: Apresentação de si. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 11/18</span>
+        <strong class="fc22-term">Apresentação de si</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>Na perspectiva de Erving Goffman, refere-se às maneiras pelas quais as pessoas se apresentam e são interpretadas por outras em situações sociais, mobilizando comportamentos, expressões e expectativas associadas ao contexto.</p></section>
+      <section><h4>Como funciona?</h4><p>Em diferentes situações, os participantes procuram sustentar determinadas impressões sobre quem são e sobre o papel que desempenham. A apresentação de si envolve linguagem, aparência, gestos e modos de agir, mas não constitui necessariamente uma tentativa consciente de enganar outras pessoas. As interpretações também dependem das expectativas de quem observa.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Representação estudantil</strong>Ao apresentar uma reivindicação à direção da escola, uma representante do grêmio organiza argumentos, escolhe um modo de falar e procura transmitir segurança.</li><li><strong>Atendimento comercial</strong>Durante uma negociação em uma feira, uma vendedora utiliza determinadas formas de saudação, explica características dos produtos e procura estabelecer uma relação de confiança com os clientes.</li></ol></section>
+    </div>
+    </details></div>
+        </section><section class="fc22-unit" id="unidade-dados" aria-labelledby="titulo-dados">
+          <header class="fc22-unit-head"><span class="fc22-unit-index">06</span><h2 id="titulo-dados">Jovens também ensinam adultos</h2></header>
+          <p class="fc22-unit-note">Fontes, indicadores e limites de interpretação aplicados às experiências de socialização digital.</p>
+          <div class="fc22-grid"><details class="fc22-card tone-leaf" data-fc22-index="12" data-term="Fonte primária" data-fc22-id="fonte-primaria">
+      <summary aria-label="Flashcard 12: Fonte primária. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 12/18</span>
+        <strong class="fc22-term">Fonte primária</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É um documento, registro ou vestígio utilizado como testemunho direto de determinado fenômeno ou contexto investigado. Sua classificação como fonte primária depende da pergunta de pesquisa, e não apenas da antiguidade do material.</p></section>
+      <section><h4>Como funciona?</h4><p>Uma fonte primária permite investigar aspectos das práticas, representações e condições de uma época. Entretanto, sua interpretação exige examinar autoria, finalidade, contexto de produção e limites do registro. Um documento oficial, por exemplo, pode informar o que uma instituição prescrevia sem demonstrar integralmente o que acontecia na prática.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Legislação histórica</strong>Em uma pesquisa sobre a política brasileira de ensino profissional em 1909, o Decreto nº 7.566 pode ser examinado como fonte primária das finalidades educacionais declaradas pelo governo federal.</li><li><strong>Fotografia escolar</strong>Em uma investigação sobre o cotidiano da Escola de Aprendizes Artífices de Alagoas, uma fotografia de sala de aula produzida em 1910 pode ser utilizada para examinar aspectos visíveis da organização escolar.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-wine" data-fc22-index="13" data-term="Indicador estatístico" data-fc22-id="indicador-estatistico">
+      <summary aria-label="Flashcard 13: Indicador estatístico. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 13/18</span>
+        <strong class="fc22-term">Indicador estatístico</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É uma medida construída a partir de dados e critérios definidos, utilizada para descrever ou acompanhar determinada característica de uma população ou fenômeno social.</p></section>
+      <section><h4>Como funciona?</h4><p>A interpretação de um indicador exige conhecer a pergunta utilizada, o período de referência, a população considerada e a forma de cálculo. Os indicadores permitem identificar distribuições, diferenças e tendências, mas seus resultados não explicam automaticamente as causas dos fenômenos observados.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Pesquisa sobre Internet</strong>Na TIC Kids Online Brasil 2025, o percentual de usuários de Internet de 15 a 17 anos que declararam ajudar pais ou responsáveis todos os dias ou quase todos os dias a fazer algo na Internet é um indicador da frequência dessa prática entre os respondentes.</li><li><strong>Participação estudantil</strong>Em um levantamento hipotético, uma escola poderia calcular a proporção de estudantes que declararam participar de reuniões do grêmio ao menos uma vez por mês, definindo previamente a população pesquisada e o período considerado.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-earth" data-fc22-index="14" data-term="Limite da imagem" data-fc22-id="limite-da-imagem">
+      <summary aria-label="Flashcard 14: Limite da imagem. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 14/18</span>
+        <strong class="fc22-term">Limite da imagem</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É a restrição interpretativa decorrente do fato de que fotografias e outros registros visuais apresentam apenas determinados aspectos de uma situação, sem revelar integralmente suas condições, significados e relações sociais.</p></section>
+      <section><h4>Como funciona?</h4><p>Uma fotografia permite observar pessoas, objetos, espaços, posições e gestos registrados em determinado enquadramento. Entretanto, não permite concluir automaticamente quais eram as intenções, sentimentos ou experiências dos participantes. Sua análise exige contextualização e, quando necessário, confronto com outras fontes.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Fotografia escolar de 1910</strong>A imagem de uma sala de aula pode mostrar carteiras, materiais e a disposição dos estudantes, mas não comprova o que cada aluno aprendeu nem como avaliava sua experiência escolar.</li><li><strong>Reunião estudantil</strong>Uma fotografia de estudantes reunidos em um pátio pode registrar sua presença e organização espacial, mas não permite determinar, isoladamente, se concordavam entre si ou quais decisões foram tomadas.</li></ol></section>
+    </div>
+    </details></div>
+        </section><section class="fc22-unit" id="unidade-conceitos" aria-labelledby="titulo-conceitos">
+          <header class="fc22-unit-head"><span class="fc22-unit-index">07</span><h2 id="titulo-conceitos">Quatro dimensões da vida social</h2></header>
+          <p class="fc22-unit-note">Síntese dos conceitos fundamentais com novos exemplos.</p>
+          <div class="fc22-grid"><details class="fc22-card tone-leaf" data-fc22-index="15" data-term="Instituições" data-fc22-id="instituicoes-sintese">
+      <summary aria-label="Flashcard 15: Instituições. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 15/18</span>
+        <strong class="fc22-term">Instituições</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>São conjuntos historicamente constituídos de normas, práticas, posições e expectativas que organizam dimensões relativamente estáveis da vida coletiva.</p></section>
+      <section><h4>Como funciona?</h4><p>As instituições estabelecem condições de participação, distribuem responsabilidades e orientam comportamentos. Embora apresentem continuidade histórica, suas regras e práticas podem ser modificadas por mudanças sociais, conflitos e decisões coletivas.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Educação</strong>O sistema escolar estabelece responsabilidades de ensino, formas de avaliação e condições de participação, que influenciam a experiência cotidiana dos estudantes.</li><li><strong>Organização familiar</strong>As responsabilidades de cuidado e convivência são distribuídas entre pessoas que podem integrar diferentes arranjos familiares, conforme condições históricas e sociais.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-wine" data-fc22-index="16" data-term="Socialização" data-fc22-id="socializacao-sintese">
+      <summary aria-label="Flashcard 16: Socialização. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 16/18</span>
+        <strong class="fc22-term">Socialização</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É o processo contínuo pelo qual as pessoas aprendem, interpretam e transformam referências culturais, normas e maneiras de agir nas relações sociais.</p></section>
+      <section><h4>Como funciona?</h4><p>As experiências de convivência fornecem repertórios para interpretar situações e orientar comportamentos. Entretanto, as pessoas também questionam referências aprendidas e participam de sua transformação. O processo ocorre ao longo de toda a vida.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Mudança de turma</strong>Uma estudante que passa a frequentar uma nova turma aprende formas de organização coletiva e modifica algumas de suas maneiras de participar de atividades.</li><li><strong>Cooperativa de trabalho</strong>Ao ingressar em uma cooperativa, uma pessoa aprende procedimentos de decisão compartilhada e passa a negociar responsabilidades com os demais integrantes.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-earth" data-fc22-index="17" data-term="Relações sociais" data-fc22-id="relacoes-sociais-sintese">
+      <summary aria-label="Flashcard 17: Relações sociais. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 17/18</span>
+        <strong class="fc22-term">Relações sociais</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>Na perspectiva de Max Weber, são orientações recíprocas de condutas nas quais os participantes atribuem sentidos às ações uns dos outros e levam esses sentidos em consideração.</p></section>
+      <section><h4>Como funciona?</h4><p>As relações sociais podem envolver cooperação, autoridade, confiança, concorrência ou conflito. Não dependem necessariamente de concordância ou encontros presenciais constantes. Uma relação pode se expressar por diferentes episódios de interação.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Relação entre docentes e estudantes</strong>Durante o período letivo, professores e alunos orientam suas condutas por expectativas recíprocas relativas ao ensino, à aprendizagem e à avaliação.</li><li><strong>Negociação trabalhista</strong>Trabalhadores e representantes de uma empresa discutem a organização de turnos, orientando suas decisões pelas propostas, interesses e respostas da outra parte.</li></ol></section>
+    </div>
+    </details><details class="fc22-card tone-petrol" data-fc22-index="18" data-term="Interação social" data-fc22-id="interacao-social-sintese">
+      <summary aria-label="Flashcard 18: Interação social. Abrir explicação e exemplos">
+        <span class="fc22-num">Sociologia I · 18/18</span>
+        <strong class="fc22-term">Interação social</strong>
+        <span class="fc22-cue">Consultar conceito e exemplos</span>
+      </summary>
+      <div class="fc22-body">
+      <section><h4>O que é?</h4><p>É o processo concreto de interpretação e resposta entre participantes de uma situação social, por meio de palavras, gestos e outros comportamentos socialmente reconhecidos.</p></section>
+      <section><h4>Como funciona?</h4><p>Durante uma interação, as pessoas interpretam sinais e ajustam suas condutas conforme as respostas recebidas. Uma interação pode manifestar uma relação anterior ou contribuir para sua formação, mas não deve ser confundida automaticamente com um vínculo duradouro.</p></section>
+      <section><h4>Exemplos</h4><ol><li><strong>Assembleia comunitária</strong>Moradores apresentam propostas, respondem a questionamentos e reformulam argumentos durante uma reunião sobre o uso de um espaço coletivo.</li><li><strong>Conversa por mensagens</strong>Duas pessoas discutem uma alteração no horário de uma atividade, interpretam respostas e chegam a um encaminhamento comum por meio da comunicação digital.</li></ol></section>
+    </div>
+    </details></div>
+        </section>
+<p class="empty" id="fc22-empty" hidden>Nenhum cartão corresponde à pesquisa. Experimente outra palavra.</p>
+<section class="fc22-sources" aria-labelledby="fc22-sources-title">
+<h2 id="fc22-sources-title">Referências documentais</h2>
+<p>Os exemplos cotidianos sem indicação documental são situações didáticas hipotéticas. Os documentos e as pesquisas mencionados nos cartões podem ser consultados nas fontes abaixo.</p>
+<ul>
+<li><a href="https://www2.camara.leg.br/legin/fed/decret/1900-1909/decreto-7566-23-setembro-1909-525411-publicacaooriginal-1-pe.html" target="_blank" rel="noopener noreferrer">BRASIL. Decreto nº 7.566, de 23 de setembro de 1909</a>.</li>
+<li><a href="https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/7909" target="_blank" rel="noopener noreferrer">BRASILIANA FOTOGRÁFICA. Registro escolar de Maceió, 1910</a>.</li>
+<li><a href="https://www.cetic.br/pt/tics/kidsonline/2025/criancas/E1A/expandido/" target="_blank" rel="noopener noreferrer">CETIC.BR. TIC Kids Online Brasil 2025, indicador E1A</a>.</li>
+</ul>
+</section>
+</main>
+<footer class="footer"><span>SOCIOLOGIA I · AULA 2.2 · FLASHCARDS</span><span><a href="S-I-2-2-relacoes_individuo_sociedade_aula.html">Voltar à aula completa</a></span></footer>
+</div>
+<!-- COMPONENTE ÚNICO DE LEITURA DOS FLASHCARDS (acessível por teclado). -->
+<dialog class="fc22-dialog" id="fc22-dialog" aria-labelledby="fc22-dialog-title">
+  <header class="fc22-dialog-head">
+    <div><div class="fc22-dialog-label">SOCIOLOGIA I · FLASHCARD COMENTADO</div>
+      <h2 id="fc22-dialog-title"></h2></div>
+    <button type="button" class="fc22-close" id="fc22-dialog-close" aria-label="Fechar a explicação do flashcard">Fechar</button>
+  </header>
+  <div id="fc22-dialog-content"></div>
+  <div class="fc22-dialog-footer">Para voltar aos cartões, selecione “Fechar” ou pressione a tecla Esc.</div>
+</dialog>
+<script>
+/* =======================================================================
+   SOCIOLOGIA I · AULA 2.2 · FLASHCARDS COMPARTILHADOS
+   Melhoria progressiva: sem JS, cada <details> continua abrindo sua resposta.
+   Com JS, o conteúdo abre em <dialog> com foco, Esc e fechamento acessíveis.
+   ======================================================================= */
+(function () {
+  'use strict';
+
+  const dialog = document.getElementById('fc22-dialog');
+  const dialogTitle = document.getElementById('fc22-dialog-title');
+  const dialogContent = document.getElementById('fc22-dialog-content');
+  const closeButton = document.getElementById('fc22-dialog-close');
+
+  if (!dialog || !dialogTitle || !dialogContent || !closeButton) return;
+
+  let previousFocus = null;
+  const allCards = Array.from(document.querySelectorAll('.fc22-card'));
+
+  // Apenas intercepta a abertura se o navegador oferecer <dialog>.showModal().
+  if (typeof dialog.showModal === 'function') {
+    for (const card of allCards) {
+      const summary = card.querySelector(':scope > summary');
+      summary.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (dialog.open) return;
+        previousFocus = summary;
+        dialogTitle.textContent = card.dataset.term;
+        dialogContent.replaceChildren();
+        const source = card.querySelector(':scope > .fc22-body');
+        const cloned = source.cloneNode(true);
+        // No modal, as três subseções ficam abaixo do h2 do conceito.
+        for (const h4 of cloned.querySelectorAll('h4')) {
+          const h3 = document.createElement('h3');
+          h3.textContent = h4.textContent;
+          h4.replaceWith(h3);
+        }
+        dialogContent.appendChild(cloned);
+        dialog.showModal();
+        closeButton.focus();
+      });
+    }
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      dialogContent.replaceChildren();
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+    });
+  }
+
+  // Impressão: expõe temporariamente todas as explicações dos <details>.
+  let openedForPrint = [];
+  window.addEventListener('beforeprint', () => {
+    openedForPrint = allCards.filter((card) => !card.open);
+    openedForPrint.forEach((card) => { card.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    openedForPrint.forEach((card) => { card.open = false; });
+    openedForPrint = [];
+  });
+})();
+
+
+/* NAVEGAÇÃO E FILTROS DO CADERNO INDEPENDENTE */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const toggle = document.getElementById('fc22-theme');
+  const search = document.getElementById('fc22-search');
+  const select = document.getElementById('fc22-unit-filter');
+  const count = document.getElementById('fc22-count');
+  const sections = Array.from(document.querySelectorAll('.fc22-unit'));
+  const cards = Array.from(document.querySelectorAll('.fc22-card'));
+  const normalize = str => String(str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+
+  // A mesma preferência de leitura da página da aula.
+  let theme = null;
+  try { theme = localStorage.getItem('sociologia22:tema'); } catch (_) {}
+  if (theme === 'dark') root.dataset.theme = 'dark';
+  function renderTheme() {
+    const dark = root.dataset.theme === 'dark';
+    toggle.setAttribute('aria-pressed', String(dark));
+    toggle.textContent = dark ? 'Modo claro' : 'Modo escuro';
+  }
+  toggle.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('sociologia22:tema', root.dataset.theme); } catch (_) {}
+    renderTheme();
+  });
+  renderTheme();
+
+  // Pesquisa procura também as explicações e os dois exemplos de cada cartão.
+  function refresh() {
+    const query = normalize(search.value.trim());
+    const group = select.value;
+    let visible = 0;
+    for (const section of sections) {
+      const groupMatches = group === 'all' || section.id === 'unidade-' + group;
+      let inGroup = 0;
+      for (const card of section.querySelectorAll('.fc22-card')) {
+        const match = groupMatches && (!query || normalize(card.textContent).includes(query));
+        card.hidden = !match;
+        if (match) { visible += 1; inGroup += 1; }
+      }
+      section.hidden = inGroup === 0;
+    }
+    count.textContent = visible + (visible === 1 ? ' cartão encontrado' : ' cartões encontrados');
+    document.getElementById('fc22-empty').hidden = visible > 0;
+  }
+  search.addEventListener('input', refresh);
+  select.addEventListener('change', refresh);
+  refresh();
+})();
+</script>
+</body>
+</html>

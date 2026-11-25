@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Quiz interativo de Sociologia I, aula 2.2: instituições, socialização, relações e interação social, fontes históricas e estatística. Dez questões comentadas, quatro alternativas, 30 segundos e até mil pontos por acerto." name="description"/>
+<title>Quiz | Relações indivíduo-sociedade | Sociologia I</title>
+<style>
+   /* QUIZ RELAÇÕES INDIVÍDUO-SOCIEDADE | MESMA MECÂNICA DO MODELO */
+/* ================================================================
+   QUIZ — RELAÇÕES INDIVÍDUO-SOCIEDADE
+   01. PALETA E CONFIGURAÇÕES GERAIS
+   Para modificar a identidade visual, edite as variáveis abaixo.
+   ================================================================ */
+:root {
+  --ink: #182529;
+  --muted: #586e68;
+  --bg: #f6f4ef;
+  --paper: #fffdf9;
+  --dark: #172e2b;
+  --deep: #26483e;
+  --line: #d8ded5;
+  --accent: #ba7d57;
+  --answer1: #ac3346;
+  --answer2: #206a9a;
+  --answer3: #956700;
+  --answer4: #28734a;
+  --shadow: 0 20px 48px #24392d14;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+button, a {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid #b88255;
+  outline-offset: 3px;
+}
+[hidden] {
+  display: none !important;
+}
+/* 02. CABEÇALHO E NAVEGAÇÃO */
+.top {
+  background: #f9f7f2;
+  border-bottom: 1px solid var(--line);
+}
+.topin {
+  max-width: 1180px;
+  padding: 12px 24px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 730;
+  color: #253b34;
+  text-decoration: none;
+  letter-spacing: .055em;
+  font-size: 12px;
+}
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #253b34;
+  font: 19px Georgia, serif;
+  letter-spacing: 0;
+}
+.toplinks {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.toplinks a {
+  padding: 7px 12px;
+  font-weight: 750;
+  font-size: 12px;
+  color: #56665f;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.toplinks a:hover {
+  background: #e2e8dd;
+}
+.toplinks .selected, .toplinks .selected:hover {
+  background: #29483f;
+  color: #fff;
+}
+.muted {
+  color: #62716b;
+}
+/* 03. INTRODUÇÃO, TEXTO E BOTÕES */
+.main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 24px 65px;
+  min-height: calc(100vh - 130px);
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a77551;
+}
+.display {
+  font: 400 clamp(2.7rem, 6.6vw, 5.5rem)/1.06 Georgia, "Times New Roman", serif;
+  letter-spacing: -.04em;
+  margin: 14px 0 20px;
+}
+.display em {
+  font-style: normal;
+  color: #ddb28b;
+}
+.intro {
+  background: var(--dark);
+  color: #f9f4e9;
+  padding: clamp(32px, 6vw, 70px);
+  position: relative;
+  overflow: hidden;
+}
+.intro::after {
+  content: "J";
+  font: 350px Georgia, serif;
+  position: absolute;
+  right: -8px;
+  bottom: -145px;
+  color: #ffffff06;
+  pointer-events: none;
+}
+.intro > * {
+  position: relative;
+  z-index: 1;
+}
+.intro .eyebrow {
+  color: #e5bc90;
+}
+.intro p {
+  color: #e4eae4;
+  max-width: 690px;
+  font-size: 18px;
+}
+.intro .display {
+  max-width: 800px;
+}
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.meta span {
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border: 1px solid #78908675;
+  padding: 8px 12px;
+  color: #ebeee3;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 23px;
+  border: 1px solid #d4ab7e;
+  background: #d4ab7e;
+  color: #1c332a;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 3px;
+  gap: 10px;
+}
+.btn:hover {
+  filter: brightness(.95);
+}
+.btn.ghost {
+  background: transparent;
+  color: #f7eee4;
+  border-color: #91a59c;
+}
+.btn.dark {
+  background: #29483f;
+  border-color: #29483f;
+  color: white;
+}
+.btn.dark:hover {
+  background: #385c51;
+}
+.note {
+  background: #e8ede5;
+  border-left: 3px solid #5e7b65;
+  padding: 19px 23px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.note strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.note p {
+  margin: 0;
+}
+/* 04. JOGO, CRONÔMETRO E PROGRESSO */
+.play {
+  overflow: hidden;
+}
+.gamehead {
+  background: #203934;
+  color: #fff;
+  padding: 25px 30px 21px;
+}
+.gamehead.timing {
+  background: #213f38;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.counter, .scoresmall {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 750;
+  color: #e5dbcb;
+}
+.scorebig {
+  font: 400 24px Georgia, serif;
+  color: #fff;
+}
+.progressbar {
+  height: 6px;
+  border-radius: 100px;
+  background: #466159;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.progressbar > span {
+  display: block;
+  height: 100%;
+  background: #d6ba91;
+  width: 0%;
+  transition: width .24s linear;
+}
+.timerset {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+.clockbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.clock {
+  background: #fbfaf4;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: #18372c;
+  font: 700 28px Georgia, serif;
+  font-variant-numeric: tabular-nums;
+  border: 5px solid #e4e6d9;
+}
+.clock.low {
+  color: #a13f38;
+}
+.clockbar {
+  height: 9px;
+  background: #cbd2c9;
+  flex: 1;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.clockbar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #85a18d;
+  transition: width .12s linear, background .12s;
+}
+.clockbar span.low {
+  background: #bc6b58;
+}
+.prompt {
+  padding: 32px 30px 23px;
+}
+.kicker {
+  font-size: 12px;
+  font-weight: 780;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: #9a6448;
+}
+.question {
+  font: 400 clamp(23px, 3.5vw, 36px)/1.2 Georgia, serif;
+  margin: 15px 0 10px;
+  letter-spacing: -.019em;
+  max-width: 920px;
+  scroll-margin-top: 22px;
+}
+.select-hint {
+  font-size: 13px;
+  color: #68756f;
+  margin: 0;
+}
+.reading {
+  padding: 0 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  background: var(--paper);
+}
+.reading .btn {
+  min-height: 55px;
+  font-size: 16px;
+  padding: 15px 24px;
+}
+.reading-caption {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 370px;
+}
+/* 05. QUATRO ALTERNATIVAS COLORIDAS */
+.answers {
+  padding: 0 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.answer {
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+  color: #fff;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 15px 18px;
+  font-weight: 730;
+  font-size: 16px;
+  line-height: 1.37;
+  transition: transform .12s ease, filter .12s ease, border-color .12s ease;
+}
+.answer:hover:not(:disabled) {
+  filter: brightness(1.075);
+  transform: translateY(-2px);
+}
+.answer:disabled {
+  cursor: default;
+}
+.answer:nth-child(1) {
+  background: var(--answer1);
+}
+.answer:nth-child(2) {
+  background: var(--answer2);
+}
+.answer:nth-child(3) {
+  background: var(--answer3);
+}
+.answer:nth-child(4) {
+  background: var(--answer4);
+}
+.letter {
+  display: grid;
+  place-items: center;
+  flex: 0 0 41px;
+  height: 41px;
+  border: 2px solid #ffffff9a;
+  border-radius: 4px;
+  font: 700 21px Georgia, serif;
+}
+.answer.correct {
+  border-color: #e7e7b8;
+  box-shadow: inset 0 0 0 2px #e7e7b8;
+}
+.answer.wrong {
+  opacity: .57;
+}
+.answer.notpicked {
+  opacity: .45;
+}
+.answer.correct .letter::after {
+  content: " ✓";
+  font: 700 15px system-ui;
+}
+/* 06. RESPOSTA, PONTUAÇÃO E GABARITO COMENTADO */
+.feedback {
+  padding: 22px 30px 30px;
+  background: #eef0e7;
+  border-top: 1px solid #dce1d6;
+}
+.feedbackline {
+  font: 400 25px Georgia, serif;
+  margin: 0 0 8px;
+}
+.feedbackline.good {
+  color: #255c43;
+}
+.feedbackline.bad {
+  color: #9b4544;
+}
+.feedback p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  max-width: 850px;
+}
+.feedback .row {
+  align-items: end;
+}
+.feedback .earned {
+  font: 400 23px Georgia, serif;
+}
+.feedback .earned small {
+  font: 600 11px system-ui;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: block;
+}
+.feedback details {
+  margin: 0 0 16px;
+  border-left: 3px solid #8a9b7c;
+  padding: 3px 0 3px 14px;
+}
+.feedback summary {
+  cursor: pointer;
+  font-weight: 720;
+  font-size: 14px;
+}
+.feedback ul {
+  padding-left: 19px;
+  margin: 10px 0 0;
+}
+.feedback li {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 760px;
+  margin: 25px 0;
+}
+.stat {
+  background: #fffdf6;
+  border: 1px solid #536b59;
+  padding: 17px;
+}
+.stat strong {
+  display: block;
+  font: 400 36px Georgia, serif;
+}
+.stat span {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 750;
+  letter-spacing: .08em;
+}
+.end {
+  padding: clamp(28px, 5vw, 56px);
+}
+.end h1 {
+  font: 400 clamp(2.8rem, 7vw, 4.8rem)/1 Georgia, serif;
+  margin: 16px 0;
+}
+.end p {
+  max-width: 780px;
+}
+.end .btn {
+  margin: 6px 10px 8px 0;
+}
+.review {
+  margin: 28px 0 0;
+}
+.review h2 {
+  font: 400 29px Georgia, serif;
+  margin: 0 0 16px;
+}
+.review details {
+  border: 1px solid #d6dfd5;
+  background: #fffefa;
+  margin: 8px 0;
+}
+.review summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 730;
+  padding: 14px 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.review .exp {
+  padding: 0 17px 16px;
+  font-size: 14px;
+}
+.review .exp p {
+  margin: 7px 0;
+}
+.review .exp strong {
+  color: #315944;
+}
+.review ul {
+  padding-left: 22px;
+}
+.review li {
+  margin: 8px 0;
+}
+.review li[data-state="correct"] {
+  color: #285b41;
+}
+.review li[data-state="chosen-wrong"] {
+  color: #9b4544;
+}
+.footer {
+  padding: 25px 24px;
+  background: #172b27;
+  color: #c9d5cd;
+  font-size: 12px;
+}
+.footin {
+  max-width: 1080px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footer a {
+  color: #f0d3ae;
+}
+/* 07. RESPONSIVIDADE E MOVIMENTO REDUZIDO */
+@media (max-width: 650px) {
+  .main {
+    padding: 18px 12px 45px;
+  }
+  .topin {
+    padding: 10px 12px;
+  }
+  .intro {
+    padding: 35px 24px;
+  }
+  .intro .display {
+    font-size: clamp(2.4rem, 10vw, 3.9rem);
+  }
+  .gamehead {
+    padding: 20px 17px;
+  }
+  .prompt {
+    padding: 24px 18px 19px;
+  }
+  .answers {
+    padding: 0 15px 18px;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .answer {
+    min-height: 81px;
+    padding: 11px 13px;
+    font-size: 15px;
+  }
+  .reading {
+    padding: 0 18px 23px;
+    display: block;
+  }
+  .reading .btn {
+    width: 100%;
+  }
+  .reading-caption {
+    margin: 12px 0 0;
+  }
+  .clock {
+    height: 58px;
+    width: 58px;
+    font-size: 23px;
+  }
+  .feedback {
+    padding: 21px 18px;
+  }
+  .end {
+    padding: 29px 21px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand {
+    letter-spacing: 0;
+    font-size: 11px;
+  }
+  .toplinks a {
+    padding: 6px 7px;
+  }
+  .note {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .toplinks {
+    gap: 1px;
+  }
+  .toplinks a {
+    font-size: 11px;
+  }
+  .answer {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .answer, .progressbar > span, .clockbar span {
+    transition: none !important;
+  }
+}
+@media print {
+  .top, .footer, .btn, .clockbar, .clockbox, .answers, .gamehead {
+    display: none !important;
+  }
+  .main {
+    max-width: 100%;
+  }
+  .intro {
+    color: #111;
+    background: #fff;
+  }
+  .intro p {
+    color: #222;
+  }
+  .review details {
+    break-inside: avoid;
+  }
+  .review .exp {
+    display: block !important;
+  }
+}
+
+/* ===================================================================
+   08. IDENTIDADE VISUAL | SOCIOLOGIA I · AULA 2.2
+   Personalização localizada do modelo 1.1.
+   A abertura utiliza BORDÔ, em vez do verde-musgo.
+   Para mudar apenas a cor inicial: ajuste --entry-wine.
+   O jogo preserva as quatro cores das alternativas do modelo.
+   =================================================================== */
+:root {
+  --ink:#182c27; --muted:#615c54;
+  --bg:#f5f0e6; --paper:#fffaf1;
+  --dark:#193b30; --deep:#285447;
+  --line:#cec3ae; --accent:#ad8051;
+  --entry-wine:#80382f;
+  --answer1:#9a3940; --answer2:#276184;
+  --answer3:#95702b; --answer4:#31724e;
+}
+.intro { background:var(--entry-wine); color:#fffaf1; }
+.intro::after { content:'2.2'; color:#ffffff0c; font-size:260px; right:-7px; bottom:-98px; }
+.intro .eyebrow { color:#f6d3a4; }
+.intro .display { font-size:clamp(2.5rem,5.8vw,5.1rem); max-width:850px; overflow-wrap:break-word; }
+.intro .display em { color:#f4d4a7; }
+.intro p { color:#fff6eb; }
+.intro .meta span { color:#fff8ed; border-color:#f5e4cf85; }
+.intro .btn:not(.ghost) { background:#f3d0a2; border-color:#f3d0a2; color:#3d2420; }
+.intro .btn.ghost { border-color:#f1d6c5; color:#fff; }
+.note { background:#eee5d8; border-left-color:var(--entry-wine); }
+.eyebrow,.kicker { color:#873d31; }
+.intro .eyebrow { color:#f6d3a4; }
+.feedbackline.bad { color:#873d31; }
+.toplinks .selected,.toplinks .selected:hover { background:#193b30; color:#fff; }
+@media (max-width:650px) {
+ .intro .display { font-size:clamp(2.2rem,9vw,3.6rem); }
+ .intro::after { font-size:170px; bottom:-65px; }
+}
+</style>
+</head>
+<body>
+<!-- 08. CABEÇALHO DO SITE E LINKS PARA A AULA -->
+<header class="top">
+<div class="topin">
+<a class="brand" href="S-I-2-2-relacoes_individuo_sociedade_aula.html">
+<span aria-hidden="true" class="stamp">
+      S
+     </span>
+<span>
+      DICIONÁRIO PARA NÃO SER TROUXA
+      <br/>
+<span class="muted">
+       Prof. Dr. Eliaquim Timóteo
+      </span>
+</span>
+</a>
+<nav aria-label="Navegação da aula" class="toplinks"><a href="S-I-2-2-relacoes_individuo_sociedade_aula.html">Texto da aula</a><a href="S-I-2-2-relacoes_individuo_sociedade_aula.html#conceitos">Conceitos</a><a aria-current="page" class="selected" href="S-I-2-2-relacoes_individuo_sociedade_quiz.html">Quiz cronometrado</a></nav>
+</div>
+</header>
+<main class="main">
+<!-- 09. TELA DE APRESENTAÇÃO -->
+<section class="card intro" id="start">
+<div class="eyebrow">SOCIOLOGIA I · 1ª SÉRIE · QUIZ INTERATIVO · AULA 2.2</div>
+<h1 aria-label="Relações sociais: indivíduo e sociedade" class="display">Relações sociais: <em>indivíduo e sociedade</em></h1>
+<p>Instituições, processos de socialização, relações e interação social. Analise situações cotidianas, documentos históricos e dados de pesquisa.</p>
+<div class="meta">
+<span>10 questões</span>
+<span>30 segundos por questão</span>
+<span>Até 1.000 pontos por acerto</span>
+</div>
+<p>Leia cada pergunta com atenção. O cronômetro começa somente quando você selecionar “Ver alternativas e iniciar 30 s”. Depois de responder, examine a explicação sociológica antes de avançar.</p>
+<button class="btn" id="startBtn" type="button">
+     Começar quiz
+     <span aria-hidden="true">
+      →
+     </span>
+</button>
+</section>
+<section class="note" id="introNote">
+<strong>Como funciona a pontuação?</strong>
+<p>Cada resposta correta vale de 500 a 1.000 pontos, conforme o tempo disponível no momento do acerto. Respostas incorretas ou não respondidas valem zero. Ao final, consulte o gabarito detalhado de todas as alternativas.</p>
+</section>
+<!-- 10. ETAPAS DO JOGO: LEITURA, RESPOSTA E COMENTÁRIO -->
+<section aria-label="Questionário de Sociologia" class="card play" hidden="" id="game">
+<div class="gamehead">
+<div class="row">
+<div>
+<div class="counter" id="counter">
+        Questão 1 de 10
+       </div>
+<div class="scorebig" id="scoreTop">
+        0 pontos
+       </div>
+</div>
+<div class="scoresmall" id="statusTop">
+       Acertos: 0
+      </div>
+</div>
+<div aria-label="Progresso do quiz" aria-valuemax="10" aria-valuemin="0" aria-valuenow="0" class="progressbar" id="progressContainer" role="progressbar">
+<span id="progress">
+</span>
+</div>
+<div class="timerset" hidden="" id="timerRow">
+<div class="clockbox">
+<div aria-label="Tempo restante, em segundos" class="clock" id="seconds" role="timer">
+        30
+       </div>
+</div>
+<div aria-hidden="true" class="clockbar">
+<span id="clockFill">
+</span>
+</div>
+</div>
+</div>
+<div class="prompt">
+<div class="kicker" id="topic">Instituições sociais</div>
+<h2 class="question" id="question" tabindex="-1">
+</h2>
+<p class="select-hint" id="stageHint">
+</p>
+</div>
+<div class="reading" id="readingStage">
+<button class="btn dark" id="revealBtn" type="button">
+      Ver alternativas e iniciar 30 s →
+     </button>
+<span class="reading-caption">
+      Leia o enunciado antes de começar. O cronômetro ainda não está funcionando.
+     </span>
+</div>
+<div aria-label="Alternativas de resposta" class="answers" hidden="" id="answers" role="group">
+</div>
+<div aria-live="polite" class="feedback" hidden="" id="feedback">
+<h3 class="feedbackline" id="feedbackTitle">
+</h3>
+<p id="feedbackText">
+</p>
+<details id="currentReasons">
+<summary>
+       Por que as outras alternativas estão incorretas?
+      </summary>
+<ul id="reasonsList">
+</ul>
+</details>
+<div class="row">
+<div class="earned">
+<small>
+        Pontos nesta questão
+       </small>
+<span id="earned">
+        0
+       </span>
+</div>
+<button class="btn dark" id="nextBtn" type="button">
+       Próxima pergunta →
+      </button>
+</div>
+</div>
+</section>
+<!-- 11. RESULTADO E GABARITO DETALHADO -->
+<section class="card end" hidden="" id="end">
+<div class="eyebrow">RESULTADO · SOCIOLOGIA I · AULA 2.2</div>
+<h1 id="endTitle">
+     Quiz concluído.
+    </h1>
+<p id="endMessage">
+</p>
+<div class="stats">
+<div class="stat">
+<strong id="total">
+       0
+      </strong>
+<span>
+       Pontos
+      </span>
+</div>
+<div class="stat">
+<strong id="hits">
+       0/10
+      </strong>
+<span>
+       Acertos
+      </span>
+</div>
+<div class="stat">
+<strong id="rate">
+       0%
+      </strong>
+<span>
+       Aproveitamento
+      </span>
+</div>
+</div>
+<button class="btn dark" id="restartBtn" type="button">
+     Jogar novamente
+    </button>
+<a class="btn dark" href="S-I-2-2-relacoes_individuo_sociedade_aula.html">Voltar à aula</a>
+<div class="review">
+<h2>
+      Gabarito comentado
+     </h2>
+<p>
+      Consulte a justificativa da resposta correta e as explicações das demais alternativas.
+     </p>
+<div id="reviewList">
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footin">
+<span>Dicionário para não ser trouxa · Relações indivíduo-sociedade · Sociologia I · Aula 2.2</span>
+<a href="S-I-2-2-relacoes_individuo_sociedade_aula.html">Retornar ao texto da aula</a>
+</div>
+</footer>
+<!-- 12. DADOS DO QUIZ E INTERAÇÕES EM JAVASCRIPT -->
+<script>
+   "use strict";
+
+/* ================================================================
+   13. MATRIZ DE QUESTÕES | AULA 2.2
+   Cada objeto contém: area, text, choices, correct, explain e reasons.
+   O índice correct começa em 0 e aponta para a resposta correta.
+   reasons[i] explica a alternativa choices[i].
+   Para atualizar o conteúdo, edite somente a lista QUESTIONS.
+   ================================================================ */
+const QUESTIONS = [
+  {
+    "area": "Instituições sociais · escola",
+    "text": "Uma escola muda de prédio, mas mantém currículos, avaliações e regras de convivência. O que isso permite compreender sobre a instituição escolar?",
+    "choices": [
+      "A instituição escolar se define sobretudo pela continuidade de seu endereço e de suas instalações.",
+      "As práticas escolares só constituem uma instituição quando todos concordam com as regras.",
+      "A instituição reúne normas, práticas e expectativas que não se reduzem ao edifício.",
+      "A organização escolar depende apenas das escolhas individuais feitas a cada dia."
+    ],
+    "correct": 2,
+    "explain": "A escola é uma instituição social porque organiza práticas, posições, normas e expectativas com continuidade histórica. Sua existência não se confunde com o prédio onde as atividades ocorrem.",
+    "reasons": [
+      "O prédio é um espaço material de funcionamento, mas não define sozinho a instituição escolar.",
+      "As instituições podem envolver divergências, negociações e conflitos sobre suas regras.",
+      "A continuidade institucional envolve práticas, normas, posições e expectativas que ultrapassam a estrutura física.",
+      "Decisões individuais participam da vida escolar, mas não explicam isoladamente suas regras e sua organização."
+    ]
+  },
+  {
+    "area": "Instituições sociais · famílias",
+    "text": "Uma pesquisa encontra diferentes configurações familiares em épocas e localidades distintas. Qual interpretação corresponde ao estudo sociológico das instituições?",
+    "choices": [
+      "As famílias apresentam formas historicamente variadas de cuidado, convivência e pertencimento.",
+      "Uma única configuração familiar deve ser usada como padrão para avaliar todas as demais.",
+      "A diversidade de arranjos demonstra que as famílias deixaram de exercer funções sociais.",
+      "As diferenças familiares decorrem exclusivamente de preferências pessoais desvinculadas da história."
+    ],
+    "correct": 0,
+    "explain": "A Sociologia considera a diversidade das configurações familiares e suas transformações históricas. Instituições organizam práticas e expectativas sem precisar reproduzir um modelo único.",
+    "reasons": [
+      "A variedade de arranjos pode ser investigada considerando relações de cuidado, pertencimento e contextos históricos.",
+      "Eleger um único arranjo como medida universal ignora a diversidade histórica e social das famílias.",
+      "Mudanças de configuração não eliminam necessariamente práticas de cuidado e pertencimento.",
+      "Escolhas pessoais participam das trajetórias familiares, mas se relacionam a condições e expectativas sociais."
+    ]
+  },
+  {
+    "area": "Socialização · primeiras experiências",
+    "text": "Uma criança aprende a língua usada por pessoas próximas e suas primeiras maneiras de conviver. Segundo Berger e Luckmann, esse exemplo remete principalmente a qual processo?",
+    "choices": [
+      "Aprendizagem de papéis especializados em uma instituição profissional já frequentada.",
+      "Formação de vínculos limitada às mensagens trocadas em ambientes digitais.",
+      "Mudança institucional decorrente da publicação de uma nova norma escolar.",
+      "Socialização primária, ligada às primeiras experiências de inserção na vida social."
+    ],
+    "correct": 3,
+    "explain": "Berger e Luckmann chamam de socialização primária o processo inicial de inserção no mundo social, marcado pela aprendizagem de linguagem e das primeiras referências de convivência.",
+    "reasons": [
+      "A aprendizagem de papéis especializados em outros espaços institucionais é mais característica da socialização secundária.",
+      "A comunicação digital é uma forma possível de interação, mas não define o processo inicial descrito.",
+      "A criação de uma regra é um acontecimento institucional diferente da aprendizagem inicial da criança.",
+      "O aprendizado da linguagem e das referências iniciais de convivência caracteriza a socialização primária."
+    ]
+  },
+  {
+    "area": "Socialização · novos espaços",
+    "text": "Ao ingressar em uma nova escola, um estudante aprende horários, regras de trabalho coletivo e rotinas de estudo. Qual conceito ajuda a interpretar esse aprendizado?",
+    "choices": [
+      "A socialização primária, porque toda aprendizagem ocorre exclusivamente na primeira infância.",
+      "A socialização secundária, associada à participação em novos espaços e papéis sociais.",
+      "A inexistência de socialização, pois o estudante já aprendeu a falar antes de entrar na escola.",
+      "A interrupção das relações sociais, pois a mudança de instituição elimina vínculos anteriores."
+    ],
+    "correct": 1,
+    "explain": "A socialização secundária envolve conhecimentos, práticas e papéis aprendidos em novos ambientes sociais. Não implica que a socialização primária termine ou que vínculos anteriores desapareçam.",
+    "reasons": [
+      "A socialização primária não abrange toda e qualquer aprendizagem posterior nem se restringe mecanicamente a uma idade.",
+      "O ingresso em novo contexto escolar exige aprender práticas, expectativas e papéis vinculados à instituição.",
+      "A socialização continua ao longo da vida, inclusive depois da aquisição da linguagem.",
+      "Novas formas de participação podem coexistir com relações sociais estabelecidas anteriormente."
+    ]
+  },
+  {
+    "area": "Socialização · aprendizagem entre gerações",
+    "text": "Uma adolescente ensina a avó a utilizar um aplicativo de mensagens. Qual interpretação sociológica é mais adequada?",
+    "choices": [
+      "A circulação de conhecimentos pode ocorrer dos mais jovens para os mais velhos, em relações recíprocas.",
+      "A situação prova que os adultos não participam mais da socialização das novas gerações.",
+      "O ensino do aplicativo não envolve socialização, por tratar de uma habilidade tecnológica.",
+      "A aprendizagem digital extingue todas as diferenças de autoridade e experiência entre gerações."
+    ],
+    "correct": 0,
+    "explain": "A socialização envolve aprendizagens e reelaborações ao longo da vida, inclusive entre gerações. O conhecimento tecnológico pode circular em diferentes direções, sem eliminar outras diferenças sociais.",
+    "reasons": [
+      "Aprendizagens sociais não seguem obrigatoriamente uma direção única entre adultos e jovens.",
+      "O exemplo não autoriza concluir que adultos deixaram de transmitir conhecimentos ou referências.",
+      "Aprender práticas de comunicação digital também envolve conhecimentos e modos de convivência.",
+      "O domínio de uma tecnologia não apaga por si só relações familiares de autoridade ou experiência."
+    ]
+  },
+  {
+    "area": "Relação social e interação social",
+    "text": "Duas pessoas mantêm uma amizade há anos e trocam mensagens durante uma tarde. Como distinguir sociologicamente esses acontecimentos?",
+    "choices": [
+      "A amizade e a conversa são apenas interações momentâneas, sem expectativas ao longo do tempo.",
+      "As mensagens constituem uma instituição, enquanto a amizade é um processo de socialização primária.",
+      "A amizade é uma relação social; a conversa é uma interação que participa da continuidade do vínculo.",
+      "A relação social só existe durante o encontro presencial, não entre pessoas fisicamente distantes."
+    ],
+    "correct": 2,
+    "explain": "A amizade pode organizar expectativas recíprocas relativamente duradouras. Uma conversa é uma situação concreta de interação social que pode manter, modificar ou tensionar essa relação.",
+    "reasons": [
+      "A amizade pode persistir entre encontros, com expectativas de reconhecimento e continuidade.",
+      "Uma troca de mensagens não constitui, por si, uma instituição social; e uma amizade não equivale à socialização primária.",
+      "A distinção reconhece o vínculo relativamente duradouro e o episódio concreto de comunicação.",
+      "Relações sociais podem continuar sem presença física, inclusive mediante expectativas e comunicação digital."
+    ]
+  },
+  {
+    "area": "Max Weber · reciprocidade e conflito",
+    "text": "Duas equipes rivais ajustam suas estratégias considerando o que esperam que a outra faça. Por que essa rivalidade pode constituir uma relação social?",
+    "choices": [
+      "Porque relações sociais pressupõem necessariamente cooperação e concordância entre participantes.",
+      "Porque apenas interações com diálogo presencial podem orientar comportamentos recíprocos.",
+      "Porque toda concorrência elimina expectativas compartilhadas e impede a orientação mútua.",
+      "Porque as condutas de cada equipe se orientam pelas ações esperadas da outra, mesmo no conflito."
+    ],
+    "correct": 3,
+    "explain": "Para Max Weber, a relação social envolve orientações recíprocas de conduta. Ela pode assumir formas de cooperação, autoridade, concorrência ou conflito, sem depender de concordância.",
+    "reasons": [
+      "A cooperação é uma possibilidade de relação social, mas a concorrência e o conflito também podem envolvê-la.",
+      "A orientação recíproca não exige necessariamente uma conversa presencial entre os participantes.",
+      "Uma rivalidade pode organizar expectativas persistentes sobre as condutas da outra parte.",
+      "A antecipação de decisões da equipe adversária mostra que as ações se referem umas às outras."
+    ]
+  },
+  {
+    "area": "Erving Goffman · apresentação de si",
+    "text": "Uma pessoa fala de forma diferente em uma entrevista de emprego e em uma conversa com amigos. Qual leitura se aproxima da perspectiva de Erving Goffman?",
+    "choices": [
+      "As diferenças provam que a pessoa não possui vínculos sociais estáveis em nenhum dos ambientes.",
+      "As situações envolvem expectativas distintas que influenciam a apresentação de si.",
+      "Uma das maneiras de falar deve ser necessariamente falsa, pois a identidade é sempre invariável.",
+      "As normas de convivência deixam de ter efeito quando a interação ocorre entre amigos."
+    ],
+    "correct": 1,
+    "explain": "Goffman investigou a apresentação de si e a organização das interações. Modos de falar, gestos e comportamentos se ajustam a situações e expectativas, sem que isso implique falsidade automática.",
+    "reasons": [
+      "Variar a maneira de agir entre situações não comprova ausência de vínculos ou identidades.",
+      "Diferentes encontros mobilizam expectativas e formas de apresentação de si socialmente situadas.",
+      "A mudança de registro não autoriza classificar uma das formas de expressão como necessariamente falsa.",
+      "Relações de amizade também envolvem expectativas, regras implícitas e interpretações recíprocas."
+    ]
+  },
+  {
+    "area": "Metodologia · fotografia e decreto histórico",
+    "text": "Uma pesquisa compara o Decreto nº 7.566, de 1909, com fotografias de uma escola de aprendizes artífices em 1910. Qual procedimento interpreta adequadamente essas fontes?",
+    "choices": [
+      "Tratar a fotografia como retrato completo da vida escolar, incluindo sentimentos não registrados.",
+      "Usar o decreto para demonstrar que todas as regras foram aplicadas de modo idêntico nas escolas.",
+      "Confrontar normas prescritas e registros visuais, reconhecendo o que cada documento permite investigar.",
+      "Descartar a legislação, pois apenas fotografias podem fornecer informações sobre instituições históricas."
+    ],
+    "correct": 2,
+    "explain": "O decreto é uma fonte para estudar finalidades e regras prescritas; as fotografias mostram recortes de espaços e práticas. A comparação amplia a análise, mas não revela tudo sobre as experiências dos envolvidos.",
+    "reasons": [
+      "Uma imagem registra um enquadramento e não demonstra, sozinha, sentimentos ou acontecimentos fora da cena.",
+      "O texto normativo informa prescrições; sua aplicação concreta precisa ser investigada com outras evidências.",
+      "A leitura crítica distingue tipos de documento, suas possibilidades e seus limites explicativos.",
+      "A legislação é uma fonte histórica pertinente para examinar a formulação institucional de normas e objetivos."
+    ]
+  },
+  {
+    "area": "TIC Kids Online Brasil 2025 · leitura de dados",
+    "text": "Na TIC Kids Online Brasil 2025, 37% dos usuários de Internet de 15 a 17 anos disseram ajudar pais ou responsáveis on-line todos os dias ou quase todos os dias. Qual conclusão respeita esse indicador?",
+    "choices": [
+      "O percentual refere-se aos adolescentes usuários de Internet de 15 a 17 anos pesquisados, nessa frequência de ajuda.",
+      "O percentual corresponde a 37% de todas as pessoas brasileiras, independentemente de idade ou acesso à Internet.",
+      "O dado demonstra que 37% dos familiares aprendem exclusivamente com os adolescentes, sem outras fontes.",
+      "O resultado comprova que a maioria dos adolescentes de todas as idades ajuda diariamente seus responsáveis."
+    ],
+    "correct": 0,
+    "explain": "O indicador refere-se aos usuários de Internet de 15 a 17 anos pesquisados e à frequência diária ou quase diária de ajuda. A interpretação deve respeitar população, comportamento medido e limites de generalização.",
+    "reasons": [
+      "O dado tem um universo e uma frequência definidos, que devem ser mantidos na interpretação.",
+      "A pesquisa mencionada não utiliza toda a população brasileira como denominador desse indicador.",
+      "A frequência de ajuda não mede exclusividade das fontes de aprendizagem dos familiares.",
+      "O recorte etário é de 15 a 17 anos e 37% não representa uma maioria nem todas as idades."
+    ]
+  }
+];
+
+
+/* 14. CONFIGURAÇÃO DO TEMPO E DA PONTUAÇÃO */
+const TIME = 30;                  // segundos por pergunta
+const POINTS_MIN = 500;          // acerto no final do tempo
+const POINTS_MAX = 1000;         // acerto imediato
+const ANSWER_LETTERS = ["A", "B", "C", "D"];
+
+const el = (id) => document.getElementById(id);
+const fmt = (n) => new Intl.NumberFormat("pt-BR").format(n);
+let current = 0;
+let total = 0;
+let hits = 0;
+let responses = [];
+let phase = "intro";             // intro, reading, answering, feedback, end
+let deadline = 0;
+let timerId = null;
+let secondsLeft = TIME;
+let order = [];
+
+// Embaralha somente as alternativas, mantendo a ordem temática das questões.
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/* 15. MUDANÇA DE TELA E INÍCIO DA PARTIDA */
+function display(sectionId) {
+  for (const id of ["start", "introNote", "game", "end"]) {
+    el(id).hidden = id !== sectionId && !(sectionId === "start" && id === "introNote");
+  }
+}
+
+function scrollUp() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function begin() {
+  clearInterval(timerId);
+  current = 0;
+  total = 0;
+  hits = 0;
+  responses = [];
+  phase = "reading";
+  order = QUESTIONS.map(q => ({
+    ...q,
+    variant: shuffle(q.choices.map((txt, index) => ({ txt, index })))
+  }));
+  display("game");
+  showQuestion();
+  scrollUp();
+}
+
+/* 16. LEITURA LIVRE, SEM EXIBIÇÃO PREMATURA DE ALTERNATIVAS */
+function updateClock(remaining) {
+  const sec = Math.ceil(remaining);
+  el("seconds").textContent = String(sec);
+  el("seconds").classList.toggle("low", sec <= 10);
+  el("clockFill").style.width = `${remaining / TIME * 100}%`;
+  el("clockFill").classList.toggle("low", sec <= 10);
+}
+
+function showQuestion() {
+  clearInterval(timerId);
+  phase = "reading";
+  secondsLeft = TIME;
+  const q = order[current];
+  el("counter").textContent = `Questão ${current + 1} de ${order.length}`;
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("progress").style.width = `${current / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current));
+  el("topic").textContent = q.area;
+  el("question").textContent = q.text;
+  el("readingStage").hidden = false;
+  el("timerRow").hidden = true;
+  el("answers").hidden = true;
+  el("feedback").hidden = true;
+  el("stageHint").textContent = "";
+  el("answers").replaceChildren();
+  el("game").querySelector(".gamehead").classList.remove("timing");
+  updateClock(TIME);
+  el("question").focus({ preventScroll: true });
+}
+
+/* 17. REVELAÇÃO DAS ALTERNATIVAS E INÍCIO DOS 30 SEGUNDOS */
+function reveal() {
+  if (phase !== "reading") return;
+  phase = "answering";
+  const q = order[current];
+  const box = el("answers");
+  box.replaceChildren();
+  q.variant.forEach(({ txt }, slot) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    button.dataset.slot = String(slot);
+    button.setAttribute("aria-label", `Alternativa ${ANSWER_LETTERS[slot]}: ${txt}`);
+
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.textContent = ANSWER_LETTERS[slot];
+    letter.setAttribute("aria-hidden", "true");
+    const content = document.createElement("span");
+    content.textContent = txt;
+    button.append(letter, content);
+    button.addEventListener("click", () => select(slot));
+    box.appendChild(button);
+  });
+
+  el("readingStage").hidden = true;
+  el("timerRow").hidden = false;
+  box.hidden = false;
+  el("stageHint").textContent = "O cronômetro está em andamento. Responda com um clique ou use as teclas de 1 a 4.";
+  el("game").querySelector(".gamehead").classList.add("timing");
+
+  // performance.now() evita contagem imprecisa causada por atrasos do intervalo.
+  deadline = performance.now() + TIME * 1000;
+  secondsLeft = TIME;
+  updateClock(secondsLeft);
+  timerId = setInterval(tick, 60);
+  box.firstElementChild?.focus({ preventScroll: true });
+  tick();
+}
+
+function tick() {
+  if (phase !== "answering") return;
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  updateClock(secondsLeft);
+  if (secondsLeft <= 0) select(-1);
+}
+
+/* 18. CORREÇÃO E FEEDBACK IMEDIATO */
+function select(slot) {
+  if (phase !== "answering") return;
+  const q = order[current];
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  if (secondsLeft <= 0) slot = -1;
+  phase = "feedback";
+  clearInterval(timerId);
+
+  const correctSlot = q.variant.findIndex(option => option.index === q.correct);
+  const correct = slot === correctSlot;
+  const earned = correct
+    ? Math.min(POINTS_MAX, POINTS_MIN + Math.round((POINTS_MAX - POINTS_MIN) * secondsLeft / TIME))
+    : 0;
+  total += earned;
+  if (correct) hits++;
+
+  responses.push({
+    q, slot, chosenIndex: slot >= 0 ? q.variant[slot].index : -1,
+    correct, earned
+  });
+  Array.from(el("answers").children).forEach((button, i) => {
+    button.disabled = true;
+    button.classList.toggle("correct", i === correctSlot);
+    button.classList.toggle("wrong", i === slot && !correct);
+    button.classList.toggle("notpicked", i !== correctSlot && i !== slot);
+  });
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("stageHint").textContent = "";
+  el("feedback").hidden = false;
+  el("feedbackTitle").className = `feedbackline ${correct ? "good" : "bad"}`;
+  el("feedbackTitle").textContent = correct ? "Resposta correta!" : slot === -1 ? "Tempo esgotado." : "Resposta incorreta.";
+  el("feedbackText").textContent = `Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+  el("earned").textContent = `+ ${fmt(earned)}`;
+
+  const reasonsList = el("reasonsList");
+  reasonsList.replaceChildren();
+  q.reasons.forEach((reason, i) => {
+    if (i === q.correct) return;
+    const li = document.createElement("li");
+    li.textContent = `${q.choices[i]} — ${reason}`;
+    reasonsList.appendChild(li);
+  });
+  el("currentReasons").open = false;
+  el("nextBtn").textContent = current === order.length - 1 ? "Ver resultado →" : "Próxima pergunta →";
+  el("progress").style.width = `${(current + 1) / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current + 1));
+  el("nextBtn").focus({ preventScroll: true });
+}
+
+/* 19. PRÓXIMA QUESTÃO E TELA DE RESULTADOS */
+function next() {
+  if (phase !== "feedback") return;
+  if (current + 1 < order.length) {
+    current++;
+    showQuestion();
+    scrollUp();
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  clearInterval(timerId);
+  phase = "end";
+  display("end");
+  el("total").textContent = fmt(total);
+  el("hits").textContent = `${hits}/${order.length}`;
+  el("rate").textContent = `${Math.round(hits / order.length * 100)}%`;
+  el("endTitle").textContent = hits === order.length ? "Todas as respostas corretas!" : "Quiz concluído.";
+  el("endMessage").textContent = `Você acertou ${hits} de ${order.length} questões e obteve ${fmt(total)} dos ${fmt(order.length * POINTS_MAX)} pontos possíveis. Reveja abaixo o gabarito e as justificativas.`;
+
+  const box = el("reviewList");
+  box.replaceChildren();
+  responses.forEach((entry, i) => {
+    const q = entry.q;
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `${i + 1}. ${q.text}`;
+    const exp = document.createElement("div");
+    exp.className = "exp";
+    const personal = document.createElement("p");
+    personal.textContent = `Sua resposta: ${entry.chosenIndex === -1 ? "Não respondida (tempo esgotado)" : q.choices[entry.chosenIndex]}.`;
+    const answer = document.createElement("p");
+    const b = document.createElement("strong");
+    b.textContent = "Resposta correta: ";
+    answer.append(b, document.createTextNode(q.choices[q.correct]));
+    const explanation = document.createElement("p");
+    explanation.textContent = q.explain;
+    const title = document.createElement("p");
+    const titleStrong = document.createElement("strong");
+    titleStrong.textContent = "Análise das alternativas";
+    title.append(titleStrong);
+    const list = document.createElement("ul");
+    q.choices.forEach((choice, n) => {
+      const li = document.createElement("li");
+      li.dataset.state = n === q.correct ? "correct" : n === entry.chosenIndex ? "chosen-wrong" : "other";
+      li.textContent = `${choice} — ${q.reasons[n]}`;
+      list.appendChild(li);
+    });
+    exp.append(personal, answer, explanation, title, list);
+    details.append(summary, exp);
+    box.appendChild(details);
+  });
+  scrollUp();
+}
+
+/* 20. EVENTOS E ATALHOS DE TECLADO */
+el("startBtn").addEventListener("click", begin);
+el("revealBtn").addEventListener("click", reveal);
+el("nextBtn").addEventListener("click", next);
+el("restartBtn").addEventListener("click", begin);
+document.addEventListener("keydown", event => {
+  if (el("game").hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (phase === "answering" && /^[1-4]$/.test(event.key)) {
+    event.preventDefault();
+    select(Number(event.key) - 1);
+  }
+});
+  </script>
+</body>
+</html>
