@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#f7f5ee" name="theme-color"/>
+<meta content="18 flashcards da aula 1.2 de Sociologia I: teorias sociológicas e modernidade. Definições, mecanismos e dois exemplos por conceito." name="description"/>
+<title>Flashcards da Aula 1.2 | Teorias Sociológicas e Modernidade | Sociologia I</title>
+<style>
+    /* ============================================================
+       01. PALETA CENTRAL E MODO NOTURNO
+       Para trocar a identidade visual, altere as variáveis abaixo.
+       Os cartões usam a paleta editorial das aulas 1.1 e 1.2.
+       ============================================================ */
+    :root {
+      color-scheme:light;
+      --paper:#f7f5ef;
+      --surface:#fffdf7;
+      --ink:#28342f;
+      --muted:#657068;
+      --line:#d7d8cc;
+      --accent:#315746;
+      --accent-fg:#ffffff;
+      --faint:#ebeee7;
+      --dialog-shadow:0 30px 90px rgba(16,34,30,.25);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      --mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+    }
+    html[data-theme="dark"] {
+      color-scheme:dark;
+      --paper:#192421;
+      --surface:#24322d;
+      --ink:#f5f2e7;
+      --muted:#c0c9c1;
+      --line:#42544a;
+      --accent:#c2d8c4;
+      --accent-fg:#1b3027;
+      --faint:#2e4037;
+      --dialog-shadow:0 32px 100px rgba(0,0,0,.57);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5}
+    button,input,select {font:inherit}
+    button {cursor:pointer}
+    button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {outline:3px solid #df8b50;outline-offset:4px}
+    a {color:inherit}
+    .shell {width:min(1360px,calc(100% - 54px));margin-inline:auto}
+    .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link {position:absolute;z-index:50;top:8px;left:8px;transform:translateY(-150%);background:var(--surface);color:var(--ink);padding:10px 16px;border:1px solid var(--line)}
+    .skip-link:focus {transform:none}
+
+    /* 02. CABEÇALHO, IDENTIDADE E CONTEÚDO INTRODUTÓRIO */
+    .topline {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 0 19px;border-bottom:1px solid var(--line)}
+    .brand {font-size:11px;letter-spacing:.095em;font-weight:850;text-transform:uppercase;line-height:1.5}
+    .brand-prof {font-weight:650;letter-spacing:0;text-transform:none}
+    .brand-divider {padding-inline:5px;font-weight:500}
+    .top-actions {display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .top-link,.theme-btn {min-height:39px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);padding:9px 13px;text-decoration:none;font-size:12px;font-weight:740}
+    .top-link:hover,.theme-btn:hover {border-color:var(--accent)}
+    .hero {display:block;padding:40px 0 34px}
+    .eyebrow {display:block;color:var(--accent);font-size:11px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+    .hero h1 {font-family:var(--serif);font-size:clamp(52px,6.1vw,87px);letter-spacing:-.065em;font-weight:600;line-height:1;margin:13px 0 11px}
+    .hero-subtitle {font-family:var(--serif);font-size:clamp(18px,2.2vw,28px);line-height:1.18;max-width:850px;margin:0}
+    .hero-description {max-width:720px;font-size:14px;line-height:1.7;color:var(--muted);margin:17px 0 0}
+    /* 03. PESQUISA E SELEÇÃO DE UNIDADE */
+    .study-toolbar {display:grid;grid-template-columns:minmax(230px,1.4fr) minmax(250px,1fr);gap:13px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:end}
+    .field {display:flex;flex-direction:column;gap:5px;min-width:0}
+    .field label {font-size:10px;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:var(--muted)}
+    .field input,.field select {background:var(--surface);color:var(--ink);width:100%;border:1px solid var(--line);height:44px;border-radius:8px;padding:0 12px;outline-offset:2px;font-size:13px}
+    .study-guide {margin:15px 0 4px;display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted)}
+
+    /* 04. UNIDADES E GRADE SEM VAZIOS DE ABERTURA */
+    .unit-block {margin:44px 0 57px;scroll-margin-top:18px}
+    .unit-block[hidden],.study-card[hidden] {display:none!important}
+    .unit-heading {max-width:1100px;margin:0 auto 22px;border-bottom:1px solid var(--line);padding:0 0 18px}
+    .unit-heading h2 {margin:0}
+    .unit-toggle {width:100%;display:flex;align-items:center;gap:18px;border:0;border-radius:9px;padding:5px 8px 5px 0;background:transparent;color:var(--ink);text-align:left}
+    .unit-toggle:hover {background:var(--faint)}
+    .unit-toggle:focus-visible {outline:3px solid #df8b50;outline-offset:3px}
+    .unit-heading-index {display:grid;place-items:center;flex:none;width:60px;height:60px;border:1px solid var(--line);border-radius:50%;font-family:var(--serif);font-size:23px;font-weight:700;color:var(--accent)}
+    .unit-heading-copy {min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+    .unit-eyebrow {text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+    .unit-heading-label {font-family:var(--serif);font-size:clamp(23px,2.4vw,34px);line-height:1.17;font-weight:550;letter-spacing:-.03em;margin-top:5px}
+    .unit-chevron {margin-left:auto;font-family:var(--sans);font-size:30px;line-height:1;transform:rotate(180deg);transition:transform .18s;flex:none;color:var(--accent)}
+    .unit-toggle[aria-expanded="false"] .unit-chevron {transform:rotate(0deg)}
+    /* Flex com largura calculada mantém três cartões por linha e centraliza as filas incompletas. */
+    .card-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:24px;align-items:flex-start;max-width:1100px;margin-inline:auto}
+    .card-grid > .study-card {flex:0 1 calc((100% - 48px)/3)}
+    .study-card {min-width:0;position:relative;--card-color:#315746;--card-pale:#e9f0e8}
+    .card-trigger {position:relative;display:flex;flex-direction:column;justify-content:space-between;width:100%;height:228px;text-align:left;padding:23px 21px 17px;border:0;color:#fff;background:var(--card-color);transition:transform .17s,box-shadow .17s;isolation:isolate;overflow:visible}
+    .card-trigger:hover {transform:translateY(-3px)}
+    .card-trigger::before {content:"";position:absolute;inset:0 0 auto;height:5px;background:#dfbd8b;opacity:.7}
+    .card-top {position:relative;z-index:1;display:flex;align-items:start;justify-content:space-between;gap:8px}
+    .card-name {position:relative;z-index:1;align-self:stretch;text-align:center;font-family:var(--serif);font-size:clamp(22px,2vw,31px);font-weight:750;letter-spacing:-.035em;line-height:1.1;hyphens:auto;overflow-wrap:break-word;margin:auto 0;padding:15px 0}
+    .card-bottom {position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:10px;font-size:11px;line-height:1.35;font-weight:600;opacity:.9}
+    .card-arrow {font-size:20px;line-height:1}
+    .study-card.variant-soft .card-trigger {border-radius:18px;border:1px solid rgba(255,255,255,.2);box-shadow:0 13px 25px rgba(28,51,43,.17),0 2px 4px rgba(16,34,29,.07)}
+    .study-card.variant-soft .card-trigger::before {border-radius:18px 18px 0 0;background:linear-gradient(90deg,#e5bd7a,#eee2bf);height:5px}
+    .study-card.variant-brutal .card-trigger {border:3px solid #1e2825;border-radius:7px;box-shadow:8px 8px 0 #26362f}
+    .study-card.variant-brutal .card-trigger:hover {transform:translate(-2px,-3px);box-shadow:10px 11px 0 #26362f}
+    .study-card.variant-brutal .card-trigger::before {display:none}
+    .study-card.variant-brutal .card-name {font-family:var(--sans);font-size:clamp(19px,1.9vw,26px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em}
+    .study-card.variant-brutal .card-arrow {border:2px solid currentColor;min-width:29px;height:29px;display:grid;place-items:center;border-radius:2px}
+    .study-card.variant-terminal .card-trigger {background:linear-gradient(140deg,color-mix(in srgb,var(--card-color) 44%,#101f22),#142523);border:1px solid color-mix(in srgb,var(--card-color) 65%,#b3ccbd);border-radius:10px;box-shadow:0 12px 22px rgba(20,47,37,.21);padding-top:42px}
+    .study-card.variant-terminal .card-trigger::before {display:none}
+    .terminal-chrome {display:none}
+    .study-card.variant-terminal .terminal-chrome {position:absolute;inset:0 0 auto;display:flex;gap:5px;align-items:center;height:31px;border-bottom:1px solid #6f8a7b;padding:0 12px}
+    .study-card.variant-terminal .terminal-chrome i {display:block;width:7px;height:7px;border-radius:50%;background:#d6aa81}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(2) {background:#a9c5ab}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(3) {background:#789ca3}
+    .study-card.variant-terminal .card-bottom {font-family:var(--mono)}
+    .study-card.variant-terminal .card-name {font-family:var(--mono);font-size:clamp(18px,1.7vw,24px);font-weight:760;letter-spacing:-.05em}
+    .study-card.variant-terminal .card-arrow {font-family:var(--mono)}
+
+
+    /* ============================================================
+       04-B. EQUILÍBRIO DAS FILEIRAS EM TELAS GRANDES
+       1 cartão: centralizado; 3: uma linha; 8: 4 + 4;
+       5: uma linha com cinco cartões. O número é da unidade,
+       nunca um misto de conceitos de aulas diferentes.
+       ============================================================ */
+    @media(min-width:1201px) {
+      .layout-count-8 {max-width:1220px;gap:20px}
+      .layout-count-8 > .study-card {flex:0 1 calc((100% - 60px)/4)}
+      .layout-count-5 {max-width:1220px;gap:16px}
+      .layout-count-5 > .study-card {flex:0 1 calc((100% - 64px)/5)}
+      .layout-count-5 .card-name {font-size:clamp(21px,1.75vw,27px)}
+      .layout-count-5 .card-trigger {padding-inline:18px}
+      .layout-count-1 > .study-card {flex:0 1 350px}
+    }
+    @media(min-width:1011px) and (max-width:1200px) {
+      .layout-count-8 {max-width:970px;gap:17px}
+      .layout-count-8 > .study-card {flex:0 1 calc((100% - 51px)/4)}
+      .layout-count-5 {max-width:980px;gap:18px}
+      .layout-count-5 > .study-card {flex:0 1 calc((100% - 36px)/3)}
+      .layout-count-1 > .study-card {flex:0 1 350px}
+    }
+    @media(min-width:701px) and (max-width:1010px) {
+      .layout-count-1 > .study-card {flex-basis:min(350px,100%)}
+      .layout-count-3 > .study-card {flex-basis:calc((100% - 44px)/3)}
+      .layout-count-3 {max-width:960px}
+      .layout-count-5 > .study-card {flex-basis:calc((100% - 22px)/2)}
+    }
+    /* Busca e filtros preservam alinhamento central, sem espaços-fantasma. */
+    @media(max-width:700px) and (min-width:521px) {
+      .layout-count-1 > .study-card {flex-basis:min(350px,100%)}
+    }
+
+    /* Alinhar o cabeçalho das unidades largas à própria grade. */
+    @media(min-width:1201px) {
+      #unidade-3 .unit-heading, #unidade-4 .unit-heading {max-width:1220px}
+    }
+    /* 05. VERSO EM PAINEL MODAL: TODOS OS TEXTOS SÃO INTEGRAIS
+       A abertura não desloca a grade e permite leitura acessível. */
+    .card-dialog {position:fixed;border:1px solid var(--line);padding:0;margin:auto;width:min(850px,calc(100vw - 36px));max-height:min(91dvh,980px);border-radius:17px;box-shadow:var(--dialog-shadow);background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+    .card-dialog::backdrop {background:rgba(14,29,25,.78);backdrop-filter:blur(5px)}
+    .dialog-header {background:var(--dialog-accent,#315746);color:#fff;padding:30px 36px 28px;position:relative}
+    .dialog-header::before {content:"";position:absolute;top:0;left:0;right:0;height:5px;background:#e3c79c}
+    .dialog-top {display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.92}
+    .dialog-header h2 {font-family:var(--serif);font-size:clamp(32px,5vw,55px);line-height:1.05;letter-spacing:-.05em;font-weight:650;margin:18px 0 0;overflow-wrap:anywhere}
+    .dialog-subtitle {font-size:12px;margin:12px 0 0;opacity:.86}
+    .reading-content {padding:28px 35px 35px}
+    .reading-section+ .reading-section {margin-top:23px;padding-top:23px;border-top:1px solid var(--line)}
+    .reading-section h3 {font-family:var(--serif);font-size:25px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-weight:700;color:var(--accent)}
+    .reading-section p {font-size:15px;line-height:1.72;margin:0;max-width:75ch;hyphens:auto;text-align:justify;text-justify:inter-word}
+    .reading-examples ol {list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;counter-reset:case}
+    .reading-examples li {position:relative;counter-increment:case;background:var(--faint);border:1px solid var(--line);border-radius:10px;padding:19px 17px 18px;font-size:13px;line-height:1.65;min-width:0;text-align:justify;text-justify:inter-word;hyphens:auto}
+    .reading-examples li::before {content:counter(case,decimal-leading-zero);display:block;color:var(--accent);font-size:10px;letter-spacing:.13em;font-weight:900;margin-bottom:8px}
+    .example-label {font-weight:800;color:var(--ink)}
+    .dialog-footer {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:15px 35px 22px;border-top:1px solid var(--line);background:var(--surface)}
+    .dialog-actions {display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .dialog-action {border-radius:8px;min-height:41px;padding:9px 17px;background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:12px;font-weight:800}
+    .dialog-action.primary {background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+    .empty-state {display:none;border:1px dashed var(--line);border-radius:14px;margin:30px 0;padding:30px;color:var(--muted);text-align:center}
+    .empty-state:not([hidden]) {display:block}
+    .page-footer {border-top:1px solid var(--line);padding:26px 0 50px;display:flex;justify-content:space-between;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:12px;align-items:center}
+    .footer-brand {font-weight:700;letter-spacing:.025em}
+    .page-footer a {color:var(--accent);font-weight:800}
+    [hidden] {display:none!important}
+    /* 06. ADAPTAÇÃO RESPONSIVA E LEITURA JUSTIFICADA */
+    p {text-align:justify;text-justify:inter-word;hyphens:auto}
+    @media(max-width:1010px){
+      .card-grid > .study-card {flex-basis:calc((100% - 22px)/2)}
+      .card-grid {gap:22px;max-width:730px}
+      .unit-heading {max-width:730px}
+    }
+    @media(max-width:800px){
+      .shell{width:min(100% - 32px,1360px)}
+      .hero{padding:30px 0}
+      .study-toolbar{grid-template-columns:1fr 1fr}
+      .card-trigger{height:219px}
+      .reading-content{padding:25px}
+      .dialog-footer{padding-inline:25px}
+    }
+    @media(max-width:520px){
+      .topline{align-items:flex-start;flex-direction:column}
+      .brand{max-width:none}
+      .top-actions{justify-content:flex-start}
+      .hero h1{font-size:clamp(48px,11vw,66px)}
+      .hero-subtitle{font-size:20px}
+      .study-toolbar{grid-template-columns:1fr;gap:10px}
+      .unit-block{margin:34px 0 44px}
+      .unit-toggle{gap:12px}
+      .unit-heading-index{width:47px;height:47px;font-size:19px}
+      .unit-heading-label{font-size:24px}
+      .card-grid{gap:15px;max-width:440px}
+      .card-grid > .study-card{flex:0 1 100%}
+      .card-trigger{height:205px;padding:21px}
+      .card-name{font-size:clamp(27px,7.5vw,35px)!important}
+      .study-card.variant-terminal .card-name{font-size:27px!important}
+      .reading-examples ol{grid-template-columns:1fr}
+      .card-dialog{width:calc(100vw - 18px);max-height:96dvh;border-radius:12px}
+      .dialog-header{padding:27px 21px 23px}
+      .reading-content{padding:22px 20px}
+      .reading-section p{font-size:14px}
+      .dialog-footer{padding:13px 20px 20px}
+      .reading-section h3{font-size:23px}
+    }
+    /* Após as regras gerais de tablet, equilibrar as fileiras: 3 e 3+2. */
+    @media(min-width:701px) and (max-width:1010px) {
+      #conteudo .layout-count-3 > .study-card {flex-basis:calc((100% - 44px)/3)}
+      #conteudo .layout-count-5 > .study-card {flex-basis:calc((100% - 44px)/3)}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media print {.top-actions,.study-toolbar,.study-guide,.dialog-action,.page-footer{display:none!important}body{background:#fff;color:#222}.card-grid{gap:14px;max-width:none}.card-grid > .study-card{flex-basis:calc((100% - 28px)/3)}.card-trigger{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact;height:150px}.unit-block{break-before:page}.unit-block:first-child{break-before:auto}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para os flashcards</a>
+<div class="shell">
+<!-- 06. IDENTIDADE DA AULA E NAVEGAÇÃO · AULA 1.2 -->
+<header class="topline">
+<div aria-label="SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA | Prof. Dr. Eliaquim Timóteo" class="brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA<span aria-hidden="true" class="brand-divider"> | </span><span class="brand-prof">Prof. Dr. Eliaquim Timóteo</span></div>
+<nav aria-label="Acessos da aula" class="top-actions">
+<a class="top-link" href="S-i-1-2-teorias-sociologicas-modernidade-aula-V05.html">Voltar à aula</a>
+<button aria-pressed="false" class="theme-btn" id="theme-toggle" type="button">Modo noturno</button>
+</nav>
+</header>
+<section aria-labelledby="page-title" class="hero">
+<div>
+<span class="eyebrow">AULA 1.2 · CADERNO DE CONCEITOS</span>
+<h1 id="page-title">Flashcards</h1>
+<p class="hero-subtitle">Teorias Sociológicas e Modernidade</p>
+<p class="hero-description">Dezoito conceitos para investigar as revoluções, o capitalismo, as transformações do trabalho e a formação do pensamento sociológico. Selecione um cartão para ler a definição, a explicação e dois exemplos.</p>
+</div>
+
+</section>
+<!-- 07. PESQUISA E FILTROS DO ACERVO -->
+<div aria-label="Filtrar flashcards" class="study-toolbar" role="search">
+<div class="field"><label for="search-cards">Pesquisar conceitos e explicações</label><input autocomplete="off" id="search-cards" placeholder="Ex.: historicidade, industrialização, Marx..." type="search"/></div>
+<div class="field"><label for="unit-filter">Unidade</label><select id="unit-filter"><option value="all">Todas as unidades</option>
+<option value="1">01 · A sociedade como problema de investigação</option>
+<option value="2">02 · Conceitos fundamentais da modernidade</option>
+<option value="3">03 · Transformações históricas da modernidade</option>
+<option value="4">04 · Pensadores e interpretações sociológicas</option>
+<option value="5">05 · As contradições da modernidade</option>
+</select></div>
+
+<div aria-live="polite" class="sr-only" id="result-count">18 cartões</div>
+</div>
+<div class="study-guide">
+<span>Selecione um cartão para ler seu conteúdo. Use a tecla Esc para fechar.</span>
+
+</div>
+<!-- 08. FLASHCARDS DA AULA 1.2 · 18 CONCEITOS REVISADOS -->
+<main id="conteudo">
+    <!-- ============================================================
+         UNIDADE 01 · A sociedade como problema de investigação · 1 flashcard(s)
+         ============================================================ -->
+    <section class="unit-block" data-unit-section="1" id="unidade-1" aria-labelledby="titulo-u1">
+      <header class="unit-heading">
+        <h2 class="unit-title" id="titulo-u1">
+          <button type="button" class="unit-toggle" data-toggle-unit aria-expanded="true" aria-controls="cartoes-u1">
+            <span class="unit-heading-index" aria-hidden="true">01</span>
+            <span class="unit-heading-copy">
+              <span class="unit-eyebrow">UNIDADE 01 · 1 CARTÃO</span>
+              <span class="unit-heading-label">A sociedade como problema de investigação</span>
+            </span>
+            <span class="unit-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+      </header>
+      <div class="card-grid layout-count-1" role="region" id="cartoes-u1" aria-labelledby="titulo-u1">
+        <!-- FLASHCARD 01: Historicidade -->
+        <article class="study-card variant-soft" data-number="01" data-unit="1" data-search="historicidade é a condição histórica das instituições, normas e relações sociais, que são produzidas, reproduzidas e transformadas ao longo do tempo. significa reconhecer que a organização da sociedade não é natural nem imutável. a historicidade permite investigar como uma instituição surgiu, quais relações sociais sustentam sua existência e por que ela pode mudar. ajuda a compreender que transformações políticas e econômicas resultam de processos históricos, conflitos e ações coletivas. uma mudança institucional, porém, não implica necessariamente a superação de todas as desigualdades anteriores. revolução francesa: a contestação da monarquia e dos privilégios do antigo regime demonstrou que instituições consideradas legítimas poderiam ser transformadas. abolição no brasil: a lei áurea, de 1888, modificou a condição jurídica das pessoas escravizadas, mas não eliminou as desigualdades raciais e econômicas historicamente constituídas." style="--card-color:#315746;--card-pale:#e9f0e8;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 1: Historicidade">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Historicidade</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É a condição histórica das instituições, normas e relações sociais, que são produzidas, reproduzidas e transformadas ao longo do tempo. Significa reconhecer que a organização da sociedade não é natural nem imutável.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A historicidade permite investigar como uma instituição surgiu, quais relações sociais sustentam sua existência e por que ela pode mudar. Ajuda a compreender que transformações políticas e econômicas resultam de processos históricos, conflitos e ações coletivas. Uma mudança institucional, porém, não implica necessariamente a superação de todas as desigualdades anteriores.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Revolução Francesa:</span> A contestação da monarquia e dos privilégios do Antigo Regime demonstrou que instituições consideradas legítimas poderiam ser transformadas.</li>
+                <li><span class="example-label">Abolição no Brasil:</span> A Lei Áurea, de 1888, modificou a condição jurídica das pessoas escravizadas, mas não eliminou as desigualdades raciais e econômicas historicamente constituídas.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+    <!-- ============================================================
+         UNIDADE 02 · Conceitos fundamentais da modernidade · 3 flashcard(s)
+         ============================================================ -->
+    <section class="unit-block" data-unit-section="2" id="unidade-2" aria-labelledby="titulo-u2">
+      <header class="unit-heading">
+        <h2 class="unit-title" id="titulo-u2">
+          <button type="button" class="unit-toggle" data-toggle-unit aria-expanded="true" aria-controls="cartoes-u2">
+            <span class="unit-heading-index" aria-hidden="true">02</span>
+            <span class="unit-heading-copy">
+              <span class="unit-eyebrow">UNIDADE 02 · 3 CARTÕES</span>
+              <span class="unit-heading-label">Conceitos fundamentais da modernidade</span>
+            </span>
+            <span class="unit-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+      </header>
+      <div class="card-grid layout-count-3" role="region" id="cartoes-u2" aria-labelledby="titulo-u2">
+        <!-- FLASHCARD 02: Modernidade -->
+        <article class="study-card variant-brutal" data-number="02" data-unit="2" data-search="modernidade é um processo histórico de transformação das instituições políticas, das relações econômicas, dos conhecimentos e das formas de organização da vida social. sua formação está associada, entre outros processos, às revoluções políticas, à industrialização, à expansão capitalista e às conexões coloniais. a modernidade modifica a maneira como as sociedades organizam o trabalho, o poder, as cidades e a circulação de pessoas e mercadorias. essas transformações não acontecem da mesma forma em todos os territórios. a modernidade pode ampliar direitos e capacidades produtivas enquanto mantém ou reorganiza relações de exploração e desigualdade. industrialização europeia: a expansão das fábricas e das ferrovias, no século xix, modificou os ritmos do trabalho, os transportes e a organização das cidades. modernidade brasileira: durante o século xix, ferrovias, bancos e comércio internacional expandiram-se em uma sociedade que manteve a escravidão até 1888." style="--card-color:#634a3b;--card-pale:#f3ece4;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 2: Modernidade">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Modernidade</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um processo histórico de transformação das instituições políticas, das relações econômicas, dos conhecimentos e das formas de organização da vida social. Sua formação está associada, entre outros processos, às revoluções políticas, à industrialização, à expansão capitalista e às conexões coloniais.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A modernidade modifica a maneira como as sociedades organizam o trabalho, o poder, as cidades e a circulação de pessoas e mercadorias. Essas transformações não acontecem da mesma forma em todos os territórios. A modernidade pode ampliar direitos e capacidades produtivas enquanto mantém ou reorganiza relações de exploração e desigualdade.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Industrialização europeia:</span> A expansão das fábricas e das ferrovias, no século XIX, modificou os ritmos do trabalho, os transportes e a organização das cidades.</li>
+                <li><span class="example-label">Modernidade brasileira:</span> Durante o século XIX, ferrovias, bancos e comércio internacional expandiram-se em uma sociedade que manteve a escravidão até 1888.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 03: Iluminismo -->
+        <article class="study-card variant-terminal" data-number="03" data-unit="2" data-search="iluminismo é um conjunto diversificado de correntes intelectuais, especialmente do século xviii, que valorizou a investigação racional e a crítica das instituições, das tradições e das formas estabelecidas de autoridade. os pensadores iluministas utilizaram a razão, a comparação e a argumentação para questionar a legitimidade das instituições políticas e sociais. suas ideias contribuíram para debates sobre liberdade, leis, educação e organização do governo. entretanto, os iluministas não compartilhavam necessariamente as mesmas posições sobre democracia, igualdade e escravidão. montesquieu: em o espírito das leis (1748), comparou formas de governo e investigou relações entre leis, costumes e organização política. crítica à autoridade monárquica: os debates iluministas contribuíram para questionar a ideia de que o poder dos governantes deveria ser legitimado apenas pela tradição ou pela hereditariedade." style="--card-color:#344f60;--card-pale:#e8eef2;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 3: Iluminismo">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Iluminismo</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um conjunto diversificado de correntes intelectuais, especialmente do século XVIII, que valorizou a investigação racional e a crítica das instituições, das tradições e das formas estabelecidas de autoridade.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>Os pensadores iluministas utilizaram a razão, a comparação e a argumentação para questionar a legitimidade das instituições políticas e sociais. Suas ideias contribuíram para debates sobre liberdade, leis, educação e organização do governo. Entretanto, os iluministas não compartilhavam necessariamente as mesmas posições sobre democracia, igualdade e escravidão.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Montesquieu:</span> Em O espírito das leis (1748), comparou formas de governo e investigou relações entre leis, costumes e organização política.</li>
+                <li><span class="example-label">Crítica à autoridade monárquica:</span> Os debates iluministas contribuíram para questionar a ideia de que o poder dos governantes deveria ser legitimado apenas pela tradição ou pela hereditariedade.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 04: Revolução política -->
+        <article class="study-card variant-terminal" data-number="04" data-unit="2" data-search="revolução política é um processo de transformação profunda das estruturas de poder, das instituições e dos fundamentos que legitimam a autoridade política. envolve conflitos e mobilizações capazes de alterar a organização do estado e as relações entre governantes e governados. uma revolução política questiona uma ordem de poder existente e pode estabelecer novas instituições, direitos e formas de participação. seus resultados dependem das forças sociais envolvidas e dos conflitos posteriores. por isso, uma revolução não produz necessariamente igualdade social ou participação política para toda a população. revolução francesa (1789): questionou as instituições do antigo regime e contribuiu para transformar os fundamentos da autoridade política. revolução haitiana (1791–1804): mobilizações revolucionárias de pessoas escravizadas combateram a escravidão e o domínio colonial francês, culminando na independência do haiti." style="--card-color:#213d34;--card-pale:#e5efea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 4: Revolução política">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Revolução política</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um processo de transformação profunda das estruturas de poder, das instituições e dos fundamentos que legitimam a autoridade política. Envolve conflitos e mobilizações capazes de alterar a organização do Estado e as relações entre governantes e governados.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>Uma revolução política questiona uma ordem de poder existente e pode estabelecer novas instituições, direitos e formas de participação. Seus resultados dependem das forças sociais envolvidas e dos conflitos posteriores. Por isso, uma revolução não produz necessariamente igualdade social ou participação política para toda a população.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Revolução Francesa (1789):</span> Questionou as instituições do Antigo Regime e contribuiu para transformar os fundamentos da autoridade política.</li>
+                <li><span class="example-label">Revolução Haitiana (1791–1804):</span> Mobilizações revolucionárias de pessoas escravizadas combateram a escravidão e o domínio colonial francês, culminando na independência do Haiti.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+    <!-- ============================================================
+         UNIDADE 03 · Transformações históricas da modernidade · 8 flashcard(s)
+         ============================================================ -->
+    <section class="unit-block" data-unit-section="3" id="unidade-3" aria-labelledby="titulo-u3">
+      <header class="unit-heading">
+        <h2 class="unit-title" id="titulo-u3">
+          <button type="button" class="unit-toggle" data-toggle-unit aria-expanded="true" aria-controls="cartoes-u3">
+            <span class="unit-heading-index" aria-hidden="true">03</span>
+            <span class="unit-heading-copy">
+              <span class="unit-eyebrow">UNIDADE 03 · 8 CARTÕES</span>
+              <span class="unit-heading-label">Transformações históricas da modernidade</span>
+            </span>
+            <span class="unit-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+      </header>
+      <div class="card-grid layout-count-8" role="region" id="cartoes-u3" aria-labelledby="titulo-u3">
+        <!-- FLASHCARD 05: Antigo Regime -->
+        <article class="study-card variant-soft" data-number="05" data-unit="3" data-search="antigo regime é a expressão utilizada para designar, especialmente na história francesa, a organização política e social anterior à revolução de 1789. caracterizava-se pela monarquia e por uma sociedade de ordens ou estamentos, marcada por diferenças jurídicas e privilégios. nessa organização, a posição social e os direitos das pessoas eram influenciados pelo pertencimento a determinados grupos, como o clero, a nobreza e o chamado terceiro estado. a crítica revolucionária questionou os privilégios e os fundamentos tradicionais da autoridade. a expressão não deve ser entendida como uma etapa universal da história de todas as sociedades. privilégios estamentais: na frança anterior a 1789, integrantes da nobreza e do clero desfrutavam de prerrogativas jurídicas e fiscais que não eram igualmente asseguradas aos demais grupos sociais. estados gerais de 1789: a convocação de representantes organizados em três ordens evidenciou a estrutura estamental e as disputas que antecederam a transformação revolucionária." style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 5: Antigo Regime">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Antigo Regime</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É a expressão utilizada para designar, especialmente na história francesa, a organização política e social anterior à Revolução de 1789. Caracterizava-se pela monarquia e por uma sociedade de ordens ou estamentos, marcada por diferenças jurídicas e privilégios.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>Nessa organização, a posição social e os direitos das pessoas eram influenciados pelo pertencimento a determinados grupos, como o clero, a nobreza e o chamado Terceiro Estado. A crítica revolucionária questionou os privilégios e os fundamentos tradicionais da autoridade. A expressão não deve ser entendida como uma etapa universal da história de todas as sociedades.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Privilégios estamentais:</span> Na França anterior a 1789, integrantes da nobreza e do clero desfrutavam de prerrogativas jurídicas e fiscais que não eram igualmente asseguradas aos demais grupos sociais.</li>
+                <li><span class="example-label">Estados Gerais de 1789:</span> A convocação de representantes organizados em três ordens evidenciou a estrutura estamental e as disputas que antecederam a transformação revolucionária.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 06: Universalismo -->
+        <article class="study-card variant-brutal" data-number="06" data-unit="3" data-search="universalismo é o princípio segundo o qual determinados direitos, valores ou normas possuem validade para todas as pessoas, independentemente de sua origem ou posição social. na modernidade política, aparece especialmente nas formulações sobre liberdade, igualdade e direitos humanos. o universalismo permite questionar privilégios e defender direitos que não deveriam depender do nascimento, da condição econômica ou de pertencimentos sociais. entretanto, é necessário distinguir a proclamação de um direito de sua realização histórica. princípios considerados universais coexistiram com escravidão, colonialismo e exclusões políticas. declaração francesa de 1789: proclamou liberdade e igualdade em direitos, embora sua aplicação histórica tenha convivido com exclusões e desigualdades. revolução haitiana: a luta das pessoas escravizadas questionou os limites desses princípios, reivindicando liberdade diante da dominação colonial." style="--card-color:#2f5548;--card-pale:#e5efea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 6: Universalismo">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Universalismo</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É o princípio segundo o qual determinados direitos, valores ou normas possuem validade para todas as pessoas, independentemente de sua origem ou posição social. Na modernidade política, aparece especialmente nas formulações sobre liberdade, igualdade e direitos humanos.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>O universalismo permite questionar privilégios e defender direitos que não deveriam depender do nascimento, da condição econômica ou de pertencimentos sociais. Entretanto, é necessário distinguir a proclamação de um direito de sua realização histórica. Princípios considerados universais coexistiram com escravidão, colonialismo e exclusões políticas.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Declaração francesa de 1789:</span> Proclamou liberdade e igualdade em direitos, embora sua aplicação histórica tenha convivido com exclusões e desigualdades.</li>
+                <li><span class="example-label">Revolução Haitiana:</span> A luta das pessoas escravizadas questionou os limites desses princípios, reivindicando liberdade diante da dominação colonial.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 07: Industrialização -->
+        <article class="study-card variant-terminal" data-number="07" data-unit="3" data-search="industrialização é um processo histórico de transformação da produção, caracterizado pela expansão das máquinas, pela utilização de novas fontes de energia e pela concentração e reorganização de atividades produtivas. altera as relações de trabalho, a economia e a organização da vida social. a industrialização permite ampliar a escala da produção e modificar o tempo necessário à fabricação de mercadorias. também reorganiza a divisão das tarefas, a supervisão e os ritmos do trabalho. seus efeitos dependem das relações sociais em que ocorre, pois o aumento da produtividade não assegura automaticamente melhores condições de vida aos trabalhadores. indústria têxtil do século xix: a utilização de máquinas e a concentração fabril transformaram a fabricação de tecidos e a organização das jornadas de trabalho. situação didática contemporânea: uma fábrica de alimentos que incorpora equipamentos automatizados pode ampliar a produção e reorganizar as funções, os horários e a supervisão dos trabalhadores." style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 7: Industrialização">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Industrialização</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um processo histórico de transformação da produção, caracterizado pela expansão das máquinas, pela utilização de novas fontes de energia e pela concentração e reorganização de atividades produtivas. Altera as relações de trabalho, a economia e a organização da vida social.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A industrialização permite ampliar a escala da produção e modificar o tempo necessário à fabricação de mercadorias. Também reorganiza a divisão das tarefas, a supervisão e os ritmos do trabalho. Seus efeitos dependem das relações sociais em que ocorre, pois o aumento da produtividade não assegura automaticamente melhores condições de vida aos trabalhadores.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Indústria têxtil do século XIX:</span> A utilização de máquinas e a concentração fabril transformaram a fabricação de tecidos e a organização das jornadas de trabalho.</li>
+                <li><span class="example-label">Situação didática contemporânea:</span> Uma fábrica de alimentos que incorpora equipamentos automatizados pode ampliar a produção e reorganizar as funções, os horários e a supervisão dos trabalhadores.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 08: Trabalho assalariado -->
+        <article class="study-card variant-soft" data-number="08" data-unit="3" data-search="trabalho assalariado é uma relação de trabalho na qual uma pessoa coloca sua força de trabalho à disposição de um empregador em troca de remuneração. no capitalismo, constitui uma das principais formas de organização do trabalho. o trabalhador recebe um salário pela atividade realizada, enquanto o empregador organiza o processo produtivo nos termos da relação contratual e da legislação aplicável. essa relação envolve liberdade jurídica de contratação, mas pode coexistir com desigualdades econômicas entre as partes. na interpretação marxiana, a necessidade de vender a força de trabalho está relacionada à separação entre trabalhadores e propriedade dos meios de produção. operários industriais: trabalhadores contratados por fábricas do século xix recebiam salários pela atividade realizada nas instalações produtivas. situação didática contemporânea: uma pessoa contratada para trabalhar em um supermercado recebe remuneração mensal e cumpre funções e horários estabelecidos na relação de emprego." style="--card-color:#6c453c;--card-pale:#f3ece4;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 8: Trabalho assalariado">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Trabalho assalariado</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É uma relação de trabalho na qual uma pessoa coloca sua força de trabalho à disposição de um empregador em troca de remuneração. No capitalismo, constitui uma das principais formas de organização do trabalho.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>O trabalhador recebe um salário pela atividade realizada, enquanto o empregador organiza o processo produtivo nos termos da relação contratual e da legislação aplicável. Essa relação envolve liberdade jurídica de contratação, mas pode coexistir com desigualdades econômicas entre as partes. Na interpretação marxiana, a necessidade de vender a força de trabalho está relacionada à separação entre trabalhadores e propriedade dos meios de produção.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Operários industriais:</span> Trabalhadores contratados por fábricas do século XIX recebiam salários pela atividade realizada nas instalações produtivas.</li>
+                <li><span class="example-label">Situação didática contemporânea:</span> Uma pessoa contratada para trabalhar em um supermercado recebe remuneração mensal e cumpre funções e horários estabelecidos na relação de emprego.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 09: Urbanização -->
+        <article class="study-card variant-brutal" data-number="09" data-unit="3" data-search="urbanização é o processo de crescimento e transformação dos espaços urbanos, acompanhado pela concentração de população, atividades econômicas, infraestrutura e instituições nas cidades. pode envolver o aumento da proporção da população que vive em áreas urbanas. a urbanização modifica a distribuição da população, a circulação de pessoas e as formas de utilização do território. a expansão das cidades exige moradia, transportes, serviços públicos e infraestrutura. entretanto, esses recursos podem ser distribuídos desigualmente, produzindo diferentes condições de vida entre grupos sociais. manchester industrial: durante o século xix, a expansão das atividades industriais esteve associada ao crescimento populacional e à formação de bairros operários. situação didática contemporânea: o crescimento de bairros periféricos em uma cidade brasileira pode aumentar a demanda por transporte coletivo, saneamento, escolas e serviços de saúde." style="--card-color:#294a42;--card-pale:#e8f0ea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 9: Urbanização">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Urbanização</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É o processo de crescimento e transformação dos espaços urbanos, acompanhado pela concentração de população, atividades econômicas, infraestrutura e instituições nas cidades. Pode envolver o aumento da proporção da população que vive em áreas urbanas.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A urbanização modifica a distribuição da população, a circulação de pessoas e as formas de utilização do território. A expansão das cidades exige moradia, transportes, serviços públicos e infraestrutura. Entretanto, esses recursos podem ser distribuídos desigualmente, produzindo diferentes condições de vida entre grupos sociais.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Manchester industrial:</span> Durante o século XIX, a expansão das atividades industriais esteve associada ao crescimento populacional e à formação de bairros operários.</li>
+                <li><span class="example-label">Situação didática contemporânea:</span> O crescimento de bairros periféricos em uma cidade brasileira pode aumentar a demanda por transporte coletivo, saneamento, escolas e serviços de saúde.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 10: Capitalismo -->
+        <article class="study-card variant-soft" data-number="10" data-unit="3" data-search="capitalismo é um sistema histórico de organização econômica caracterizado pela predominância da propriedade privada dos meios de produção, pela produção de mercadorias para o mercado, pelo trabalho assalariado e pela busca de acumulação de capital. na produção capitalista, empresas organizam recursos, tecnologias e trabalho para produzir bens ou serviços comercializados no mercado. a propriedade dos meios de produção e a necessidade de vender a força de trabalho contribuem para estabelecer posições econômicas desiguais. historicamente, a expansão capitalista também esteve articulada a mercados coloniais e à exploração do trabalho escravizado. fábrica industrial: os proprietários controlam máquinas e instalações, contratam trabalhadores e comercializam os produtos fabricados. comércio atlântico: durante a expansão capitalista, mercadorias produzidas por trabalhadores escravizados, como algodão e açúcar, integraram circuitos internacionais de comércio e acumulação de riqueza." style="--card-color:#315746;--card-pale:#e9f0e8;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 10: Capitalismo">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Capitalismo</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um sistema histórico de organização econômica caracterizado pela predominância da propriedade privada dos meios de produção, pela produção de mercadorias para o mercado, pelo trabalho assalariado e pela busca de acumulação de capital.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>Na produção capitalista, empresas organizam recursos, tecnologias e trabalho para produzir bens ou serviços comercializados no mercado. A propriedade dos meios de produção e a necessidade de vender a força de trabalho contribuem para estabelecer posições econômicas desiguais. Historicamente, a expansão capitalista também esteve articulada a mercados coloniais e à exploração do trabalho escravizado.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Fábrica industrial:</span> Os proprietários controlam máquinas e instalações, contratam trabalhadores e comercializam os produtos fabricados.</li>
+                <li><span class="example-label">Comércio atlântico:</span> Durante a expansão capitalista, mercadorias produzidas por trabalhadores escravizados, como algodão e açúcar, integraram circuitos internacionais de comércio e acumulação de riqueza.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 11: Classe social -->
+        <article class="study-card variant-brutal" data-number="11" data-unit="3" data-search="classe social é uma categoria sociológica utilizada para compreender posições desiguais na organização econômica e social. na perspectiva de karl marx, as classes são definidas fundamentalmente pelas relações que os grupos estabelecem com os meios de produção e com o trabalho. a posição de classe influencia as condições de existência, o acesso a recursos e os interesses econômicos dos grupos sociais. no capitalismo, marx analisa especialmente as relações entre proprietários dos meios de produção e trabalhadores que vendem sua força de trabalho. entretanto, as experiências das pessoas pertencentes a uma mesma classe também apresentam diferenças históricas e sociais. sociedade industrial: proprietários de fábricas e operários assalariados ocupam posições distintas nas relações de produção, mesmo participando de uma mesma atividade econômica. situação didática contemporânea: uma pessoa proprietária de uma rede de lojas, que contrata empregados, estabelece relações diferentes com a propriedade e o trabalho em comparação com os trabalhadores contratados." style="--card-color:#634a3b;--card-pale:#f3ece4;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 11: Classe social">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Classe social</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É uma categoria sociológica utilizada para compreender posições desiguais na organização econômica e social. Na perspectiva de Karl Marx, as classes são definidas fundamentalmente pelas relações que os grupos estabelecem com os meios de produção e com o trabalho.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A posição de classe influencia as condições de existência, o acesso a recursos e os interesses econômicos dos grupos sociais. No capitalismo, Marx analisa especialmente as relações entre proprietários dos meios de produção e trabalhadores que vendem sua força de trabalho. Entretanto, as experiências das pessoas pertencentes a uma mesma classe também apresentam diferenças históricas e sociais.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Sociedade industrial:</span> Proprietários de fábricas e operários assalariados ocupam posições distintas nas relações de produção, mesmo participando de uma mesma atividade econômica.</li>
+                <li><span class="example-label">Situação didática contemporânea:</span> Uma pessoa proprietária de uma rede de lojas, que contrata empregados, estabelece relações diferentes com a propriedade e o trabalho em comparação com os trabalhadores contratados.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 12: Colonialismo -->
+        <article class="study-card variant-terminal" data-number="12" data-unit="3" data-search="colonialismo é uma forma histórica de dominação política, econômica e territorial exercida sobre povos e territórios submetidos ao poder colonial. pode envolver exploração de recursos, imposição de instituições e controle coercitivo do trabalho e das populações. o colonialismo organiza relações desiguais de poder entre autoridades coloniais e populações submetidas à dominação. frequentemente articula exploração econômica, apropriação territorial e hierarquias raciais construídas historicamente. a expansão colonial também encontrou resistências, revoltas e movimentos de emancipação, protagonizados pelos povos submetidos. saint-domingue: o domínio colonial francês organizou uma economia de plantations sustentada pela exploração de pessoas escravizadas, sistema enfrentado pela revolução haitiana. brasil colonial: a colonização portuguesa esteve associada à exploração de territórios, à escravização de africanos e seus descendentes e à violência contra populações indígenas, que desenvolveram diferentes formas de resistência." style="--card-color:#344f60;--card-pale:#e8eef2;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 12: Colonialismo">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Colonialismo</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É uma forma histórica de dominação política, econômica e territorial exercida sobre povos e territórios submetidos ao poder colonial. Pode envolver exploração de recursos, imposição de instituições e controle coercitivo do trabalho e das populações.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>O colonialismo organiza relações desiguais de poder entre autoridades coloniais e populações submetidas à dominação. Frequentemente articula exploração econômica, apropriação territorial e hierarquias raciais construídas historicamente. A expansão colonial também encontrou resistências, revoltas e movimentos de emancipação, protagonizados pelos povos submetidos.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Saint-Domingue:</span> O domínio colonial francês organizou uma economia de plantations sustentada pela exploração de pessoas escravizadas, sistema enfrentado pela Revolução Haitiana.</li>
+                <li><span class="example-label">Brasil colonial:</span> A colonização portuguesa esteve associada à exploração de territórios, à escravização de africanos e seus descendentes e à violência contra populações indígenas, que desenvolveram diferentes formas de resistência.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+    <!-- ============================================================
+         UNIDADE 04 · Pensadores e interpretações sociológicas · 5 flashcard(s)
+         ============================================================ -->
+    <section class="unit-block" data-unit-section="4" id="unidade-4" aria-labelledby="titulo-u4">
+      <header class="unit-heading">
+        <h2 class="unit-title" id="titulo-u4">
+          <button type="button" class="unit-toggle" data-toggle-unit aria-expanded="true" aria-controls="cartoes-u4">
+            <span class="unit-heading-index" aria-hidden="true">04</span>
+            <span class="unit-heading-copy">
+              <span class="unit-eyebrow">UNIDADE 04 · 5 CARTÕES</span>
+              <span class="unit-heading-label">Pensadores e interpretações sociológicas</span>
+            </span>
+            <span class="unit-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+      </header>
+      <div class="card-grid layout-count-5" role="region" id="cartoes-u4" aria-labelledby="titulo-u4">
+        <!-- FLASHCARD 13: Positivismo -->
+        <article class="study-card variant-terminal" data-number="13" data-unit="4" data-search="positivismo é uma corrente intelectual associada especialmente a auguste comte, no século xix, que defende o estudo sistemático dos fenômenos por meio da observação, da comparação e da investigação de regularidades. na perspectiva comtiana, o conhecimento científico deve investigar relações entre fenômenos, buscando explicações fundamentadas em procedimentos sistemáticos. comte procurou aplicar essa orientação ao estudo da sociedade e de suas instituições. seu positivismo constitui uma perspectiva histórica específica, não sendo equivalente a toda investigação científica posterior. programa de comte: em seu curso de filosofia positiva (1830–1842), propôs uma organização sistemática do conhecimento científico, incluindo o estudo dos fenômenos sociais. aplicação didática hipotética: um pesquisador inspirado no positivismo compara registros de frequência escolar de diferentes períodos para identificar regularidades e formular hipóteses sobre o funcionamento institucional." style="--card-color:#213d34;--card-pale:#e5efea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 13: Positivismo">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Positivismo</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É uma corrente intelectual associada especialmente a Auguste Comte, no século XIX, que defende o estudo sistemático dos fenômenos por meio da observação, da comparação e da investigação de regularidades.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>Na perspectiva comtiana, o conhecimento científico deve investigar relações entre fenômenos, buscando explicações fundamentadas em procedimentos sistemáticos. Comte procurou aplicar essa orientação ao estudo da sociedade e de suas instituições. Seu positivismo constitui uma perspectiva histórica específica, não sendo equivalente a toda investigação científica posterior.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Programa de Comte:</span> Em seu Curso de filosofia positiva (1830–1842), propôs uma organização sistemática do conhecimento científico, incluindo o estudo dos fenômenos sociais.</li>
+                <li><span class="example-label">Aplicação didática hipotética:</span> Um pesquisador inspirado no positivismo compara registros de frequência escolar de diferentes períodos para identificar regularidades e formular hipóteses sobre o funcionamento institucional.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 14: Observação social -->
+        <article class="study-card variant-soft" data-number="14" data-unit="4" data-search="observação social é um procedimento de investigação que examina sistematicamente práticas, comportamentos, interações e instituições em situações concretas. permite produzir informações sobre a vida social que podem ser analisadas à luz de problemas e conceitos sociológicos. a observação exige atenção ao contexto, registro organizado das informações e interpretação crítica do que foi observado. não consiste apenas em olhar acontecimentos cotidianos, pois envolve perguntas de investigação. harriet martineau demonstrou a importância de confrontar os valores declarados por uma sociedade com suas relações sociais efetivas. harriet martineau: em society in america (1837), examinou contradições entre os ideais de liberdade e as práticas de escravidão e desigualdade nos estados unidos. situação didática hipotética: estudantes acompanham uma reunião de conselho escolar e registram quem participa das discussões, como as decisões são tomadas e se todos possuem oportunidades semelhantes de manifestação." style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 14: Observação social">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Observação social</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É um procedimento de investigação que examina sistematicamente práticas, comportamentos, interações e instituições em situações concretas. Permite produzir informações sobre a vida social que podem ser analisadas à luz de problemas e conceitos sociológicos.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A observação exige atenção ao contexto, registro organizado das informações e interpretação crítica do que foi observado. Não consiste apenas em olhar acontecimentos cotidianos, pois envolve perguntas de investigação. Harriet Martineau demonstrou a importância de confrontar os valores declarados por uma sociedade com suas relações sociais efetivas.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Harriet Martineau:</span> Em Society in America (1837), examinou contradições entre os ideais de liberdade e as práticas de escravidão e desigualdade nos Estados Unidos.</li>
+                <li><span class="example-label">Situação didática hipotética:</span> Estudantes acompanham uma reunião de conselho escolar e registram quem participa das discussões, como as decisões são tomadas e se todos possuem oportunidades semelhantes de manifestação.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 15: Luta de classes -->
+        <article class="study-card variant-brutal" data-number="15" data-unit="4" data-search="luta de classes na perspectiva de karl marx, é o conflito histórico entre classes sociais cujas posições e interesses se opõem nas relações de produção, na apropriação da riqueza e no exercício do poder. as relações econômicas podem produzir interesses divergentes entre grupos que controlam os meios de produção e aqueles que dependem da venda de sua força de trabalho. esses conflitos podem aparecer em greves, reivindicações salariais, disputas políticas e movimentos de organização coletiva. para marx, a luta de classes participa da dinâmica histórica das transformações sociais. movimento operário industrial: trabalhadores organizaram reivindicações pela redução da jornada e pela melhoria das condições de trabalho, confrontando interesses empresariais. situação didática hipotética: trabalhadores de uma empresa reivindicam uma parcela maior dos ganhos de produtividade, enquanto os proprietários procuram manter a distribuição existente dos resultados econômicos." style="--card-color:#2f5548;--card-pale:#e5efea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 15: Luta de classes">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Luta de classes</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>Na perspectiva de Karl Marx, é o conflito histórico entre classes sociais cujas posições e interesses se opõem nas relações de produção, na apropriação da riqueza e no exercício do poder.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>As relações econômicas podem produzir interesses divergentes entre grupos que controlam os meios de produção e aqueles que dependem da venda de sua força de trabalho. Esses conflitos podem aparecer em greves, reivindicações salariais, disputas políticas e movimentos de organização coletiva. Para Marx, a luta de classes participa da dinâmica histórica das transformações sociais.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Movimento operário industrial:</span> Trabalhadores organizaram reivindicações pela redução da jornada e pela melhoria das condições de trabalho, confrontando interesses empresariais.</li>
+                <li><span class="example-label">Situação didática hipotética:</span> Trabalhadores de uma empresa reivindicam uma parcela maior dos ganhos de produtividade, enquanto os proprietários procuram manter a distribuição existente dos resultados econômicos.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 16: Fato social -->
+        <article class="study-card variant-terminal" data-number="16" data-unit="4" data-search="fato social segundo émile durkheim, é uma maneira de agir, pensar ou sentir que existe independentemente das vontades individuais e exerce sobre as pessoas algum poder de coerção. os fatos sociais são coletivos e podem apresentar diferentes graus de generalidade. as pessoas encontram normas, costumes e instituições que já existiam antes de seu ingresso nos grupos sociais. essas formas coletivas orientam comportamentos e podem produzir aprovação, reprovação ou sanções. para durkheim, a sociologia deve investigar os fatos sociais como realidades que não se explicam apenas por decisões individuais. organização escolar: horários de entrada, regras de avaliação e normas de convivência são estabelecidos institucionalmente e orientam a conduta dos estudantes. uso da linguagem: as regras socialmente compartilhadas de uma língua são aprendidas na convivência e influenciam a comunicação, independentemente da vontade isolada de cada pessoa." style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 16: Fato social">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Fato social</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>Segundo Émile Durkheim, é uma maneira de agir, pensar ou sentir que existe independentemente das vontades individuais e exerce sobre as pessoas algum poder de coerção. Os fatos sociais são coletivos e podem apresentar diferentes graus de generalidade.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>As pessoas encontram normas, costumes e instituições que já existiam antes de seu ingresso nos grupos sociais. Essas formas coletivas orientam comportamentos e podem produzir aprovação, reprovação ou sanções. Para Durkheim, a Sociologia deve investigar os fatos sociais como realidades que não se explicam apenas por decisões individuais.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Organização escolar:</span> Horários de entrada, regras de avaliação e normas de convivência são estabelecidos institucionalmente e orientam a conduta dos estudantes.</li>
+                <li><span class="example-label">Uso da linguagem:</span> As regras socialmente compartilhadas de uma língua são aprendidas na convivência e influenciam a comunicação, independentemente da vontade isolada de cada pessoa.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+        <!-- FLASHCARD 17: Racionalização -->
+        <article class="study-card variant-soft" data-number="17" data-unit="4" data-search="racionalização na sociologia de max weber, refere-se à expansão de formas de organização e orientação da ação baseadas em cálculo, regras, procedimentos sistemáticos e previsibilidade. é um dos processos associados ao desenvolvimento das instituições modernas. a racionalização reorganiza atividades sociais por meio de normas, classificações, registros e critérios formais. pode favorecer a coordenação de tarefas e a previsibilidade das decisões, mas também intensificar mecanismos de controle e limitar a autonomia das pessoas. para weber, esse processo aparece em instituições administrativas, organizações econômicas e outras dimensões da vida moderna. administração pública: repartições utilizam protocolos, documentos, atribuições definidas e procedimentos padronizados para organizar o atendimento. organização escolar: calendários, critérios formais de avaliação e sistemas de registro permitem coordenar atividades e acompanhar procedimentos institucionais." style="--card-color:#6c453c;--card-pale:#f3ece4;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 17: Racionalização">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Racionalização</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>Na sociologia de Max Weber, refere-se à expansão de formas de organização e orientação da ação baseadas em cálculo, regras, procedimentos sistemáticos e previsibilidade. É um dos processos associados ao desenvolvimento das instituições modernas.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A racionalização reorganiza atividades sociais por meio de normas, classificações, registros e critérios formais. Pode favorecer a coordenação de tarefas e a previsibilidade das decisões, mas também intensificar mecanismos de controle e limitar a autonomia das pessoas. Para Weber, esse processo aparece em instituições administrativas, organizações econômicas e outras dimensões da vida moderna.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Administração pública:</span> Repartições utilizam protocolos, documentos, atribuições definidas e procedimentos padronizados para organizar o atendimento.</li>
+                <li><span class="example-label">Organização escolar:</span> Calendários, critérios formais de avaliação e sistemas de registro permitem coordenar atividades e acompanhar procedimentos institucionais.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+    <!-- ============================================================
+         UNIDADE 05 · As contradições da modernidade · 1 flashcard(s)
+         ============================================================ -->
+    <section class="unit-block" data-unit-section="5" id="unidade-5" aria-labelledby="titulo-u5">
+      <header class="unit-heading">
+        <h2 class="unit-title" id="titulo-u5">
+          <button type="button" class="unit-toggle" data-toggle-unit aria-expanded="true" aria-controls="cartoes-u5">
+            <span class="unit-heading-index" aria-hidden="true">05</span>
+            <span class="unit-heading-copy">
+              <span class="unit-eyebrow">UNIDADE 05 · 1 CARTÃO</span>
+              <span class="unit-heading-label">As contradições da modernidade</span>
+            </span>
+            <span class="unit-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </h2>
+      </header>
+      <div class="card-grid layout-count-1" role="region" id="cartoes-u5" aria-labelledby="titulo-u5">
+        <!-- FLASHCARD 18: Igualdade jurídica -->
+        <article class="study-card variant-brutal" data-number="18" data-unit="5" data-search="igualdade jurídica é o princípio segundo o qual todas as pessoas devem ser reconhecidas como iguais perante a lei, com proteção jurídica e direitos que não dependam de privilégios arbitrários. essa igualdade formal não significa necessariamente igualdade econômica ou social. a igualdade jurídica estabelece um princípio normativo para a organização das relações sociais e políticas. entretanto, a existência de direitos formalmente reconhecidos não garante condições materiais semelhantes para exercê-los. a sociologia investiga como desigualdades de classe, raça, gênero e acesso a recursos podem limitar a realização efetiva desses direitos. abolição brasileira: em 1888, a escravidão foi juridicamente abolida, mas a população negra continuou enfrentando desigualdades de propriedade, renda e acesso a direitos. situação didática hipotética: duas pessoas possuem formalmente o mesmo direito de participar de uma seleção de emprego, mas enfrentam condições diferentes de transporte, escolarização e acesso a recursos necessários à candidatura." style="--card-color:#294a42;--card-pale:#e8f0ea;">
+          <button type="button" class="card-trigger" data-open-card aria-haspopup="dialog" aria-label="Abrir flashcard 18: Igualdade jurídica">
+            <span class="terminal-chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="card-name">Igualdade jurídica</span>
+            <span class="card-bottom"><span>Ver definição e exemplos</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <template class="card-back-template">
+            <div class="reading-content">
+              <section class="reading-section">
+                <h3>O que é?</h3>
+                <p>É o princípio segundo o qual todas as pessoas devem ser reconhecidas como iguais perante a lei, com proteção jurídica e direitos que não dependam de privilégios arbitrários. Essa igualdade formal não significa necessariamente igualdade econômica ou social.</p>
+              </section>
+              <section class="reading-section">
+                <h3>Como funciona?</h3>
+                <p>A igualdade jurídica estabelece um princípio normativo para a organização das relações sociais e políticas. Entretanto, a existência de direitos formalmente reconhecidos não garante condições materiais semelhantes para exercê-los. A Sociologia investiga como desigualdades de classe, raça, gênero e acesso a recursos podem limitar a realização efetiva desses direitos.</p>
+              </section>
+              <section class="reading-section reading-examples">
+                <h3>Exemplos</h3>
+                <ol>
+                <li><span class="example-label">Abolição brasileira:</span> Em 1888, a escravidão foi juridicamente abolida, mas a população negra continuou enfrentando desigualdades de propriedade, renda e acesso a direitos.</li>
+                <li><span class="example-label">Situação didática hipotética:</span> Duas pessoas possuem formalmente o mesmo direito de participar de uma seleção de emprego, mas enfrentam condições diferentes de transporte, escolarização e acesso a recursos necessários à candidatura.</li>
+                </ol>
+              </section>
+            </div>
+          </template>
+        </article>
+      </div>
+    </section>
+    <p class="empty-state" hidden id="empty-state">Nenhum conceito corresponde à pesquisa. Experimente outra palavra ou unidade.</p>
+</main>
+<footer class="page-footer"><span class="footer-brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA  |  Prof. Dr. Eliaquim Timóteo</span><a href="S-i-1-2-teorias-sociologicas-modernidade-aula-V05.html">Voltar à aula</a></footer>
+</div>
+<!-- 09. VERSO UNIVERSAL DOS FLASHCARDS: CONTEÚDO INTEGRAL E NAVEGÁVEL -->
+<dialog aria-labelledby="dialog-title" class="card-dialog" id="flashcard-dialog">
+<div class="dialog-header" id="dialog-header">
+<div class="dialog-top"><span id="dialog-unit">UNIDADE 01</span></div>
+<h2 id="dialog-title"></h2>
+<p class="dialog-subtitle">Definição, explicação e exemplos do conceito.</p>
+</div>
+<div id="dialog-body"></div>
+<div class="dialog-footer">
+
+<div class="dialog-actions"><button class="dialog-action" id="dialog-previous" type="button">Anterior</button><button class="dialog-action" id="dialog-next" type="button">Próximo</button><button class="dialog-action primary" id="dialog-close" type="button">Voltar aos cartões</button></div>
+</div>
+</dialog>
+<noscript><div class="shell" role="status">Esta página utiliza JavaScript para revelar o verso de cada cartão e navegar entre os conceitos. Ative o JavaScript no navegador para estudar os flashcards.</div></noscript>
+<script>
+    /* ============================================================
+       10. FUNCIONALIDADE DOS FLASHCARDS
+       O conteúdo revisado fica nos <template> de cada cartão, acima.
+       Não há dependências externas. O arquivo funciona offline.
+       ============================================================ */
+    (() => {
+      'use strict';
+      const root = document.documentElement;
+      const cards = [...document.querySelectorAll('.study-card')];
+      const units = [...document.querySelectorAll('[data-unit-section]')];
+      const search = document.querySelector('#search-cards');
+      const unitFilter = document.querySelector('#unit-filter');
+      const count = document.querySelector('#result-count');
+      const empty = document.querySelector('#empty-state');
+      const modal = document.querySelector('#flashcard-dialog');
+      const modalTitle = document.querySelector('#dialog-title');
+      const modalUnit = document.querySelector('#dialog-unit');
+      const modalBody = document.querySelector('#dialog-body');
+      const previous = document.querySelector('#dialog-previous');
+      const next = document.querySelector('#dialog-next');
+      const close = document.querySelector('#dialog-close');
+      const theme = document.querySelector('#theme-toggle');
+      let lastTrigger = null;
+      let activeIndex = 0;
+      const normalise = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+      const visibleCards = () => cards.filter(card => !card.hidden);
+
+      function filterCards(){
+        const word = normalise(search.value.trim());
+        const u = unitFilter.value;
+        for (const card of cards) {
+          const match = (!word || normalise(card.dataset.search).includes(word)) &&
+              (u === 'all' || card.dataset.unit === u);
+          card.hidden = !match;
+        }
+        for (const section of units) {
+          const hasMatchingCards = Boolean(section.querySelector('.study-card:not([hidden])'));
+          section.hidden = !hasMatchingCards;
+          // Ao pesquisar ou selecionar uma unidade, revele os resultados encontrados.
+          if (hasMatchingCards && (word || u !== 'all')) {
+            setUnitExpanded(section, true);
+          }
+        }
+        const total = visibleCards().length;
+        count.textContent = `${total} ${total === 1 ? 'cartão' : 'cartões'}`;
+        empty.hidden = total !== 0;
+      }
+      [search,unitFilter].forEach(input=>input.addEventListener('input',filterCards));
+
+      function setUnitExpanded(section, expanded) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        const grid = section.querySelector('.card-grid');
+        toggle.setAttribute('aria-expanded', String(expanded));
+        grid.hidden = !expanded;
+      }
+      for (const section of units) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        toggle.addEventListener('click', () => {
+          setUnitExpanded(section, toggle.getAttribute('aria-expanded') !== 'true');
+        });
+      }
+
+      function openCard(card, keepOrigin = false) {
+        if (!card) return;
+        if (!keepOrigin) lastTrigger = card.querySelector('[data-open-card]');
+        activeIndex = cards.indexOf(card);
+        const title = card.querySelector('.card-name').textContent.trim();
+        modalTitle.textContent = title;
+        modalUnit.textContent = `UNIDADE ${String(card.dataset.unit).padStart(2,'0')}`;
+        document.querySelector('#dialog-header').style.setProperty('--dialog-accent', getComputedStyle(card).getPropertyValue('--card-color').trim());
+        modalBody.replaceChildren(card.querySelector('.card-back-template').content.cloneNode(true));
+        if (!modal.open) modal.showModal();
+        modal.scrollTop = 0;
+        close.focus({preventScroll:true});
+      }
+      cards.forEach(card=>card.querySelector('[data-open-card]').addEventListener('click',()=>openCard(card)));
+      function navigate(offset) {
+        const available=visibleCards();
+        const current=available.indexOf(cards[activeIndex]);
+        const target=available[(current + offset + available.length)%available.length];
+        if (target) openCard(target,true);
+      }
+      previous.addEventListener('click',()=>navigate(-1));
+      next.addEventListener('click',()=>navigate(1));
+      close.addEventListener('click',()=>modal.close());
+      modal.addEventListener('click',event=>{
+        // Clique na área escurecida fecha a leitura; conteúdo permanece interativo.
+        if (event.target !== modal) return;
+        const r=modal.getBoundingClientRect();
+        if (event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) modal.close();
+      });
+      modal.addEventListener('close',()=>{if(lastTrigger && lastTrigger.isConnected) lastTrigger.focus({preventScroll:true});});
+      modal.addEventListener('keydown',event=>{
+        if (event.altKey && event.key === 'ArrowRight') {event.preventDefault();navigate(1);}
+        if (event.altKey && event.key === 'ArrowLeft') {event.preventDefault();navigate(-1);}
+      });
+      function applyTheme(mode) {
+        root.dataset.theme=mode;
+        const isDark=mode==='dark';
+        theme.textContent=isDark?'Modo claro':'Modo noturno';
+        theme.setAttribute('aria-pressed',String(isDark));
+        document.querySelector('meta[name="theme-color"]').setAttribute('content',isDark?'#192421':'#f7f5ef');
+      }
+      try {applyTheme(localStorage.getItem('sociologia-i-1-2-flashcards-theme')==='dark'?'dark':'light');} catch(e) {applyTheme('light');}
+      theme.addEventListener('click',()=>{
+        const nextMode=root.dataset.theme==='dark'?'light':'dark';
+        applyTheme(nextMode);
+        try {localStorage.setItem('sociologia-i-1-2-flashcards-theme',nextMode);} catch(e) { /* modo privado */ }
+      });
+      filterCards();
+    })();
+  </script>
+</body>
+</html>

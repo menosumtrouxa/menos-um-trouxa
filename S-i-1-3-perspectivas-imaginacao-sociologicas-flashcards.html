@@ -1,0 +1,523 @@
+<!doctype html>
+
+
+<html data-theme="light" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#f7f5ee" name="theme-color"/>
+<meta content="16 flashcards exclusivos da aula 1.3: Perspectivas e imaginação sociológicas. Definição, explicação e dois exemplos por conceito." name="description"/>
+<title>Flashcards da Aula 1.3 | Sociologia I</title>
+<style>
+    /* ============================================================
+       01. PALETA CENTRAL E MODO NOTURNO
+       Para trocar a identidade visual, altere as variáveis abaixo.
+       Os cartões preservam as cores individuais da aula V07.
+       ============================================================ */
+    :root {
+      color-scheme:light;
+      --paper:#f7f5ef;
+      --surface:#fffdf7;
+      --ink:#28342f;
+      --muted:#657068;
+      --line:#d7d8cc;
+      --accent:#315746;
+      --accent-fg:#ffffff;
+      --faint:#ebeee7;
+      --dialog-shadow:0 30px 90px rgba(16,34,30,.25);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      --mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+    }
+    html[data-theme="dark"] {
+      color-scheme:dark;
+      --paper:#192421;
+      --surface:#24322d;
+      --ink:#f5f2e7;
+      --muted:#c0c9c1;
+      --line:#42544a;
+      --accent:#c2d8c4;
+      --accent-fg:#1b3027;
+      --faint:#2e4037;
+      --dialog-shadow:0 32px 100px rgba(0,0,0,.57);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5}
+    button,input,select {font:inherit}
+    button {cursor:pointer}
+    button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {outline:3px solid #df8b50;outline-offset:4px}
+    a {color:inherit}
+    .shell {width:min(1360px,calc(100% - 54px));margin-inline:auto}
+    .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link {position:absolute;z-index:50;top:8px;left:8px;transform:translateY(-150%);background:var(--surface);color:var(--ink);padding:10px 16px;border:1px solid var(--line)}
+    .skip-link:focus {transform:none}
+
+    /* 02. CABEÇALHO, IDENTIDADE E CONTEÚDO INTRODUTÓRIO */
+    .topline {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 0 19px;border-bottom:1px solid var(--line)}
+    .brand {font-size:11px;letter-spacing:.095em;font-weight:850;text-transform:uppercase;line-height:1.5}
+    .brand-prof {font-weight:650;letter-spacing:0;text-transform:none}
+    .brand-divider {padding-inline:5px;font-weight:500}
+    .top-actions {display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .top-link,.theme-btn {min-height:39px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);padding:9px 13px;text-decoration:none;font-size:12px;font-weight:740}
+    .top-link:hover,.theme-btn:hover {border-color:var(--accent)}
+    .hero {display:block;padding:40px 0 34px}
+    .eyebrow {display:block;color:var(--accent);font-size:11px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+    .hero h1 {font-family:var(--serif);font-size:clamp(52px,6.1vw,87px);letter-spacing:-.065em;font-weight:600;line-height:1;margin:13px 0 11px}
+    .hero-subtitle {font-family:var(--serif);font-size:clamp(18px,2.2vw,28px);line-height:1.18;max-width:850px;margin:0}
+    .hero-description {max-width:720px;font-size:14px;line-height:1.7;color:var(--muted);margin:17px 0 0}
+    /* 03. PESQUISA E SELEÇÃO DE UNIDADE */
+    .study-toolbar {display:grid;grid-template-columns:minmax(230px,1.4fr) minmax(250px,1fr);gap:13px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:end}
+    .field {display:flex;flex-direction:column;gap:5px;min-width:0}
+    .field label {font-size:10px;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:var(--muted)}
+    .field input,.field select {background:var(--surface);color:var(--ink);width:100%;border:1px solid var(--line);height:44px;border-radius:8px;padding:0 12px;outline-offset:2px;font-size:13px}
+    .study-guide {margin:15px 0 4px;display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted)}
+
+    /* 04. UNIDADES E GRADE SEM VAZIOS DE ABERTURA */
+    .unit-block {margin:44px 0 57px;scroll-margin-top:18px}
+    .unit-block[hidden],.study-card[hidden] {display:none!important}
+    .unit-heading {max-width:1100px;margin:0 auto 22px;border-bottom:1px solid var(--line);padding:0 0 18px}
+    .unit-heading h2 {margin:0}
+    .unit-toggle {width:100%;display:flex;align-items:center;gap:18px;border:0;border-radius:9px;padding:5px 8px 5px 0;background:transparent;color:var(--ink);text-align:left}
+    .unit-toggle:hover {background:var(--faint)}
+    .unit-toggle:focus-visible {outline:3px solid #df8b50;outline-offset:3px}
+    .unit-heading-index {display:grid;place-items:center;flex:none;width:60px;height:60px;border:1px solid var(--line);border-radius:50%;font-family:var(--serif);font-size:23px;font-weight:700;color:var(--accent)}
+    .unit-heading-copy {min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+    .unit-eyebrow {text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+    .unit-heading-label {font-family:var(--serif);font-size:clamp(23px,2.4vw,34px);line-height:1.17;font-weight:550;letter-spacing:-.03em;margin-top:5px}
+    .unit-chevron {margin-left:auto;font-family:var(--sans);font-size:30px;line-height:1;transform:rotate(180deg);transition:transform .18s;flex:none;color:var(--accent)}
+    .unit-toggle[aria-expanded="false"] .unit-chevron {transform:rotate(0deg)}
+    /* Flex com largura calculada mantém três cartões por linha e centraliza as filas incompletas. */
+    .card-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:24px;align-items:flex-start;max-width:1100px;margin-inline:auto}
+    .card-grid > .study-card {flex:0 1 calc((100% - 48px)/3)}
+    .study-card {min-width:0;position:relative;--card-color:#315746;--card-pale:#e9f0e8}
+    .card-trigger {position:relative;display:flex;flex-direction:column;justify-content:space-between;width:100%;height:228px;text-align:left;padding:23px 21px 17px;border:0;color:#fff;background:var(--card-color);transition:transform .17s,box-shadow .17s;isolation:isolate;overflow:visible}
+    .card-trigger:hover {transform:translateY(-3px)}
+    .card-trigger::before {content:"";position:absolute;inset:0 0 auto;height:5px;background:#dfbd8b;opacity:.7}
+    .card-top {position:relative;z-index:1;display:flex;align-items:start;justify-content:space-between;gap:8px}
+    .card-name {position:relative;z-index:1;align-self:stretch;text-align:center;font-family:var(--serif);font-size:clamp(22px,2vw,31px);font-weight:750;letter-spacing:-.035em;line-height:1.1;hyphens:auto;overflow-wrap:break-word;margin:auto 0;padding:15px 0}
+    .card-bottom {position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:10px;font-size:11px;line-height:1.35;font-weight:600;opacity:.9}
+    .card-arrow {font-size:20px;line-height:1}
+    .study-card.variant-soft .card-trigger {border-radius:18px;border:1px solid rgba(255,255,255,.2);box-shadow:0 13px 25px rgba(28,51,43,.17),0 2px 4px rgba(16,34,29,.07)}
+    .study-card.variant-soft .card-trigger::before {border-radius:18px 18px 0 0;background:linear-gradient(90deg,#e5bd7a,#eee2bf);height:5px}
+    .study-card.variant-brutal .card-trigger {border:3px solid #1e2825;border-radius:7px;box-shadow:8px 8px 0 #26362f}
+    .study-card.variant-brutal .card-trigger:hover {transform:translate(-2px,-3px);box-shadow:10px 11px 0 #26362f}
+    .study-card.variant-brutal .card-trigger::before {display:none}
+    .study-card.variant-brutal .card-name {font-family:var(--sans);font-size:clamp(19px,1.9vw,26px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em}
+    .study-card.variant-brutal .card-arrow {border:2px solid currentColor;min-width:29px;height:29px;display:grid;place-items:center;border-radius:2px}
+    .study-card.variant-terminal .card-trigger {background:linear-gradient(140deg,color-mix(in srgb,var(--card-color) 44%,#101f22),#142523);border:1px solid color-mix(in srgb,var(--card-color) 65%,#b3ccbd);border-radius:10px;box-shadow:0 12px 22px rgba(20,47,37,.21);padding-top:42px}
+    .study-card.variant-terminal .card-trigger::before {display:none}
+    .terminal-chrome {display:none}
+    .study-card.variant-terminal .terminal-chrome {position:absolute;inset:0 0 auto;display:flex;gap:5px;align-items:center;height:31px;border-bottom:1px solid #6f8a7b;padding:0 12px}
+    .study-card.variant-terminal .terminal-chrome i {display:block;width:7px;height:7px;border-radius:50%;background:#d6aa81}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(2) {background:#a9c5ab}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(3) {background:#789ca3}
+    .study-card.variant-terminal .card-bottom {font-family:var(--mono)}
+    .study-card.variant-terminal .card-name {font-family:var(--mono);font-size:clamp(19px,1.7vw,24px);font-weight:760;letter-spacing:-.05em}
+    .study-card.variant-terminal .card-arrow {font-family:var(--mono)}
+
+    /* 05. VERSO EM PAINEL MODAL: TODOS OS TEXTOS SÃO INTEGRAIS
+       A abertura não desloca a grade e permite leitura acessível. */
+    .card-dialog {position:fixed;border:1px solid var(--line);padding:0;margin:auto;width:min(850px,calc(100vw - 36px));max-height:min(91dvh,980px);border-radius:17px;box-shadow:var(--dialog-shadow);background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+    .card-dialog::backdrop {background:rgba(14,29,25,.78);backdrop-filter:blur(5px)}
+    .dialog-header {background:var(--dialog-accent,#315746);color:#fff;padding:30px 36px 28px;position:relative}
+    .dialog-header::before {content:"";position:absolute;top:0;left:0;right:0;height:5px;background:#e3c79c}
+    .dialog-top {display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.92}
+    .dialog-header h2 {font-family:var(--serif);font-size:clamp(32px,5vw,55px);line-height:1.05;letter-spacing:-.05em;font-weight:650;margin:18px 0 0;overflow-wrap:anywhere}
+    .dialog-subtitle {font-size:12px;margin:12px 0 0;opacity:.86}
+    .reading-content {padding:28px 35px 35px}
+    .reading-section+ .reading-section {margin-top:23px;padding-top:23px;border-top:1px solid var(--line)}
+    .reading-section h3 {font-family:var(--serif);font-size:25px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-weight:700;color:var(--accent)}
+    .reading-section p {font-size:15px;line-height:1.72;margin:0;max-width:75ch;hyphens:auto;text-align:justify;text-justify:inter-word}
+    .reading-examples ol {list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;counter-reset:case}
+    .reading-examples li {position:relative;counter-increment:case;background:var(--faint);border:1px solid var(--line);border-radius:10px;padding:19px 17px 18px;font-size:13px;line-height:1.65;min-width:0;text-align:justify;text-justify:inter-word;hyphens:auto}
+    .reading-examples li::before {content:counter(case,decimal-leading-zero);display:block;color:var(--accent);font-size:10px;letter-spacing:.13em;font-weight:900;margin-bottom:8px}
+    .example-label {font-weight:800;color:var(--ink)}
+    .dialog-footer {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:15px 35px 22px;border-top:1px solid var(--line);background:var(--surface)}
+    .dialog-actions {display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .dialog-action {border-radius:8px;min-height:41px;padding:9px 17px;background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:12px;font-weight:800}
+    .dialog-action.primary {background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+    .empty-state {display:none;border:1px dashed var(--line);border-radius:14px;margin:30px 0;padding:30px;color:var(--muted);text-align:center}
+    .empty-state:not([hidden]) {display:block}
+    .page-footer {border-top:1px solid var(--line);padding:26px 0 50px;display:flex;justify-content:space-between;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:12px;align-items:center}
+    .footer-brand {font-weight:700;letter-spacing:.025em}
+    .page-footer a {color:var(--accent);font-weight:800}
+    [hidden] {display:none!important}
+    /* 06. ADAPTAÇÃO RESPONSIVA E LEITURA JUSTIFICADA */
+    p {text-align:justify;text-justify:inter-word;hyphens:auto}
+    @media(max-width:1010px){
+      .card-grid > .study-card {flex-basis:calc((100% - 22px)/2)}
+      .card-grid {gap:22px;max-width:730px}
+      .unit-heading {max-width:730px}
+    }
+    @media(max-width:800px){
+      .shell{width:min(100% - 32px,1360px)}
+      .hero{padding:30px 0}
+      .study-toolbar{grid-template-columns:1fr 1fr}
+      .card-trigger{height:219px}
+      .reading-content{padding:25px}
+      .dialog-footer{padding-inline:25px}
+    }
+    @media(max-width:520px){
+      .topline{align-items:flex-start;flex-direction:column}
+      .brand{max-width:none}
+      .top-actions{justify-content:flex-start}
+      .hero h1{font-size:clamp(48px,11vw,66px)}
+      .hero-subtitle{font-size:20px}
+      .study-toolbar{grid-template-columns:1fr;gap:10px}
+      .unit-block{margin:34px 0 44px}
+      .unit-toggle{gap:12px}
+      .unit-heading-index{width:47px;height:47px;font-size:19px}
+      .unit-heading-label{font-size:24px}
+      .card-grid{gap:15px;max-width:440px}
+      .card-grid > .study-card{flex:0 1 100%}
+      .card-trigger{height:205px;padding:21px}
+      .card-name{font-size:clamp(27px,7.5vw,35px)!important}
+      .study-card.variant-terminal .card-name{font-size:27px!important}
+      .reading-examples ol{grid-template-columns:1fr}
+      .card-dialog{width:calc(100vw - 18px);max-height:96dvh;border-radius:12px}
+      .dialog-header{padding:27px 21px 23px}
+      .reading-content{padding:22px 20px}
+      .reading-section p{font-size:14px}
+      .dialog-footer{padding:13px 20px 20px}
+      .reading-section h3{font-size:23px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media print {.top-actions,.study-toolbar,.study-guide,.dialog-action,.page-footer{display:none!important}body{background:#fff;color:#222}.card-grid{gap:14px;max-width:none}.card-grid > .study-card{flex-basis:calc((100% - 28px)/3)}.card-trigger{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact;height:150px}.unit-block{break-before:page}.unit-block:first-child{break-before:auto}}
+  
+/* GRADE BALANCEADA DA AULA 1.3: sem lacunas no final das unidades. */
+.card-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));max-width:1140px;gap:22px;align-items:stretch}
+.card-grid>.study-card{grid-column:span 4;width:100%;flex:none}
+@media(min-width:1061px){.card-grid>.study-card[data-span="3"]{grid-column:span 3}.card-grid>.study-card[data-span="4"]{grid-column:span 4}.card-grid>.study-card[data-span="6"]{grid-column:span 6}.card-grid>.study-card[data-span="12"]{grid-column:span 12}}
+@media(min-width:521px) and (max-width:1060px){.card-grid{max-width:760px;gap:18px}.card-grid>.study-card{grid-column:span 6!important}.card-grid>.study-card[data-mobile-span="12"]{grid-column:span 12!important}}
+@media(max-width:520px){.card-grid{grid-template-columns:1fr;max-width:440px;gap:15px}.card-grid>.study-card{grid-column:1/-1!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para os flashcards</a>
+<div class="shell">
+<!-- 06. IDENTIDADE DA AULA E NAVEGAÇÃO -->
+<header class="topline">
+<div aria-label="SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA | Prof. Dr. Eliaquim Timóteo" class="brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA<span aria-hidden="true" class="brand-divider"> | </span><span class="brand-prof">Prof. Dr. Eliaquim Timóteo</span></div>
+<nav aria-label="Acessos da aula" class="top-actions">
+<a class="top-link" href="S-I-1-3-perspectivas-imaginacao-sociologicas-aula_V04.html">Voltar à aula</a>
+<button aria-pressed="false" class="theme-btn" id="theme-toggle" type="button">Modo noturno</button>
+</nav>
+</header>
+<section aria-labelledby="page-title" class="hero">
+<div>
+<span class="eyebrow">AULA 1.3 · CADERNO DE CONCEITOS</span>
+<h1 id="page-title">Flashcards</h1>
+<p class="hero-subtitle">Perspectivas e imaginação sociológicas</p>
+<p class="hero-description">Estude os 16 conceitos da aula, com explicações sociológicas e dois exemplos distintos por cartão.</p>
+</div>
+</section>
+<!-- 07. PESQUISA E FILTROS DO ACERVO -->
+<div aria-label="Filtrar flashcards" class="study-toolbar" role="search">
+<div class="field"><label for="search-cards">Pesquisar conceitos e explicações</label><input autocomplete="off" id="search-cards" placeholder="Ex.: Mills, biografia, classe, cidade..." type="search"/></div>
+<div class="field"><label for="unit-filter">Unidade</label><select id="unit-filter"><option value="all">Todas as unidades</option><option value="1">01 · O olhar sociológico</option><option value="2">02 · C. Wright Mills e a imaginação sociológica</option><option value="3">03 · Familiaridade e perspectivas sociológicas clássicas</option><option value="4">04 · Cidade, ação coletiva e investigação empírica</option></select></div>
+<div aria-live="polite" class="sr-only" id="result-count">16 cartões</div>
+</div>
+<div class="study-guide">
+<span>Selecione um cartão para ler seu conteúdo. Use a tecla Esc para fechar.</span>
+</div>
+<!-- 08. FLASHCARDS REPRODUZIDOS FIELMENTE DA AULA 1.3 -->
+<main id="conteudo"><section aria-labelledby="titulo-u1" class="unit-block" data-unit-section="1" id="unidade-1"><header class="unit-heading"><h2 class="unit-title" id="titulo-u1"><button aria-controls="cartoes-u1" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">01</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 01</span><span class="unit-heading-label">O olhar sociológico</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header><div aria-labelledby="titulo-u1" class="card-grid" data-layout="balanced" id="cartoes-u1" role="region"><article class="study-card variant-soft" data-number="01" data-search="perspectiva sociológica é uma maneira de investigar a vida em sociedade que procura compreender como comportamentos, experiências e instituições se relacionam com condições sociais e históricas. a perspectiva sociológica não considera as decisões individuais isoladamente. ela investiga as relações, normas, recursos e desigualdades que influenciam as possibilidades de ação das pessoas, sem pressupor que suas escolhas sejam totalmente determinadas. teoria sociológica escolarização duas estudantes desejam frequentar um curso técnico. uma dispõe de transporte regular e tempo para estudar; a outra trabalha durante a tarde e enfrenta dificuldades de deslocamento. a perspectiva sociológica permite investigar como essas condições interferem nas oportunidades de formação, mesmo quando ambas possuem objetivos semelhantes. moradia duas famílias procuram casas para alugar na mesma cidade, mas possuem rendas diferentes. a investigação sociológica examina como preços, localização, transporte e condições de trabalho influenciam as opções disponíveis, em vez de explicar a escolha residencial somente pelas preferências familiares." data-style="soft" data-unit="1" style="--card-color:#315746;--card-pale:#e9f0e8">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 1: Perspectiva sociológica" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Perspectiva sociológica</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É uma maneira de investigar a vida em sociedade que procura compreender como comportamentos, experiências e instituições se relacionam com condições sociais e históricas.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A perspectiva sociológica não considera as decisões individuais isoladamente. Ela investiga as relações, normas, recursos e desigualdades que influenciam as possibilidades de ação das pessoas, sem pressupor que suas escolhas sejam totalmente determinadas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Escolarização:</strong> duas estudantes desejam frequentar um curso técnico. Uma dispõe de transporte regular e tempo para estudar; a outra trabalha durante a tarde e enfrenta dificuldades de deslocamento. A perspectiva sociológica permite investigar como essas condições interferem nas oportunidades de formação, mesmo quando ambas possuem objetivos semelhantes.</li><li><strong class="example-label">Moradia:</strong> duas famílias procuram casas para alugar na mesma cidade, mas possuem rendas diferentes. A investigação sociológica examina como preços, localização, transporte e condições de trabalho influenciam as opções disponíveis, em vez de explicar a escolha residencial somente pelas preferências familiares.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-brutal" data-number="02" data-search="desnaturalização é o procedimento de questionar explicações que apresentam práticas, normas ou desigualdades sociais como naturais, inevitáveis ou imutáveis. desnaturalizar significa investigar como determinada prática foi construída e reproduzida socialmente. a comparação entre épocas, grupos e contextos permite reconhecer que comportamentos considerados normais podem resultar de convenções, relações de poder e transformações históricas. sociologia crítica divisão doméstica do trabalho em uma família, as filhas são responsáveis pela limpeza da casa, enquanto os filhos são dispensados dessas tarefas. desnaturalizar essa divisão exige investigar as expectativas de gênero que a sustentam, reconhecendo que a organização do cuidado não decorre necessariamente de características biológicas. padrões de vestuário uma peça de roupa considerada masculina em determinado contexto pode ser utilizada por mulheres em outro. a comparação mostra que os significados atribuídos ao vestuário não são propriedades naturais dos tecidos, mas convenções culturais que podem variar historicamente." data-style="brutal" data-unit="1" style="--card-color:#713b4c;--card-pale:#f6eaeb">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 2: Desnaturalização" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Desnaturalização</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É o procedimento de questionar explicações que apresentam práticas, normas ou desigualdades sociais como naturais, inevitáveis ou imutáveis.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Desnaturalizar significa investigar como determinada prática foi construída e reproduzida socialmente. A comparação entre épocas, grupos e contextos permite reconhecer que comportamentos considerados normais podem resultar de convenções, relações de poder e transformações históricas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Divisão doméstica do trabalho:</strong> em uma família, as filhas são responsáveis pela limpeza da casa, enquanto os filhos são dispensados dessas tarefas. Desnaturalizar essa divisão exige investigar as expectativas de gênero que a sustentam, reconhecendo que a organização do cuidado não decorre necessariamente de características biológicas.</li><li><strong class="example-label">Padrões de vestuário:</strong> uma peça de roupa considerada masculina em determinado contexto pode ser utilizada por mulheres em outro. A comparação mostra que os significados atribuídos ao vestuário não são propriedades naturais dos tecidos, mas convenções culturais que podem variar historicamente.</li></ol></section>
+</div></template>
+</article></div></section><section aria-labelledby="titulo-u2" class="unit-block" data-unit-section="2" id="unidade-2"><header class="unit-heading"><h2 class="unit-title" id="titulo-u2"><button aria-controls="cartoes-u2" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">02</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 02</span><span class="unit-heading-label">C. Wright Mills e a imaginação sociológica</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header><div aria-labelledby="titulo-u2" class="card-grid" data-layout="balanced" id="cartoes-u2" role="region"><article class="study-card variant-terminal" data-number="03" data-search="imaginação sociológica é a capacidade de compreender como experiências individuais se relacionam com processos históricos e estruturas sociais. c. wright mills propõe investigar as conexões entre biografia, história e sociedade. uma experiência pode ser vivida pessoalmente, mas sua explicação pode exigir o exame de instituições, transformações econômicas e relações de poder que ultrapassam a trajetória do indivíduo. c. wright mills, 1959 desemprego um trabalhador perde sua ocupação após o fechamento de uma fábrica. a imaginação sociológica relaciona sua experiência pessoal às transformações da economia regional, às decisões empresariais e às oportunidades de trabalho disponíveis, em vez de atribuir o desemprego exclusivamente às suas capacidades individuais. mudança de residência uma família precisa sair de seu bairro devido ao aumento dos aluguéis. a experiência modifica sua rotina, mas também pode estar relacionada à valorização imobiliária, à distribuição da renda e às políticas habitacionais. a imaginação sociológica permite conectar esses níveis de explicação." data-style="terminal" data-unit="2" style="--card-color:#344f60;--card-pale:#e8eef2">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 3: Imaginação sociológica" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Imaginação sociológica</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a capacidade de compreender como experiências individuais se relacionam com processos históricos e estruturas sociais.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>C. Wright Mills propõe investigar as conexões entre biografia, história e sociedade. Uma experiência pode ser vivida pessoalmente, mas sua explicação pode exigir o exame de instituições, transformações econômicas e relações de poder que ultrapassam a trajetória do indivíduo.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Desemprego:</strong> um trabalhador perde sua ocupação após o fechamento de uma fábrica. A imaginação sociológica relaciona sua experiência pessoal às transformações da economia regional, às decisões empresariais e às oportunidades de trabalho disponíveis, em vez de atribuir o desemprego exclusivamente às suas capacidades individuais.</li><li><strong class="example-label">Mudança de residência:</strong> uma família precisa sair de seu bairro devido ao aumento dos aluguéis. A experiência modifica sua rotina, mas também pode estar relacionada à valorização imobiliária, à distribuição da renda e às políticas habitacionais. A imaginação sociológica permite conectar esses níveis de explicação.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-soft" data-number="04" data-search="biografia é a trajetória particular de uma pessoa, constituída por experiências, escolhas, relações e acontecimentos vividos em determinadas circunstâncias sociais e históricas. a biografia permite investigar como os indivíduos experimentam situações sociais ao longo de suas vidas. embora cada trajetória seja singular, ela se desenvolve em condições que podem favorecer, restringir ou modificar os projetos pessoais. c. wright mills, 1959 migração familiar durante a adolescência, uma estudante muda de município porque sua família procura novas oportunidades de trabalho. ela passa a frequentar outra escola, estabelece novas amizades e modifica seus planos. essas experiências integram sua biografia. trajetória educacional um jovem inicia um curso técnico, interrompe os estudos para contribuir com a renda familiar e posteriormente retorna à escola. sua biografia permite compreender a sequência de acontecimentos e decisões que marcaram seu percurso, sem ignorar as condições sociais envolvidas." data-style="soft" data-unit="2" style="--card-color:#634a3b;--card-pale:#f3ece4">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 4: Biografia" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Biografia</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a trajetória particular de uma pessoa, constituída por experiências, escolhas, relações e acontecimentos vividos em determinadas circunstâncias sociais e históricas.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A biografia permite investigar como os indivíduos experimentam situações sociais ao longo de suas vidas. Embora cada trajetória seja singular, ela se desenvolve em condições que podem favorecer, restringir ou modificar os projetos pessoais.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Migração familiar:</strong> durante a adolescência, uma estudante muda de município porque sua família procura novas oportunidades de trabalho. Ela passa a frequentar outra escola, estabelece novas amizades e modifica seus planos. Essas experiências integram sua biografia.</li><li><strong class="example-label">Trajetória educacional:</strong> um jovem inicia um curso técnico, interrompe os estudos para contribuir com a renda familiar e posteriormente retorna à escola. Sua biografia permite compreender a sequência de acontecimentos e decisões que marcaram seu percurso, sem ignorar as condições sociais envolvidas.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-brutal" data-number="05" data-search="história é a dimensão temporal dos processos sociais, formada por acontecimentos, continuidades e transformações que modificam as condições de vida e a organização das sociedades. a análise histórica permite compreender que instituições, tecnologias e relações sociais não existem fora do tempo. elas foram produzidas em determinadas circunstâncias e podem ser transformadas por conflitos, decisões políticas, mudanças econômicas e ações coletivas. c. wright mills, 1959 · tarsila do amaral, operários, 1933 organização do trabalho a pintura operários (1933), de tarsila do amaral, representa trabalhadores associados à industrialização. sua comparação com registros contemporâneos do trabalho por plataformas digitais ajuda a investigar mudanças tecnológicas e organizacionais, sem considerar essas formas de trabalho historicamente equivalentes. acesso à escolarização ao comparar as oportunidades educacionais de diferentes gerações de uma família, uma pesquisa pode investigar como a expansão das redes escolares, as mudanças na legislação e as condições econômicas transformaram as possibilidades de estudar ao longo do tempo." data-style="brutal" data-unit="2" style="--card-color:#2f5548;--card-pale:#e5efea">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 5: História" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">História</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a dimensão temporal dos processos sociais, formada por acontecimentos, continuidades e transformações que modificam as condições de vida e a organização das sociedades.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A análise histórica permite compreender que instituições, tecnologias e relações sociais não existem fora do tempo. Elas foram produzidas em determinadas circunstâncias e podem ser transformadas por conflitos, decisões políticas, mudanças econômicas e ações coletivas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Organização do trabalho:</strong> a pintura Operários (1933), de Tarsila do Amaral, representa trabalhadores associados à industrialização. Sua comparação com registros contemporâneos do trabalho por plataformas digitais ajuda a investigar mudanças tecnológicas e organizacionais, sem considerar essas formas de trabalho historicamente equivalentes.</li><li><strong class="example-label">Acesso à escolarização:</strong> ao comparar as oportunidades educacionais de diferentes gerações de uma família, uma pesquisa pode investigar como a expansão das redes escolares, as mudanças na legislação e as condições econômicas transformaram as possibilidades de estudar ao longo do tempo.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-terminal" data-number="06" data-search="estrutura social é a organização relativamente duradoura das relações sociais, instituições, posições e formas de distribuição de recursos que condicionam a vida em sociedade. a estrutura social estabelece condições distintas de acesso ao trabalho, à educação, à moradia e ao poder. essas condições influenciam a ação das pessoas, mas não determinam de maneira absoluta suas decisões ou impedem transformações sociais. teoria sociológica organização urbana em um município, escolas e serviços de saúde estão concentrados no centro, enquanto bairros distantes possuem transporte limitado. a distribuição das instituições e da infraestrutura condiciona as oportunidades de seus moradores. mercado de trabalho em uma empresa, diferentes posições profissionais possuem atribuições, remunerações e poderes de decisão desiguais. a estrutura organizacional ajuda a compreender essas diferenças, que não dependem apenas das características pessoais de cada trabalhador." data-style="terminal" data-unit="2" style="--card-color:#2c5862;--card-pale:#e7f0f1">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 6: Estrutura social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Estrutura social</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a organização relativamente duradoura das relações sociais, instituições, posições e formas de distribuição de recursos que condicionam a vida em sociedade.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A estrutura social estabelece condições distintas de acesso ao trabalho, à educação, à moradia e ao poder. Essas condições influenciam a ação das pessoas, mas não determinam de maneira absoluta suas decisões ou impedem transformações sociais.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Organização urbana:</strong> em um município, escolas e serviços de saúde estão concentrados no centro, enquanto bairros distantes possuem transporte limitado. A distribuição das instituições e da infraestrutura condiciona as oportunidades de seus moradores.</li><li><strong class="example-label">Mercado de trabalho:</strong> em uma empresa, diferentes posições profissionais possuem atribuições, remunerações e poderes de decisão desiguais. A estrutura organizacional ajuda a compreender essas diferenças, que não dependem apenas das características pessoais de cada trabalhador.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-soft" data-number="07" data-search="dificuldade pessoal na perspectiva de c. wright mills, é um problema experimentado diretamente na vida de uma pessoa e em suas relações mais próximas, dentro das circunstâncias em que desenvolve sua trajetória. a dificuldade pessoal é identificada a partir da experiência vivida pelo indivíduo. entretanto, sua compreensão pode exigir o exame de processos econômicos, instituições e relações sociais que ultrapassam o ambiente imediato da pessoa. c. wright mills, 1959 perda de emprego uma trabalhadora perde sua ocupação e precisa reorganizar as despesas familiares. o desemprego constitui uma dificuldade experimentada pessoalmente, mas sua origem pode estar relacionada ao fechamento de empresas ou à redução de postos de trabalho. permanência escolar um estudante passa a faltar às aulas porque precisa cuidar de um familiar. a dificuldade interfere diretamente em sua trajetória, mas também pode estar relacionada à distribuição das responsabilidades de cuidado e à disponibilidade de serviços de apoio." data-style="soft" data-unit="2" style="--card-color:#754743;--card-pale:#f6eaeb">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 7: Dificuldade pessoal" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Dificuldade pessoal</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>Na perspectiva de C. Wright Mills, é um problema experimentado diretamente na vida de uma pessoa e em suas relações mais próximas, dentro das circunstâncias em que desenvolve sua trajetória.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A dificuldade pessoal é identificada a partir da experiência vivida pelo indivíduo. Entretanto, sua compreensão pode exigir o exame de processos econômicos, instituições e relações sociais que ultrapassam o ambiente imediato da pessoa.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Perda de emprego:</strong> uma trabalhadora perde sua ocupação e precisa reorganizar as despesas familiares. O desemprego constitui uma dificuldade experimentada pessoalmente, mas sua origem pode estar relacionada ao fechamento de empresas ou à redução de postos de trabalho.</li><li><strong class="example-label">Permanência escolar:</strong> um estudante passa a faltar às aulas porque precisa cuidar de um familiar. A dificuldade interfere diretamente em sua trajetória, mas também pode estar relacionada à distribuição das responsabilidades de cuidado e à disponibilidade de serviços de apoio.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-brutal" data-number="08" data-search="questão pública na perspectiva de c. wright mills, é um problema relacionado à organização da sociedade, ao funcionamento de suas instituições e às condições estruturais que ultrapassam o ambiente imediato de uma pessoa. uma questão pública envolve relações sociais e institucionais que não podem ser explicadas apenas pelas experiências individuais. investigá-la exige examinar processos históricos, distribuição de recursos, decisões econômicas e formas de organização social. c. wright mills, 1959 desemprego regional quando várias empresas encerram atividades em um município, numerosos trabalhadores podem perder renda. a investigação do desemprego precisa considerar o funcionamento da economia regional, as decisões empresariais e as políticas de emprego, além das experiências de cada trabalhador. transporte escolar estudantes de diferentes comunidades rurais enfrentam dificuldades frequentes para chegar à escola. a situação pode constituir uma questão pública quando envolve a organização das rotas, os recursos destinados ao transporte e as responsabilidades institucionais relacionadas ao acesso à educação." data-style="brutal" data-unit="2" style="--card-color:#315746;--card-pale:#e9f0e8">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 8: Questão pública" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Questão pública</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>Na perspectiva de C. Wright Mills, é um problema relacionado à organização da sociedade, ao funcionamento de suas instituições e às condições estruturais que ultrapassam o ambiente imediato de uma pessoa.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Uma questão pública envolve relações sociais e institucionais que não podem ser explicadas apenas pelas experiências individuais. Investigá-la exige examinar processos históricos, distribuição de recursos, decisões econômicas e formas de organização social.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Desemprego regional:</strong> quando várias empresas encerram atividades em um município, numerosos trabalhadores podem perder renda. A investigação do desemprego precisa considerar o funcionamento da economia regional, as decisões empresariais e as políticas de emprego, além das experiências de cada trabalhador.</li><li><strong class="example-label">Transporte escolar:</strong> estudantes de diferentes comunidades rurais enfrentam dificuldades frequentes para chegar à escola. A situação pode constituir uma questão pública quando envolve a organização das rotas, os recursos destinados ao transporte e as responsabilidades institucionais relacionadas ao acesso à educação.</li></ol></section>
+</div></template>
+</article></div></section><section aria-labelledby="titulo-u3" class="unit-block" data-unit-section="3" id="unidade-3"><header class="unit-heading"><h2 class="unit-title" id="titulo-u3"><button aria-controls="cartoes-u3" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">03</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 03</span><span class="unit-heading-label">Familiaridade e perspectivas sociológicas clássicas</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header><div aria-labelledby="titulo-u3" class="card-grid" data-layout="balanced" id="cartoes-u3" role="region"><article class="study-card variant-terminal" data-number="09" data-search="estranhamento do familiar é o exercício de examinar criticamente práticas e relações conhecidas, questionando pressupostos que a convivência cotidiana pode fazer parecer evidentes. na abordagem de gilberto velho, conhecer um ambiente não significa compreender todas as relações sociais nele existentes. o pesquisador precisa reconhecer sua própria posição, confrontar interpretações e investigar os diferentes sentidos atribuídos às práticas observadas. gilberto velho, observando o familiar, 1978 participação escolar uma estudante percebe que determinados colegas costumam falar mais nas reuniões. em vez de considerar essa diferença natural, observa como as reuniões são conduzidas e entrevista participantes para investigar as condições que favorecem ou restringem a participação. relações familiares uma pesquisadora observa que, nas reuniões de sua própria família, determinadas pessoas costumam decidir os assuntos coletivos. o estranhamento permite investigar como idade, gênero, autoridade e trajetórias familiares influenciam essas decisões, em vez de tratá-las como costumes que dispensam explicação." data-style="terminal" data-unit="3" style="--card-color:#344f60;--card-pale:#e8eef2">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 9: Estranhamento do familiar" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Estranhamento do familiar</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É o exercício de examinar criticamente práticas e relações conhecidas, questionando pressupostos que a convivência cotidiana pode fazer parecer evidentes.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Na abordagem de Gilberto Velho, conhecer um ambiente não significa compreender todas as relações sociais nele existentes. O pesquisador precisa reconhecer sua própria posição, confrontar interpretações e investigar os diferentes sentidos atribuídos às práticas observadas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Participação escolar:</strong> uma estudante percebe que determinados colegas costumam falar mais nas reuniões. Em vez de considerar essa diferença natural, observa como as reuniões são conduzidas e entrevista participantes para investigar as condições que favorecem ou restringem a participação.</li><li><strong class="example-label">Relações familiares:</strong> uma pesquisadora observa que, nas reuniões de sua própria família, determinadas pessoas costumam decidir os assuntos coletivos. O estranhamento permite investigar como idade, gênero, autoridade e trajetórias familiares influenciam essas decisões, em vez de tratá-las como costumes que dispensam explicação.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-soft" data-number="10" data-search="familiaridade é a condição de conhecer ou conviver frequentemente com determinado ambiente, grupo ou prática social, sem necessariamente compreender todas as relações que o constituem. a familiaridade pode fornecer experiências e informações úteis à investigação. entretanto, também pode levar o observador a considerar algumas práticas evidentes e a ignorar perspectivas diferentes das suas. gilberto velho, observando o familiar, 1978 ambiente escolar um estudante conhece bem a biblioteca porque a utiliza diariamente. entretanto, pode desconhecer por que outros grupos frequentam pouco esse espaço. sua experiência oferece um ponto de partida, mas não representa todas as experiências dos estudantes. grupo de mensagens uma jovem participa há anos de um grupo digital e conhece suas regras informais. ainda assim, pode não perceber que alguns integrantes evitam participar por receio de críticas. a convivência permite conhecer certas práticas, mas não revela automaticamente os sentidos atribuídos por todos os participantes." data-style="soft" data-unit="3" style="--card-color:#634a3b;--card-pale:#f3ece4">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 10: Familiaridade" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Familiaridade</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a condição de conhecer ou conviver frequentemente com determinado ambiente, grupo ou prática social, sem necessariamente compreender todas as relações que o constituem.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A familiaridade pode fornecer experiências e informações úteis à investigação. Entretanto, também pode levar o observador a considerar algumas práticas evidentes e a ignorar perspectivas diferentes das suas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Ambiente escolar:</strong> um estudante conhece bem a biblioteca porque a utiliza diariamente. Entretanto, pode desconhecer por que outros grupos frequentam pouco esse espaço. Sua experiência oferece um ponto de partida, mas não representa todas as experiências dos estudantes.</li><li><strong class="example-label">Grupo de mensagens:</strong> uma jovem participa há anos de um grupo digital e conhece suas regras informais. Ainda assim, pode não perceber que alguns integrantes evitam participar por receio de críticas. A convivência permite conhecer certas práticas, mas não revela automaticamente os sentidos atribuídos por todos os participantes.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-brutal" data-number="11" data-search="fato social na perspectiva de émile durkheim, é uma maneira coletiva de agir, pensar ou sentir, exterior aos indivíduos e capaz de exercer coerção social. os fatos sociais são formas de organização e regulação que os indivíduos encontram em sua vida social. sua influência pode aparecer em regras formais, sanções institucionais ou expectativas coletivas acompanhadas de aprovação e reprovação. émile durkheim, as regras do método sociológico, 1895 horários escolares o horário obrigatório de entrada na escola existe antes da matrícula de cada estudante. a instituição estabelece essa regra para o grupo e pode aplicar advertências quando ela é descumprida. o caso demonstra exterioridade e coerção. regras de convivência em uma reunião, espera-se que os participantes respeitem a vez de falar. alguém que interrompe continuamente os demais pode receber críticas ou reprovação. mesmo sem uma lei específica, a expectativa coletiva pode exercer pressão sobre os comportamentos." data-style="brutal" data-unit="3" style="--card-color:#7c5240;--card-pale:#f6ece5">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 11: Fato social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Fato social</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>Na perspectiva de Émile Durkheim, é uma maneira coletiva de agir, pensar ou sentir, exterior aos indivíduos e capaz de exercer coerção social.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Os fatos sociais são formas de organização e regulação que os indivíduos encontram em sua vida social. Sua influência pode aparecer em regras formais, sanções institucionais ou expectativas coletivas acompanhadas de aprovação e reprovação.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Horários escolares:</strong> o horário obrigatório de entrada na escola existe antes da matrícula de cada estudante. A instituição estabelece essa regra para o grupo e pode aplicar advertências quando ela é descumprida. O caso demonstra exterioridade e coerção.</li><li><strong class="example-label">Regras de convivência:</strong> em uma reunião, espera-se que os participantes respeitem a vez de falar. Alguém que interrompe continuamente os demais pode receber críticas ou reprovação. Mesmo sem uma lei específica, a expectativa coletiva pode exercer pressão sobre os comportamentos.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-terminal" data-number="12" data-search="ação social na perspectiva de max weber, é uma conduta à qual o sujeito atribui sentido e que se orienta considerando o comportamento de outras pessoas. para compreender uma ação social, é necessário investigar o sentido que o indivíduo lhe atribui. esse sentido pode envolver expectativas, valores, emoções ou hábitos, desde que a conduta esteja orientada pelo comportamento de outros. max weber, economia e sociedade, 1921–1922 assembleia estudantil uma estudante prepara argumentos para convencer colegas a apoiar uma proposta. ela organiza sua fala considerando as reações que espera dos participantes. a conduta constitui ação social porque possui sentido para a estudante e se orienta em relação aos outros. reconciliação depois de um desentendimento, um jovem decide cumprimentar um colega para tentar restabelecer a amizade. o gesto possui um sentido para quem o realiza e considera uma possível resposta da outra pessoa. a interpretação sociológica procura compreender esse sentido, sem presumir que o resultado desejado será alcançado." data-style="terminal" data-unit="3" style="--card-color:#2f5860;--card-pale:#e7f0f1">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 12: Ação social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Ação social</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>Na perspectiva de Max Weber, é uma conduta à qual o sujeito atribui sentido e que se orienta considerando o comportamento de outras pessoas.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Para compreender uma ação social, é necessário investigar o sentido que o indivíduo lhe atribui. Esse sentido pode envolver expectativas, valores, emoções ou hábitos, desde que a conduta esteja orientada pelo comportamento de outros.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Assembleia estudantil:</strong> uma estudante prepara argumentos para convencer colegas a apoiar uma proposta. Ela organiza sua fala considerando as reações que espera dos participantes. A conduta constitui ação social porque possui sentido para a estudante e se orienta em relação aos outros.</li><li><strong class="example-label">Reconciliação:</strong> depois de um desentendimento, um jovem decide cumprimentar um colega para tentar restabelecer a amizade. O gesto possui um sentido para quem o realiza e considera uma possível resposta da outra pessoa. A interpretação sociológica procura compreender esse sentido, sem presumir que o resultado desejado será alcançado.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-soft" data-number="13" data-search="relações de classe na perspectiva marxiana, são relações entre grupos situados de maneira diferente perante a propriedade e o controle dos meios de produção e a organização do trabalho. no capitalismo, a propriedade e o controle dos meios de produção constituem dimensões das posições de classe. trabalhadores que vendem sua força de trabalho e proprietários que controlam a produção podem apresentar interesses conflitantes sobre remuneração, jornada, condições de trabalho e apropriação dos resultados da atividade produtiva. karl marx, tradição marxiana de análise das relações de produção indústria em uma fábrica, os proprietários controlam instalações, máquinas e investimentos, enquanto os empregados recebem salários pelo trabalho realizado. disputas sobre jornada e remuneração expressam interesses ligados às diferentes posições ocupadas na produção. produção rural em uma propriedade agrícola, trabalhadores contratados realizam atividades produtivas, enquanto o proprietário controla a terra e as decisões sobre sua utilização. investigar a remuneração, as condições de trabalho e o controle dos recursos permite analisar relações de classe no contexto rural." data-style="soft" data-unit="3" style="--card-color:#713b4c;--card-pale:#f6eaeb">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 13: Relações de classe" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Relações de classe</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>Na perspectiva marxiana, são relações entre grupos situados de maneira diferente perante a propriedade e o controle dos meios de produção e a organização do trabalho.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>No capitalismo, a propriedade e o controle dos meios de produção constituem dimensões das posições de classe. Trabalhadores que vendem sua força de trabalho e proprietários que controlam a produção podem apresentar interesses conflitantes sobre remuneração, jornada, condições de trabalho e apropriação dos resultados da atividade produtiva.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Indústria:</strong> em uma fábrica, os proprietários controlam instalações, máquinas e investimentos, enquanto os empregados recebem salários pelo trabalho realizado. Disputas sobre jornada e remuneração expressam interesses ligados às diferentes posições ocupadas na produção.</li><li><strong class="example-label">Produção rural:</strong> em uma propriedade agrícola, trabalhadores contratados realizam atividades produtivas, enquanto o proprietário controla a terra e as decisões sobre sua utilização. Investigar a remuneração, as condições de trabalho e o controle dos recursos permite analisar relações de classe no contexto rural.</li></ol></section>
+</div></template>
+</article></div></section><section aria-labelledby="titulo-u4" class="unit-block" data-unit-section="4" id="unidade-4"><header class="unit-heading"><h2 class="unit-title" id="titulo-u4"><button aria-controls="cartoes-u4" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">04</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 04</span><span class="unit-heading-label">Cidade, ação coletiva e investigação empírica</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header><div aria-labelledby="titulo-u4" class="card-grid" data-layout="balanced" id="cartoes-u4" role="region"><article class="study-card variant-brutal" data-number="14" data-search="desigualdade socioespacial é a distribuição socialmente produzida e desigual de moradias, infraestrutura, serviços e oportunidades entre diferentes territórios. a desigualdade socioespacial está relacionada a processos históricos de urbanização, à distribuição da renda, ao mercado imobiliário e às políticas públicas. ela influencia as condições de vida e as possibilidades de acesso a serviços, mesmo entre populações que vivem geograficamente próximas. sociologia urbana · tuca vieira, paraisópolis, 2004 fotografia de paraisópolis a imagem produzida por tuca vieira em 2004 apresenta um contraste visual entre diferentes formas de ocupação residencial em são paulo. a fotografia permite formular perguntas sobre desigualdade urbana, mas não revela isoladamente a renda ou as condições de vida de todos os moradores. sua interpretação exige outras evidências sobre a produção do espaço. acesso ao transporte dois bairros de um município possuem distâncias semelhantes até o centro, mas um dispõe de transporte público frequente e o outro possui poucas linhas. essa diferença pode influenciar o tempo e o custo dos deslocamentos para trabalho, estudo e atendimento de saúde. a análise investiga como decisões de planejamento e investimentos contribuíram para produzir essas condições." data-style="brutal" data-unit="4" style="--card-color:#315746;--card-pale:#e9f0e8">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 14: Desigualdade socioespacial" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Desigualdade socioespacial</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a distribuição socialmente produzida e desigual de moradias, infraestrutura, serviços e oportunidades entre diferentes territórios.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A desigualdade socioespacial está relacionada a processos históricos de urbanização, à distribuição da renda, ao mercado imobiliário e às políticas públicas. Ela influencia as condições de vida e as possibilidades de acesso a serviços, mesmo entre populações que vivem geograficamente próximas.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Fotografia de Paraisópolis:</strong> a imagem produzida por Tuca Vieira em 2004 apresenta um contraste visual entre diferentes formas de ocupação residencial em São Paulo. A fotografia permite formular perguntas sobre desigualdade urbana, mas não revela isoladamente a renda ou as condições de vida de todos os moradores. Sua interpretação exige outras evidências sobre a produção do espaço.</li><li><strong class="example-label">Acesso ao transporte:</strong> dois bairros de um município possuem distâncias semelhantes até o centro, mas um dispõe de transporte público frequente e o outro possui poucas linhas. Essa diferença pode influenciar o tempo e o custo dos deslocamentos para trabalho, estudo e atendimento de saúde. A análise investiga como decisões de planejamento e investimentos contribuíram para produzir essas condições.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-terminal" data-number="15" data-search="ação coletiva é a atuação coordenada de pessoas ou grupos em torno de objetivos, interesses ou reivindicações comuns. a ação coletiva ocorre quando participantes desenvolvem formas de organização para atuar conjuntamente. pode envolver assembleias, campanhas, paralisações e mobilizações públicas. nem toda ação coletiva constitui, por si só, um movimento social organizado e duradouro. sociologia dos movimentos sociais · myke sena/dpu, acampamento terra livre, 2025 entregadores por aplicativos trabalhadores que enfrentam problemas semelhantes de remuneração organizam reuniões, formulam reivindicações e combinam uma paralisação. a coordenação permite transformar dificuldades experimentadas individualmente em uma reivindicação apresentada coletivamente. mobilização indígena a marcha do acampamento terra livre, registrada em brasília em 2025, exemplifica formas de organização coletiva na defesa de direitos e territórios. a mobilização envolve o protagonismo de organizações indígenas, sem pressupor que todos os povos e participantes possuam trajetórias ou reivindicações idênticas." data-style="terminal" data-unit="4" style="--card-color:#8a5741;--card-pale:#f3ece4">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 15: Ação coletiva" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Ação coletiva</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É a atuação coordenada de pessoas ou grupos em torno de objetivos, interesses ou reivindicações comuns.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>A ação coletiva ocorre quando participantes desenvolvem formas de organização para atuar conjuntamente. Pode envolver assembleias, campanhas, paralisações e mobilizações públicas. Nem toda ação coletiva constitui, por si só, um movimento social organizado e duradouro.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Entregadores por aplicativos:</strong> trabalhadores que enfrentam problemas semelhantes de remuneração organizam reuniões, formulam reivindicações e combinam uma paralisação. A coordenação permite transformar dificuldades experimentadas individualmente em uma reivindicação apresentada coletivamente.</li><li><strong class="example-label">Mobilização indígena:</strong> a marcha do Acampamento Terra Livre, registrada em Brasília em 2025, exemplifica formas de organização coletiva na defesa de direitos e territórios. A mobilização envolve o protagonismo de organizações indígenas, sem pressupor que todos os povos e participantes possuam trajetórias ou reivindicações idênticas.</li></ol></section>
+</div></template>
+</article><article class="study-card variant-soft" data-number="16" data-search="evidência sociológica é uma informação, observação ou registro produzido ou selecionado por procedimentos identificáveis e utilizado para examinar afirmações e explicações sobre a vida social. evidências permitem sustentar, questionar ou reformular interpretações. sua utilização exige conhecer a origem dos registros, os procedimentos de produção e os limites das conclusões que podem ser formuladas. uma evidência isolada nem sempre é suficiente para explicar um fenômeno. metodologia das ciências sociais · ibge · tuca vieira indicadores educacionais uma pesquisa do ibge apresenta motivos declarados por jovens que interromperam os estudos. os resultados ajudam a identificar padrões entre os grupos pesquisados, mas não permitem concluir automaticamente por que cada estudante deixou a escola. fotografia urbana uma imagem de dois conjuntos residenciais apresenta diferenças visíveis na organização do espaço. esse registro constitui evidência da configuração espacial observada, mas não comprova, isoladamente, a renda de cada morador ou as causas históricas do contraste. para formular uma explicação, são necessárias informações complementares." data-style="soft" data-unit="4" style="--card-color:#344f60;--card-pale:#e8eef2">
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 16: Evidência sociológica" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+<span class="card-name">Evidência sociológica</span><span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span></button>
+<template class="card-back-template"><div class="reading-content">
+<section class="reading-section"><h3>O que é?</h3><p>É uma informação, observação ou registro produzido ou selecionado por procedimentos identificáveis e utilizado para examinar afirmações e explicações sobre a vida social.</p></section>
+<section class="reading-section"><h3>Como funciona?</h3><p>Evidências permitem sustentar, questionar ou reformular interpretações. Sua utilização exige conhecer a origem dos registros, os procedimentos de produção e os limites das conclusões que podem ser formuladas. Uma evidência isolada nem sempre é suficiente para explicar um fenômeno.</p></section>
+<section class="reading-section reading-examples"><h3>Exemplos</h3><ol><li><strong class="example-label">Indicadores educacionais:</strong> uma pesquisa do IBGE apresenta motivos declarados por jovens que interromperam os estudos. Os resultados ajudam a identificar padrões entre os grupos pesquisados, mas não permitem concluir automaticamente por que cada estudante deixou a escola.</li><li><strong class="example-label">Fotografia urbana:</strong> uma imagem de dois conjuntos residenciais apresenta diferenças visíveis na organização do espaço. Esse registro constitui evidência da configuração espacial observada, mas não comprova, isoladamente, a renda de cada morador ou as causas históricas do contraste. Para formular uma explicação, são necessárias informações complementares.</li></ol></section>
+</div></template>
+</article></div></section><p class="empty-state" hidden="" id="empty-state">Nenhum conceito corresponde à pesquisa. Experimente outra palavra ou unidade.</p></main>
+<footer class="page-footer"><span class="footer-brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA  |  Prof. Dr. Eliaquim Timóteo</span><a href="S-I-1-3-perspectivas-imaginacao-sociologicas-aula_V04.html">Voltar à aula</a></footer>
+</div>
+<!-- 09. VERSO UNIVERSAL DOS FLASHCARDS: CONTEÚDO INTEGRAL E NAVEGÁVEL -->
+<dialog aria-labelledby="dialog-title" class="card-dialog" id="flashcard-dialog">
+<div class="dialog-header" id="dialog-header">
+<div class="dialog-top"><span id="dialog-unit">UNIDADE 01</span></div>
+<h2 id="dialog-title"></h2>
+<p class="dialog-subtitle">Definição, explicação e exemplos do conceito.</p>
+</div>
+<div id="dialog-body"></div>
+<div class="dialog-footer">
+<div class="dialog-actions"><button class="dialog-action" id="dialog-previous" type="button">Anterior</button><button class="dialog-action" id="dialog-next" type="button">Próximo</button><button class="dialog-action primary" id="dialog-close" type="button">Voltar aos cartões</button></div>
+</div>
+</dialog>
+<noscript><div class="shell" role="status">Esta página utiliza JavaScript para revelar o verso de cada cartão e navegar entre os conceitos. Ative o JavaScript no navegador para estudar os flashcards.</div></noscript>
+<script>
+    /* ============================================================
+       10. FUNCIONALIDADE DOS FLASHCARDS
+       O conteúdo fica nos <template> de cada cartão, acima.
+       Não há dependências externas. O arquivo funciona offline.
+       ============================================================ */
+    (() => {
+      'use strict';
+      const root = document.documentElement;
+      const cards = [...document.querySelectorAll('.study-card')];
+      const units = [...document.querySelectorAll('[data-unit-section]')];
+      const search = document.querySelector('#search-cards');
+      const unitFilter = document.querySelector('#unit-filter');
+      const count = document.querySelector('#result-count');
+      const empty = document.querySelector('#empty-state');
+      const modal = document.querySelector('#flashcard-dialog');
+      const modalTitle = document.querySelector('#dialog-title');
+      const modalUnit = document.querySelector('#dialog-unit');
+      const modalBody = document.querySelector('#dialog-body');
+      const previous = document.querySelector('#dialog-previous');
+      const next = document.querySelector('#dialog-next');
+      const close = document.querySelector('#dialog-close');
+      const theme = document.querySelector('#theme-toggle');
+      let lastTrigger = null;
+      let activeIndex = 0;
+      const normalise = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+      const visibleCards = () => cards.filter(card => !card.hidden);
+
+
+      function balanceCardRows(){
+        for (const sec of units) {
+          const visible=[...sec.querySelectorAll('.study-card:not([hidden])')];
+          const n=visible.length;
+          // Preencha as linhas: 5 resulta em 3+2; 6 resulta em 3+3, sem vazios.
+          let rowSizes=[];
+          if(n<=4)rowSizes=[n];
+          else if(n===5)rowSizes=[3,2];
+          else if(n===6)rowSizes=[3,3];
+          else if(n===7)rowSizes=[4,3];
+          else if(n===8)rowSizes=[4,4];
+          else {let remaining=n;while(remaining>0){let k=Math.min(4,remaining);if(remaining===5)k=3;rowSizes.push(k);remaining-=k}}
+          let at=0;
+          for(const size of rowSizes){
+            const span=12/size;
+            for(let j=0;j<size;j++)visible[at++].dataset.span=String(span);
+          }
+          for(const card of sec.querySelectorAll('.study-card'))delete card.dataset.mobileSpan;
+          if(n%2===1 && n>1)visible[n-1].dataset.mobileSpan='12';
+        }
+      }
+
+      function filterCards(){
+        const word = normalise(search.value.trim());
+        const u = unitFilter.value;
+        for (const card of cards) {
+          const match = (!word || normalise(card.dataset.search).includes(word)) &&
+              (u === 'all' || card.dataset.unit === u);
+          card.hidden = !match;
+        }
+        for (const section of units) {
+          const hasMatchingCards = Boolean(section.querySelector('.study-card:not([hidden])'));
+          section.hidden = !hasMatchingCards;
+          // Ao pesquisar ou selecionar uma unidade, revele os resultados encontrados.
+          if (hasMatchingCards && (word || u !== 'all')) {
+            setUnitExpanded(section, true);
+          }
+        }
+        balanceCardRows();
+        const total = visibleCards().length;
+        count.textContent = `${total} ${total === 1 ? 'cartão' : 'cartões'}`;
+        empty.hidden = total !== 0;
+      }
+      [search,unitFilter].forEach(input=>input.addEventListener('input',filterCards));
+
+      function setUnitExpanded(section, expanded) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        const grid = section.querySelector('.card-grid');
+        toggle.setAttribute('aria-expanded', String(expanded));
+        grid.hidden = !expanded;
+      }
+      for (const section of units) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        toggle.addEventListener('click', () => {
+          setUnitExpanded(section, toggle.getAttribute('aria-expanded') !== 'true');
+        });
+      }
+
+      function openCard(card, keepOrigin = false) {
+        if (!card) return;
+        if (!keepOrigin) lastTrigger = card.querySelector('[data-open-card]');
+        activeIndex = cards.indexOf(card);
+        const title = card.querySelector('.card-name').textContent.trim();
+        modalTitle.textContent = title;
+        modalUnit.textContent = `UNIDADE ${String(card.dataset.unit).padStart(2,'0')}`;
+        document.querySelector('#dialog-header').style.setProperty('--dialog-accent', getComputedStyle(card).getPropertyValue('--card-color').trim());
+        modalBody.replaceChildren(card.querySelector('.card-back-template').content.cloneNode(true));
+        if (!modal.open) modal.showModal();
+        modal.scrollTop = 0;
+        close.focus({preventScroll:true});
+      }
+      cards.forEach(card=>card.querySelector('[data-open-card]').addEventListener('click',()=>openCard(card)));
+      function navigate(offset) {
+        const available=visibleCards();
+        const current=available.indexOf(cards[activeIndex]);
+        const target=available[(current + offset + available.length)%available.length];
+        if (target) openCard(target,true);
+      }
+      previous.addEventListener('click',()=>navigate(-1));
+      next.addEventListener('click',()=>navigate(1));
+      close.addEventListener('click',()=>modal.close());
+      modal.addEventListener('click',event=>{
+        // Clique na área escurecida fecha a leitura; conteúdo permanece interativo.
+        if (event.target !== modal) return;
+        const r=modal.getBoundingClientRect();
+        if (event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) modal.close();
+      });
+      modal.addEventListener('close',()=>{if(lastTrigger && lastTrigger.isConnected) lastTrigger.focus({preventScroll:true});});
+      modal.addEventListener('keydown',event=>{
+        if (event.altKey && event.key === 'ArrowRight') {event.preventDefault();navigate(1);}
+        if (event.altKey && event.key === 'ArrowLeft') {event.preventDefault();navigate(-1);}
+      });
+      function applyTheme(mode) {
+        root.dataset.theme=mode;
+        const isDark=mode==='dark';
+        theme.textContent=isDark?'Modo claro':'Modo noturno';
+        theme.setAttribute('aria-pressed',String(isDark));
+        document.querySelector('meta[name="theme-color"]').setAttribute('content',isDark?'#192421':'#f7f5ef');
+      }
+      try {applyTheme(localStorage.getItem('sociologia-i-flashcards-theme')==='dark'?'dark':'light');} catch(e) {applyTheme('light');}
+      theme.addEventListener('click',()=>{
+        const nextMode=root.dataset.theme==='dark'?'light':'dark';
+        applyTheme(nextMode);
+        try {localStorage.setItem('sociologia-i-flashcards-theme',nextMode);} catch(e) { /* modo privado */ }
+      });
+      filterCards();
+    })();
+  </script>
+</body>
+</html>

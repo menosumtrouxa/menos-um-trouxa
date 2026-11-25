@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR" data-mode="filled">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Três exemplos preenchidos de anotações pelo método Cornell a partir da Aula 1.1 de Sociologia I, com fichas em branco para prática e versão para impressão.">
+  <title>Método Cornell | Sociologia I | Aula 1.1</title>
+  <style>
+    /* ============================================================
+       01. IDENTIDADE EDITORIAL E VARIÁVEIS
+       As cores, medidas e famílias tipográficas podem ser ajustadas aqui.
+       ============================================================ */
+    :root {
+      --wine: #83232f;
+      --wine-deep: #631923;
+      --wine-pale: #f1e1df;
+      --ink: #292823;
+      --muted: #665e59;
+      --paper: #fffefb;
+      --canvas: #f2efe9;
+      --line: #e2d8d0;
+      --rule: #e9e2d9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      --sheet-width: 900px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); font: 16px/1.55 var(--sans); }
+    a { color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #b45a37; outline-offset: 4px; }
+    p { text-align: justify; text-justify: inter-word; hyphens: auto; }
+    .skip-link { position: absolute; top: -100px; left: 12px; z-index: 20; background: var(--paper); padding: 8px 12px; }
+    .skip-link:focus { top: 10px; }
+
+    /* ============================================================
+       02. CABEÇALHO E NAVEGAÇÃO
+       ============================================================ */
+    .site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .site-header-inner { max-width: 1100px; margin: auto; padding: 19px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .brand { color: var(--wine-deep); font-size: 11px; font-weight: 800; line-height: 1.6; letter-spacing: .055em; text-transform: uppercase; }
+    .brand span { text-transform: none; letter-spacing: 0; font-weight: 600; }
+    .site-hero { max-width: 1100px; margin: auto; padding: 42px 26px 26px; }
+    .hero-kicker { margin: 0 0 7px; font-size: 12px; font-weight: 850; letter-spacing: .16em; color: var(--wine); text-transform: uppercase; }
+    h1 { margin: 0; font: 700 clamp(42px, 6.9vw, 82px)/1.05 var(--serif); letter-spacing: -.055em; color: var(--wine-deep); }
+    h1 em { font-style: normal; color: var(--paper); background: var(--wine); padding: 0 .14em .055em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .hero-desc { max-width: 840px; margin: 16px 0 0; font-size: 15px; color: #47413d; }
+    .toolbar { max-width: 1100px; margin: 0 auto; padding: 0 26px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-end; gap: 16px; }
+    .quick-nav { display: flex; gap: 7px; flex-wrap: wrap; }
+    .nav-pill { border: 1px solid #d5c9bd; border-radius: 999px; padding: 9px 14px; background: #fbf9f6; text-decoration: none; font-size: 12px; font-weight: 750; }
+    .nav-pill:hover { background: var(--wine-pale); border-color: var(--wine); }
+    .actions { display: flex; gap: 9px; flex-wrap: wrap; }
+    .action { border: 1px solid var(--wine); border-radius: 7px; padding: 10px 15px; color: var(--wine-deep); background: transparent; font-size: 12px; font-weight: 800; }
+    .action:hover { background: #f4e6e2; }
+    .action[aria-pressed="true"], .action.primary { background: var(--wine); color: #fff; }
+    .action.primary:hover { background: var(--wine-deep); }
+    .usage-note { max-width: 1100px; margin: 0 auto 28px; padding: 0 26px; color: var(--muted); font-size: 13px; }
+
+    /* ============================================================
+       03. FICHAS DE ANOTAÇÃO CORNELL
+       Cada seção corresponde a um exemplo independente.
+       ============================================================ */
+    main { max-width: 1140px; padding: 0 26px 60px; margin: auto; }
+    .example { margin: 0 auto 58px; scroll-margin-top: 20px; }
+    .example-heading { max-width: var(--sheet-width); margin: 0 auto 17px; display: flex; align-items: baseline; gap: 17px; border-top: 1px solid #d6c5bb; padding-top: 19px; }
+    .example-count { color: var(--wine); font: 700 32px/1 var(--serif); }
+    .example-heading h2 { margin: 0; font: 700 clamp(24px,3vw,30px)/1.22 var(--serif); color: var(--wine-deep); letter-spacing: -.03em; }
+    .source-card { max-width: var(--sheet-width); margin: 0 auto 17px; padding: 14px 20px; background: #eae4dc; border-left: 4px solid var(--wine); }
+    .source-card h3 { font-size: 10px; letter-spacing: .14em; color: var(--wine-deep); text-transform: uppercase; margin: 0 0 5px; }
+    .source-card blockquote { margin: 0; font: 15px/1.5 var(--serif); color: #39302e; text-align: justify; }
+    .source-card .source-label { margin: 7px 0 0; font-size: 11px; color: #625b54; }
+    .cornell-sheet { position: relative; max-width: var(--sheet-width); margin: auto; background: var(--paper); border: 1.5px solid #bfaeaa; box-shadow: 0 11px 30px #49392d12, 7px 7px 0 #dcb2ab; }
+    .sheet-header { border-bottom: 3px solid var(--wine); padding: 22px 28px 19px; display: grid; grid-template-columns: 1fr auto; gap: 10px 16px; align-items: end; }
+    .sheet-class { font-size: 10px; text-transform: uppercase; color: var(--wine); font-weight: 800; letter-spacing: .14em; }
+    .sheet-header h3 { margin: 4px 0 0; font: 700 clamp(22px,3.2vw,28px)/1.23 var(--serif); color: var(--wine-deep); }
+    .sheet-date { font-size: 11px; color: var(--muted); text-align: right; white-space: nowrap; }
+    .sheet-date strong { display: block; color: var(--ink); font-weight: 700; }
+    .sheet-grid { display: grid; grid-template-columns: 31% 69%; min-height: 466px; border-bottom: 3px solid var(--wine); }
+    .column { position: relative; min-width: 0; padding: 21px 23px 26px; background-image: repeating-linear-gradient(to bottom,transparent 0px, transparent 32px, var(--rule) 32px, var(--rule) 33px); background-position: 0 58px; background-repeat: repeat; }
+    .cue-column { border-right: 3px solid var(--wine); background-color: #fdfaf6; }
+    .notes-column { background-color: #fffefb; }
+    .column-title { position: relative; display: flex; gap: 8px; align-items: center; padding: 0 0 12px; background: inherit; margin: -1px 0 12px; color: var(--wine); text-transform: uppercase; letter-spacing: .105em; font-size: 11px; font-weight: 850; }
+    .column-title::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--wine); }
+    .cue-list, .note-list { position: relative; list-style: none; padding: 0; margin: 0; }
+    .cue-list { display: grid; gap: 17px; }
+    .cue-list li { padding: 7px 1px; font-size: 14px; line-height: 1.45; font-weight: 750; color: #51413d; }
+    .cue-list .cue-number { display: block; margin-bottom: 5px; color: var(--wine); font-size: 10px; letter-spacing: .13em; }
+    .note-list { display: grid; gap: 16px; }
+    .note-list li { position: relative; padding-left: 15px; font: 15px/1.65 var(--serif); text-align: justify; hyphens: auto; }
+    .note-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--wine); }
+    .note-list strong { color: var(--wine-deep); }
+    .summary-area { padding: 22px 28px 28px; min-height: 135px; background-image: repeating-linear-gradient(to bottom,transparent 0px,transparent 32px,var(--rule) 32px,var(--rule) 33px); }
+    .summary-area h4 { margin: 0 0 13px; font-size: 11px; color: var(--wine); text-transform: uppercase; letter-spacing: .13em; }
+    .summary-area p { position: relative; margin: 0; font: 16px/1.72 var(--serif); }
+    .sheet-footer { background: #fdfaf6; border-top: 1px solid var(--line); padding: 11px 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px; color: #6e635f; text-transform: uppercase; font-size: 10px; letter-spacing: .075em; }
+
+    /* 04. MODO DE PRÁTICA, mantém linhas e estrutura da página. */
+    html[data-mode="blank"] .fill-copy { visibility: hidden; }
+    html[data-mode="blank"] .sheet-grid { min-height: 490px; }
+    html[data-mode="blank"] .summary-area { min-height: 170px; }
+    .page-footer { max-width: 1100px; margin: 0 auto; border-top: 1px solid #d4c6bd; padding: 22px 26px 35px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 11px; color: #6c615c; }
+    .page-footer b { color: var(--wine-deep); }
+
+    /* ============================================================
+       05. RESPONSIVIDADE
+       ============================================================ */
+    @media (max-width: 680px) {
+      .site-header-inner, .site-hero, .toolbar, .usage-note, main, .page-footer { padding-left: 15px; padding-right: 15px; }
+      .site-hero { padding-top: 30px; }
+      .example-heading { align-items: flex-start; }
+      .sheet-grid { grid-template-columns: 35% 65%; }
+      .sheet-header { padding: 17px; }
+      .sheet-date { display: none; }
+      .column { padding: 15px 12px 20px; }
+      .cue-list { gap: 12px; }
+      .cue-list li { font-size: 12px; }
+      .note-list li { font-size: 13px; line-height: 1.65; }
+      .notes-column { padding-left: 15px; }
+      .column-title { font-size: 10px; }
+      .summary-area { padding: 17px; }
+      .summary-area p { font-size: 14px; }
+      .source-card { padding: 12px 14px; }
+      .source-card blockquote { font-size: 13px; }
+      .cornell-sheet { box-shadow: 3px 3px 0 #dcb2ab; }
+    }
+    @media (max-width: 390px) {
+      .sheet-grid { grid-template-columns: 36% 64%; }
+      .note-list li { padding-left: 10px; font-size: 12px; }
+      .cue-list li { font-size: 11px; overflow-wrap: break-word; }
+      .sheet-header h3 { font-size: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    /* ============================================================
+       06. IMPRESSÃO, UMA FICHA POR PÁGINA A4
+       ============================================================ */
+    @page { size: A4 portrait; margin: 10mm; }
+    @media print {
+      html, body { background: white !important; color: #111; font-size: 10pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .site-header, .site-hero, .toolbar, .usage-note, .page-footer, .example-heading { display: none !important; }
+      main { max-width: unset; width: auto; padding: 0; margin: 0; }
+      .example { display: block; margin: 0; break-after: page; page-break-after: always; }
+      .example:last-child { break-after: auto; page-break-after: auto; }
+      .source-card { margin: 0 0 3mm; max-width: unset; padding: 2mm 3mm; background: #f3eee9 !important; }
+      .source-card h3 { font-size: 7pt; margin-bottom: 0; }
+      .source-card blockquote { font-size: 9pt; line-height: 1.25; }
+      .source-card .source-label { margin-top: 1mm; font-size: 7pt; }
+      .cornell-sheet { width: 100%; max-width: none; box-shadow: none !important; border: 1px solid #999; }
+      .sheet-header { padding: 4mm 5mm; }
+      .sheet-header h3 { font-size: 15pt; }
+      .sheet-class, .sheet-date { font-size: 7pt; }
+      .sheet-grid { min-height: 165mm !important; grid-template-columns: 31% 69%; }
+      .column { padding: 3mm 4mm; background-position: 0 8mm; background-size: auto; }
+      .cue-list { gap: 4mm; }
+      .cue-list li { font-size: 9pt; line-height: 1.3; padding: 1mm 0; }
+      .cue-list .cue-number { font-size: 7pt; margin-bottom: 1mm; }
+      .note-list { gap: 3mm; }
+      .note-list li { font-size: 9pt; line-height: 1.35; padding-left: 3mm; }
+      .column-title { font-size: 8pt; padding-bottom: 1mm; margin-bottom: 3mm; }
+      .summary-area { min-height: 37mm !important; padding: 4mm 5mm; }
+      .summary-area h4 { font-size: 8pt; margin-bottom: 2mm; }
+      .summary-area p { font-size: 10pt; line-height: 1.38; }
+      .sheet-footer { padding: 2mm 5mm; font-size: 7pt; }
+      .example, .cornell-sheet { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Ir para as fichas de estudo</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA <span>| Prof. Dr. Eliaquim Timóteo</span></div>
+      <div class="brand">Caderno de estudo · Aula 1.1</div>
+    </div>
+  </header>
+
+  <div class="site-hero">
+    <p class="hero-kicker">Técnica de estudo e revisão</p>
+    <h1>Método <em>Cornell</em></h1>
+    <p class="hero-desc">Aprenda a transformar a leitura sociológica em anotações. No espaço maior, registre ideias com suas palavras; na margem, formule perguntas de revisão; ao final, escreva uma síntese que relacione os conceitos.</p>
+  </div>
+
+  <nav class="toolbar" aria-label="Navegação e recursos da atividade">
+    <div class="quick-nav">
+      <a href="#exemplo-1" class="nav-pill">01 · Desnaturalização</a>
+      <a href="#exemplo-2" class="nav-pill">02 · Conhecimento</a>
+      <a href="#exemplo-3" class="nav-pill">03 · Dados do IBGE</a>
+    </div>
+    <div class="actions">
+      <button id="btn-filled" class="action" type="button" aria-pressed="true">Exemplos preenchidos</button>
+      <button id="btn-blank" class="action" type="button" aria-pressed="false">Fichas em branco</button>
+      <button id="btn-print" class="action primary" type="button">Imprimir / salvar PDF</button>
+    </div>
+  </nav>
+  <p class="usage-note" id="mode-status" role="status" aria-live="polite">Você está visualizando três exemplos preenchidos. Use as perguntas da esquerda para revisar o conteúdo; depois tente responder sem consultar a coluna de anotações.</p>
+
+  <main id="conteudo">
+    <!-- ========================================================== -->
+    <!-- EXEMPLO 01. UNIDADE 01, DESNATURALIZAÇÃO E ESTRANHAMENTO -->
+    <!-- ========================================================== -->
+    <article class="example" id="exemplo-1" aria-labelledby="titulo-ex1">
+      <div class="example-heading"><span class="example-count" aria-hidden="true">01</span><h2 id="titulo-ex1">Desnaturalização e estranhamento</h2></div>
+      <aside class="source-card" aria-label="Trecho de referência da aula">
+        <h3>Trecho da aula</h3>
+        <blockquote>“A maneira de vestir, de dividir o trabalho, de organizar a família ou de ocupar os espaços coletivos resulta de processos históricos. A repetição pode fazer uma convenção social parecer uma lei da natureza.”</blockquote>
+        <p class="source-label">Aula 1.1 · Unidade 01, “O mundo social não nasce pronto”.</p>
+      </aside>
+      <div class="cornell-sheet">
+        <header class="sheet-header">
+          <div><span class="sheet-class">Sociologia I · Anotação Cornell 01</span><h3>O mundo social não nasce pronto</h3></div>
+          <div class="sheet-date"><strong>Aula 1.1</strong>Data: ____ / ____ / ______</div>
+        </header>
+        <div class="sheet-grid">
+          <section class="column cue-column" aria-labelledby="rev-1">
+            <h4 class="column-title" id="rev-1">Revisão · Pistas</h4>
+            <ol class="cue-list fill-copy">
+              <li><span class="cue-number">01</span>O que é desnaturalizar?</li>
+              <li><span class="cue-number">02</span>Por que os hábitos parecem naturais?</li>
+              <li><span class="cue-number">03</span>O que é estranhamento?</li>
+              <li><span class="cue-number">04</span>Qual exemplo posso investigar?</li>
+            </ol>
+          </section>
+          <section class="column notes-column" aria-labelledby="notes-1">
+            <h4 class="column-title" id="notes-1">Anotações · Ideias principais</h4>
+            <ul class="note-list fill-copy">
+              <li><strong>Desnaturalizar:</strong> perguntar como algo considerado “normal” foi construído pela sociedade e pela história.</li>
+              <li><strong>Repetição não é natureza:</strong> um costume muito difundido pode parecer obrigatório, mas muda entre tempos, grupos e lugares.</li>
+              <li><strong>Normas sociais:</strong> aprendemos expectativas sobre roupas, família, profissões e maneiras de agir. Elas podem gerar aprovação ou reprovação.</li>
+              <li><strong>Estranhamento:</strong> observar o familiar como se fosse uma questão nova. Em vez de aceitar, perguntar “por quê?” e procurar evidências.</li>
+              <li><strong>Exemplo:</strong> uma peça de roupa não possui gênero por natureza. Sua classificação depende de costumes e contextos históricos.</li>
+            </ul>
+          </section>
+        </div>
+        <section class="summary-area" aria-labelledby="sum-1"><h4 id="sum-1">Resumo · Síntese com minhas palavras</h4><p class="fill-copy">O que parece natural na vida social pode resultar de práticas históricas. A Sociologia utiliza o estranhamento e a desnaturalização para questionar convenções, investigar suas origens e compreender como produzem expectativas e desigualdades.</p></section>
+        <footer class="sheet-footer"><span>Ciência, senso comum e conhecimento do mundo social</span><span>01 / 03</span></footer>
+      </div>
+    </article>
+
+    <!-- ========================================================== -->
+    <!-- EXEMPLO 02. UNIDADE 02, SENSO COMUM, CIÊNCIA E EVIDÊNCIA -->
+    <!-- ========================================================== -->
+    <article class="example" id="exemplo-2" aria-labelledby="titulo-ex2">
+      <div class="example-heading"><span class="example-count" aria-hidden="true">02</span><h2 id="titulo-ex2">Senso comum e conhecimento científico</h2></div>
+      <aside class="source-card" aria-label="Trecho de referência da aula">
+        <h3>Trecho da aula</h3>
+        <blockquote>“A ciência social parte frequentemente de perguntas nascidas no cotidiano. Sua especificidade reside em formular problemas delimitados, explicitar conceitos, utilizar procedimentos controláveis, dialogar com pesquisas anteriores e submeter interpretações à crítica e à revisão.”</blockquote>
+        <p class="source-label">Aula 1.1 · Unidade 02, “As diferentes formas de conhecer”.</p>
+      </aside>
+      <div class="cornell-sheet">
+        <header class="sheet-header">
+          <div><span class="sheet-class">Sociologia I · Anotação Cornell 02</span><h3>Como construímos conhecimentos?</h3></div>
+          <div class="sheet-date"><strong>Aula 1.1</strong>Data: ____ / ____ / ______</div>
+        </header>
+        <div class="sheet-grid">
+          <section class="column cue-column" aria-labelledby="rev-2">
+            <h4 class="column-title" id="rev-2">Revisão · Pistas</h4>
+            <ol class="cue-list fill-copy">
+              <li><span class="cue-number">01</span>Como se forma o senso comum?</li>
+              <li><span class="cue-number">02</span>O que diferencia a pesquisa científica?</li>
+              <li><span class="cue-number">03</span>Qual é o papel das evidências?</li>
+              <li><span class="cue-number">04</span>Por que evitar hierarquias de saberes?</li>
+            </ol>
+          </section>
+          <section class="column notes-column" aria-labelledby="notes-2">
+            <h4 class="column-title" id="notes-2">Anotações · Ideias principais</h4>
+            <ul class="note-list fill-copy">
+              <li><strong>Senso comum:</strong> conhecimentos práticos aprendidos na convivência e em experiências repetidas. Ajudam a orientar decisões cotidianas.</li>
+              <li><strong>Limite:</strong> vivenciar alguns casos não autoriza concluir que “sempre acontece assim” em todos os lugares.</li>
+              <li><strong>Pesquisa científica:</strong> define uma pergunta, esclarece conceitos, seleciona métodos, reúne evidências e aceita revisão de suas conclusões.</li>
+              <li><strong>Exemplo da feira:</strong> saber quais dias são movimentados é útil. Para falar de todas as feiras, precisamos observar outros contextos.</li>
+              <li><strong>Saberes tradicionais:</strong> práticas como as técnicas construtivas Wauja possuem aprendizagem e critérios próprios; diferenças metodológicas não justificam preconceitos culturais.</li>
+            </ul>
+          </section>
+        </div>
+        <section class="summary-area" aria-labelledby="sum-2"><h4 id="sum-2">Resumo · Síntese com minhas palavras</h4><p class="fill-copy">O conhecimento cotidiano ajuda a compreender experiências, mas pode produzir generalizações precipitadas. A ciência investiga perguntas com conceitos, métodos e evidências. Reconhecer essa diferença não significa desvalorizar saberes tradicionais ou classificar culturas como superiores e inferiores.</p></section>
+        <footer class="sheet-footer"><span>Ciência, senso comum e conhecimento do mundo social</span><span>02 / 03</span></footer>
+      </div>
+    </article>
+
+    <!-- ========================================================== -->
+    <!-- EXEMPLO 03. UNIDADE 06, INDICADORES E INTERPRETAÇÃO -->
+    <!-- ========================================================== -->
+    <article class="example" id="exemplo-3" aria-labelledby="titulo-ex3">
+      <div class="example-heading"><span class="example-count" aria-hidden="true">03</span><h2 id="titulo-ex3">O que os dados mostram? O que não mostram?</h2></div>
+      <aside class="source-card" aria-label="Trecho de referência da aula">
+        <h3>Trecho da aula</h3>
+        <blockquote>“Entre pessoas de 10 anos ou mais, a proporção de católicos passou de 65,0% (2010) para 56,7% (2022), uma diferença de 8,3 pontos percentuais.”</blockquote>
+        <p class="source-label">Aula 1.1 · Unidade 06, “O que os dados mostram? O que silenciam?”. Fonte dos dados: IBGE, Censos 2010 e 2022.</p>
+      </aside>
+      <div class="cornell-sheet">
+        <header class="sheet-header">
+          <div><span class="sheet-class">Sociologia I · Anotação Cornell 03</span><h3>Aprender a ler indicadores sociais</h3></div>
+          <div class="sheet-date"><strong>Aula 1.1</strong>Data: ____ / ____ / ______</div>
+        </header>
+        <div class="sheet-grid">
+          <section class="column cue-column" aria-labelledby="rev-3">
+            <h4 class="column-title" id="rev-3">Revisão · Pistas</h4>
+            <ol class="cue-list fill-copy">
+              <li><span class="cue-number">01</span>O que um indicador mede?</li>
+              <li><span class="cue-number">02</span>Como calcular pontos percentuais?</li>
+              <li><span class="cue-number">03</span>Quem foi pesquisado?</li>
+              <li><span class="cue-number">04</span>O que os números não provam?</li>
+            </ol>
+          </section>
+          <section class="column notes-column" aria-labelledby="notes-3">
+            <h4 class="column-title" id="notes-3">Anotações · Ideias principais</h4>
+            <ul class="note-list fill-copy">
+              <li><strong>Indicador social:</strong> medida construída com dados e categorias. Mostra aspectos da sociedade, mas não sua totalidade.</li>
+              <li><strong>Católicos:</strong> 65,0% em 2010 → 56,7% em 2022. Diferença: 56,7 − 65,0 = −8,3 pontos percentuais.</li>
+              <li><strong>Evangélicos:</strong> 21,7% em 2010 → 26,9% em 2022. Diferença: +5,2 pontos percentuais.</li>
+              <li><strong>Comparabilidade:</strong> os dois percentuais devem se referir ao mesmo universo: aqui, pessoas com 10 anos ou mais.</li>
+              <li><strong>Limites:</strong> as proporções não revelam, sozinhas, quem mudou de religião, a intensidade da fé ou as causas das variações.</li>
+            </ul>
+          </section>
+        </div>
+        <section class="summary-area" aria-labelledby="sum-3"><h4 id="sum-3">Resumo · Síntese com minhas palavras</h4><p class="fill-copy">Ler um dado sociologicamente exige observar fonte, período, categorias e população pesquisada. A diferença entre dois percentuais é expressa em pontos percentuais. Os números descrevem tendências, mas não autorizam, isoladamente, conclusões sobre as escolhas ou motivações de cada pessoa.</p></section>
+        <footer class="sheet-footer"><span>Ciência, senso comum e conhecimento do mundo social</span><span>03 / 03</span></footer>
+      </div>
+    </article>
+  </main>
+
+  <footer class="page-footer">
+    <b>SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA</b>
+    <span>Prof. Dr. Eliaquim Timóteo</span>
+  </footer>
+
+  <script>
+    /* ============================================================
+       07. CONTROLES, VISUALIZAÇÃO E IMPRESSÃO
+       Nenhum conteúdo ou dado sai do navegador.
+       ============================================================ */
+    (() => {
+      'use strict';
+      const root = document.documentElement;
+      const filled = document.getElementById('btn-filled');
+      const blank = document.getElementById('btn-blank');
+      const status = document.getElementById('mode-status');
+      const print = document.getElementById('btn-print');
+      function setMode(mode) {
+        root.dataset.mode = mode;
+        filled.setAttribute('aria-pressed', String(mode === 'filled'));
+        blank.setAttribute('aria-pressed', String(mode === 'blank'));
+        status.textContent = mode === 'filled'
+          ? 'Você está visualizando três exemplos preenchidos. Use as perguntas da esquerda para revisar o conteúdo; depois tente responder sem consultar a coluna de anotações.'
+          : 'As três fichas agora estão em branco, preservando as linhas, os campos e os trechos da aula. Imprima para produzir suas próprias anotações.';
+      }
+      filled.addEventListener('click', () => setMode('filled'));
+      blank.addEventListener('click', () => setMode('blank'));
+      print.addEventListener('click', () => window.print());
+    })();
+  </script>
+</body>
+</html>

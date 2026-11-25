@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Quiz de Sociologia I: ciência, senso comum e conhecimento do mundo social. Dez questões comentadas, quatro alternativas, 30 segundos por rodada e até 1.000 pontos por acerto." name="description"/>
+<title>Quiz | Ciência, senso comum e conhecimento do mundo social</title>
+<style>
+   /* QUIZ CIÊNCIA E SENSO COMUM | MESMA MECÂNICA DO MODELO */
+/* ================================================================
+   QUIZ — CIÊNCIA, SENSO COMUM E CONHECIMENTO DO MUNDO SOCIAL
+   01. PALETA E CONFIGURAÇÕES GERAIS
+   Para modificar a identidade visual, edite as variáveis abaixo.
+   ================================================================ */
+:root {
+  --ink: #182529;
+  --muted: #586e68;
+  --bg: #f6f4ef;
+  --paper: #fffdf9;
+  --dark: #172e2b;
+  --deep: #26483e;
+  --line: #d8ded5;
+  --accent: #ba7d57;
+  --answer1: #ac3346;
+  --answer2: #206a9a;
+  --answer3: #956700;
+  --answer4: #28734a;
+  --shadow: 0 20px 48px #24392d14;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+button, a {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid #b88255;
+  outline-offset: 3px;
+}
+[hidden] {
+  display: none !important;
+}
+/* 02. CABEÇALHO E NAVEGAÇÃO */
+.top {
+  background: #f9f7f2;
+  border-bottom: 1px solid var(--line);
+}
+.topin {
+  max-width: 1180px;
+  padding: 12px 24px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 730;
+  color: #253b34;
+  text-decoration: none;
+  letter-spacing: .055em;
+  font-size: 12px;
+}
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #253b34;
+  font: 19px Georgia, serif;
+  letter-spacing: 0;
+}
+.toplinks {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.toplinks a {
+  padding: 7px 12px;
+  font-weight: 750;
+  font-size: 12px;
+  color: #56665f;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.toplinks a:hover {
+  background: #e2e8dd;
+}
+.toplinks .selected, .toplinks .selected:hover {
+  background: #29483f;
+  color: #fff;
+}
+.muted {
+  color: #62716b;
+}
+/* 03. INTRODUÇÃO, TEXTO E BOTÕES */
+.main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 24px 65px;
+  min-height: calc(100vh - 130px);
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a77551;
+}
+.display {
+  font: 400 clamp(2.7rem, 6.6vw, 5.5rem)/1.06 Georgia, "Times New Roman", serif;
+  letter-spacing: -.04em;
+  margin: 14px 0 20px;
+}
+.display em {
+  font-style: normal;
+  color: #ddb28b;
+}
+.intro {
+  background: var(--dark);
+  color: #f9f4e9;
+  padding: clamp(32px, 6vw, 70px);
+  position: relative;
+  overflow: hidden;
+}
+.intro::after {
+  content: "J";
+  font: 350px Georgia, serif;
+  position: absolute;
+  right: -8px;
+  bottom: -145px;
+  color: #ffffff06;
+  pointer-events: none;
+}
+.intro > * {
+  position: relative;
+  z-index: 1;
+}
+.intro .eyebrow {
+  color: #e5bc90;
+}
+.intro p {
+  color: #e4eae4;
+  max-width: 690px;
+  font-size: 18px;
+}
+.intro .display {
+  max-width: 800px;
+}
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.meta span {
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border: 1px solid #78908675;
+  padding: 8px 12px;
+  color: #ebeee3;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 23px;
+  border: 1px solid #d4ab7e;
+  background: #d4ab7e;
+  color: #1c332a;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 3px;
+  gap: 10px;
+}
+.btn:hover {
+  filter: brightness(.95);
+}
+.btn.ghost {
+  background: transparent;
+  color: #f7eee4;
+  border-color: #91a59c;
+}
+.btn.dark {
+  background: #29483f;
+  border-color: #29483f;
+  color: white;
+}
+.btn.dark:hover {
+  background: #385c51;
+}
+.note {
+  background: #e8ede5;
+  border-left: 3px solid #5e7b65;
+  padding: 19px 23px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.note strong {
+  display: block;
+  margin-bottom: 5px;
+}
+.note p {
+  margin: 0;
+}
+/* 04. JOGO, CRONÔMETRO E PROGRESSO */
+.play {
+  overflow: hidden;
+}
+.gamehead {
+  background: #203934;
+  color: #fff;
+  padding: 25px 30px 21px;
+}
+.gamehead.timing {
+  background: #213f38;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.counter, .scoresmall {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 750;
+  color: #e5dbcb;
+}
+.scorebig {
+  font: 400 24px Georgia, serif;
+  color: #fff;
+}
+.progressbar {
+  height: 6px;
+  border-radius: 100px;
+  background: #466159;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.progressbar > span {
+  display: block;
+  height: 100%;
+  background: #d6ba91;
+  width: 0%;
+  transition: width .24s linear;
+}
+.timerset {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+.clockbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.clock {
+  background: #fbfaf4;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: #18372c;
+  font: 700 28px Georgia, serif;
+  font-variant-numeric: tabular-nums;
+  border: 5px solid #e4e6d9;
+}
+.clock.low {
+  color: #a13f38;
+}
+.clockbar {
+  height: 9px;
+  background: #cbd2c9;
+  flex: 1;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.clockbar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #85a18d;
+  transition: width .12s linear, background .12s;
+}
+.clockbar span.low {
+  background: #bc6b58;
+}
+.prompt {
+  padding: 32px 30px 23px;
+}
+.kicker {
+  font-size: 12px;
+  font-weight: 780;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: #9a6448;
+}
+.question {
+  font: 400 clamp(23px, 3.5vw, 36px)/1.2 Georgia, serif;
+  margin: 15px 0 10px;
+  letter-spacing: -.019em;
+  max-width: 920px;
+  scroll-margin-top: 22px;
+}
+.select-hint {
+  font-size: 13px;
+  color: #68756f;
+  margin: 0;
+}
+.reading {
+  padding: 0 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  background: var(--paper);
+}
+.reading .btn {
+  min-height: 55px;
+  font-size: 16px;
+  padding: 15px 24px;
+}
+.reading-caption {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 370px;
+}
+/* 05. QUATRO ALTERNATIVAS COLORIDAS */
+.answers {
+  padding: 0 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.answer {
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+  color: #fff;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 15px 18px;
+  font-weight: 730;
+  font-size: 16px;
+  line-height: 1.37;
+  transition: transform .12s ease, filter .12s ease, border-color .12s ease;
+}
+.answer:hover:not(:disabled) {
+  filter: brightness(1.075);
+  transform: translateY(-2px);
+}
+.answer:disabled {
+  cursor: default;
+}
+.answer:nth-child(1) {
+  background: var(--answer1);
+}
+.answer:nth-child(2) {
+  background: var(--answer2);
+}
+.answer:nth-child(3) {
+  background: var(--answer3);
+}
+.answer:nth-child(4) {
+  background: var(--answer4);
+}
+.letter {
+  display: grid;
+  place-items: center;
+  flex: 0 0 41px;
+  height: 41px;
+  border: 2px solid #ffffff9a;
+  border-radius: 4px;
+  font: 700 21px Georgia, serif;
+}
+.answer.correct {
+  border-color: #e7e7b8;
+  box-shadow: inset 0 0 0 2px #e7e7b8;
+}
+.answer.wrong {
+  opacity: .57;
+}
+.answer.notpicked {
+  opacity: .45;
+}
+.answer.correct .letter::after {
+  content: " ✓";
+  font: 700 15px system-ui;
+}
+/* 06. RESPOSTA, PONTUAÇÃO E GABARITO COMENTADO */
+.feedback {
+  padding: 22px 30px 30px;
+  background: #eef0e7;
+  border-top: 1px solid #dce1d6;
+}
+.feedbackline {
+  font: 400 25px Georgia, serif;
+  margin: 0 0 8px;
+}
+.feedbackline.good {
+  color: #255c43;
+}
+.feedbackline.bad {
+  color: #9b4544;
+}
+.feedback p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  max-width: 850px;
+}
+.feedback .row {
+  align-items: end;
+}
+.feedback .earned {
+  font: 400 23px Georgia, serif;
+}
+.feedback .earned small {
+  font: 600 11px system-ui;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: block;
+}
+.feedback details {
+  margin: 0 0 16px;
+  border-left: 3px solid #8a9b7c;
+  padding: 3px 0 3px 14px;
+}
+.feedback summary {
+  cursor: pointer;
+  font-weight: 720;
+  font-size: 14px;
+}
+.feedback ul {
+  padding-left: 19px;
+  margin: 10px 0 0;
+}
+.feedback li {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 760px;
+  margin: 25px 0;
+}
+.stat {
+  background: #fffdf6;
+  border: 1px solid #536b59;
+  padding: 17px;
+}
+.stat strong {
+  display: block;
+  font: 400 36px Georgia, serif;
+}
+.stat span {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 750;
+  letter-spacing: .08em;
+}
+.end {
+  padding: clamp(28px, 5vw, 56px);
+}
+.end h1 {
+  font: 400 clamp(2.8rem, 7vw, 4.8rem)/1 Georgia, serif;
+  margin: 16px 0;
+}
+.end p {
+  max-width: 780px;
+}
+.end .btn {
+  margin: 6px 10px 8px 0;
+}
+.review {
+  margin: 28px 0 0;
+}
+.review h2 {
+  font: 400 29px Georgia, serif;
+  margin: 0 0 16px;
+}
+.review details {
+  border: 1px solid #d6dfd5;
+  background: #fffefa;
+  margin: 8px 0;
+}
+.review summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 730;
+  padding: 14px 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.review .exp {
+  padding: 0 17px 16px;
+  font-size: 14px;
+}
+.review .exp p {
+  margin: 7px 0;
+}
+.review .exp strong {
+  color: #315944;
+}
+.review ul {
+  padding-left: 22px;
+}
+.review li {
+  margin: 8px 0;
+}
+.review li[data-state="correct"] {
+  color: #285b41;
+}
+.review li[data-state="chosen-wrong"] {
+  color: #9b4544;
+}
+.footer {
+  padding: 25px 24px;
+  background: #172b27;
+  color: #c9d5cd;
+  font-size: 12px;
+}
+.footin {
+  max-width: 1080px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footer a {
+  color: #f0d3ae;
+}
+/* 07. RESPONSIVIDADE E MOVIMENTO REDUZIDO */
+@media (max-width: 650px) {
+  .main {
+    padding: 18px 12px 45px;
+  }
+  .topin {
+    padding: 10px 12px;
+  }
+  .intro {
+    padding: 35px 24px;
+  }
+  .intro .display {
+    font-size: clamp(2.4rem, 10vw, 3.9rem);
+  }
+  .gamehead {
+    padding: 20px 17px;
+  }
+  .prompt {
+    padding: 24px 18px 19px;
+  }
+  .answers {
+    padding: 0 15px 18px;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .answer {
+    min-height: 81px;
+    padding: 11px 13px;
+    font-size: 15px;
+  }
+  .reading {
+    padding: 0 18px 23px;
+    display: block;
+  }
+  .reading .btn {
+    width: 100%;
+  }
+  .reading-caption {
+    margin: 12px 0 0;
+  }
+  .clock {
+    height: 58px;
+    width: 58px;
+    font-size: 23px;
+  }
+  .feedback {
+    padding: 21px 18px;
+  }
+  .end {
+    padding: 29px 21px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand {
+    letter-spacing: 0;
+    font-size: 11px;
+  }
+  .toplinks a {
+    padding: 6px 7px;
+  }
+  .note {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .toplinks {
+    gap: 1px;
+  }
+  .toplinks a {
+    font-size: 11px;
+  }
+  .answer {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .answer, .progressbar > span, .clockbar span {
+    transition: none !important;
+  }
+}
+@media print {
+  .top, .footer, .btn, .clockbar, .clockbox, .answers, .gamehead {
+    display: none !important;
+  }
+  .main {
+    max-width: 100%;
+  }
+  .intro {
+    color: #111;
+    background: #fff;
+  }
+  .intro p {
+    color: #222;
+  }
+  .review details {
+    break-inside: avoid;
+  }
+  .review .exp {
+    display: block !important;
+  }
+}
+/* ================================================================
+   QUIZ SOCIOLOGIA I · CIÊNCIA E SENSO COMUM · PALETA
+   O modelo estrutural e suas interações foram preservados.
+   Para alterar tempo e pontos: edite TIME, POINTS_MIN e POINTS_MAX
+   no JavaScript, abaixo do vetor QUESTIONS.
+   ================================================================ */
+:root {
+  --bg: #f5f0e6;
+  --paper: #fffaf1;
+  --dark: #193b30;
+  --deep: #285447;
+  --accent: #ad8051;
+  --line: #d5c7b5;
+  --answer1: #9a3940;
+  --answer2: #276184;
+  --answer3: #95702b;
+  --answer4: #31724e;
+}
+.intro .display em {
+  color: #e2b88e;
+}
+.intro::after {
+  content: "S";
+}
+.question {
+  max-width: 970px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+@media(max-width: 650px) {
+  .toplinks {
+    justify-content: flex-start;
+  }
+  .topin {
+    align-items: flex-start;
+  }
+  .intro .display {
+    overflow-wrap: break-word;
+  }
+}
+  
+/* PERSONALIZAÇÃO DA AULA: MARFIM, VERDE-MUSGO, BORDÔ E MARROM */
+:root {
+  --ink: #252c28;
+  --muted: #5e625c;
+  --bg: #f3eee3;
+  --paper: #fffaf1;
+  --dark: #213b34;
+  --deep: #315b49;
+  --line: #d6c8b6;
+  --accent: #89563d;
+  --answer1: #8e3546;
+  --answer2: #245f80;
+  --answer3: #8d662e;
+  --answer4: #2e704c;
+}
+.intro .display { font-size: clamp(2.4rem, 5.7vw, 4.9rem); line-height: 1.09; overflow-wrap: break-word; }
+.intro .display em { color: #e7bc99; }
+.intro::after { content: "C"; }
+.eyebrow, .kicker { color: #875236; }
+.intro .eyebrow { color: #ebc3a3; }
+.note { border-left-color: #823946; }
+.btn:not(.dark):not(.ghost) { background: #d6ae82; border-color: #d6ae82; }
+.feedbackline.bad { color: #813b45; }
+@media (max-width:650px) { .intro .display { font-size: clamp(2.1rem, 8.6vw, 3.8rem); } }
+</style>
+</head>
+<body>
+<!-- 08. CABEÇALHO DO SITE E LINKS PARA A AULA -->
+<header class="top">
+<div class="topin">
+<a class="brand" href="Sociologia_I_Ciencia_Senso_Comum_V03_Publicacao.html">
+<span aria-hidden="true" class="stamp">
+      S
+     </span>
+<span>
+      DICIONÁRIO PARA NÃO SER TROUXA
+      <br/>
+<span class="muted">
+       Prof. Dr. Eliaquim Timóteo
+      </span>
+</span>
+</a>
+<nav aria-label="Navegação da aula" class="toplinks">
+<a href="Sociologia_I_Ciencia_Senso_Comum_V03_Publicacao.html">Texto da aula</a>
+<a href="Sociologia_I_Ciencia_Senso_Comum_V03_Publicacao.html#quiz">Atividades do capítulo</a>
+<a aria-current="page" class="selected" href="Sociologia_I_Ciencia_Senso_Comum_Quiz.html">Quiz cronometrado</a>
+</nav>
+</div>
+</header>
+<main class="main">
+<!-- 09. TELA DE APRESENTAÇÃO -->
+<section class="card intro" id="start">
+<div class="eyebrow">Sociologia I · Quiz interativo · Ciência e senso comum</div>
+<h1 aria-label="Ciência, senso comum e conhecimento do mundo social" class="display">Ciência, senso comum <em>e conhecimento do mundo social</em></h1>
+<p>Desnaturalização, diferentes formas de conhecimento, investigação científica, modernidade, conceitos sociológicos, dados censitários e pensamento crítico.</p>
+<div class="meta">
+<span>10 questões</span>
+<span>30 segundos por questão</span>
+<span>Até 1.000 pontos por acerto</span>
+</div>
+<p>Leia cada enunciado sem pressa. Quando estiver pronto, selecione “Ver alternativas e iniciar 30 s”. As quatro respostas aparecerão e o tempo começará. Após cada resposta, consulte a análise sociológica.</p>
+<button class="btn" id="startBtn" type="button">
+     Começar quiz
+     <span aria-hidden="true">
+      →
+     </span>
+</button>
+</section>
+<section class="note" id="introNote">
+<strong>
+     Como funciona a pontuação?
+    </strong>
+<p>
+     Cada resposta correta vale de 500 a 1.000 pontos conforme o tempo restante. Respostas incorretas ou não respondidas valem zero. O gabarito final explica cada alternativa.
+    </p>
+</section>
+<!-- 10. ETAPAS DO JOGO: LEITURA, RESPOSTA E COMENTÁRIO -->
+<section aria-label="Questionário de Sociologia" class="card play" hidden="" id="game">
+<div class="gamehead">
+<div class="row">
+<div>
+<div class="counter" id="counter">
+        Questão 1 de 10
+       </div>
+<div class="scorebig" id="scoreTop">
+        0 pontos
+       </div>
+</div>
+<div class="scoresmall" id="statusTop">
+       Acertos: 0
+      </div>
+</div>
+<div aria-label="Progresso do quiz" aria-valuemax="10" aria-valuemin="0" aria-valuenow="0" class="progressbar" id="progressContainer" role="progressbar">
+<span id="progress">
+</span>
+</div>
+<div class="timerset" hidden="" id="timerRow">
+<div class="clockbox">
+<div aria-label="Tempo restante, em segundos" class="clock" id="seconds" role="timer">
+        30
+       </div>
+</div>
+<div aria-hidden="true" class="clockbar">
+<span id="clockFill">
+</span>
+</div>
+</div>
+</div>
+<div class="prompt">
+<div class="kicker" id="topic">Desnaturalização</div>
+<h2 class="question" id="question" tabindex="-1">
+</h2>
+<p class="select-hint" id="stageHint">
+</p>
+</div>
+<div class="reading" id="readingStage">
+<button class="btn dark" id="revealBtn" type="button">
+      Ver alternativas e iniciar 30 s →
+     </button>
+<span class="reading-caption">
+      Leia o enunciado antes de começar. O cronômetro ainda não está funcionando.
+     </span>
+</div>
+<div aria-label="Alternativas de resposta" class="answers" hidden="" id="answers" role="group">
+</div>
+<div aria-live="polite" class="feedback" hidden="" id="feedback">
+<h3 class="feedbackline" id="feedbackTitle">
+</h3>
+<p id="feedbackText">
+</p>
+<details id="currentReasons">
+<summary>
+       Por que as outras alternativas estão incorretas?
+      </summary>
+<ul id="reasonsList">
+</ul>
+</details>
+<div class="row">
+<div class="earned">
+<small>
+        Pontos nesta questão
+       </small>
+<span id="earned">
+        0
+       </span>
+</div>
+<button class="btn dark" id="nextBtn" type="button">
+       Próxima pergunta →
+      </button>
+</div>
+</div>
+</section>
+<!-- 11. RESULTADO E GABARITO DETALHADO -->
+<section class="card end" hidden="" id="end">
+<div class="eyebrow">Resultado · Ciência, senso comum e conhecimento do mundo social</div>
+<h1 id="endTitle">
+     Quiz concluído.
+    </h1>
+<p id="endMessage">
+</p>
+<div class="stats">
+<div class="stat">
+<strong id="total">
+       0
+      </strong>
+<span>
+       Pontos
+      </span>
+</div>
+<div class="stat">
+<strong id="hits">
+       0/10
+      </strong>
+<span>
+       Acertos
+      </span>
+</div>
+<div class="stat">
+<strong id="rate">
+       0%
+      </strong>
+<span>
+       Aproveitamento
+      </span>
+</div>
+</div>
+<button class="btn dark" id="restartBtn" type="button">
+     Jogar novamente
+    </button>
+<a class="btn dark" href="Sociologia_I_Ciencia_Senso_Comum_V03_Publicacao.html">Voltar à aula</a>
+<div class="review">
+<h2>
+      Gabarito comentado
+     </h2>
+<p>
+      Consulte a justificativa da resposta correta e as explicações das demais alternativas.
+     </p>
+<div id="reviewList">
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footin">
+<span>Dicionário para não ser trouxa · Ciência, senso comum e conhecimento do mundo social · Sociologia I</span>
+<a href="Sociologia_I_Ciencia_Senso_Comum_V03_Publicacao.html">Retornar ao texto da aula</a>
+</div>
+</footer>
+<!-- 12. DADOS DO QUIZ E INTERAÇÕES EM JAVASCRIPT -->
+<script>
+   "use strict";
+
+/* ================================================================
+   13. QUESTÕES: MATRIZ DE CONTEÚDOS DA AULA V03
+   Questões elaboradas sobre os temas do capítulo.
+   Para editar uma pergunta: altere os campos text, choices, correct,
+   explain e reasons do objeto correspondente.
+   correct é o índice da alternativa certa, começando por ZERO.
+   ================================================================ */
+const QUESTIONS = [
+  {
+    "area": "Desnaturalização · normas sociais",
+    "text": "Em uma pesquisa, estudantes observam que uma peça de roupa é considerada masculina em certo lugar e feminina em outro. Qual interpretação é sociologicamente mais adequada?",
+    "choices": [
+      "As diferenças de uso demonstram que o material da roupa determina o gênero de quem a veste.",
+      "As classificações do vestuário resultam de convenções sociais que variam historicamente.",
+      "As preferências registradas hoje bastam para explicar o significado da roupa em qualquer época.",
+      "As diferenças entre lugares decorrem somente da disponibilidade comercial de cada peça."
+    ],
+    "correct": 1,
+    "explain": "Desnaturalizar é investigar como práticas e significados se formam historicamente. Vestuário e gênero envolvem convenções, disputas e expectativas sociais, não propriedades intrínsecas dos tecidos.",
+    "reasons": [
+      "O material de uma roupa não estabelece, por si, o significado de gênero atribuído socialmente à peça.",
+      "Os usos comparados indicam que o significado da roupa depende de normas, contextos e transformações históricas.",
+      "Uma preferência contemporânea não explica automaticamente usos de outras épocas ou grupos.",
+      "O comércio interfere na circulação de roupas, mas não explica sozinho os significados culturais associados a elas."
+    ]
+  },
+  {
+    "area": "Senso comum · investigação sociológica",
+    "text": "Uma pessoa afirma: “Todos os jovens perderam o interesse pela política”, baseando-se em conversas com cinco conhecidos. Qual procedimento permitiria investigar essa afirmação?",
+    "choices": [
+      "Recolher mais relatos de adultos do mesmo círculo social e tratar a concordância como confirmação.",
+      "Examinar somente a filiação partidária, tomando-a como toda forma possível de participação política.",
+      "Substituir a observação cotidiana por uma definição teórica, dispensando dados empíricos.",
+      "Definir juventude e participação política, comparar diferentes práticas e analisar evidências de contextos diversos."
+    ],
+    "correct": 3,
+    "explain": "A experiência cotidiana pode suscitar uma hipótese, mas não autoriza generalizações sem delimitação de conceitos, seleção de evidências e comparação entre contextos. Participação política inclui formas institucionais e não institucionais.",
+    "reasons": [
+      "Relatos de um círculo social restrito podem repetir vieses de seleção e não representam todos os jovens.",
+      "A filiação partidária é um indicador possível, porém não abarca todas as modalidades de participação política.",
+      "Teorias orientam a pesquisa, mas não substituem a necessidade de examinar evidências.",
+      "A investigação requer conceitos definidos, indicadores pertinentes e dados que permitam confrontar a hipótese."
+    ]
+  },
+  {
+    "area": "Conhecimentos tradicionais · Antropologia",
+    "text": "Ao estudar a construção de uma casa Wauja no Xingu, uma pesquisadora identifica técnicas transmitidas coletivamente e adaptadas ao ambiente. Que conclusão respeita o caráter desse conhecimento?",
+    "choices": [
+      "Uma técnica transmitida entre gerações só pode ser explicada por crenças e não envolve observação.",
+      "O conhecimento construtivo tradicional permanece invariável, mesmo diante de novas condições.",
+      "Esse saber articula experiência, transmissão social, observação e elaboração técnica em um contexto cultural.",
+      "A observação de uma casa autoriza generalizar as mesmas técnicas a todos os povos indígenas."
+    ],
+    "correct": 2,
+    "explain": "Os conhecimentos tradicionais envolvem produção e circulação de saberes técnicos, ambientais e culturais. Reconhecer sua historicidade evita opor, de forma hierárquica, ciência e práticas coletivas de outros grupos.",
+    "reasons": [
+      "Saberes tradicionais podem mobilizar observação detalhada, experimentação prática e conhecimentos materiais.",
+      "A transmissão intergeracional não implica imobilidade; técnicas podem ser adaptadas e transformadas.",
+      "O exemplo permite compreender o conhecimento como prática coletiva, situada e tecnicamente elaborada.",
+      "Povos indígenas apresentam histórias e conhecimentos diversos; um caso não representa automaticamente todos eles."
+    ]
+  },
+  {
+    "area": "Revolução Científica · interpretação de evidências",
+    "text": "O deslocamento aparente do Sol no céu parece indicar que ele gira ao redor da Terra. Qual atitude corresponde à investigação científica discutida na aula?",
+    "choices": [
+      "Comparar modelos explicativos com observações, instrumentos e previsões, reconhecendo os limites da aparência imediata.",
+      "Adotar a interpretação mais difundida na época, pois o consenso social confirma o movimento dos astros.",
+      "Considerar o deslocamento aparente uma demonstração suficiente, sem examinar outras observações.",
+      "Rejeitar toda observação cotidiana, porque ela não pode contribuir para a formulação de hipóteses."
+    ],
+    "correct": 0,
+    "explain": "A controvérsia entre modelos geocêntricos e heliocêntricos mostra que uma observação depende de referenciais e de modelos interpretativos. Hipóteses são avaliadas com conjuntos de evidências e procedimentos examináveis.",
+    "reasons": [
+      "Modelos concorrentes podem explicar aparências semelhantes; sua avaliação exige evidências, procedimentos e previsões.",
+      "A difusão de uma ideia não demonstra, isoladamente, sua adequação explicativa.",
+      "A aparência de um movimento não basta para estabelecer suas causas ou seu referencial.",
+      "Observações cotidianas podem originar perguntas; o problema está em tomá-las como conclusões autossuficientes."
+    ]
+  },
+  {
+    "area": "Modernidade · formação das Ciências Sociais",
+    "text": "Qual explicação articula historicamente a formação da Sociologia com as transformações estudadas na aula?",
+    "choices": [
+      "A disciplina surgiu da estabilidade das relações tradicionais, sem relação com mudanças no trabalho.",
+      "A Sociologia resultou exclusivamente da circulação de ideias filosóficas, independentemente de conflitos sociais.",
+      "A modernização europeia ocorreu separadamente das relações coloniais e da economia atlântica.",
+      "Industrialização, urbanização, revoluções políticas e expansão colonial criaram problemas novos de investigação social."
+    ],
+    "correct": 3,
+    "explain": "A Sociologia consolidou-se no século XIX diante de mudanças na organização do trabalho, das cidades e das instituições. Essas transformações se articularam a conflitos de classe, colonialismo e circuitos econômicos transnacionais.",
+    "reasons": [
+      "A reorganização do trabalho e a instabilidade social foram parte do contexto de formação da Sociologia.",
+      "Ideias filosóficas tiveram participação relevante, mas não explicam a disciplina isoladamente da história social.",
+      "A expansão capitalista europeia manteve vínculos constitutivos com colonização, escravização e circuitos atlânticos.",
+      "Os processos mencionados produziram conflitos e questões sobre instituições, desigualdades e transformação social."
+    ]
+  },
+  {
+    "area": "Auguste Comte · positivismo",
+    "text": "Qual formulação caracteriza o programa positivista de Auguste Comte apresentado na aula?",
+    "choices": [
+      "Explicar a organização social exclusivamente pelos sentidos subjetivos atribuídos a cada ação individual.",
+      "Investigar regularidades dos fenômenos sociais, vinculando ciência a uma concepção de ordem e progresso.",
+      "Interpretar a história principalmente a partir das relações de propriedade e do conflito de classes.",
+      "Substituir a investigação empírica por uma pedagogia centrada somente na transmissão de tradições populares."
+    ],
+    "correct": 1,
+    "explain": "Comte propôs constituir uma ciência da sociedade que identificasse regularidades e contribuísse para sua reorganização. O positivismo é uma tradição histórica específica, sujeita a críticas e revisões.",
+    "reasons": [
+      "A interpretação dos sentidos da ação social é associada sobretudo à tradição compreensiva, e não ao programa comtiano.",
+      "A identificação científica de regularidades e a preocupação com ordem e progresso integram a proposta de Comte.",
+      "As relações de produção e os conflitos de classe são centrais na tradição marxiana, distinta da de Comte.",
+      "O positivismo de Comte valorizava a ciência e sua sistematização, em vez de dispensar a investigação."
+    ]
+  },
+  {
+    "area": "Construção de conceitos · classificação",
+    "text": "Quatro mesas diferem em material, altura, formato e uso. Ao reuni-las na categoria “mesa”, que operação ajuda a compreender a construção dos conceitos sociológicos?",
+    "choices": [
+      "Explicitar propriedades compartilhadas, reconhecer casos-limite e revisar critérios de classificação conforme a investigação.",
+      "Escolher a mesa mais conhecida como padrão universal e descartar as que não se parecem com ela.",
+      "Utilizar a primeira definição de dicionário como suficiente para qualquer tradição de pesquisa.",
+      "Considerar a classificação uma cópia direta dos objetos, que não exige escolhas de quem investiga."
+    ],
+    "correct": 0,
+    "explain": "Conceitos selecionam propriedades e estabelecem critérios. Em Sociologia, termos como classe, família e cultura exigem delimitações teóricas e empíricas, passíveis de discussão e revisão.",
+    "reasons": [
+      "A classificação depende de critérios explícitos, aplicáveis a diferentes casos, e pode ser refinada em casos-limite.",
+      "Adotar um único exemplar como norma pode excluir casos pertinentes sem justificativa analítica.",
+      "Definições comuns não resolvem as diferenças entre tradições sociológicas e problemas de pesquisa.",
+      "Categorias são instrumentos de análise construídos por pesquisadores, não reproduções automáticas do real."
+    ]
+  },
+  {
+    "area": "Censos demográficos · religiões no Brasil",
+    "text": "Uma tabela do Censo 2010 classifica religião para todas as idades; a série do Censo 2022 utiliza pessoas de 10 anos ou mais. Como comparar percentuais sem confundir os universos?",
+    "choices": [
+      "Confrontar diretamente os percentuais originais, pois o ano do levantamento é o único fator que importa.",
+      "Comparar números absolutos e atribuir toda diferença à mudança de crença dos indivíduos.",
+      "Usar um recorte etário equivalente e verificar a compatibilidade das categorias e dos procedimentos censitários.",
+      "Tratar a declaração de religião como medida direta de frequência a cultos e intensidade da prática religiosa."
+    ],
+    "correct": 2,
+    "explain": "A comparação histórica requer universos e categorias compatíveis. Declarações de pertencimento religioso não medem, por si, frequência a rituais ou intensidade da crença.",
+    "reasons": [
+      "Populações de faixas etárias diferentes não produzem percentuais diretamente comparáveis sem ajustes.",
+      "A variação absoluta também depende do tamanho da população e de aspectos da mensuração; não isola mudanças de crença.",
+      "Equivalência do universo, das categorias e dos procedimentos é condição para uma leitura histórica consistente.",
+      "O quesito censitário sobre pertencimento não equivale a um indicador de frequência ou intensidade de prática."
+    ]
+  },
+  {
+    "area": "Censo 2022 · identificação indígena",
+    "text": "O total de pessoas indígenas registrado em 2022 supera o de censos anteriores. Qual leitura considera a natureza dos dados apresentados na aula?",
+    "choices": [
+      "A diferença demonstra, por si só, que houve migração uniforme das aldeias para todas as cidades.",
+      "A variação deve ser analisada com as mudanças de cobertura, identificação e autodeclaração, além da dinâmica demográfica.",
+      "A comparação comprova que todos os censos utilizaram exatamente o mesmo procedimento de identificação.",
+      "O crescimento do número registrado autoriza ignorar diferenças entre população urbana, rural e terras indígenas."
+    ],
+    "correct": 1,
+    "explain": "O Censo 2022 ampliou procedimentos de localização e identificação indígena. Mudanças metodológicas, reconhecimento e autodeclaração influem na comparação, juntamente com processos demográficos e territoriais.",
+    "reasons": [
+      "Os totais não demonstram, isoladamente, os motivos ou os destinos de deslocamentos populacionais.",
+      "A leitura exige considerar tanto a população quanto as condições em que cada levantamento a identifica.",
+      "Há diferenças metodológicas entre os censos, que precisam ser explicitadas antes de inferir tendências.",
+      "Recortes territoriais e formas de identificação são necessários para interpretar os resultados."
+    ]
+  },
+  {
+    "area": "Ideologia · pensamento crítico · Paulo Freire",
+    "text": "Uma notícia atribui a pobreza exclusivamente à “falta de esforço” das pessoas. Qual resposta mobiliza pensamento crítico e leitura social do mundo?",
+    "choices": [
+      "Adotar a notícia como fato porque uma interpretação difundida corresponde ao conhecimento científico.",
+      "Substituir a notícia por uma opinião pessoal contrária, sem recorrer a pesquisa ou argumentação.",
+      "Considerar todos os dados estatísticos incapazes de contribuir para o entendimento da experiência vivida.",
+      "Investigar trabalho, escolarização, raça, gênero, território e políticas públicas, confrontando argumentos e evidências."
+    ],
+    "correct": 3,
+    "explain": "A investigação crítica examina relações sociais e históricas que condicionam experiências individuais. A perspectiva pedagógica de Paulo Freire valoriza o diálogo entre experiência vivida, reflexão e conhecimento contextualizado.",
+    "reasons": [
+      "A circulação de uma interpretação não comprova sua validade empírica ou analítica.",
+      "A discordância sem exame de fontes não supera os limites da opinião não fundamentada.",
+      "Dados estatísticos, interpretados criticamente, podem ser articulados a pesquisas qualitativas e experiências sociais.",
+      "Uma análise sociológica combina problemas definidos, dados e relações estruturais para questionar explicações individualizantes."
+    ]
+  }
+];
+
+/* 14. CONFIGURAÇÃO DO TEMPO E DA PONTUAÇÃO */
+const TIME = 30;                  // segundos por pergunta
+const POINTS_MIN = 500;          // acerto no final do tempo
+const POINTS_MAX = 1000;         // acerto imediato
+const ANSWER_LETTERS = ["A", "B", "C", "D"];
+
+const el = (id) => document.getElementById(id);
+const fmt = (n) => new Intl.NumberFormat("pt-BR").format(n);
+let current = 0;
+let total = 0;
+let hits = 0;
+let responses = [];
+let phase = "intro";             // intro, reading, answering, feedback, end
+let deadline = 0;
+let timerId = null;
+let secondsLeft = TIME;
+let order = [];
+
+// Embaralha somente as alternativas, mantendo a ordem temática das questões.
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/* 15. MUDANÇA DE TELA E INÍCIO DA PARTIDA */
+function display(sectionId) {
+  for (const id of ["start", "introNote", "game", "end"]) {
+    el(id).hidden = id !== sectionId && !(sectionId === "start" && id === "introNote");
+  }
+}
+
+function scrollUp() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function begin() {
+  clearInterval(timerId);
+  current = 0;
+  total = 0;
+  hits = 0;
+  responses = [];
+  phase = "reading";
+  order = QUESTIONS.map(q => ({
+    ...q,
+    variant: shuffle(q.choices.map((txt, index) => ({ txt, index })))
+  }));
+  display("game");
+  showQuestion();
+  scrollUp();
+}
+
+/* 16. LEITURA LIVRE, SEM EXIBIÇÃO PREMATURA DE ALTERNATIVAS */
+function updateClock(remaining) {
+  const sec = Math.ceil(remaining);
+  el("seconds").textContent = String(sec);
+  el("seconds").classList.toggle("low", sec <= 10);
+  el("clockFill").style.width = `${remaining / TIME * 100}%`;
+  el("clockFill").classList.toggle("low", sec <= 10);
+}
+
+function showQuestion() {
+  clearInterval(timerId);
+  phase = "reading";
+  secondsLeft = TIME;
+  const q = order[current];
+  el("counter").textContent = `Questão ${current + 1} de ${order.length}`;
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("progress").style.width = `${current / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current));
+  el("topic").textContent = q.area;
+  el("question").textContent = q.text;
+  el("readingStage").hidden = false;
+  el("timerRow").hidden = true;
+  el("answers").hidden = true;
+  el("feedback").hidden = true;
+  el("stageHint").textContent = "";
+  el("answers").replaceChildren();
+  el("game").querySelector(".gamehead").classList.remove("timing");
+  updateClock(TIME);
+  el("question").focus({ preventScroll: true });
+}
+
+/* 17. REVELAÇÃO DAS ALTERNATIVAS E INÍCIO DOS 30 SEGUNDOS */
+function reveal() {
+  if (phase !== "reading") return;
+  phase = "answering";
+  const q = order[current];
+  const box = el("answers");
+  box.replaceChildren();
+  q.variant.forEach(({ txt }, slot) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    button.dataset.slot = String(slot);
+    button.setAttribute("aria-label", `Alternativa ${ANSWER_LETTERS[slot]}: ${txt}`);
+
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.textContent = ANSWER_LETTERS[slot];
+    letter.setAttribute("aria-hidden", "true");
+    const content = document.createElement("span");
+    content.textContent = txt;
+    button.append(letter, content);
+    button.addEventListener("click", () => select(slot));
+    box.appendChild(button);
+  });
+
+  el("readingStage").hidden = true;
+  el("timerRow").hidden = false;
+  box.hidden = false;
+  el("stageHint").textContent = "O cronômetro está em andamento. Responda com um clique ou use as teclas de 1 a 4.";
+  el("game").querySelector(".gamehead").classList.add("timing");
+
+  // performance.now() evita contagem imprecisa causada por atrasos do intervalo.
+  deadline = performance.now() + TIME * 1000;
+  secondsLeft = TIME;
+  updateClock(secondsLeft);
+  timerId = setInterval(tick, 60);
+  box.firstElementChild?.focus({ preventScroll: true });
+  tick();
+}
+
+function tick() {
+  if (phase !== "answering") return;
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  updateClock(secondsLeft);
+  if (secondsLeft <= 0) select(-1);
+}
+
+/* 18. CORREÇÃO E FEEDBACK IMEDIATO */
+function select(slot) {
+  if (phase !== "answering") return;
+  const q = order[current];
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  if (secondsLeft <= 0) slot = -1;
+  phase = "feedback";
+  clearInterval(timerId);
+
+  const correctSlot = q.variant.findIndex(option => option.index === q.correct);
+  const correct = slot === correctSlot;
+  const earned = correct
+    ? Math.min(POINTS_MAX, POINTS_MIN + Math.round((POINTS_MAX - POINTS_MIN) * secondsLeft / TIME))
+    : 0;
+  total += earned;
+  if (correct) hits++;
+
+  responses.push({
+    q, slot, chosenIndex: slot >= 0 ? q.variant[slot].index : -1,
+    correct, earned
+  });
+  Array.from(el("answers").children).forEach((button, i) => {
+    button.disabled = true;
+    button.classList.toggle("correct", i === correctSlot);
+    button.classList.toggle("wrong", i === slot && !correct);
+    button.classList.toggle("notpicked", i !== correctSlot && i !== slot);
+  });
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("stageHint").textContent = "";
+  el("feedback").hidden = false;
+  el("feedbackTitle").className = `feedbackline ${correct ? "good" : "bad"}`;
+  el("feedbackTitle").textContent = correct ? "Resposta correta!" : slot === -1 ? "Tempo esgotado." : "Resposta incorreta.";
+  el("feedbackText").textContent = `Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+  el("earned").textContent = `+ ${fmt(earned)}`;
+
+  const reasonsList = el("reasonsList");
+  reasonsList.replaceChildren();
+  q.reasons.forEach((reason, i) => {
+    if (i === q.correct) return;
+    const li = document.createElement("li");
+    li.textContent = `${q.choices[i]} — ${reason}`;
+    reasonsList.appendChild(li);
+  });
+  el("currentReasons").open = false;
+  el("nextBtn").textContent = current === order.length - 1 ? "Ver resultado →" : "Próxima pergunta →";
+  el("progress").style.width = `${(current + 1) / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current + 1));
+  el("nextBtn").focus({ preventScroll: true });
+}
+
+/* 19. PRÓXIMA QUESTÃO E TELA DE RESULTADOS */
+function next() {
+  if (phase !== "feedback") return;
+  if (current + 1 < order.length) {
+    current++;
+    showQuestion();
+    scrollUp();
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  clearInterval(timerId);
+  phase = "end";
+  display("end");
+  el("total").textContent = fmt(total);
+  el("hits").textContent = `${hits}/${order.length}`;
+  el("rate").textContent = `${Math.round(hits / order.length * 100)}%`;
+  el("endTitle").textContent = hits === order.length ? "Todas as respostas corretas!" : "Quiz concluído.";
+  el("endMessage").textContent = `Você acertou ${hits} de ${order.length} questões e obteve ${fmt(total)} dos ${fmt(order.length * POINTS_MAX)} pontos possíveis. Reveja abaixo o gabarito e as justificativas.`;
+
+  const box = el("reviewList");
+  box.replaceChildren();
+  responses.forEach((entry, i) => {
+    const q = entry.q;
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `${i + 1}. ${q.text}`;
+    const exp = document.createElement("div");
+    exp.className = "exp";
+    const personal = document.createElement("p");
+    personal.textContent = `Sua resposta: ${entry.chosenIndex === -1 ? "Não respondida (tempo esgotado)" : q.choices[entry.chosenIndex]}.`;
+    const answer = document.createElement("p");
+    const b = document.createElement("strong");
+    b.textContent = "Resposta correta: ";
+    answer.append(b, document.createTextNode(q.choices[q.correct]));
+    const explanation = document.createElement("p");
+    explanation.textContent = q.explain;
+    const title = document.createElement("p");
+    const titleStrong = document.createElement("strong");
+    titleStrong.textContent = "Análise das alternativas";
+    title.append(titleStrong);
+    const list = document.createElement("ul");
+    q.choices.forEach((choice, n) => {
+      const li = document.createElement("li");
+      li.dataset.state = n === q.correct ? "correct" : n === entry.chosenIndex ? "chosen-wrong" : "other";
+      li.textContent = `${choice} — ${q.reasons[n]}`;
+      list.appendChild(li);
+    });
+    exp.append(personal, answer, explanation, title, list);
+    details.append(summary, exp);
+    box.appendChild(details);
+  });
+  scrollUp();
+}
+
+/* 20. EVENTOS E ATALHOS DE TECLADO */
+el("startBtn").addEventListener("click", begin);
+el("revealBtn").addEventListener("click", reveal);
+el("nextBtn").addEventListener("click", next);
+el("restartBtn").addEventListener("click", begin);
+document.addEventListener("keydown", event => {
+  if (el("game").hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (phase === "answering" && /^[1-4]$/.test(event.key)) {
+    event.preventDefault();
+    select(Number(event.key) - 1);
+  }
+});
+  </script>
+</body>
+</html>

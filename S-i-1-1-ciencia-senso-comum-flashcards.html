@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#f7f5ee" name="theme-color"/>
+<meta content="24 flashcards da aula de Sociologia I: ciência, senso comum e conhecimento do mundo social. Definições, explicações e dois exemplos por conceito." name="description"/>
+<title>Flashcards da Aula 1.1 | Sociologia I</title>
+<style>
+    /* ============================================================
+       01. PALETA CENTRAL E MODO NOTURNO
+       Para trocar a identidade visual, altere as variáveis abaixo.
+       Os cartões preservam as cores individuais da aula V07.
+       ============================================================ */
+    :root {
+      color-scheme:light;
+      --paper:#f7f5ef;
+      --surface:#fffdf7;
+      --ink:#28342f;
+      --muted:#657068;
+      --line:#d7d8cc;
+      --accent:#315746;
+      --accent-fg:#ffffff;
+      --faint:#ebeee7;
+      --dialog-shadow:0 30px 90px rgba(16,34,30,.25);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      --mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+    }
+    html[data-theme="dark"] {
+      color-scheme:dark;
+      --paper:#192421;
+      --surface:#24322d;
+      --ink:#f5f2e7;
+      --muted:#c0c9c1;
+      --line:#42544a;
+      --accent:#c2d8c4;
+      --accent-fg:#1b3027;
+      --faint:#2e4037;
+      --dialog-shadow:0 32px 100px rgba(0,0,0,.57);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5}
+    button,input,select {font:inherit}
+    button {cursor:pointer}
+    button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible {outline:3px solid #df8b50;outline-offset:4px}
+    a {color:inherit}
+    .shell {width:min(1360px,calc(100% - 54px));margin-inline:auto}
+    .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link {position:absolute;z-index:50;top:8px;left:8px;transform:translateY(-150%);background:var(--surface);color:var(--ink);padding:10px 16px;border:1px solid var(--line)}
+    .skip-link:focus {transform:none}
+
+    /* 02. CABEÇALHO, IDENTIDADE E CONTEÚDO INTRODUTÓRIO */
+    .topline {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 0 19px;border-bottom:1px solid var(--line)}
+    .brand {font-size:11px;letter-spacing:.095em;font-weight:850;text-transform:uppercase;line-height:1.5}
+    .brand-prof {font-weight:650;letter-spacing:0;text-transform:none}
+    .brand-divider {padding-inline:5px;font-weight:500}
+    .top-actions {display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .top-link,.theme-btn {min-height:39px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);padding:9px 13px;text-decoration:none;font-size:12px;font-weight:740}
+    .top-link:hover,.theme-btn:hover {border-color:var(--accent)}
+    .hero {display:block;padding:40px 0 34px}
+    .eyebrow {display:block;color:var(--accent);font-size:11px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+    .hero h1 {font-family:var(--serif);font-size:clamp(52px,6.1vw,87px);letter-spacing:-.065em;font-weight:600;line-height:1;margin:13px 0 11px}
+    .hero-subtitle {font-family:var(--serif);font-size:clamp(18px,2.2vw,28px);line-height:1.18;max-width:850px;margin:0}
+    .hero-description {max-width:720px;font-size:14px;line-height:1.7;color:var(--muted);margin:17px 0 0}
+    /* 03. PESQUISA E SELEÇÃO DE UNIDADE */
+    .study-toolbar {display:grid;grid-template-columns:minmax(230px,1.4fr) minmax(250px,1fr);gap:13px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:end}
+    .field {display:flex;flex-direction:column;gap:5px;min-width:0}
+    .field label {font-size:10px;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:var(--muted)}
+    .field input,.field select {background:var(--surface);color:var(--ink);width:100%;border:1px solid var(--line);height:44px;border-radius:8px;padding:0 12px;outline-offset:2px;font-size:13px}
+    .study-guide {margin:15px 0 4px;display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted)}
+
+    /* 04. UNIDADES E GRADE SEM VAZIOS DE ABERTURA */
+    .unit-block {margin:44px 0 57px;scroll-margin-top:18px}
+    .unit-block[hidden],.study-card[hidden] {display:none!important}
+    .unit-heading {max-width:1100px;margin:0 auto 22px;border-bottom:1px solid var(--line);padding:0 0 18px}
+    .unit-heading h2 {margin:0}
+    .unit-toggle {width:100%;display:flex;align-items:center;gap:18px;border:0;border-radius:9px;padding:5px 8px 5px 0;background:transparent;color:var(--ink);text-align:left}
+    .unit-toggle:hover {background:var(--faint)}
+    .unit-toggle:focus-visible {outline:3px solid #df8b50;outline-offset:3px}
+    .unit-heading-index {display:grid;place-items:center;flex:none;width:60px;height:60px;border:1px solid var(--line);border-radius:50%;font-family:var(--serif);font-size:23px;font-weight:700;color:var(--accent)}
+    .unit-heading-copy {min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+    .unit-eyebrow {text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+    .unit-heading-label {font-family:var(--serif);font-size:clamp(23px,2.4vw,34px);line-height:1.17;font-weight:550;letter-spacing:-.03em;margin-top:5px}
+    .unit-chevron {margin-left:auto;font-family:var(--sans);font-size:30px;line-height:1;transform:rotate(180deg);transition:transform .18s;flex:none;color:var(--accent)}
+    .unit-toggle[aria-expanded="false"] .unit-chevron {transform:rotate(0deg)}
+    /* Flex com largura calculada mantém três cartões por linha e centraliza as filas incompletas. */
+    .card-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:24px;align-items:flex-start;max-width:1100px;margin-inline:auto}
+    .card-grid > .study-card {flex:0 1 calc((100% - 48px)/3)}
+    .study-card {min-width:0;position:relative;--card-color:#315746;--card-pale:#e9f0e8}
+    .card-trigger {position:relative;display:flex;flex-direction:column;justify-content:space-between;width:100%;height:228px;text-align:left;padding:23px 21px 17px;border:0;color:#fff;background:var(--card-color);transition:transform .17s,box-shadow .17s;isolation:isolate;overflow:visible}
+    .card-trigger:hover {transform:translateY(-3px)}
+    .card-trigger::before {content:"";position:absolute;inset:0 0 auto;height:5px;background:#dfbd8b;opacity:.7}
+    .card-top {position:relative;z-index:1;display:flex;align-items:start;justify-content:space-between;gap:8px}
+    .card-name {position:relative;z-index:1;align-self:stretch;text-align:center;font-family:var(--serif);font-size:clamp(22px,2vw,31px);font-weight:750;letter-spacing:-.035em;line-height:1.1;hyphens:auto;overflow-wrap:break-word;margin:auto 0;padding:15px 0}
+    .card-bottom {position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:10px;font-size:11px;line-height:1.35;font-weight:600;opacity:.9}
+    .card-arrow {font-size:20px;line-height:1}
+    .study-card.variant-soft .card-trigger {border-radius:18px;border:1px solid rgba(255,255,255,.2);box-shadow:0 13px 25px rgba(28,51,43,.17),0 2px 4px rgba(16,34,29,.07)}
+    .study-card.variant-soft .card-trigger::before {border-radius:18px 18px 0 0;background:linear-gradient(90deg,#e5bd7a,#eee2bf);height:5px}
+    .study-card.variant-brutal .card-trigger {border:3px solid #1e2825;border-radius:7px;box-shadow:8px 8px 0 #26362f}
+    .study-card.variant-brutal .card-trigger:hover {transform:translate(-2px,-3px);box-shadow:10px 11px 0 #26362f}
+    .study-card.variant-brutal .card-trigger::before {display:none}
+    .study-card.variant-brutal .card-name {font-family:var(--sans);font-size:clamp(19px,1.9vw,26px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em}
+    .study-card.variant-brutal .card-arrow {border:2px solid currentColor;min-width:29px;height:29px;display:grid;place-items:center;border-radius:2px}
+    .study-card.variant-terminal .card-trigger {background:linear-gradient(140deg,color-mix(in srgb,var(--card-color) 44%,#101f22),#142523);border:1px solid color-mix(in srgb,var(--card-color) 65%,#b3ccbd);border-radius:10px;box-shadow:0 12px 22px rgba(20,47,37,.21);padding-top:42px}
+    .study-card.variant-terminal .card-trigger::before {display:none}
+    .terminal-chrome {display:none}
+    .study-card.variant-terminal .terminal-chrome {position:absolute;inset:0 0 auto;display:flex;gap:5px;align-items:center;height:31px;border-bottom:1px solid #6f8a7b;padding:0 12px}
+    .study-card.variant-terminal .terminal-chrome i {display:block;width:7px;height:7px;border-radius:50%;background:#d6aa81}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(2) {background:#a9c5ab}
+    .study-card.variant-terminal .terminal-chrome i:nth-child(3) {background:#789ca3}
+    .study-card.variant-terminal .card-bottom {font-family:var(--mono)}
+    .study-card.variant-terminal .card-name {font-family:var(--mono);font-size:clamp(19px,1.7vw,24px);font-weight:760;letter-spacing:-.05em}
+    .study-card.variant-terminal .card-arrow {font-family:var(--mono)}
+
+    /* 05. VERSO EM PAINEL MODAL: TODOS OS TEXTOS SÃO INTEGRAIS
+       A abertura não desloca a grade e permite leitura acessível. */
+    .card-dialog {position:fixed;border:1px solid var(--line);padding:0;margin:auto;width:min(850px,calc(100vw - 36px));max-height:min(91dvh,980px);border-radius:17px;box-shadow:var(--dialog-shadow);background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+    .card-dialog::backdrop {background:rgba(14,29,25,.78);backdrop-filter:blur(5px)}
+    .dialog-header {background:var(--dialog-accent,#315746);color:#fff;padding:30px 36px 28px;position:relative}
+    .dialog-header::before {content:"";position:absolute;top:0;left:0;right:0;height:5px;background:#e3c79c}
+    .dialog-top {display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.92}
+    .dialog-header h2 {font-family:var(--serif);font-size:clamp(32px,5vw,55px);line-height:1.05;letter-spacing:-.05em;font-weight:650;margin:18px 0 0;overflow-wrap:anywhere}
+    .dialog-subtitle {font-size:12px;margin:12px 0 0;opacity:.86}
+    .reading-content {padding:28px 35px 35px}
+    .reading-section+ .reading-section {margin-top:23px;padding-top:23px;border-top:1px solid var(--line)}
+    .reading-section h3 {font-family:var(--serif);font-size:25px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;font-weight:700;color:var(--accent)}
+    .reading-section p {font-size:15px;line-height:1.72;margin:0;max-width:75ch;hyphens:auto;text-align:justify;text-justify:inter-word}
+    .reading-examples ol {list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;counter-reset:case}
+    .reading-examples li {position:relative;counter-increment:case;background:var(--faint);border:1px solid var(--line);border-radius:10px;padding:19px 17px 18px;font-size:13px;line-height:1.65;min-width:0;text-align:justify;text-justify:inter-word;hyphens:auto}
+    .reading-examples li::before {content:counter(case,decimal-leading-zero);display:block;color:var(--accent);font-size:10px;letter-spacing:.13em;font-weight:900;margin-bottom:8px}
+    .example-label {font-weight:800;color:var(--ink)}
+    .dialog-footer {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:15px 35px 22px;border-top:1px solid var(--line);background:var(--surface)}
+    .dialog-actions {display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .dialog-action {border-radius:8px;min-height:41px;padding:9px 17px;background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:12px;font-weight:800}
+    .dialog-action.primary {background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+    .empty-state {display:none;border:1px dashed var(--line);border-radius:14px;margin:30px 0;padding:30px;color:var(--muted);text-align:center}
+    .empty-state:not([hidden]) {display:block}
+    .page-footer {border-top:1px solid var(--line);padding:26px 0 50px;display:flex;justify-content:space-between;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:12px;align-items:center}
+    .footer-brand {font-weight:700;letter-spacing:.025em}
+    .page-footer a {color:var(--accent);font-weight:800}
+    [hidden] {display:none!important}
+    /* 06. ADAPTAÇÃO RESPONSIVA E LEITURA JUSTIFICADA */
+    p {text-align:justify;text-justify:inter-word;hyphens:auto}
+    @media(max-width:1010px){
+      .card-grid > .study-card {flex-basis:calc((100% - 22px)/2)}
+      .card-grid {gap:22px;max-width:730px}
+      .unit-heading {max-width:730px}
+    }
+    @media(max-width:800px){
+      .shell{width:min(100% - 32px,1360px)}
+      .hero{padding:30px 0}
+      .study-toolbar{grid-template-columns:1fr 1fr}
+      .card-trigger{height:219px}
+      .reading-content{padding:25px}
+      .dialog-footer{padding-inline:25px}
+    }
+    @media(max-width:520px){
+      .topline{align-items:flex-start;flex-direction:column}
+      .brand{max-width:none}
+      .top-actions{justify-content:flex-start}
+      .hero h1{font-size:clamp(48px,11vw,66px)}
+      .hero-subtitle{font-size:20px}
+      .study-toolbar{grid-template-columns:1fr;gap:10px}
+      .unit-block{margin:34px 0 44px}
+      .unit-toggle{gap:12px}
+      .unit-heading-index{width:47px;height:47px;font-size:19px}
+      .unit-heading-label{font-size:24px}
+      .card-grid{gap:15px;max-width:440px}
+      .card-grid > .study-card{flex:0 1 100%}
+      .card-trigger{height:205px;padding:21px}
+      .card-name{font-size:clamp(27px,7.5vw,35px)!important}
+      .study-card.variant-terminal .card-name{font-size:27px!important}
+      .reading-examples ol{grid-template-columns:1fr}
+      .card-dialog{width:calc(100vw - 18px);max-height:96dvh;border-radius:12px}
+      .dialog-header{padding:27px 21px 23px}
+      .reading-content{padding:22px 20px}
+      .reading-section p{font-size:14px}
+      .dialog-footer{padding:13px 20px 20px}
+      .reading-section h3{font-size:23px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media print {.top-actions,.study-toolbar,.study-guide,.dialog-action,.page-footer{display:none!important}body{background:#fff;color:#222}.card-grid{gap:14px;max-width:none}.card-grid > .study-card{flex-basis:calc((100% - 28px)/3)}.card-trigger{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact;height:150px}.unit-block{break-before:page}.unit-block:first-child{break-before:auto}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para os flashcards</a>
+<div class="shell">
+<!-- 06. IDENTIDADE DA AULA E NAVEGAÇÃO -->
+<header class="topline">
+<div aria-label="SOCIOLOGIA I | DICIONÁRIO PARA NÃO SER TROUXA | Prof. Dr. Eliaquim Timóteo" class="brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA<span aria-hidden="true" class="brand-divider"> | </span><span class="brand-prof">Prof. Dr. Eliaquim Timóteo</span></div>
+<nav aria-label="Acessos da aula" class="top-actions">
+<a class="top-link" href="index.html">Voltar à aula</a>
+<button aria-pressed="false" class="theme-btn" id="theme-toggle" type="button">Modo noturno</button>
+</nav>
+</header>
+<section aria-labelledby="page-title" class="hero">
+<div>
+<span class="eyebrow">AULA 1.1 · CADERNO DE CONCEITOS</span>
+<h1 id="page-title">Flashcards</h1>
+<p class="hero-subtitle">Ciência, senso comum e o conhecimento do mundo social</p>
+<p class="hero-description"></p>
+</div>
+
+</section>
+<!-- 07. PESQUISA E FILTROS DO ACERVO -->
+<div aria-label="Filtrar flashcards" class="study-toolbar" role="search">
+<div class="field"><label for="search-cards">Pesquisar conceitos e explicações</label><input autocomplete="off" id="search-cards" placeholder="Ex.: desnaturalização, Comte, escola..." type="search"/></div>
+<div class="field"><label for="unit-filter">Unidade</label><select id="unit-filter"><option value="all">Todas as unidades</option>
+<option value="1">01 · O mundo social não nasce pronto</option>
+<option value="2">02 · As diferentes formas de conhecer</option>
+<option value="3">03 · Da dúvida aos modelos explicativos</option>
+<option value="4">04 · Por que surgiram as Ciências Sociais?</option>
+<option value="5">05 · Como investigar o mundo social?</option>
+<option value="6">06 · O que os dados mostram? O que silenciam?</option>
+<option value="7">07 · Ideologia, pensamento crítico e Paulo Freire</option>
+</select></div>
+
+<div aria-live="polite" class="sr-only" id="result-count">24 cartões</div>
+</div>
+<div class="study-guide">
+<span>Selecione um cartão para ler seu conteúdo. Use a tecla Esc para fechar.</span>
+
+</div>
+<!-- 08. FLASHCARDS REPRODUZIDOS FIELMENTE DA AULA V07 -->
+<main id="conteudo">
+<!-- ====================================================
+         UNIDADE 01 · O mundo social não nasce pronto
+         ==================================================== -->
+<section aria-labelledby="titulo-u1" class="unit-block" data-unit-section="1" id="unidade-1">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u1"><button aria-controls="cartoes-u1" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">01</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 01</span><span class="unit-heading-label">O mundo social não nasce pronto</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u1" class="card-grid" id="cartoes-u1" role="region">
+<article class="study-card variant-soft" data-number="01" data-search="desnaturalização é o procedimento sociológico de questionar a ideia de que comportamentos, instituições e desigualdades sociais são naturais, universais ou imutáveis. a sociologia investiga como costumes e relações de poder são produzidos e transformados historicamente. desnaturalizar não significa negar aspectos biológicos da vida humana, mas reconhecer que eles não explicam sozinhos a organização da sociedade. gênero:a associação do cuidado doméstico exclusivamente às mulheres expressa uma divisão social do trabalho construída e reproduzida historicamente. alimentação:comer é uma necessidade biológica, mas os horários das refeições, os alimentos considerados apropriados e os hábitos à mesa variam conforme a cultura." data-style="soft" data-unit="1" style="--card-color:#315746;--card-pale:#e9f0e8;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 1: Desnaturalização" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Desnaturalização</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É o procedimento sociológico de questionar a ideia de que comportamentos, instituições e desigualdades sociais são naturais, universais ou imutáveis.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>A Sociologia investiga como costumes e relações de poder são produzidos e transformados historicamente. Desnaturalizar não significa negar aspectos biológicos da vida humana, mas reconhecer que eles não explicam sozinhos a organização da sociedade.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Gênero:</span> A associação do cuidado doméstico exclusivamente às mulheres expressa uma divisão social do trabalho construída e reproduzida historicamente.</li>
+<li><span class="example-label">Alimentação:</span> Comer é uma necessidade biológica, mas os horários das refeições, os alimentos considerados apropriados e os hábitos à mesa variam conforme a cultura.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="02" data-search="norma social é uma regra ou expectativa coletiva que orienta os comportamentos considerados adequados ou inadequados em um grupo ou sociedade. as normas são aprendidas na convivência e transmitidas por famílias, escolas e outras instituições. seu cumprimento pode gerar aprovação, enquanto sua transgressão pode provocar reprovação ou sanções. nem todas as normas estão escritas em leis. escola:durante uma apresentação, espera-se que os estudantes respeitem a vez de falar de seus colegas. atendimento:em filas de bancos e supermercados, a ordem de chegada costuma ser respeitada, sem eliminar os direitos de atendimento prioritário." data-style="brutal" data-unit="1" style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 2: Norma social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Norma social</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma regra ou expectativa coletiva que orienta os comportamentos considerados adequados ou inadequados em um grupo ou sociedade.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>As normas são aprendidas na convivência e transmitidas por famílias, escolas e outras instituições. Seu cumprimento pode gerar aprovação, enquanto sua transgressão pode provocar reprovação ou sanções. Nem todas as normas estão escritas em leis.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Escola:</span> Durante uma apresentação, espera-se que os estudantes respeitem a vez de falar de seus colegas.</li>
+<li><span class="example-label">Atendimento:</span> Em filas de bancos e supermercados, a ordem de chegada costuma ser respeitada, sem eliminar os direitos de atendimento prioritário.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="03" data-search="estranhamento é a atitude de observar práticas familiares como questões que precisam ser investigadas, em vez de aceitá-las como evidentes. muitos hábitos parecem óbvios porque convivemos com eles diariamente. o estranhamento interrompe essa familiaridade e permite perguntar de onde vieram as práticas, como funcionam e quais efeitos produzem. rotina escolar:por que uma campainha estabelece horários para estudar, descansar e circular pela escola? mensagens digitais:por que algumas pessoas consideram falta de educação visualizar uma mensagem no whatsapp e não responder imediatamente?" data-style="terminal" data-unit="1" style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 3: Estranhamento" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Estranhamento</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É a atitude de observar práticas familiares como questões que precisam ser investigadas, em vez de aceitá-las como evidentes.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Muitos hábitos parecem óbvios porque convivemos com eles diariamente. O estranhamento interrompe essa familiaridade e permite perguntar de onde vieram as práticas, como funcionam e quais efeitos produzem.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Rotina escolar:</span> Por que uma campainha estabelece horários para estudar, descansar e circular pela escola?</li>
+<li><span class="example-label">Mensagens digitais:</span> Por que algumas pessoas consideram falta de educação visualizar uma mensagem no WhatsApp e não responder imediatamente?</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 02 · As diferentes formas de conhecer
+         ==================================================== -->
+<section aria-labelledby="titulo-u2" class="unit-block" data-unit-section="2" id="unidade-2">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u2"><button aria-controls="cartoes-u2" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">02</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 02</span><span class="unit-heading-label">As diferentes formas de conhecer</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u2" class="card-grid" id="cartoes-u2" role="region">
+<article class="study-card variant-soft" data-number="04" data-search="senso comum é o conjunto de conhecimentos e explicações adquiridos nas experiências cotidianas e na transmissão de costumes. esses conhecimentos ajudam nas decisões práticas, mas experiências individuais nem sempre autorizam generalizações. a investigação sociológica examina as interpretações do cotidiano, confrontando-as com conceitos e evidências. ônibus:uma pessoa diz que um ônibus “sempre atrasa” porque o perdeu três vezes. seria necessário observar outros dias e horários. juventude e política:afirmar que jovens não se interessam por política porque não participam de partidos ignora grêmios, coletivos e mobilizações sociais." data-style="soft" data-unit="2" style="--card-color:#634a3b;--card-pale:#f3ece4;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 4: Senso comum" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Senso comum</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É o conjunto de conhecimentos e explicações adquiridos nas experiências cotidianas e na transmissão de costumes.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Esses conhecimentos ajudam nas decisões práticas, mas experiências individuais nem sempre autorizam generalizações. A investigação sociológica examina as interpretações do cotidiano, confrontando-as com conceitos e evidências.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Ônibus:</span> Uma pessoa diz que um ônibus “sempre atrasa” porque o perdeu três vezes. Seria necessário observar outros dias e horários.</li>
+<li><span class="example-label">Juventude e política:</span> Afirmar que jovens não se interessam por política porque não participam de partidos ignora grêmios, coletivos e mobilizações sociais.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="05" data-search="conhecimento situado é o conhecimento produzido a partir de perspectivas e condições históricas, sociais e culturais específicas. investigações partem de perguntas e posições de observação determinadas. reconhecer essas condições ajuda a avaliar os limites do conhecimento, sem abandonar os critérios de objetividade e verificação. acessibilidade:uma pesquisa de transporte combina dados municipais com experiências de pessoas com deficiência que utilizam ônibus. conhecimento ambiental:pescadores observam marés e ciclos de espécies ao longo do tempo; esses conhecimentos podem dialogar com estudos científicos, com métodos distintos." data-style="brutal" data-unit="2" style="--card-color:#344f60;--card-pale:#e8eef2;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 5: Conhecimento situado" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Conhecimento situado</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É o conhecimento produzido a partir de perspectivas e condições históricas, sociais e culturais específicas.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Investigações partem de perguntas e posições de observação determinadas. Reconhecer essas condições ajuda a avaliar os limites do conhecimento, sem abandonar os critérios de objetividade e verificação.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Acessibilidade:</span> Uma pesquisa de transporte combina dados municipais com experiências de pessoas com deficiência que utilizam ônibus.</li>
+<li><span class="example-label">Conhecimento ambiental:</span> Pescadores observam marés e ciclos de espécies ao longo do tempo; esses conhecimentos podem dialogar com estudos científicos, com métodos distintos.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="06" data-search="evidência é uma informação, observação, documento ou registro utilizado para sustentar, questionar ou avaliar uma afirmação. uma evidência não determina automaticamente uma conclusão. é preciso conhecer a origem do registro, os procedimentos de produção e os limites de interpretação. fontes diferentes podem ser combinadas. censo indígena:dados do ibge ajudam a estudar a população indígena; comparações entre 2010 e 2022 exigem observar os critérios de identificação. atrasos escolares:horários de chegada, itinerários e relatos de estudantes podem ser confrontados em uma pesquisa sobre o transporte escolar." data-style="terminal" data-unit="2" style="--card-color:#2f5548;--card-pale:#e5efea;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 6: Evidência" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Evidência</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma informação, observação, documento ou registro utilizado para sustentar, questionar ou avaliar uma afirmação.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Uma evidência não determina automaticamente uma conclusão. É preciso conhecer a origem do registro, os procedimentos de produção e os limites de interpretação. Fontes diferentes podem ser combinadas.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Censo indígena:</span> Dados do IBGE ajudam a estudar a população indígena; comparações entre 2010 e 2022 exigem observar os critérios de identificação.</li>
+<li><span class="example-label">Atrasos escolares:</span> Horários de chegada, itinerários e relatos de estudantes podem ser confrontados em uma pesquisa sobre o transporte escolar.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 03 · Da dúvida aos modelos explicativos
+         ==================================================== -->
+<section aria-labelledby="titulo-u3" class="unit-block" data-unit-section="3" id="unidade-3">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u3"><button aria-controls="cartoes-u3" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">03</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 03</span><span class="unit-heading-label">Da dúvida aos modelos explicativos</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u3" class="card-grid" id="cartoes-u3" role="region">
+<article class="study-card variant-soft" data-number="07" data-search="paradigma na perspectiva de thomas kuhn, é um conjunto de realizações, referências e práticas compartilhadas que orienta a pesquisa de uma comunidade científica. os paradigmas influenciam os problemas considerados relevantes, os procedimentos adotados e a interpretação dos resultados. suas transformações podem modificar profundamente a investigação científica. astronomia:a transformação histórica dos modelos geocêntricos para os heliocêntricos alterou as explicações dos movimentos celestes. medicina:a consolidação das explicações microbiológicas para certas doenças transformou problemas e procedimentos de investigação médica." data-style="soft" data-unit="3" style="--card-color:#315746;--card-pale:#e9f0e8;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 7: Paradigma" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Paradigma</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>Na perspectiva de Thomas Kuhn, é um conjunto de realizações, referências e práticas compartilhadas que orienta a pesquisa de uma comunidade científica.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Os paradigmas influenciam os problemas considerados relevantes, os procedimentos adotados e a interpretação dos resultados. Suas transformações podem modificar profundamente a investigação científica.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Astronomia:</span> A transformação histórica dos modelos geocêntricos para os heliocêntricos alterou as explicações dos movimentos celestes.</li>
+<li><span class="example-label">Medicina:</span> A consolidação das explicações microbiológicas para certas doenças transformou problemas e procedimentos de investigação médica.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="08" data-search="hipótese é uma explicação possível ou proposição sobre a relação entre fenômenos que deverá ser examinada por uma pesquisa. a hipótese orienta a escolha das informações necessárias. ela não é uma verdade antecipada: os resultados podem sustentá-la, modificá-la ou contrariá-la. transporte:“estudantes que precisam usar dois ônibus gastam mais tempo no trajeto escolar” é uma proposição que pode ser investigada. grêmio:“participar do grêmio escolar está relacionado ao interesse por debates políticos” é uma hipótese que exige critérios de observação." data-style="brutal" data-unit="3" style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 8: Hipótese" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Hipótese</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma explicação possível ou proposição sobre a relação entre fenômenos que deverá ser examinada por uma pesquisa.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>A hipótese orienta a escolha das informações necessárias. Ela não é uma verdade antecipada: os resultados podem sustentá-la, modificá-la ou contrariá-la.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Transporte:</span> “Estudantes que precisam usar dois ônibus gastam mais tempo no trajeto escolar” é uma proposição que pode ser investigada.</li>
+<li><span class="example-label">Grêmio:</span> “Participar do grêmio escolar está relacionado ao interesse por debates políticos” é uma hipótese que exige critérios de observação.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="09" data-search="método científico é o conjunto de procedimentos sistemáticos e justificáveis utilizados para investigar problemas e examinar explicações. não há um único método adequado a todas as ciências. nas ciências sociais, pesquisas podem envolver entrevistas, observações, questionários, documentos e estatísticas, conforme o problema estudado. educação:pesquisadores podem combinar dados de frequência escolar com entrevistas sobre as condições de permanência na escola. mobilidade urbana:uma investigação pode registrar tempos de deslocamento, examinar linhas de ônibus e ouvir passageiros de diferentes bairros." data-style="terminal" data-unit="3" style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 9: Método científico" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Método científico</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É o conjunto de procedimentos sistemáticos e justificáveis utilizados para investigar problemas e examinar explicações.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Não há um único método adequado a todas as ciências. Nas Ciências Sociais, pesquisas podem envolver entrevistas, observações, questionários, documentos e estatísticas, conforme o problema estudado.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Educação:</span> Pesquisadores podem combinar dados de frequência escolar com entrevistas sobre as condições de permanência na escola.</li>
+<li><span class="example-label">Mobilidade urbana:</span> Uma investigação pode registrar tempos de deslocamento, examinar linhas de ônibus e ouvir passageiros de diferentes bairros.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 04 · Por que surgiram as Ciências Sociais?
+         ==================================================== -->
+<section aria-labelledby="titulo-u4" class="unit-block" data-unit-section="4" id="unidade-4">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u4"><button aria-controls="cartoes-u4" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">04</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 04</span><span class="unit-heading-label">Por que surgiram as Ciências Sociais?</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u4" class="card-grid" id="cartoes-u4" role="region">
+<article class="study-card variant-soft" data-number="10" data-search="positivismo é uma corrente associada a auguste comte, que procurou compreender regularidades da sociedade mediante o conhecimento científico e relacionou ciência, ordem e progresso. comte formulou a lei dos três estados e defendeu a investigação sistemática dos fenômenos sociais. trata-se de uma concepção histórica do século xix; sua visão linear do desenvolvimento humano é objeto de críticas contemporâneas. bandeira brasileira:o lema “ordem e progresso” registra a influência histórica de ideias positivistas na formação da república. investigação social:no projeto de comte, os fenômenos da organização social deveriam ser investigados em busca de regularidades, não explicados apenas por opinião." data-style="soft" data-unit="4" style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 10: Positivismo" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Positivismo</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma corrente associada a Auguste Comte, que procurou compreender regularidades da sociedade mediante o conhecimento científico e relacionou ciência, ordem e progresso.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Comte formulou a Lei dos Três Estados e defendeu a investigação sistemática dos fenômenos sociais. Trata-se de uma concepção histórica do século XIX; sua visão linear do desenvolvimento humano é objeto de críticas contemporâneas.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Bandeira brasileira:</span> O lema “Ordem e Progresso” registra a influência histórica de ideias positivistas na formação da República.</li>
+<li><span class="example-label">Investigação social:</span> No projeto de Comte, os fenômenos da organização social deveriam ser investigados em busca de regularidades, não explicados apenas por opinião.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="11" data-search="estado teológico na lei dos três estados de comte, corresponde ao pensamento que explica fenômenos principalmente pela ação de divindades ou agentes sobrenaturais. comte utilizou essa categoria para construir sua interpretação histórica das formas de explicar o mundo. ela não deve servir para hierarquizar religiões, culturas ou povos contemporâneos. tempestade:atribuir diretamente uma tempestade à vontade de uma divindade ilustra, no esquema de comte, uma explicação teológica. doença:atribuir exclusivamente uma enfermidade à intervenção sobrenatural é outro exemplo do tipo de explicação descrito por comte." data-style="brutal" data-unit="4" style="--card-color:#315746;--card-pale:#e9f0e8;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 11: Estado teológico" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Estado teológico</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>Na Lei dos Três Estados de Comte, corresponde ao pensamento que explica fenômenos principalmente pela ação de divindades ou agentes sobrenaturais.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Comte utilizou essa categoria para construir sua interpretação histórica das formas de explicar o mundo. Ela não deve servir para hierarquizar religiões, culturas ou povos contemporâneos.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Tempestade:</span> Atribuir diretamente uma tempestade à vontade de uma divindade ilustra, no esquema de Comte, uma explicação teológica.</li>
+<li><span class="example-label">Doença:</span> Atribuir exclusivamente uma enfermidade à intervenção sobrenatural é outro exemplo do tipo de explicação descrito por Comte.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="12" data-search="estado metafísico na lei dos três estados de comte, é a forma de pensamento que recorre a forças, essências ou princípios abstratos para explicar os fenômenos. comte considerava esse estado uma transição entre as explicações teológicas e a investigação positiva. em vez de atribuir um fato diretamente a uma divindade, invocam-se princípios abstratos como causa. princípio vital:explicar uma doença exclusivamente por uma suposta “força vital”, sem identificar processos específicos, ilustra esse tipo de raciocínio. progresso abstrato:atribuir toda mudança de uma sociedade à inevitável “essência do progresso”, sem investigar processos históricos, é um exemplo ilustrativo." data-style="terminal" data-unit="4" style="--card-color:#344f60;--card-pale:#e8eef2;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 12: Estado metafísico" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Estado metafísico</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>Na Lei dos Três Estados de Comte, é a forma de pensamento que recorre a forças, essências ou princípios abstratos para explicar os fenômenos.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Comte considerava esse estado uma transição entre as explicações teológicas e a investigação positiva. Em vez de atribuir um fato diretamente a uma divindade, invocam-se princípios abstratos como causa.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Princípio vital:</span> Explicar uma doença exclusivamente por uma suposta “força vital”, sem identificar processos específicos, ilustra esse tipo de raciocínio.</li>
+<li><span class="example-label">Progresso abstrato:</span> Atribuir toda mudança de uma sociedade à inevitável “essência do progresso”, sem investigar processos históricos, é um exemplo ilustrativo.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-soft" data-number="13" data-search="estado positivo na lei dos três estados de comte, é a forma de pensamento que procura conhecer regularidades pela observação, pelo raciocínio e pela investigação científica. segundo comte, a ciência deveria examinar relações observáveis em lugar de procurar causas últimas. é uma concepção histórica particular, que não abrange toda a variedade de métodos científicos contemporâneos. eclipses:observações e modelos matemáticos permitem prever a ocorrência de eclipses e estudar as regularidades astronômicas. demografia:analisar séries de dados populacionais com critérios definidos é um exemplo de investigação empírica, sem se limitar ao positivismo." data-style="soft" data-unit="4" style="--card-color:#634a3b;--card-pale:#f3ece4;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 13: Estado positivo" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Estado positivo</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>Na Lei dos Três Estados de Comte, é a forma de pensamento que procura conhecer regularidades pela observação, pelo raciocínio e pela investigação científica.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Segundo Comte, a ciência deveria examinar relações observáveis em lugar de procurar causas últimas. É uma concepção histórica particular, que não abrange toda a variedade de métodos científicos contemporâneos.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Eclipses:</span> Observações e modelos matemáticos permitem prever a ocorrência de eclipses e estudar as regularidades astronômicas.</li>
+<li><span class="example-label">Demografia:</span> Analisar séries de dados populacionais com critérios definidos é um exemplo de investigação empírica, sem se limitar ao positivismo.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="14" data-search="classe social é uma categoria utilizada para analisar posições e desigualdades na sociedade. em marx, relaciona-se especialmente à propriedade dos meios de produção e às relações de trabalho. no capitalismo, há diferenças entre quem controla meios de produção e quem depende da venda da força de trabalho. outras perspectivas sociológicas, como a de weber, também examinam oportunidades e posições de mercado. fábrica:proprietários das instalações industriais e trabalhadores assalariados ocupam posições distintas nas relações de produção. aplicativos:empresas que controlam plataformas de entrega e os entregadores que delas dependem para obter renda possuem posições econômicas diferentes." data-style="brutal" data-unit="4" style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 14: Classe social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Classe social</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma categoria utilizada para analisar posições e desigualdades na sociedade. Em Marx, relaciona-se especialmente à propriedade dos meios de produção e às relações de trabalho.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>No capitalismo, há diferenças entre quem controla meios de produção e quem depende da venda da força de trabalho. Outras perspectivas sociológicas, como a de Weber, também examinam oportunidades e posições de mercado.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Fábrica:</span> Proprietários das instalações industriais e trabalhadores assalariados ocupam posições distintas nas relações de produção.</li>
+<li><span class="example-label">Aplicativos:</span> Empresas que controlam plataformas de entrega e os entregadores que delas dependem para obter renda possuem posições econômicas diferentes.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="15" data-search="modernidade é uma categoria histórica que reúne transformações econômicas, políticas, sociais e intelectuais associadas à formação do mundo moderno. industrialização, urbanização e reorganização do estado alteraram as relações sociais. esses processos ocorreram de maneira desigual e também se relacionaram à expansão colonial e à economia escravista, não constituindo uma trajetória universal de progresso. revolução industrial:as gravuras de paisagens industriais mostram mudanças nas tecnologias de produção e na organização do espaço e do trabalho. revolução francesa:a declaração de 1789 expressou novas ideias de liberdade e igualdade, cuja aplicação histórica conviveu com exclusões." data-style="terminal" data-unit="4" style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 15: Modernidade" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Modernidade</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma categoria histórica que reúne transformações econômicas, políticas, sociais e intelectuais associadas à formação do mundo moderno.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Industrialização, urbanização e reorganização do Estado alteraram as relações sociais. Esses processos ocorreram de maneira desigual e também se relacionaram à expansão colonial e à economia escravista, não constituindo uma trajetória universal de progresso.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Revolução Industrial:</span> As gravuras de paisagens industriais mostram mudanças nas tecnologias de produção e na organização do espaço e do trabalho.</li>
+<li><span class="example-label">Revolução Francesa:</span> A Declaração de 1789 expressou novas ideias de liberdade e igualdade, cuja aplicação histórica conviveu com exclusões.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 05 · Como investigar o mundo social?
+         ==================================================== -->
+<section aria-labelledby="titulo-u5" class="unit-block" data-unit-section="5" id="unidade-5">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u5"><button aria-controls="cartoes-u5" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">05</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 05</span><span class="unit-heading-label">Como investigar o mundo social?</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u5" class="card-grid" id="cartoes-u5" role="region">
+<article class="study-card variant-soft" data-number="16" data-search="conceito é um instrumento intelectual que permite identificar, delimitar e organizar aspectos dos fenômenos investigados. conceitos ajudam a analisar casos diferentes sob categorias comuns, mas não são cópias integrais da realidade. uma pesquisa deve explicitar os critérios utilizados em suas definições. quatro mesas:objetos com materiais e formatos distintos podem ser chamados de mesas porque compartilham características definidas. família:uma pesquisa deve explicar o que entende por família e considerar diferentes arranjos familiares, sem supor um modelo universal." data-style="soft" data-unit="5" style="--card-color:#634a3b;--card-pale:#f3ece4;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 16: Conceito" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Conceito</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É um instrumento intelectual que permite identificar, delimitar e organizar aspectos dos fenômenos investigados.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Conceitos ajudam a analisar casos diferentes sob categorias comuns, mas não são cópias integrais da realidade. Uma pesquisa deve explicitar os critérios utilizados em suas definições.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Quatro mesas:</span> Objetos com materiais e formatos distintos podem ser chamados de mesas porque compartilham características definidas.</li>
+<li><span class="example-label">Família:</span> Uma pesquisa deve explicar o que entende por família e considerar diferentes arranjos familiares, sem supor um modelo universal.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="17" data-search="etnografia é uma abordagem de investigação que procura compreender práticas, relações e significados sociais acompanhando a vida de pessoas e grupos em seus contextos. pode envolver observação, convivência, entrevistas e registros sistemáticos. não se limita a descrever comportamentos: procura compreender as interpretações dos participantes e exige cuidados éticos. feira livre:uma pesquisadora acompanha negociações, rotinas e relações de confiança entre feirantes e consumidores. grêmio estudantil:uma investigação acompanha reuniões e atividades do grêmio para compreender como os estudantes deliberam e resolvem divergências." data-style="brutal" data-unit="5" style="--card-color:#344f60;--card-pale:#e8eef2;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 17: Etnografia" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Etnografia</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma abordagem de investigação que procura compreender práticas, relações e significados sociais acompanhando a vida de pessoas e grupos em seus contextos.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Pode envolver observação, convivência, entrevistas e registros sistemáticos. Não se limita a descrever comportamentos: procura compreender as interpretações dos participantes e exige cuidados éticos.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Feira livre:</span> Uma pesquisadora acompanha negociações, rotinas e relações de confiança entre feirantes e consumidores.</li>
+<li><span class="example-label">Grêmio estudantil:</span> Uma investigação acompanha reuniões e atividades do grêmio para compreender como os estudantes deliberam e resolvem divergências.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="18" data-search="amostra é uma parte de uma população ou de um conjunto de casos selecionada segundo critérios definidos pela pesquisa. a escolha da amostra depende dos objetivos e dos métodos da investigação. uma seleção pequena ou inadequada não representa automaticamente toda a população; estudos qualitativos também podem selecionar casos pela diversidade de experiências. hábitos de leitura:uma escola com 800 estudantes seleciona participantes de diferentes séries e turnos por procedimentos previamente definidos. entregadores:entrevistas com trabalhadores de várias regiões revelam experiências, mas não descrevem automaticamente todos os entregadores do brasil." data-style="terminal" data-unit="5" style="--card-color:#2f5548;--card-pale:#e5efea;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 18: Amostra" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Amostra</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma parte de uma população ou de um conjunto de casos selecionada segundo critérios definidos pela pesquisa.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>A escolha da amostra depende dos objetivos e dos métodos da investigação. Uma seleção pequena ou inadequada não representa automaticamente toda a população; estudos qualitativos também podem selecionar casos pela diversidade de experiências.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Hábitos de leitura:</span> Uma escola com 800 estudantes seleciona participantes de diferentes séries e turnos por procedimentos previamente definidos.</li>
+<li><span class="example-label">Entregadores:</span> Entrevistas com trabalhadores de várias regiões revelam experiências, mas não descrevem automaticamente todos os entregadores do Brasil.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 06 · O que os dados mostram? O que silenciam?
+         ==================================================== -->
+<section aria-labelledby="titulo-u6" class="unit-block" data-unit-section="6" id="unidade-6">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u6"><button aria-controls="cartoes-u6" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">06</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 06</span><span class="unit-heading-label">O que os dados mostram? O que silenciam?</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u6" class="card-grid" id="cartoes-u6" role="region">
+<article class="study-card variant-soft" data-number="19" data-search="indicador social é uma medida construída a partir de dados e critérios definidos para acompanhar ou comparar condições da vida social. indicadores ajudam a analisar educação, trabalho, renda e saúde, mas apresentam apenas certas dimensões da realidade. sua leitura depende de saber o que foi medido e quais pessoas foram consideradas. desocupação:a taxa de desocupação da pnad contínua, do ibge, acompanha pessoas que procuram trabalho e atendem aos critérios da pesquisa. frequência escolar:uma taxa de frequência escolar pode mostrar acesso à escola, mas não mede sozinha a qualidade da aprendizagem." data-style="soft" data-unit="6" style="--card-color:#315746;--card-pale:#e9f0e8;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 19: Indicador social" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Indicador social</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma medida construída a partir de dados e critérios definidos para acompanhar ou comparar condições da vida social.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Indicadores ajudam a analisar educação, trabalho, renda e saúde, mas apresentam apenas certas dimensões da realidade. Sua leitura depende de saber o que foi medido e quais pessoas foram consideradas.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Desocupação:</span> A taxa de desocupação da PNAD Contínua, do IBGE, acompanha pessoas que procuram trabalho e atendem aos critérios da pesquisa.</li>
+<li><span class="example-label">Frequência escolar:</span> Uma taxa de frequência escolar pode mostrar acesso à escola, mas não mede sozinha a qualidade da aprendizagem.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="20" data-search="ponto percentual é a unidade utilizada para expressar a diferença entre dois valores apresentados em porcentagem. a diferença em pontos percentuais é calculada subtraindo um percentual do outro. ela não equivale à variação percentual relativa, que utiliza outra base de cálculo. censo religioso:a participação de católicos entre pessoas com 10 anos ou mais passou de 65,0% (2010) a 56,7% (2022): queda de 8,3 pontos percentuais. atividade escolar:se a participação aumenta de 20% para 25%, o avanço é de 5 pontos percentuais, o que corresponde a 25% de aumento relativo." data-style="brutal" data-unit="6" style="--card-color:#713b4c;--card-pale:#f6eaeb;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 20: Ponto percentual" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Ponto percentual</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É a unidade utilizada para expressar a diferença entre dois valores apresentados em porcentagem.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>A diferença em pontos percentuais é calculada subtraindo um percentual do outro. Ela não equivale à variação percentual relativa, que utiliza outra base de cálculo.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Censo religioso:</span> A participação de católicos entre pessoas com 10 anos ou mais passou de 65,0% (2010) a 56,7% (2022): queda de 8,3 pontos percentuais.</li>
+<li><span class="example-label">Atividade escolar:</span> Se a participação aumenta de 20% para 25%, o avanço é de 5 pontos percentuais, o que corresponde a 25% de aumento relativo.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="21" data-search="representação é uma forma de apresentar aspectos da realidade por meio de imagens, palavras, símbolos, números ou outras linguagens. uma representação envolve escolhas de enquadramento, linguagem e elementos destacados; ela não reproduz integralmente o objeto ou fenômeno representado. magritte:em “a traição das imagens”, vemos a imagem de um cachimbo, não um cachimbo material que possa ser utilizado. swansea:a gravura mostra chaminés e fábricas, mas não informa sozinha os salários e as jornadas dos trabalhadores." data-style="terminal" data-unit="6" style="--card-color:#2c5862;--card-pale:#e7f0f1;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 21: Representação" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Representação</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É uma forma de apresentar aspectos da realidade por meio de imagens, palavras, símbolos, números ou outras linguagens.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Uma representação envolve escolhas de enquadramento, linguagem e elementos destacados; ela não reproduz integralmente o objeto ou fenômeno representado.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Magritte:</span> Em “A traição das imagens”, vemos a imagem de um cachimbo, não um cachimbo material que possa ser utilizado.</li>
+<li><span class="example-label">Swansea:</span> A gravura mostra chaminés e fábricas, mas não informa sozinha os salários e as jornadas dos trabalhadores.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<!-- ====================================================
+         UNIDADE 07 · Ideologia, pensamento crítico e Paulo Freire
+         ==================================================== -->
+<section aria-labelledby="titulo-u7" class="unit-block" data-unit-section="7" id="unidade-7">
+<header class="unit-heading"><h2 class="unit-title" id="titulo-u7"><button aria-controls="cartoes-u7" aria-expanded="true" class="unit-toggle" data-toggle-unit="" type="button"><span aria-hidden="true" class="unit-heading-index">07</span><span class="unit-heading-copy"><span class="unit-eyebrow">UNIDADE 07</span><span class="unit-heading-label">Ideologia, pensamento crítico e Paulo Freire</span></span><span aria-hidden="true" class="unit-chevron">⌄</span></button></h2></header>
+<div aria-labelledby="titulo-u7" class="card-grid" id="cartoes-u7" role="region">
+<article class="study-card variant-soft" data-number="22" data-search="ideologia é um conceito com interpretações diferentes nas ciências sociais. em perspectivas críticas, pode designar ideias que naturalizam relações históricas e justificam formas de dominação. interpretações ideológicas podem destacar alguns fatores e ocultar outros, apresentando desigualdades socialmente produzidas como inevitáveis ou resultado exclusivo de escolhas individuais. pobreza:dizer que toda pessoa pobre “não se esforçou” ignora diferenças de patrimônio, oportunidades, condições de trabalho e discriminação. mérito profissional:afirmar que o sucesso depende apenas do mérito individual pode ocultar desigualdades no acesso à educação e às redes de contato." data-style="soft" data-unit="7" style="--card-color:#634a3b;--card-pale:#f3ece4;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 22: Ideologia" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Ideologia</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É um conceito com interpretações diferentes nas Ciências Sociais. Em perspectivas críticas, pode designar ideias que naturalizam relações históricas e justificam formas de dominação.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Interpretações ideológicas podem destacar alguns fatores e ocultar outros, apresentando desigualdades socialmente produzidas como inevitáveis ou resultado exclusivo de escolhas individuais.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Pobreza:</span> Dizer que toda pessoa pobre “não se esforçou” ignora diferenças de patrimônio, oportunidades, condições de trabalho e discriminação.</li>
+<li><span class="example-label">Mérito profissional:</span> Afirmar que o sucesso depende apenas do mérito individual pode ocultar desigualdades no acesso à educação e às redes de contato.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-brutal" data-number="23" data-search="pensamento crítico é a capacidade de examinar argumentos, informações e explicações considerando evidências, pressupostos e limites. não significa discordar de tudo. implica verificar fontes, comparar interpretações, considerar outras hipóteses e reconhecer quando os dados disponíveis não sustentam uma conclusão. redes sociais:antes de compartilhar um gráfico sobre violência, a pessoa verifica fonte, período, local e indicador utilizado. censo religioso:para comparar 2010 e 2022, o estudante verifica as faixas etárias e a comparabilidade das categorias dos dois levantamentos." data-style="brutal" data-unit="7" style="--card-color:#344f60;--card-pale:#e8eef2;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 23: Pensamento crítico" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Pensamento crítico</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É a capacidade de examinar argumentos, informações e explicações considerando evidências, pressupostos e limites.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Não significa discordar de tudo. Implica verificar fontes, comparar interpretações, considerar outras hipóteses e reconhecer quando os dados disponíveis não sustentam uma conclusão.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Redes sociais:</span> Antes de compartilhar um gráfico sobre violência, a pessoa verifica fonte, período, local e indicador utilizado.</li>
+<li><span class="example-label">Censo religioso:</span> Para comparar 2010 e 2022, o estudante verifica as faixas etárias e a comparabilidade das categorias dos dois levantamentos.</li></ol>
+</section>
+</div>
+</template>
+</article>
+<article class="study-card variant-terminal" data-number="24" data-search="problematização é o processo de transformar situações vividas ou conhecimentos aparentemente evidentes em questões para investigar suas condições, relações e consequências. na pedagogia de paulo freire, parte-se da realidade concreta para promover reflexão e diálogo. os estudantes participam da formulação de problemas e da busca de explicações fundamentadas, sem receber apenas respostas prontas. transporte escolar:uma turma investiga itinerários, horários e condições de deslocamento em vez de atribuir todo atraso à responsabilidade individual. desigualdade digital:estudantes investigam diferenças no acesso a computadores, internet e espaços de estudo ao discutir atividades escolares on-line." data-style="terminal" data-unit="7" style="--card-color:#2f5548;--card-pale:#e5efea;">
+<!-- FRENTE, sempre visível na grade -->
+<button aria-haspopup="dialog" aria-label="Revelar flashcard 24: Problematização" class="card-trigger" data-open-card="" type="button">
+<span aria-hidden="true" class="terminal-chrome"><i></i><i></i><i></i></span>
+
+<span class="card-name">Problematização</span>
+<span class="card-bottom"><span>Ver definição e exemplos</span><span aria-hidden="true" class="card-arrow">↗</span></span>
+</button>
+<!-- VERSO, preservado da Aula V07, transferido ao painel de leitura -->
+<template class="card-back-template">
+<div class="reading-content">
+<section class="reading-section">
+<h3>O que é?</h3>
+<p>É o processo de transformar situações vividas ou conhecimentos aparentemente evidentes em questões para investigar suas condições, relações e consequências.</p>
+</section>
+<section class="reading-section">
+<h3>Como funciona?</h3>
+<p>Na pedagogia de Paulo Freire, parte-se da realidade concreta para promover reflexão e diálogo. Os estudantes participam da formulação de problemas e da busca de explicações fundamentadas, sem receber apenas respostas prontas.</p>
+</section>
+<section class="reading-section reading-examples">
+<h3>Exemplos</h3>
+<ol><li><span class="example-label">Transporte escolar:</span> Uma turma investiga itinerários, horários e condições de deslocamento em vez de atribuir todo atraso à responsabilidade individual.</li>
+<li><span class="example-label">Desigualdade digital:</span> Estudantes investigam diferenças no acesso a computadores, internet e espaços de estudo ao discutir atividades escolares on-line.</li></ol>
+</section>
+</div>
+</template>
+</article>
+</div>
+</section>
+<p class="empty-state" hidden="" id="empty-state">Nenhum conceito corresponde à pesquisa. Experimente outra palavra ou unidade.</p>
+</main>
+<footer class="page-footer"><span class="footer-brand">SOCIOLOGIA I  |  DICIONÁRIO PARA NÃO SER TROUXA  |  Prof. Dr. Eliaquim Timóteo</span><a href="index.html">Voltar à aula</a></footer>
+</div>
+<!-- 09. VERSO UNIVERSAL DOS FLASHCARDS: CONTEÚDO INTEGRAL E NAVEGÁVEL -->
+<dialog aria-labelledby="dialog-title" class="card-dialog" id="flashcard-dialog">
+<div class="dialog-header" id="dialog-header">
+<div class="dialog-top"><span id="dialog-unit">UNIDADE 01</span></div>
+<h2 id="dialog-title"></h2>
+<p class="dialog-subtitle">Definição, explicação e exemplos do conceito.</p>
+</div>
+<div id="dialog-body"></div>
+<div class="dialog-footer">
+
+<div class="dialog-actions"><button class="dialog-action" id="dialog-previous" type="button">Anterior</button><button class="dialog-action" id="dialog-next" type="button">Próximo</button><button class="dialog-action primary" id="dialog-close" type="button">Voltar aos cartões</button></div>
+</div>
+</dialog>
+<noscript><div class="shell" role="status">Esta página utiliza JavaScript para revelar o verso de cada cartão e navegar entre os conceitos. Ative o JavaScript no navegador para estudar os flashcards.</div></noscript>
+<script>
+    /* ============================================================
+       10. FUNCIONALIDADE DOS FLASHCARDS
+       O conteúdo fica nos <template> de cada cartão, acima.
+       Não há dependências externas. O arquivo funciona offline.
+       ============================================================ */
+    (() => {
+      'use strict';
+      const root = document.documentElement;
+      const cards = [...document.querySelectorAll('.study-card')];
+      const units = [...document.querySelectorAll('[data-unit-section]')];
+      const search = document.querySelector('#search-cards');
+      const unitFilter = document.querySelector('#unit-filter');
+      const count = document.querySelector('#result-count');
+      const empty = document.querySelector('#empty-state');
+      const modal = document.querySelector('#flashcard-dialog');
+      const modalTitle = document.querySelector('#dialog-title');
+      const modalUnit = document.querySelector('#dialog-unit');
+      const modalBody = document.querySelector('#dialog-body');
+      const previous = document.querySelector('#dialog-previous');
+      const next = document.querySelector('#dialog-next');
+      const close = document.querySelector('#dialog-close');
+      const theme = document.querySelector('#theme-toggle');
+      let lastTrigger = null;
+      let activeIndex = 0;
+      const normalise = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+      const visibleCards = () => cards.filter(card => !card.hidden);
+
+      function filterCards(){
+        const word = normalise(search.value.trim());
+        const u = unitFilter.value;
+        for (const card of cards) {
+          const match = (!word || normalise(card.dataset.search).includes(word)) &&
+              (u === 'all' || card.dataset.unit === u);
+          card.hidden = !match;
+        }
+        for (const section of units) {
+          const hasMatchingCards = Boolean(section.querySelector('.study-card:not([hidden])'));
+          section.hidden = !hasMatchingCards;
+          // Ao pesquisar ou selecionar uma unidade, revele os resultados encontrados.
+          if (hasMatchingCards && (word || u !== 'all')) {
+            setUnitExpanded(section, true);
+          }
+        }
+        const total = visibleCards().length;
+        count.textContent = `${total} ${total === 1 ? 'cartão' : 'cartões'}`;
+        empty.hidden = total !== 0;
+      }
+      [search,unitFilter].forEach(input=>input.addEventListener('input',filterCards));
+
+      function setUnitExpanded(section, expanded) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        const grid = section.querySelector('.card-grid');
+        toggle.setAttribute('aria-expanded', String(expanded));
+        grid.hidden = !expanded;
+      }
+      for (const section of units) {
+        const toggle = section.querySelector('[data-toggle-unit]');
+        toggle.addEventListener('click', () => {
+          setUnitExpanded(section, toggle.getAttribute('aria-expanded') !== 'true');
+        });
+      }
+
+      function openCard(card, keepOrigin = false) {
+        if (!card) return;
+        if (!keepOrigin) lastTrigger = card.querySelector('[data-open-card]');
+        activeIndex = cards.indexOf(card);
+        const title = card.querySelector('.card-name').textContent.trim();
+        modalTitle.textContent = title;
+        modalUnit.textContent = `UNIDADE ${String(card.dataset.unit).padStart(2,'0')}`;
+        document.querySelector('#dialog-header').style.setProperty('--dialog-accent', getComputedStyle(card).getPropertyValue('--card-color').trim());
+        modalBody.replaceChildren(card.querySelector('.card-back-template').content.cloneNode(true));
+        if (!modal.open) modal.showModal();
+        modal.scrollTop = 0;
+        close.focus({preventScroll:true});
+      }
+      cards.forEach(card=>card.querySelector('[data-open-card]').addEventListener('click',()=>openCard(card)));
+      function navigate(offset) {
+        const available=visibleCards();
+        const current=available.indexOf(cards[activeIndex]);
+        const target=available[(current + offset + available.length)%available.length];
+        if (target) openCard(target,true);
+      }
+      previous.addEventListener('click',()=>navigate(-1));
+      next.addEventListener('click',()=>navigate(1));
+      close.addEventListener('click',()=>modal.close());
+      modal.addEventListener('click',event=>{
+        // Clique na área escurecida fecha a leitura; conteúdo permanece interativo.
+        if (event.target !== modal) return;
+        const r=modal.getBoundingClientRect();
+        if (event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) modal.close();
+      });
+      modal.addEventListener('close',()=>{if(lastTrigger && lastTrigger.isConnected) lastTrigger.focus({preventScroll:true});});
+      modal.addEventListener('keydown',event=>{
+        if (event.altKey && event.key === 'ArrowRight') {event.preventDefault();navigate(1);}
+        if (event.altKey && event.key === 'ArrowLeft') {event.preventDefault();navigate(-1);}
+      });
+      function applyTheme(mode) {
+        root.dataset.theme=mode;
+        const isDark=mode==='dark';
+        theme.textContent=isDark?'Modo claro':'Modo noturno';
+        theme.setAttribute('aria-pressed',String(isDark));
+        document.querySelector('meta[name="theme-color"]').setAttribute('content',isDark?'#192421':'#f7f5ef');
+      }
+      try {applyTheme(localStorage.getItem('sociologia-i-flashcards-theme')==='dark'?'dark':'light');} catch(e) {applyTheme('light');}
+      theme.addEventListener('click',()=>{
+        const nextMode=root.dataset.theme==='dark'?'light':'dark';
+        applyTheme(nextMode);
+        try {localStorage.setItem('sociologia-i-flashcards-theme',nextMode);} catch(e) { /* modo privado */ }
+      });
+      filterCards();
+    })();
+  </script>
+</body>
+</html>

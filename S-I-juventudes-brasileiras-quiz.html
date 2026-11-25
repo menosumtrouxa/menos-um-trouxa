@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Quiz da aula As muitas juventudes brasileiras. Dez questões com leitura prévia, quatro alternativas, 30 segundos por questão e gabarito sociológico comentado.">
+  <title>Quiz | As muitas juventudes brasileiras</title>
+  <style>
+/* ================================================================
+   QUIZ — AS MUITAS JUVENTUDES BRASILEIRAS
+   01. PALETA E CONFIGURAÇÕES GERAIS
+   Para modificar a identidade visual, edite as variáveis abaixo.
+   ================================================================ */
+:root {
+  --ink: #182529;
+  --muted: #586e68;
+  --bg: #f6f4ef;
+  --paper: #fffdf9;
+  --dark: #172e2b;
+  --deep: #26483e;
+  --line: #d8ded5;
+  --accent: #ba7d57;
+  --answer1: #ac3346;
+  --answer2: #206a9a;
+  --answer3: #956700;
+  --answer4: #28734a;
+  --shadow: 0 20px 48px #24392d14;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, a { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #b88255; outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+/* 02. CABEÇALHO E NAVEGAÇÃO */
+.top { background: #f9f7f2; border-bottom: 1px solid var(--line); }
+.topin { max-width: 1180px; padding: 12px 24px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 730; color: #253b34; text-decoration: none; letter-spacing: .055em; font-size: 12px; }
+.stamp { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #253b34; font: 19px Georgia, serif; letter-spacing: 0; }
+.toplinks { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+.toplinks a { padding: 7px 12px; font-weight: 750; font-size: 12px; color: #56665f; text-decoration: none; border-radius: 4px; }
+.toplinks a:hover { background: #e2e8dd; }
+.toplinks .selected, .toplinks .selected:hover { background: #29483f; color: #fff; }
+.muted { color: #62716b; }
+
+/* 03. INTRODUÇÃO, TEXTO E BOTÕES */
+.main { max-width: 1080px; margin: 0 auto; padding: 34px 24px 65px; min-height: calc(100vh - 130px); }
+.card { background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 7px; }
+.eyebrow { font-size: 11px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; color: #a77551; }
+.display { font: 400 clamp(2.7rem, 6.6vw, 5.5rem)/1.06 Georgia, "Times New Roman", serif; letter-spacing: -.04em; margin: 14px 0 20px; }
+.display em { font-style: normal; color: #ddb28b; }
+.intro { background: var(--dark); color: #f9f4e9; padding: clamp(32px, 6vw, 70px); position: relative; overflow: hidden; }
+.intro::after { content: "J"; font: 350px Georgia, serif; position: absolute; right: -8px; bottom: -145px; color: #ffffff06; pointer-events: none; }
+.intro > * { position: relative; z-index: 1; }
+.intro .eyebrow { color: #e5bc90; }
+.intro p { color: #e4eae4; max-width: 690px; font-size: 18px; }
+.intro .display { max-width: 800px; }
+.meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 25px 0; }
+.meta span { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; border: 1px solid #78908675; padding: 8px 12px; color: #ebeee3; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 23px; border: 1px solid #d4ab7e; background: #d4ab7e; color: #1c332a; text-decoration: none; font-weight: 800; border-radius: 3px; gap: 10px; }
+.btn:hover { filter: brightness(.95); }
+.btn.ghost { background: transparent; color: #f7eee4; border-color: #91a59c; }
+.btn.dark { background: #29483f; border-color: #29483f; color: white; }
+.btn.dark:hover { background: #385c51; }
+.note { background: #e8ede5; border-left: 3px solid #5e7b65; padding: 19px 23px; margin-top: 20px; font-size: 14px; }
+.note strong { display: block; margin-bottom: 5px; }
+.note p { margin: 0; }
+
+/* 04. JOGO, CRONÔMETRO E PROGRESSO */
+.play { overflow: hidden; }
+.gamehead { background: #203934; color: #fff; padding: 25px 30px 21px; }
+.gamehead.timing { background: #213f38; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.counter, .scoresmall { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 750; color: #e5dbcb; }
+.scorebig { font: 400 24px Georgia, serif; color: #fff; }
+.progressbar { height: 6px; border-radius: 100px; background: #466159; overflow: hidden; margin-top: 15px; }
+.progressbar > span { display: block; height: 100%; background: #d6ba91; width: 0%; transition: width .24s linear; }
+.timerset { display: flex; align-items: center; gap: 16px; justify-content: space-between; margin-top: 17px; }
+.clockbox { display: flex; align-items: center; gap: 10px; }
+.clock { background: #fbfaf4; border-radius: 50%; width: 72px; height: 72px; display: grid; place-items: center; position: relative; color: #18372c; font: 700 28px Georgia, serif; font-variant-numeric: tabular-nums; border: 5px solid #e4e6d9; }
+.clock.low { color: #a13f38; }
+.clockbar { height: 9px; background: #cbd2c9; flex: 1; border-radius: 50px; overflow: hidden; }
+.clockbar span { display: block; height: 100%; width: 100%; background: #85a18d; transition: width .12s linear, background .12s; }
+.clockbar span.low { background: #bc6b58; }
+.prompt { padding: 32px 30px 23px; }
+.kicker { font-size: 12px; font-weight: 780; text-transform: uppercase; letter-spacing: .13em; color: #9a6448; }
+.question { font: 400 clamp(23px, 3.5vw, 36px)/1.2 Georgia, serif; margin: 15px 0 10px; letter-spacing: -.019em; max-width: 920px; scroll-margin-top: 22px; }
+.select-hint { font-size: 13px; color: #68756f; margin: 0; }
+.reading { padding: 0 30px 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 15px; background: var(--paper); }
+.reading .btn { min-height: 55px; font-size: 16px; padding: 15px 24px; }
+.reading-caption { font-size: 13px; color: var(--muted); max-width: 370px; }
+
+/* 05. QUATRO ALTERNATIVAS COLORIDAS */
+.answers { padding: 0 30px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.answer { min-height: 112px; display: flex; align-items: center; text-align: left; gap: 16px; color: #fff; border: 3px solid transparent; border-radius: 5px; padding: 15px 18px; font-weight: 730; font-size: 16px; line-height: 1.37; transition: transform .12s ease, filter .12s ease, border-color .12s ease; }
+.answer:hover:not(:disabled) { filter: brightness(1.075); transform: translateY(-2px); }
+.answer:disabled { cursor: default; }
+.answer:nth-child(1) { background: var(--answer1); }
+.answer:nth-child(2) { background: var(--answer2); }
+.answer:nth-child(3) { background: var(--answer3); }
+.answer:nth-child(4) { background: var(--answer4); }
+.letter { display: grid; place-items: center; flex: 0 0 41px; height: 41px; border: 2px solid #ffffff9a; border-radius: 4px; font: 700 21px Georgia, serif; }
+.answer.correct { border-color: #e7e7b8; box-shadow: inset 0 0 0 2px #e7e7b8; }
+.answer.wrong { opacity: .57; }
+.answer.notpicked { opacity: .45; }
+.answer.correct .letter::after { content: " ✓"; font: 700 15px system-ui; }
+
+/* 06. RESPOSTA, PONTUAÇÃO E GABARITO COMENTADO */
+.feedback { padding: 22px 30px 30px; background: #eef0e7; border-top: 1px solid #dce1d6; }
+.feedbackline { font: 400 25px Georgia, serif; margin: 0 0 8px; }
+.feedbackline.good { color: #255c43; }
+.feedbackline.bad { color: #9b4544; }
+.feedback p { margin: 0 0 18px; font-size: 15px; max-width: 850px; }
+.feedback .row { align-items: end; }
+.feedback .earned { font: 400 23px Georgia, serif; }
+.feedback .earned small { font: 600 11px system-ui; letter-spacing: .1em; text-transform: uppercase; display: block; }
+.feedback details { margin: 0 0 16px; border-left: 3px solid #8a9b7c; padding: 3px 0 3px 14px; }
+.feedback summary { cursor: pointer; font-weight: 720; font-size: 14px; }
+.feedback ul { padding-left: 19px; margin: 10px 0 0; }
+.feedback li { font-size: 13px; margin: 5px 0; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 760px; margin: 25px 0; }
+.stat { background: #fffdf6; border: 1px solid #536b59; padding: 17px; }
+.stat strong { display: block; font: 400 36px Georgia, serif; }
+.stat span { font-size: 11px; text-transform: uppercase; font-weight: 750; letter-spacing: .08em; }
+.end { padding: clamp(28px, 5vw, 56px); }
+.end h1 { font: 400 clamp(2.8rem, 7vw, 4.8rem)/1 Georgia, serif; margin: 16px 0; }
+.end p { max-width: 780px; }
+.end .btn { margin: 6px 10px 8px 0; }
+.review { margin: 28px 0 0; }
+.review h2 { font: 400 29px Georgia, serif; margin: 0 0 16px; }
+.review details { border: 1px solid #d6dfd5; background: #fffefa; margin: 8px 0; }
+.review summary { cursor: pointer; font-size: 14px; font-weight: 730; padding: 14px 17px; display: flex; justify-content: space-between; gap: 12px; }
+.review .exp { padding: 0 17px 16px; font-size: 14px; }
+.review .exp p { margin: 7px 0; }
+.review .exp strong { color: #315944; }
+.review ul { padding-left: 22px; }
+.review li { margin: 8px 0; }
+.review li[data-state="correct"] { color: #285b41; }
+.review li[data-state="chosen-wrong"] { color: #9b4544; }
+.footer { padding: 25px 24px; background: #172b27; color: #c9d5cd; font-size: 12px; }
+.footin { max-width: 1080px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+.footer a { color: #f0d3ae; }
+
+/* 07. RESPONSIVIDADE E MOVIMENTO REDUZIDO */
+@media (max-width: 650px) {
+  .main { padding: 18px 12px 45px; }
+  .topin { padding: 10px 12px; }
+  .intro { padding: 35px 24px; }
+  .intro .display { font-size: clamp(2.4rem, 10vw, 3.9rem); }
+  .gamehead { padding: 20px 17px; }
+  .prompt { padding: 24px 18px 19px; }
+  .answers { padding: 0 15px 18px; grid-template-columns: 1fr; gap: 9px; }
+  .answer { min-height: 81px; padding: 11px 13px; font-size: 15px; }
+  .reading { padding: 0 18px 23px; display: block; }
+  .reading .btn { width: 100%; }
+  .reading-caption { margin: 12px 0 0; }
+  .clock { height: 58px; width: 58px; font-size: 23px; }
+  .feedback { padding: 21px 18px; }
+  .end { padding: 29px 21px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .brand { letter-spacing: 0; font-size: 11px; }
+  .toplinks a { padding: 6px 7px; }
+  .note { margin-top: 14px; }
+}
+@media (max-width: 360px) { .toplinks { gap: 1px; } .toplinks a { font-size: 11px; } .answer { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .answer, .progressbar > span, .clockbar span { transition: none !important; } }
+@media print { .top, .footer, .btn, .clockbar, .clockbox, .answers, .gamehead { display: none !important; } .main { max-width: 100%; } .intro { color: #111; background: #fff; } .intro p { color: #222; } .review details { break-inside: avoid; } .review .exp { display: block !important; } }
+
+  </style>
+</head>
+<body>
+  <!-- 08. CABEÇALHO DO SITE E LINKS PARA A AULA -->
+  <header class="top"><div class="topin">
+    <a class="brand" href="juventudes-brasileiras.html">
+      <span class="stamp" aria-hidden="true">J</span>
+      <span>DICIONÁRIO PARA NÃO SER TROUXA<br><span class="muted">Prof. Dr. Eliaquim Timóteo</span></span>
+    </a>
+    <nav class="toplinks" aria-label="Navegação da aula">
+      <a href="juventudes-brasileiras.html">Texto da aula</a>
+      <a href="juventudes-brasileiras.html#quiz">Revisão da aula</a>
+      <a class="selected" aria-current="page" href="Quiz_As_Muitas_Juventudes_Brasileiras.html">Quiz cronometrado</a>
+    </nav>
+  </div></header>
+  <main class="main">
+    <!-- 09. TELA DE APRESENTAÇÃO -->
+    <section class="card intro" id="start">
+      <div class="eyebrow">Sociologia I · Quiz interativo</div>
+      <h1 class="display">As muitas <em>juventudes</em> brasileiras</h1>
+      <p>Condição juvenil, estigmas, direitos, cultura urbana, trabalho e diversidade social.</p>
+      <div class="meta"><span>10 questões</span><span>30 segundos por questão</span><span>Até 1.000 pontos por acerto</span></div>
+      <p>Em cada rodada, você lê o enunciado com calma. Quando estiver pronto, clique em “Ver alternativas e iniciar 30 s”. Só então as quatro respostas aparecem e o tempo começa. Após responder, confira o comentário sociológico.</p>
+      <button class="btn" id="startBtn" type="button">Começar quiz <span aria-hidden="true">→</span></button>
+    </section>
+    <section class="note" id="introNote">
+      <strong>Como funciona a pontuação?</strong>
+      <p>Cada resposta correta vale de 500 a 1.000 pontos conforme o tempo restante. Respostas incorretas ou não respondidas valem zero. O gabarito final explica cada alternativa.</p>
+    </section>
+    <!-- 10. ETAPAS DO JOGO: LEITURA, RESPOSTA E COMENTÁRIO -->
+    <section class="card play" hidden id="game" aria-label="Questionário de Sociologia">
+      <div class="gamehead">
+        <div class="row"><div><div class="counter" id="counter">Questão 1 de 10</div><div class="scorebig" id="scoreTop">0 pontos</div></div><div class="scoresmall" id="statusTop">Acertos: 0</div></div>
+        <div class="progressbar" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="progressContainer"><span id="progress"></span></div>
+        <div class="timerset" hidden id="timerRow"><div class="clockbox"><div class="clock" id="seconds" role="timer" aria-label="Tempo restante, em segundos">30</div></div><div class="clockbar" aria-hidden="true"><span id="clockFill"></span></div></div>
+      </div>
+      <div class="prompt"><div class="kicker" id="topic">Condição juvenil</div><h2 class="question" id="question" tabindex="-1"></h2><p class="select-hint" id="stageHint"></p></div>
+      <div class="reading" id="readingStage"><button class="btn dark" id="revealBtn" type="button">Ver alternativas e iniciar 30 s →</button><span class="reading-caption">Leia o enunciado antes de começar. O cronômetro ainda não está funcionando.</span></div>
+      <div class="answers" hidden role="group" aria-label="Alternativas de resposta" id="answers"></div>
+      <div class="feedback" hidden id="feedback" aria-live="polite">
+        <h3 class="feedbackline" id="feedbackTitle"></h3>
+        <p id="feedbackText"></p>
+        <details id="currentReasons"><summary>Por que as outras alternativas estão incorretas?</summary><ul id="reasonsList"></ul></details>
+        <div class="row"><div class="earned"><small>Pontos nesta questão</small><span id="earned">0</span></div><button class="btn dark" id="nextBtn" type="button">Próxima pergunta →</button></div>
+      </div>
+    </section>
+    <!-- 11. RESULTADO E GABARITO DETALHADO -->
+    <section class="card end" hidden id="end"><div class="eyebrow">Resultado · As muitas juventudes brasileiras</div>
+      <h1 id="endTitle">Quiz concluído.</h1><p id="endMessage"></p>
+      <div class="stats"><div class="stat"><strong id="total">0</strong><span>Pontos</span></div><div class="stat"><strong id="hits">0/10</strong><span>Acertos</span></div><div class="stat"><strong id="rate">0%</strong><span>Aproveitamento</span></div></div>
+      <button class="btn dark" type="button" id="restartBtn">Jogar novamente</button>
+      <a class="btn dark" href="juventudes-brasileiras.html">Voltar à aula</a>
+      <div class="review"><h2>Gabarito comentado</h2><p>Consulte a justificativa da resposta correta e as explicações das demais alternativas.</p><div id="reviewList"></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="footin"><span>Dicionário para não ser trouxa · As muitas juventudes brasileiras · Sociologia I</span><a href="juventudes-brasileiras.html">Retornar ao texto da aula</a></div></footer>
+  <!-- 12. DADOS DO QUIZ E INTERAÇÕES EM JAVASCRIPT -->
+  <script>
+"use strict";
+
+/* ================================================================
+   13. QUESTÕES: ORIGEM E CRITÉRIO DE CONTEÚDO
+   As perguntas e alternativas reproduzem as 10 questões do HTML
+   'As muitas juventudes brasileiras', versão Lote 04.
+
+   Para editar uma pergunta: altere os campos text, choices, correct,
+   explain e reasons do objeto correspondente.
+   correct é o índice da alternativa certa, começando por ZERO.
+   ================================================================ */
+const QUESTIONS = [
+  {
+    "area": "Juventudes · categoria social",
+    "text": "Por que o capítulo prefere falar em “juventudes”, no plural?",
+    "choices": [
+      "Porque todas as pessoas jovens compartilham a mesma cultura.",
+      "Porque a experiência juvenil varia conforme condições sociais e históricas.",
+      "Porque não existem classificações de idade.",
+      "Porque apenas jovens urbanos constituem grupos sociais."
+    ],
+    "correct": 1,
+    "explain": "A categoria juventude envolve relações sociais e condições históricas. A mesma idade pode corresponder a experiências muito diferentes.",
+    "reasons": [
+      "A afirmação homogeneíza experiências juvenis e ignora diferenças de classe, raça, gênero e território.",
+      "A noção de juventudes reconhece que condições históricas e relações sociais produzem experiências distintas.",
+      "As classificações etárias existem, mas não explicam, isoladamente, o modo como as pessoas vivem a juventude.",
+      "As experiências juvenis não se restringem às cidades; também incluem campo, comunidades tradicionais e outros territórios."
+    ]
+  },
+  {
+    "area": "Estigma · representações sociais",
+    "text": "Uma representação que associa todos os jovens à violência pode produzir:",
+    "choices": [
+      "Uma classificação sempre respaldada em investigação empírica.",
+      "O fim das desigualdades entre gerações.",
+      "Estigmatização e tratamento discriminatório.",
+      "Uma identidade obrigatória para todas as juventudes."
+    ],
+    "correct": 2,
+    "explain": "O estigma envolve desqualificação social e pode alimentar discriminações; não é sinônimo de qualquer diferença individual.",
+    "reasons": [
+      "Uma generalização sobre um grupo não equivale a uma conclusão empírica devidamente demonstrada.",
+      "A representação depreciativa não elimina desigualdades; pode reforçá-las ou justificá-las.",
+      "Associar indiscriminadamente jovens à violência cria estereótipos e pode produzir estigma e discriminação.",
+      "Uma representação social pode exercer pressão, mas não estabelece uma identidade obrigatória para todos os jovens."
+    ]
+  },
+  {
+    "area": "Estatuto da Juventude · direitos",
+    "text": "Qual faixa etária é associada ao Estatuto da Juventude?",
+    "choices": [
+      "15 a 29 anos.",
+      "6 a 14 anos.",
+      "30 a 45 anos.",
+      "Apenas pessoas com menos de 12 anos."
+    ],
+    "correct": 0,
+    "explain": "O capítulo discute 15 a 29 anos como faixa da juventude em políticas brasileiras. O ECA define a adolescência em faixa parcialmente sobreposta.",
+    "reasons": [
+      "A Lei nº 12.852/2013 considera jovens as pessoas de 15 a 29 anos, ressalvadas as disposições legais específicas.",
+      "A faixa de 6 a 14 anos não corresponde à definição de juventude adotada pelo Estatuto.",
+      "Pessoas de 30 a 45 anos não integram a faixa etária definida pelo Estatuto da Juventude.",
+      "A legislação brasileira distingue a infância da juventude; a faixa citada não define jovem."
+    ]
+  },
+  {
+    "area": "Max Weber · análise sociológica",
+    "text": "Na discussão sobre Max Weber, o “tipo ideal” é:",
+    "choices": [
+      "Um modelo de pessoa jovem que todos devem imitar.",
+      "Um indivíduo perfeitamente adaptado à sociedade.",
+      "Uma fotografia fiel da realidade social.",
+      "Uma construção conceitual utilizada na análise sociológica."
+    ],
+    "correct": 3,
+    "explain": "Em Weber, tipo ideal é um instrumento analítico: não corresponde a modelo moral nem à descrição exata de uma pessoa existente.",
+    "reasons": [
+      "O tipo ideal não prescreve um modelo de comportamento a ser imitado.",
+      "Não se trata de selecionar uma pessoa perfeita ou plenamente ajustada às expectativas sociais.",
+      "Por ser uma construção analítica, o tipo ideal não pretende reproduzir fielmente todos os aspectos da realidade.",
+      "Em Weber, o tipo ideal acentua traços selecionados para analisar e comparar fenômenos sociais."
+    ]
+  },
+  {
+    "area": "Educação · desigualdades sociais",
+    "text": "Qual argumento explica desigualdades na permanência escolar?",
+    "choices": [
+      "Todo abandono escolar é resultado de desinteresse pessoal.",
+      "As condições materiais e o acesso a direitos influenciam as trajetórias escolares.",
+      "Jovens de todas as classes dispõem dos mesmos recursos.",
+      "O território onde se vive não interfere na educação."
+    ],
+    "correct": 1,
+    "explain": "As trajetórias escolares dependem também das condições de renda, território, trabalho, transporte e cuidado. Direitos exigem condições materiais para serem exercidos.",
+    "reasons": [
+      "Explicações que atribuem a evasão apenas ao interesse individual ignoram desigualdades e obstáculos objetivos.",
+      "Renda, trabalho, transporte, responsabilidades de cuidado e acesso a direitos interferem na escolarização.",
+      "Jovens de diferentes posições de classe não possuem recursos e oportunidades equivalentes.",
+      "O local de moradia pode afetar transporte, acesso à escola, infraestrutura e permanência estudantil."
+    ]
+  },
+  {
+    "area": "Culturas urbanas · pertencimento",
+    "text": "As estéticas juvenis urbanas podem ser compreendidas como:",
+    "choices": [
+      "Práticas desvinculadas de qualquer relação social.",
+      "Imitação homogênea de uma única moda.",
+      "Formas de identidade, expressão e pertencimento.",
+      "Provas automáticas de comportamentos criminosos."
+    ],
+    "correct": 2,
+    "explain": "As estéticas e culturas urbanas podem articular identidade, sociabilidade, expressão, pertencimento e disputas por reconhecimento.",
+    "reasons": [
+      "Música, grafite, vestuário e outras estéticas são práticas constituídas nas relações sociais.",
+      "As culturas juvenis urbanas são diversas, com diferentes modos de expressão e pertencimento.",
+      "Estéticas juvenis podem produzir vínculos, identidades coletivas e reconhecimento social.",
+      "Não há fundamento para associar automaticamente uma expressão estética a comportamento criminoso."
+    ]
+  },
+  {
+    "area": "Trabalho · plataformas digitais",
+    "text": "Qual tensão aparece no trabalho mediado por plataformas?",
+    "choices": [
+      "Promessas de autonomia podem conviver com controle e insegurança.",
+      "Plataformas sempre eliminam as desigualdades de renda.",
+      "O trabalho digital dispensa qualquer análise sociológica.",
+      "O uso de tecnologia garante proteção social universal."
+    ],
+    "correct": 0,
+    "explain": "A discussão sobre uberização problematiza controle por plataformas, insegurança de renda e transferência de riscos para quem trabalha.",
+    "reasons": [
+      "O discurso da autonomia pode coexistir com avaliação algorítmica, insegurança de renda e transferência de riscos.",
+      "Plataformas digitais não eliminam automaticamente diferenças de remuneração ou desigualdades sociais.",
+      "O trabalho em plataformas envolve poder, condições laborais e proteção social, temas próprios da Sociologia.",
+      "A mediação tecnológica não assegura por si só previdência, direitos ou proteção universal."
+    ]
+  },
+  {
+    "area": "Educação e trabalho · estigmatização",
+    "text": "Por que a expressão “nem-nem” é problematizada?",
+    "choices": [
+      "Porque todos os jovens fora da escola rejeitam estudar.",
+      "Porque não há dados públicos sobre educação e trabalho.",
+      "Porque estudar e trabalhar são atividades idênticas.",
+      "Porque pode culpabilizar indivíduos e ocultar desigualdades estruturais."
+    ],
+    "correct": 3,
+    "explain": "O rótulo pode transferir a responsabilidade das barreiras estruturais para os próprios jovens, reforçando estigmas.",
+    "reasons": [
+      "Afastamento escolar não pode ser equiparado automaticamente a rejeição voluntária aos estudos.",
+      "Existem dados públicos sobre educação e trabalho; o problema discutido é a interpretação social da categoria.",
+      "Estudar e trabalhar são atividades diferentes, e a questão trata da classificação social de suas ausências.",
+      "O rótulo pode responsabilizar indivíduos por situações relacionadas a desemprego, desigualdade e barreiras educacionais."
+    ]
+  },
+  {
+    "area": "Diversidade · direitos e reconhecimento",
+    "text": "Qual princípio aproxima as discussões sobre juventudes LGBTQIA+ e com deficiência?",
+    "choices": [
+      "A ideia de que todos os grupos vivenciam discriminação da mesma forma.",
+      "A defesa de direitos, reconhecimento e enfrentamento de barreiras.",
+      "A exclusão dessas juventudes dos processos políticos.",
+      "A substituição de políticas sociais por avaliações individuais."
+    ],
+    "correct": 1,
+    "explain": "As discussões sobre juventudes LGBTQIA+ e com deficiência destacam discriminação, inclusão, diversidade e acesso efetivo a direitos.",
+    "reasons": [
+      "Discriminações variam segundo as condições sociais e as barreiras vivenciadas por cada grupo.",
+      "O ponto comum é a reivindicação de reconhecimento, inclusão e acesso efetivo a direitos.",
+      "A participação política e social é um direito dessas juventudes e não deve ser negada.",
+      "Políticas públicas e direitos coletivos não podem ser substituídos apenas por juízos individuais."
+    ]
+  },
+  {
+    "area": "Territórios · juventudes tradicionais",
+    "text": "Qual abordagem corresponde às juventudes rurais, ribeirinhas e indígenas?",
+    "choices": [
+      "Supor que todos desejam deixar seus territórios.",
+      "Considerar que não participam de disputas e decisões coletivas.",
+      "Reconhecer formas próprias de organização, saberes e reivindicações.",
+      "Reduzir suas experiências à ausência de vida urbana."
+    ],
+    "correct": 2,
+    "explain": "A seção territorial enfatiza conhecimentos, projetos próprios, trabalho, participação, direitos e defesa de territórios, evitando tratar campo e povos tradicionais como mundos parados no tempo.",
+    "reasons": [
+      "As expectativas de permanência, circulação ou saída do território são diversas e não devem ser presumidas.",
+      "Essas juventudes participam de associações, mobilizações políticas, projetos comunitários e decisões coletivas.",
+      "É necessário reconhecer saberes, experiências, organização e lutas por direitos e territórios.",
+      "Reduzir esses grupos ao que não é urbano invisibiliza modos próprios de vida e protagonismo social."
+    ]
+  }
+];
+
+/* 14. CONFIGURAÇÃO DO TEMPO E DA PONTUAÇÃO */
+const TIME = 30;                  // segundos por pergunta
+const POINTS_MIN = 500;          // acerto no final do tempo
+const POINTS_MAX = 1000;         // acerto imediato
+const ANSWER_LETTERS = ["A", "B", "C", "D"];
+
+const el = (id) => document.getElementById(id);
+const fmt = (n) => new Intl.NumberFormat("pt-BR").format(n);
+let current = 0;
+let total = 0;
+let hits = 0;
+let responses = [];
+let phase = "intro";             // intro, reading, answering, feedback, end
+let deadline = 0;
+let timerId = null;
+let secondsLeft = TIME;
+let order = [];
+
+// Embaralha somente as alternativas, mantendo a ordem temática das questões.
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/* 15. MUDANÇA DE TELA E INÍCIO DA PARTIDA */
+function display(sectionId) {
+  for (const id of ["start", "introNote", "game", "end"]) {
+    el(id).hidden = id !== sectionId && !(sectionId === "start" && id === "introNote");
+  }
+}
+
+function scrollUp() {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function begin() {
+  clearInterval(timerId);
+  current = 0;
+  total = 0;
+  hits = 0;
+  responses = [];
+  phase = "reading";
+  order = QUESTIONS.map(q => ({
+    ...q,
+    variant: shuffle(q.choices.map((txt, index) => ({ txt, index })))
+  }));
+  display("game");
+  showQuestion();
+  scrollUp();
+}
+
+/* 16. LEITURA LIVRE, SEM EXIBIÇÃO PREMATURA DE ALTERNATIVAS */
+function updateClock(remaining) {
+  const sec = Math.ceil(remaining);
+  el("seconds").textContent = String(sec);
+  el("seconds").classList.toggle("low", sec <= 10);
+  el("clockFill").style.width = `${remaining / TIME * 100}%`;
+  el("clockFill").classList.toggle("low", sec <= 10);
+}
+
+function showQuestion() {
+  clearInterval(timerId);
+  phase = "reading";
+  secondsLeft = TIME;
+  const q = order[current];
+  el("counter").textContent = `Questão ${current + 1} de ${order.length}`;
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("progress").style.width = `${current / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current));
+  el("topic").textContent = q.area;
+  el("question").textContent = q.text;
+  el("readingStage").hidden = false;
+  el("timerRow").hidden = true;
+  el("answers").hidden = true;
+  el("feedback").hidden = true;
+  el("stageHint").textContent = "";
+  el("answers").replaceChildren();
+  el("game").querySelector(".gamehead").classList.remove("timing");
+  updateClock(TIME);
+  el("question").focus({ preventScroll: true });
+}
+
+/* 17. REVELAÇÃO DAS ALTERNATIVAS E INÍCIO DOS 30 SEGUNDOS */
+function reveal() {
+  if (phase !== "reading") return;
+  phase = "answering";
+  const q = order[current];
+  const box = el("answers");
+  box.replaceChildren();
+  q.variant.forEach(({ txt }, slot) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    button.dataset.slot = String(slot);
+    button.setAttribute("aria-label", `Alternativa ${ANSWER_LETTERS[slot]}: ${txt}`);
+
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.textContent = ANSWER_LETTERS[slot];
+    letter.setAttribute("aria-hidden", "true");
+    const content = document.createElement("span");
+    content.textContent = txt;
+    button.append(letter, content);
+    button.addEventListener("click", () => select(slot));
+    box.appendChild(button);
+  });
+
+  el("readingStage").hidden = true;
+  el("timerRow").hidden = false;
+  box.hidden = false;
+  el("stageHint").textContent = "O cronômetro está em andamento. Responda com um clique ou use as teclas de 1 a 4.";
+  el("game").querySelector(".gamehead").classList.add("timing");
+
+  // performance.now() evita contagem imprecisa causada por atrasos do intervalo.
+  deadline = performance.now() + TIME * 1000;
+  secondsLeft = TIME;
+  updateClock(secondsLeft);
+  timerId = setInterval(tick, 60);
+  box.firstElementChild?.focus({ preventScroll: true });
+  tick();
+}
+
+function tick() {
+  if (phase !== "answering") return;
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  updateClock(secondsLeft);
+  if (secondsLeft <= 0) select(-1);
+}
+
+/* 18. CORREÇÃO E FEEDBACK IMEDIATO */
+function select(slot) {
+  if (phase !== "answering") return;
+  const q = order[current];
+  secondsLeft = Math.max(0, (deadline - performance.now()) / 1000);
+  if (secondsLeft <= 0) slot = -1;
+  phase = "feedback";
+  clearInterval(timerId);
+
+  const correctSlot = q.variant.findIndex(option => option.index === q.correct);
+  const correct = slot === correctSlot;
+  const earned = correct
+    ? Math.min(POINTS_MAX, POINTS_MIN + Math.round((POINTS_MAX - POINTS_MIN) * secondsLeft / TIME))
+    : 0;
+  total += earned;
+  if (correct) hits++;
+
+  responses.push({
+    q, slot, chosenIndex: slot >= 0 ? q.variant[slot].index : -1,
+    correct, earned
+  });
+  Array.from(el("answers").children).forEach((button, i) => {
+    button.disabled = true;
+    button.classList.toggle("correct", i === correctSlot);
+    button.classList.toggle("wrong", i === slot && !correct);
+    button.classList.toggle("notpicked", i !== correctSlot && i !== slot);
+  });
+  el("scoreTop").textContent = `${fmt(total)} pontos`;
+  el("statusTop").textContent = `Acertos: ${hits}`;
+  el("stageHint").textContent = "";
+  el("feedback").hidden = false;
+  el("feedbackTitle").className = `feedbackline ${correct ? "good" : "bad"}`;
+  el("feedbackTitle").textContent = correct ? "Resposta correta!" : slot === -1 ? "Tempo esgotado." : "Resposta incorreta.";
+  el("feedbackText").textContent = `Resposta: ${q.choices[q.correct]}. ${q.explain}`;
+  el("earned").textContent = `+ ${fmt(earned)}`;
+
+  const reasonsList = el("reasonsList");
+  reasonsList.replaceChildren();
+  q.reasons.forEach((reason, i) => {
+    if (i === q.correct) return;
+    const li = document.createElement("li");
+    li.textContent = `${q.choices[i]} — ${reason}`;
+    reasonsList.appendChild(li);
+  });
+  el("currentReasons").open = false;
+  el("nextBtn").textContent = current === order.length - 1 ? "Ver resultado →" : "Próxima pergunta →";
+  el("progress").style.width = `${(current + 1) / order.length * 100}%`;
+  el("progressContainer").setAttribute("aria-valuenow", String(current + 1));
+  el("nextBtn").focus({ preventScroll: true });
+}
+
+/* 19. PRÓXIMA QUESTÃO E TELA DE RESULTADOS */
+function next() {
+  if (phase !== "feedback") return;
+  if (current + 1 < order.length) {
+    current++;
+    showQuestion();
+    scrollUp();
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  clearInterval(timerId);
+  phase = "end";
+  display("end");
+  el("total").textContent = fmt(total);
+  el("hits").textContent = `${hits}/${order.length}`;
+  el("rate").textContent = `${Math.round(hits / order.length * 100)}%`;
+  el("endTitle").textContent = hits === order.length ? "Todas as respostas corretas!" : "Quiz concluído.";
+  el("endMessage").textContent = `Você acertou ${hits} de ${order.length} questões e obteve ${fmt(total)} dos ${fmt(order.length * POINTS_MAX)} pontos possíveis. Reveja abaixo o gabarito e as justificativas.`;
+
+  const box = el("reviewList");
+  box.replaceChildren();
+  responses.forEach((entry, i) => {
+    const q = entry.q;
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `${i + 1}. ${q.text}`;
+    const exp = document.createElement("div");
+    exp.className = "exp";
+    const personal = document.createElement("p");
+    personal.textContent = `Sua resposta: ${entry.chosenIndex === -1 ? "Não respondida (tempo esgotado)" : q.choices[entry.chosenIndex]}.`;
+    const answer = document.createElement("p");
+    const b = document.createElement("strong");
+    b.textContent = "Resposta correta: ";
+    answer.append(b, document.createTextNode(q.choices[q.correct]));
+    const explanation = document.createElement("p");
+    explanation.textContent = q.explain;
+    const title = document.createElement("p");
+    const titleStrong = document.createElement("strong");
+    titleStrong.textContent = "Análise das alternativas";
+    title.append(titleStrong);
+    const list = document.createElement("ul");
+    q.choices.forEach((choice, n) => {
+      const li = document.createElement("li");
+      li.dataset.state = n === q.correct ? "correct" : n === entry.chosenIndex ? "chosen-wrong" : "other";
+      li.textContent = `${choice} — ${q.reasons[n]}`;
+      list.appendChild(li);
+    });
+    exp.append(personal, answer, explanation, title, list);
+    details.append(summary, exp);
+    box.appendChild(details);
+  });
+  scrollUp();
+}
+
+/* 20. EVENTOS E ATALHOS DE TECLADO */
+el("startBtn").addEventListener("click", begin);
+el("revealBtn").addEventListener("click", reveal);
+el("nextBtn").addEventListener("click", next);
+el("restartBtn").addEventListener("click", begin);
+document.addEventListener("keydown", event => {
+  if (el("game").hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (phase === "answering" && /^[1-4]$/.test(event.key)) {
+    event.preventDefault();
+    select(Number(event.key) - 1);
+  }
+});
+
+  </script>
+</body>
+</html>

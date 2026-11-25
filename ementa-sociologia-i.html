@@ -1,424 +1,353 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ementa - Sociologia I</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f9f9f8">
+<meta name="description" content="Ementa de Sociologia I, 30 horas, com conteúdo programático e critérios de avaliação organizados em seções retráteis.">
+<title>Sociologia I | Ementa | Dicionário para não ser trouxa</title>
 <style>
-  :root{
-    --paper:#e9dfcc;
-    --paper2:#f1e8d8;
-    --bg:#d7cdbb;
-    --navy:#12325a;
-    --olive:#667439;
-    --bluegray:#5f7284;
-    --wine:#7b2f3a;
-    --rust:#9b4b2d;
-    --gold:#b18428;
-    --ink:#20262d;
-    --line:#cfc4b1;
-    --shadow:rgba(39,45,52,.16);
-  }
-
-  *{box-sizing:border-box}
-
-  html{scroll-behavior:smooth}
-
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:"Trebuchet MS","Arial Narrow",Arial,sans-serif;
-    line-height:1.62;
-  }
-
-  .page{
-    width:min(1040px,100%);
-    margin:0 auto;
-    min-height:100vh;
-    background:
-      radial-gradient(circle at 18% 5%,rgba(255,255,255,.34),transparent 25%),
-      linear-gradient(180deg,#eee4d2 0%,#e6dac5 100%);
-    box-shadow:0 0 38px var(--shadow);
-  }
-
-  header{
-    padding:38px 46px 24px;
-    text-align:center;
-  }
-
-  .section-title{
-    margin:0;
-    color:var(--gold);
-    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
-    font-size:clamp(54px,8vw,90px);
-    line-height:.94;
-    letter-spacing:1px;
-    text-transform:uppercase;
-  }
-
-  .project-title{
-    margin:14px 0 0;
-    color:var(--navy);
-    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
-    font-size:clamp(28px,4vw,44px);
-    line-height:1;
-    letter-spacing:.7px;
-    text-transform:uppercase;
-  }
-
-  .kicker{
-    width:fit-content;
-    margin:12px auto 0;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:var(--olive);
-    font-size:16px;
-    font-weight:700;
-    letter-spacing:.4px;
-  }
-
-  .kicker::before,
-  .kicker::after{
-    content:"";
-    width:54px;
-    height:2px;
-    background:var(--olive);
-  }
-
-  .meta{
-    margin:9px 0 0;
-    color:var(--wine);
-    font-size:17px;
-    font-weight:700;
-  }
-
-  .top-nav{
-    margin:20px auto 0;
-    padding:10px 0;
-    border-top:2px solid var(--olive);
-    border-bottom:2px solid var(--olive);
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-  }
-
-  .home-button,
-  .nav-link{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:36px;
-    padding:7px 12px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:700;
-    transition:
-      transform .18s ease,
-      box-shadow .18s ease,
-      background .18s ease,
-      color .18s ease;
-  }
-
-  .home-button{
-    color:var(--navy);
-    background:var(--paper);
-    border:1px solid rgba(18,50,90,.18);
-    box-shadow:0 2px 6px rgba(18,50,90,.07);
-  }
-
-  .nav-link{
-    color:var(--bluegray);
-    background:rgba(255,255,255,.14);
-    border:1px solid transparent;
-  }
-
-  .home-button:hover,
-  .nav-link:hover{
-    transform:translateY(-2px);
-    background:#f5ecdc;
-    color:var(--navy);
-    box-shadow:0 5px 10px rgba(18,50,90,.09);
-  }
-
-  main{
-    padding:4px 44px 40px;
-  }
-
-  .ementa-box{
-    margin:14px 0 24px;
-    padding:22px 24px;
-    background:rgba(241,232,216,.82);
-    border:1px solid rgba(18,50,90,.10);
-    border-left:7px solid var(--gold);
-    border-radius:12px;
-    box-shadow:0 5px 14px rgba(18,50,90,.06);
-  }
-
-  .ementa-box h2,
-  .content-card h2{
-    margin:0 0 12px;
-    color:var(--navy);
-    font-family:Impact,"Arial Black","Trebuchet MS",sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    font-weight:500;
-  }
-
-  .ementa-box h2{font-size:28px}
-
-  .ementa-box p{
-    margin:0;
-    font-size:17px;
-    text-align:justify;
-  }
-
-  .content-card{
-    --accent:var(--olive);
-    margin:14px 0;
-    padding:20px 22px;
-    background:rgba(235,225,207,.72);
-    border:1px solid rgba(18,50,90,.10);
-    border-left:6px solid var(--accent);
-    border-radius:11px;
-    box-shadow:0 4px 12px rgba(18,50,90,.05);
-  }
-
-  .content-card:nth-of-type(3n+1){--accent:var(--olive)}
-  .content-card:nth-of-type(3n+2){--accent:var(--rust)}
-  .content-card:nth-of-type(3n+3){--accent:#445b86}
-
-  .content-card h2{
-    color:var(--accent);
-    font-size:25px;
-  }
-
-  .content-card h3{
-    margin:18px 0 7px;
-    color:var(--navy);
-    font-size:18px;
-  }
-
-  .content-card p{
-    margin:8px 0;
-    text-align:justify;
-  }
-
-  .content-card ul{
-    margin:8px 0 0;
-    padding-left:23px;
-  }
-
-  .content-card li{
-    margin:7px 0;
-  }
-
-  .content-list{
-    counter-reset:grupo;
-  }
-
-  .content-group{
-    margin:15px 0 0;
-    padding:0 0 0 15px;
-    border-left:3px solid rgba(102,116,57,.35);
-  }
-
-  .content-group h3{
-    margin-top:0;
-  }
-
-  .subitem{
-    margin:5px 0;
-    padding-left:3px;
-  }
-
-  .bibliografia{
-    margin:0;
-    padding:0;
-    list-style:none;
-  }
-
-  .bibliografia li{
-    margin:0;
-    padding:12px 0;
-    border-bottom:1px solid rgba(18,50,90,.10);
-  }
-
-  .bibliografia li:last-child{
-    border-bottom:0;
-  }
-
-  footer{
-    margin-top:10px;
-    padding:20px 24px;
-    text-align:center;
-    background:var(--navy);
-    color:#fff7e6;
-  }
-
-  footer span{
-    color:#e7b95d;
-    font-family:Impact,"Arial Black",sans-serif;
-    letter-spacing:.8px;
-    text-transform:uppercase;
-    font-size:20px;
-  }
-
-  @media(max-width:680px){
-    header{padding:28px 16px 20px}
-    .section-title{font-size:clamp(44px,14vw,66px)}
-    .project-title{font-size:clamp(25px,8vw,36px)}
-    .kicker{font-size:14px}
-    .kicker::before,.kicker::after{width:28px}
-    main{padding:2px 14px 28px}
-    .ementa-box,.content-card{padding:17px 16px}
-    .ementa-box p,.content-card p{text-align:left}
-    .top-nav{gap:6px}
-    .nav-link,.home-button{font-size:13px;padding:6px 9px}
-  }
-
-  @media print{
-    body{background:#fff}
-    .page{width:100%;box-shadow:none}
-    .top-nav{display:none}
-    .content-card,.ementa-box{break-inside:avoid}
-  }
+/* ==============================================================
+   01. TOKENS: cores inspiradas na página index do projeto
+   ============================================================== */
+:root{
+  color-scheme:light;
+  --bg:#fcfcfb;--surface:#fff;--surface-alt:#f7f8f9;--paper:#f6f4ef;
+  --ink:#1d2431;--navy:#102847;--body:#465368;--muted:#667383;
+  --line:#e5e8eb;--accent:#123c38;--accent-hover:#20564e;
+  --gold:#efc35b;--gold-soft:#fff5da;--link:#16365c;
+  --shadow:0 5px 24px rgba(18,31,45,.045);--frame:1040px;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#131a21;--surface:#202b34;--surface-alt:#24313b;--paper:#202b32;
+  --ink:#f2f2f0;--navy:#ddeaf6;--body:#c0cbd1;--muted:#aebcc4;
+  --line:#3a4b57;--accent:#75b3a5;--accent-hover:#97d3c3;
+  --gold:#efc35b;--gold-soft:#3a3427;--link:#b9d9fb;
+  --shadow:0 7px 25px rgba(0,0,0,.16)
+}
+/* ==============================================================
+   02. BASE, CABEÇALHO E INTRODUÇÃO
+   ============================================================== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--link)}button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid #b28b32;outline-offset:3px}
+.skip{position:absolute;top:-80px;left:16px;z-index:80;background:var(--surface);padding:9px 14px}
+.skip:focus{top:12px}
+.wrap{max-width:var(--frame);margin-inline:auto;width:calc(100% - 48px)}
+.site-header{position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 2px 12px #101d2d08}
+.head-inner{display:flex;align-items:center;gap:20px;min-height:67px}
+.brand{text-decoration:none;display:flex;flex-direction:column;color:var(--ink);line-height:1.1;min-width:0}
+.brand strong{font:800 20px/1 Georgia,serif;letter-spacing:-.4px}
+.brand small{font:700 12px/1.25 Georgia,serif;margin-top:3px}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:13px}
+.context{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.icon-button{border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);padding:7px 11px;min-height:39px}
+.icon-button:hover{background:var(--surface-alt)}
+.home{display:inline-block;text-decoration:none;font-size:12px;font-weight:700;border:1px solid var(--accent);border-radius:7px;color:#fff;background:#123c38;padding:8px 12px;white-space:nowrap}
+.home:hover{background:#20564e}
+.hero{background:var(--paper);border-bottom:1px solid var(--line)}
+.hero-inner{padding:35px 0 32px}
+.eyebrow{font:800 10px/1.5 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
+h1{font:700 clamp(39px,5.5vw,64px)/1.06 Georgia,serif;letter-spacing:-1.8px;margin:0 0 9px;color:var(--navy)}
+.hero-desc{font:400 clamp(17px,2vw,20px)/1.4 Georgia,serif;margin:0 0 17px;color:var(--body)}
+.info-tags{display:flex;gap:7px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:650;padding:5px 11px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--body)}
+/* ==============================================================
+   03. NAVEGAÇÃO DE SEÇÕES E CONTROLES GLOBAIS
+   ============================================================== */
+.actions{padding:21px 0 15px;display:flex;justify-content:space-between;align-items:center;gap:12px 22px;flex-wrap:wrap}
+.actions p{margin:0;color:var(--muted);font-size:12px}
+.action-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.soft-button{background:var(--surface);border:1px solid var(--line);color:var(--accent);border-radius:8px;padding:9px 13px;font-size:12px;font-weight:700}
+.soft-button:hover{background:var(--gold-soft);border-color:#cfba86}
+.jump-links{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:23px}
+.jump-links a{display:inline-flex;align-items:center;background:var(--surface-alt);border:1px solid var(--line);color:var(--body);border-radius:20px;text-decoration:none;padding:6px 11px;font-size:11.5px;font-weight:650}
+.jump-links a:hover{border-color:var(--accent);color:var(--accent)}
+/* ==============================================================
+   04. COMPONENTE RETRÁTIL: SEÇÕES, UNIDADES, SUBTÓPICOS
+   ============================================================== */
+.content{padding-bottom:45px}
+.fold{border:1px solid var(--line);background:var(--surface);border-radius:10px;margin:11px 0;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:92px}
+.fold>summary{list-style:none;display:flex;align-items:center;gap:13px;justify-content:space-between;padding:17px 19px;cursor:pointer;min-height:62px;transition:background .15s}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary:hover{background:var(--surface-alt)}
+.fold>summary h2,.fold>summary h3,.fold>summary h4{min-width:0;flex:1;margin:0;line-height:1.32}
+.fold-section>summary{border-left:4px solid var(--accent)}
+.fold-section>summary h2{font:700 clamp(17px,2.4vw,21px)/1.3 Georgia,serif;color:var(--navy)}
+.fold-unit{box-shadow:none;background:var(--surface-alt);margin:10px 0;border-color:var(--line)}
+.fold-unit>summary{padding:13px 15px;min-height:52px;border-left:3px solid #b88d4d}
+.fold-unit>summary h3{font:700 16px/1.4 Georgia,serif;color:var(--navy)}
+.fold-subsection{box-shadow:none;background:var(--surface-alt)}
+.fold-subsection>summary{padding:14px 16px;min-height:53px;border-left:3px solid #83958d}
+.fold-subsection>summary h3{font:700 16px/1.4 Georgia,serif;color:var(--navy)}
+.fold-topic{box-shadow:none;margin:7px 0;background:var(--surface)}
+.fold-topic>summary{min-height:48px;padding:10px 13px}
+.fold-topic>summary h4{font:650 13.5px/1.5 Arial,sans-serif;color:var(--body)}
+.fold-symbol{position:relative;width:25px;height:25px;border:1px solid var(--line);background:var(--surface-alt);border-radius:7px;flex:none}
+.fold-symbol:before,.fold-symbol:after{content:"";position:absolute;background:var(--accent);border-radius:2px;left:7px;right:7px;top:11px;height:2px}
+.fold-symbol:after{transform:rotate(90deg);transition:transform .15s}
+.fold[open]>summary>.fold-symbol:after{transform:rotate(0)}
+.fold[open]>summary{border-bottom:1px solid var(--line)}
+.fold-content{padding:15px 22px 19px;min-width:0}
+.fold-content>.fold{margin:10px 0}
+.fold-unit>.fold-content,.fold-subsection>.fold-content{padding:11px 15px 15px}
+.fold-topic>.fold-content{padding:12px 16px 14px}
+.fold-content>p{color:var(--body);margin:6px 0 11px;max-width:850px;overflow-wrap:anywhere}
+.fold-content>p:last-child{margin-bottom:0}
+.lead{font-family:Georgia,serif;font-size:16px;line-height:1.8}
+.reading-list,.bibliography-list{padding:0;margin:0;list-style:none}
+.reading-list li,.bibliography-list li{padding:11px 0 11px 22px;position:relative;border-bottom:1px solid var(--line);color:var(--body)}
+.reading-list li:last-child,.bibliography-list li:last-child{border:0}
+.reading-list li:before{content:"";position:absolute;top:20px;left:2px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.ordered{counter-reset:steps}.ordered li{counter-increment:steps}
+.ordered li:before{content:counter(steps);font-size:11px;font-weight:700;display:grid;place-items:center;background:var(--gold-soft);width:19px;height:19px;top:13px;left:0;color:var(--navy)}
+.ordered li{padding-left:29px}
+.bibliography-list li{padding-left:0;font:14px/1.65 Georgia,serif}
+.action-link{display:inline-flex;font-size:13px;font-weight:700;color:var(--accent);text-underline-offset:4px}
+.table-scroll{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0}
+.data-table{border-collapse:collapse;width:100%;min-width:460px;font-size:13px;text-align:left}
+.data-table th{background:var(--surface-alt);color:var(--navy);font-weight:750}
+.data-table th,.data-table td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+.data-table tr:last-child td,.data-table tfoot tr:last-child th{border-bottom:0}
+.data-table td{color:var(--body)}
+.score-number{text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.footer{border-top:1px solid var(--line);padding:20px 0 28px;text-align:center;font-size:11px;color:var(--muted);background:var(--surface-alt)}
+.footer strong{color:var(--navy)}
+/* ==============================================================
+   05. RESPONSIVIDADE, ACESSIBILIDADE E IMPRESSÃO
+   ============================================================== */
+@media(max-width:650px){
+  .wrap{width:calc(100% - 28px)}.head-inner{min-height:61px;gap:10px}.brand strong{font-size:17px}.brand small{font-size:10px}
+  .context{display:none}.home{padding:7px 9px}.icon-button{min-height:36px}
+  .hero-inner{padding:27px 0 25px}h1{letter-spacing:-1px}.hero-desc{font-size:17px}
+  .actions{padding-top:18px}.action-buttons{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .soft-button{padding:11px 5px}.jump-links{gap:6px}
+  .fold>summary{padding:15px 12px;gap:8px}.fold-content{padding:13px 13px 17px}
+  .fold-unit>summary,.fold-subsection>summary{padding:12px 11px}
+  .fold-unit>.fold-content,.fold-subsection>.fold-content{padding:8px 10px 11px}
+  .fold-topic>summary{padding:10px}.fold-topic>.fold-content{padding:11px}
+  .fold-unit>summary h3,.fold-subsection>summary h3{font-size:15px}
+  .fold-topic>summary h4{font-size:13px}
+  .fold-symbol{width:25px;height:25px}
+  .lead{font-size:15px}
+}
+@media(max-width:350px){.brand small{font-size:9px}.home{font-size:11px}.jump-links a{font-size:10.5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{
+  :root{color-scheme:light}body{background:#fff;color:#111}
+  .site-header,.actions,.jump-links,.footer,.fold-symbol{display:none!important}
+  .wrap{max-width:none;width:100%}.hero{background:white;border:0}.hero-inner{padding:8px 0}
+  .fold{box-shadow:none;break-inside:avoid;margin:8px 0;border-color:#bbb}
+  .fold>summary{padding:9px 12px}.fold-content{padding:8px 12px}
+  .data-table{min-width:0;font-size:11px}
+}
 </style>
 </head>
-
 <body>
-<div class="page">
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<!-- =============================================================
+     06. CABEÇALHO E NAVEGAÇÃO
+     ============================================================= -->
+<header class="site-header">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html" aria-label="Página inicial do Dicionário para não ser trouxa"><strong>Dicionário</strong><small>para não ser trouxa</small></a>
+    <div class="header-right">
+      <span class="context">Sociologia I</span>
+      <button type="button" id="theme-toggle" class="icon-button" aria-label="Ativar modo escuro" title="Alternar modo claro e escuro">☾</button>
+      <a href="index.html" class="home">Página inicial</a>
+    </div>
+  </div>
+</header>
+<section class="hero" aria-labelledby="titulo-pagina">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Dicionário para não ser trouxa / Plano de ensino</p>
+    <h1 id="titulo-pagina">Ementa · Sociologia I</h1>
+    <p class="hero-desc">Organização dos conteúdos, avaliações e referências da disciplina.</p>
+    <div class="info-tags"><span class="tag">Carga horária: 30h</span><span class="tag">Prof. Eliaquim Timóteo</span><span class="tag">8 seções</span></div>
+  </div>
+</section>
+<main id="conteudo" class="wrap">
+  <div class="actions"><p>Selecione um título para abrir ou recolher o conteúdo.</p><div class="action-buttons"><button class="soft-button" id="expand-all" type="button">Expandir tudo</button><button class="soft-button" id="collapse-all" type="button">Recolher tudo</button></div></div>
+  <nav class="jump-links" aria-label="Ir para uma seção">
+    <a href="#ementa">Ementa</a><a href="#objetivos">Objetivos</a><a href="#conteudos">Conteúdos</a>
+    <a href="#metodologia">Metodologia</a><a href="#recursos">Recursos</a><a href="#avaliacao">Avaliação</a>
+    <a href="#bibliografia">Bibliografia</a>
+  </nav>
+  <!-- ===========================================================
+       07. CONTEÚDO PROGRAMÁTICO: ACORDIÕES ANINHADOS
+       =========================================================== -->
+  <div class="content"><details class="fold fold-section" id="ementa" open>
+      <summary><h2>Ementa</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p class="lead">Sociologia como ciência, perspectiva sociológica e senso comum. Teorias sociológicas e modernidade. Conceitos sociológicos fundamentais. Relação indivíduo-sociedade, instituições, processos de socialização e interação social. Estratificação social. Marcadores sociais da diferença e as múltiplas desigualdades em uma perspectiva interseccional. Perspectivas teóricas e diagnósticos do mundo social contemporâneo. Perspectivas da formação sócio-histórica do Brasil. O Brasil contemporâneo e a sociologia brasileira.</p></div>
+    </details>
+<details class="fold fold-section" id="objetivos">
+      <summary><h2>1. Objetivos</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ul class="reading-list"><li>Compreender a Sociologia como ciência voltada para a análise e a compreensão das estruturas e relações sociais;</li><li>Desenvolver uma visão científica, crítica e reflexiva das realidades sociais que envolvem os indivíduos, seus comportamentos e interações;</li><li>Conhecer os principais conceitos sociológicos necessários para interpretar as especificidades sociais da sociedade moderna e contemporânea;</li><li>Entender análises, diagnósticos e pesquisas sociológicas sobre problemas e dilemas do mundo atual e da sociedade brasileira, especialmente aqueles relacionados às múltiplas desigualdades, tais como classe, gênero e raça, com base em uma perspectiva interseccional.</li></ul></div>
+    </details>
+<details class="fold fold-section" id="conteudos">
+      <summary><h2>2. Bases científico-tecnológicas (conteúdos)</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><details class="fold fold-unit">
+      <summary><h3>Unidade I - Sociologia: ciência da sociedade</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><details class="fold fold-topic">
+      <summary><h4>1.1. Ciência e senso comum</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>1.1. Ciência, senso comum e o conhecimento do mundo social;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>1.2. Teorias sociológicas e modernidade</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>1.2. Teorias sociológicas e modernidade;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>1.3. Perspectiva e imaginação sociológicas</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>1.3. Perspectiva e imaginação sociológicas;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>Aferição de aprendizagem</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Aferição de aprendizagem indicada ao final desta unidade, sem detalhamento adicional na ementa original.</p></div>
+    </details></div>
+    </details>
+<details class="fold fold-unit">
+      <summary><h3>2. Compreender a sociedade</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><details class="fold fold-topic">
+      <summary><h4>2.1. Conceitos fundamentais</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>2.1. Conceitos sociológicos fundamentais;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>2.2. Indivíduo, sociedade e socialização</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>2.2. Relações indivíduo-sociedade: instituições, processos de socialização, relações sociais e interação social;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>2.3. Estratificação e marcadores sociais</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>2.3. Estratificação social, marcadores sociais da diferença, estigmas e estereótipos.</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>Aferição de aprendizagem</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Aferição de aprendizagem indicada ao final desta unidade, sem detalhamento adicional na ementa original.</p></div>
+    </details></div>
+    </details>
+<details class="fold fold-unit">
+      <summary><h3>3. A sociedade e a sociologia contemporânea</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><details class="fold fold-topic">
+      <summary><h4>3.1. Diagnósticos do mundo contemporâneo</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>3.1 Perspectivas teóricas e diagnósticos sociológicos do mundo contemporâneo;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>3.2. Transformações do mundo contemporâneo</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>3.2. Transformações, dilemas e desafios do mundo contemporâneo.</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>Aferição de aprendizagem</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Aferição de aprendizagem indicada ao final desta unidade, sem detalhamento adicional na ementa original.</p></div>
+    </details></div>
+    </details>
+<details class="fold fold-unit">
+      <summary><h3>4. A sociedade e a sociologia brasileira</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><details class="fold fold-topic">
+      <summary><h4>4.1. Formação sócio-histórica do Brasil</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>4.1. Perspectivas da formação sócio-histórica do Brasil;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>4.2. Desigualdades e interseccionalidade</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>4.2. As múltiplas desigualdades na sociedade brasileira em perspectiva interseccional;</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>4.3. Desafios sociais do Brasil contemporâneo</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>4.3. Transformações, dilemas e desafios sociais do Brasil contemporâneo.</p></div>
+    </details>
+<details class="fold fold-topic">
+      <summary><h4>Aferição de aprendizagem</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Aferição de aprendizagem indicada ao final desta unidade, sem detalhamento adicional na ementa original.</p></div>
+    </details></div>
+    </details></div>
+    </details>
+<details class="fold fold-section" id="metodologia">
+      <summary><h2>3. Procedimentos metodológicos</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ul class="reading-list"><li>Aulas expositivas e dialogadas; leitura, compreensão e análise de textos; estudo dirigido; seminário e debates; ensino por meio de pesquisas sociológicas; exibições de vídeos seguidos de debates; exposições fotográficas, de poesias e de músicas; criação de ambientes virtuais; aulas de campo, visitas técnicas e produção de diagnósticos sociológicos.</li><li>O desenvolvimento dos conteúdos pode estar relacionado às demais disciplinas do Ensino Básico e também do Ensino Técnico, permitindo o desenvolvimento de projetos interdisciplinares e integradores de acordo com a realidade de cada curso e campus.</li></ul></div>
+    </details>
+<details class="fold fold-section" id="recursos">
+      <summary><h2>4. Recursos didáticos</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ul class="reading-list"><li>Quadro branco, pincéis para quadro branco, livro didático, bibliografia especializada, livros (diversos), revistas, jornais (impressos e on-line), computadores, internet, equipamento multimídia completo.</li><li>Site</li><li>Podcast - Menos um trouxa</li><li>Instagram - @menosumtrouxa</li><li>GSA</li></ul></div>
+   
+<a class="resource-button" href="Metodo_Cornell_Sociologia_I_Aula_1_1.html" rel="noopener noreferrer" target="_blank"><li>Sitema de anotações</li><li> <span aria-hidden="true">↗</span></a>
 
-  <header>
-    <h1 class="section-title">Sociologia I</h1>
-    <div class="project-title">Ementa</div>
-    <div class="kicker">Prof. Eliaquim Timóteo</div>
-    <div class="meta">Carga horária: 30h</div>
-
-    <nav class="top-nav" aria-label="Navegação da ementa">
-      <a href="index.html" class="home-button">⌂ Início</a>
-      <a href="#ementa" class="nav-link">Ementa</a>
-      <a href="#objetivos" class="nav-link">Objetivos</a>
-      <a href="#conteudos" class="nav-link">Conteúdos</a>
-      <a href="#metodologia" class="nav-link">Metodologia</a>
-      <a href="#avaliacao" class="nav-link">Avaliação</a>
-      <a href="#bibliografia" class="nav-link">Bibliografia</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="ementa-box" id="ementa">
-      <h2>Ementa</h2>
-      <p>
-        Sociologia como ciência, perspectiva sociológica e senso comum. Teorias sociológicas e modernidade.
-        Conceitos sociológicos fundamentais. Relação indivíduo-sociedade, instituições, processos de socialização
-        e interação social. Estratificação social. Marcadores sociais da diferença e as múltiplas desigualdades em
-        uma perspectiva interseccional. Perspectivas teóricas e diagnósticos do mundo social contemporâneo.
-        Perspectivas da formação sócio-histórica do Brasil. O Brasil contemporâneo e a sociologia brasileira.
-      </p>
-    </section>
-
-    <section class="content-card" id="objetivos">
-      <h2>1. Objetivos</h2>
-      <ul>
-        <li>Compreender a Sociologia como ciência voltada para a análise e a compreensão das estruturas e relações sociais;</li>
-        <li>Desenvolver uma visão científica, crítica e reflexiva das realidades sociais que envolvem os indivíduos, seus comportamentos e interações;</li>
-        <li>Conhecer os principais conceitos sociológicos necessários para interpretar as especificidades sociais da sociedade moderna e contemporânea;</li>
-        <li>Entender análises, diagnósticos e pesquisas sociológicas sobre problemas e dilemas do mundo atual e da sociedade brasileira, especialmente aqueles relacionados às múltiplas desigualdades, tais como classe, gênero e raça, com base em uma perspectiva interseccional.</li>
-      </ul>
-    </section>
-
-    <section class="content-card" id="conteudos">
-      <h2>2. Bases científico-tecnológicas (conteúdos)</h2>
-
-      <div class="content-group">
-        <h3>1. Sociologia: ciência da sociedade</h3>
-        <div class="subitem">1.1. Ciência, senso comum e o conhecimento do mundo social;</div>
-        <div class="subitem">1.2. Teorias sociológicas e modernidade;</div>
-        <div class="subitem">1.3. Perspectiva e imaginação sociológicas.</div>
-      </div>
-
-      <div class="content-group">
-        <h3>2. Compreender a sociedade</h3>
-        <div class="subitem">2.1. Conceitos sociológicos fundamentais;</div>
-        <div class="subitem">2.2. Relações indivíduo-sociedade: instituições, processos de socialização, relações sociais e interação social;</div>
-        <div class="subitem">2.3. Estratificação social, marcadores sociais da diferença, estigmas e estereótipos.</div>
-      </div>
-
-      <div class="content-group">
-        <h3>3. A sociedade e a sociologia contemporânea</h3>
-        <div class="subitem">3.1 Perspectivas teóricas e diagnósticos sociológicos do mundo contemporâneo;</div>
-        <div class="subitem">3.2. Transformações, dilemas e desafios do mundo contemporâneo.</div>
-      </div>
-
-      <div class="content-group">
-        <h3>4. A sociedade e a sociologia brasileira</h3>
-        <div class="subitem">4.1. Perspectivas da formação sócio-histórica do Brasil;</div>
-        <div class="subitem">4.2. As múltiplas desigualdades na sociedade brasileira em perspectiva interseccional;</div>
-        <div class="subitem">4.3. Transformações, dilemas e desafios sociais do Brasil contemporâneo.</div>
-      </div>
-    </section>
-
-    <section class="content-card" id="metodologia">
-      <h2>3. Procedimentos metodológicos</h2>
-      <ul>
-        <li>Aulas expositivas e dialogadas; leitura, compreensão e análise de textos; estudo dirigido; seminário e debates; ensino por meio de pesquisas sociológicas; exibições de vídeos seguidos de debates; exposições fotográficas, de poesias e de músicas; criação de ambientes virtuais; aulas de campo, visitas técnicas e produção de diagnósticos sociológicos.</li>
-        <li>O desenvolvimento dos conteúdos pode estar relacionado às demais disciplinas do Ensino Básico e também do Ensino Técnico, permitindo o desenvolvimento de projetos interdisciplinares e integradores de acordo com a realidade de cada curso e campus.</li>
-      </ul>
-    </section>
-
-    <section class="content-card">
-      <h2>4. Recursos didáticos</h2>
-      <p>
-        Quadro branco, pincéis para quadro branco, livro didático, bibliografia especializada, livros (diversos),
-        revistas, jornais (impressos e on-line), computadores, internet, equipamento multimídia completo.
-      </p>
-    </section>
-
-    <section class="content-card" id="avaliacao">
-      <h2>5. Avaliação</h2>
-      <p>
-        O processo avaliativo ocorrerá de forma contínua, diagnóstica, mediadora, formativa e somativa. Nessa
-        perspectiva, como formas de avaliação do aprendizado na disciplina, serão utilizados diferentes instrumentos
-        avaliativos: avaliações escritas e orais; trabalhos escritos individuais e em grupos; participação em seminários,
-        debates, júris simulados; confecção de cadernos temáticos; relatórios de aulas de campo, de visitas técnicas ou
-        de pesquisas.
-      </p>
-    </section>
-
-    <section class="content-card" id="bibliografia">
-      <h2>6. Bibliografia básica</h2>
-      <ul class="bibliografia">
-        <li>BODART, Cristiano das Neves (Org.). Conceitos e categorias fundamentais do ensino de Sociologia. vol. 1. Maceió: Editora Café com Sociologia, 2021.</li>
-        <li>CASTRO, Celso. Textos básicos de sociologia. Rio de Janeiro: Zahar, 2014.</li>
-        <li>CASTRO, Celso. Para além do cânone: para ampliar e diversificar as Ciências Sociais. Rio de Janeiro: FGV, 2022.</li>
-        <li>COLLINS, Patricia Hill; BILGE, Sirma. Interseccionalidade. São Paulo: Boitempo, 2021</li>
-        <li>PINHEL, André Marega; ALVES, Benno Warken. Sociologia brasileira. Curitiba/PR: Editora Intersaberes, 2019.</li>
-      </ul>
-    </section>
-
-    <section class="content-card">
-      <h2>7. Bibliografia complementar</h2>
-      <ul class="bibliografia">
-        <li>BAUMAN, Zygmunt. Para uma sociologia crítica: um ensaio sobre o senso comum e a emancipação. São Paulo: Unesp, 2023.</li>
-        <li>BODART, Cristiano das Neves (Org). Conceitos e categorias fundamentais do ensino de Sociologia. vol.2. Maceió: Editora Café com Sociologia, 2021.</li>
-        <li>DURKHEIM, Émile. A Sociologia e as Ciências Sociais. São Paulo: WMF; Martins Fontes, 2021.</li>
-        <li>MEDEIROS, Marcelo. Os ricos e os pobres: o Brasil e a desigualdade. São Paulo: Companhia das Letras, 2023.</li>
-        <li>SIMMEL, Georg. Questões fundamentais da Sociologia: indivíduo e sociedade. Rio de Janeiro: Zahar, 2006.</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <span>Sociologia I</span>
-  </footer>
-
-</div>
+ </details>
+<details class="fold fold-section" id="avaliacao">
+      <summary><h2>5. Aferição de aprendizagem</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content">
+  <p>O processo avaliativo ocorrerá de forma contínua, diagnóstica, mediadora, formativa e somativa. Nessa perspectiva, como formas de avaliação do aprendizado na disciplina, serão utilizados diferentes instrumentos avaliativos: avaliações escritas e orais; trabalhos escritos individuais e em grupos; participação em seminários, debates, júris simulados; confecção de cadernos temáticos; relatórios de aulas de campo, de visitas técnicas ou de pesquisas.</p><details class="fold fold-subsection">
+      <summary><h3>5.1. Primeiro bimestre</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Prova 1 [50 pontos] + Prova 2 [50 pontos]</p></div>
+    </details><details class="fold fold-subsection">
+      <summary><h3>5.2. Segundo bimestre</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Prova 3 [50 pontos] + Prova 4 [50 pontos] </p></div>
+    </details><details class="fold fold-subsection">
+      <summary><h3>5.2. Exame Final</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Exame Final: todo o conteúdo ministrado.</p></div>
+    </details><details class="fold fold-subsection">
+      <summary><h3>5.3. Matriz de critérios avaliativos da redação (25 pontos)</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><div class="table-scroll" role="region" aria-label="Tabela de critérios da redação" tabindex="0"><table class="data-table"><thead><tr><th>Critério avaliativo</th><th>Pontuação máxima</th></tr></thead><tbody><tr><td>Compreensão do problema escolhido</td><td class="score-number">5</td></tr><tr><td>Domínio dos conceitos sociológicos</td><td class="score-number">8</td></tr><tr><td>Argumentação e análise crítica</td><td class="score-number">6</td></tr><tr><td>Organização textual, coerência, coesão e extensão</td><td class="score-number">4</td></tr><tr><td>Domínio da escrita (gramática, ortografia e pontuação)</td><td class="score-number">2</td></tr></tbody><tfoot><tr><th>Total</th><th class="score-number">25 pontos</th></tr></tfoot></table></div></div>
+    </details><details class="fold fold-subsection">
+      <summary><h3>5.4. Como são as provas de Sociologia?</h3><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>As provas de Sociologia são inspiradas no modelo interpretativo do ENEM e organizadas a partir de situações-problema, textos, fotografias, documentos históricos, legislações, gráficos e indicadores sociais.</p><p>O objetivo é avaliar a capacidade de utilizar conhecimentos sociológicos para compreender e analisar a realidade, ultrapassando a simples memorização de conceitos e definições.</p><p>Cada questão apresenta cinco alternativas, sendo apenas uma correta. As alternativas incorretas são construídas para serem plausíveis, podendo conter informações verdadeiras, mas interpretações inadequadas.</p><p>A resposta correta não é necessariamente a que apresenta uma informação verdadeira, mas aquela que responde adequadamente ao problema proposto.</p><details class="fold fold-topic">
+      <summary><h4>O que é avaliado?</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><div class="table-scroll" role="region" tabindex="0" aria-label="O que é avaliado?"><table class="data-table"><thead><tr><th>Critério</th><th>O que se espera do estudante</th></tr></thead><tbody><tr><td>Compreensão conceitual</td><td>Distinguir e utilizar corretamente conceitos sociológicos.</td></tr><tr><td>Aplicação teórica</td><td>Relacionar autores e teorias a situações históricas e contemporâneas.</td></tr><tr><td>Interpretação documental</td><td>Analisar textos, imagens, legislações, gráficos e dados sociais.</td></tr><tr><td>Raciocínio analítico</td><td>Comparar informações, identificar relações e avaliar explicações.</td></tr><tr><td>Pensamento crítico</td><td>Reconhecer contradições, generalizações e conclusões sem fundamento suficiente.</td></tr><tr><td>Precisão argumentativa</td><td>Identificar a interpretação mais consistente com os documentos e os conceitos estudados.</td></tr></tbody></table></div></div>
+    </details><details class="fold fold-topic">
+      <summary><h4>Como funcionam as questões?</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Cada questão apresenta cinco alternativas, sendo apenas uma correta. As alternativas incorretas são construídas para serem plausíveis, podendo conter informações verdadeiras, mas interpretações inadequadas.</p><p>A resposta correta não é necessariamente a que apresenta uma informação verdadeira, mas aquela que responde adequadamente ao problema proposto.</p></div>
+    </details><details class="fold fold-topic">
+      <summary><h4>O que torna as questões difíceis?</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><div class="table-scroll" role="region" tabindex="0" aria-label="O que torna as questões difíceis?"><table class="data-table"><thead><tr><th>Dificuldade alta</th><th>Dificuldade muito alta</th></tr></thead><tbody><tr><td>Aplicar conceitos a situações concretas.</td><td>Articular diferentes conceitos e documentos.</td></tr><tr><td>Interpretar e comparar informações.</td><td>Avaliar explicações concorrentes e parcialmente corretas.</td></tr><tr><td>Identificar erros conceituais e generalizações.</td><td>Reconhecer limites das evidências e das conclusões.</td></tr></tbody></table></div></div>
+    </details><details class="fold fold-topic">
+      <summary><h4>Como resolver?</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ol class="reading-list ordered"><li>Identificar o problema apresentado no comando.</li><li>Interpretar os documentos e mobilizar os conceitos estudados.</li><li>Examinar todas as alternativas, identificando seus possíveis erros.</li><li>Selecionar a resposta mais consistente e compreender por que as demais estão incorretas.</li></ol></div>
+    </details><details class="fold fold-topic">
+      <summary><h4>Princípio da avaliação</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p>Mais importante do que memorizar uma resposta é saber construir e justificar uma interpretação sociológica.</p><p>A prova avalia a capacidade de pensar sociologicamente: compreender problemas, interpretar evidências e utilizar conceitos com rigor.</p><p>Exemplo de questão</p></div>
+    </details><details class="fold fold-topic">
+      <summary><h4>Exemplo de questão</h4><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><p><a class="action-link" href="exemplo-questao.html">Abrir o exemplo de questão <span aria-hidden="true">↗</span></a></p></div>
+    </details></div>
+    </details></div>
+    </details>
+<details class="fold fold-section" id="bibliografia">
+      <summary><h2>6. Bibliografia básica</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ul class="bibliography-list"><li>BODART, Cristiano das Neves (Org.). Conceitos e categorias fundamentais do ensino de Sociologia. vol. 1. Maceió: Editora Café com Sociologia, 2021.</li><li>CASTRO, Celso. Textos básicos de sociologia. Rio de Janeiro: Zahar, 2014.</li><li>CASTRO, Celso. Para além do cânone: para ampliar e diversificar as Ciências Sociais. Rio de Janeiro: FGV, 2022.</li><li>COLLINS, Patricia Hill; BILGE, Sirma. Interseccionalidade. São Paulo: Boitempo, 2021</li><li>PINHEL, André Marega; ALVES, Benno Warken. Sociologia brasileira. Curitiba/PR: Editora Intersaberes, 2019.</li></ul></div>
+    </details>
+<details class="fold fold-section" id="bibliografia-complementar">
+      <summary><h2>7. Bibliografia complementar</h2><span class="fold-symbol" aria-hidden="true"></span></summary>
+      <div class="fold-content"><ul class="bibliography-list"><li>BAUMAN, Zygmunt. Para uma sociologia crítica: um ensaio sobre o senso comum e a emancipação. São Paulo: Unesp, 2023.</li><li>BODART, Cristiano das Neves (Org). Conceitos e categorias fundamentais do ensino de Sociologia. vol.2. Maceió: Editora Café com Sociologia, 2021.</li><li>DURKHEIM, Émile. A Sociologia e as Ciências Sociais. São Paulo: WMF; Martins Fontes, 2021.</li><li>MEDEIROS, Marcelo. Os ricos e os pobres: o Brasil e a desigualdade. São Paulo: Companhia das Letras, 2023.</li><li>SIMMEL, Georg. Questões fundamentais da Sociologia: indivíduo e sociedade. Rio de Janeiro: Zahar, 2006.</li></ul></div>
+    </details></div>
+</main>
+<footer class="footer"><div class="wrap"><strong>Sociologia I</strong> · Dicionário para não ser trouxa · Prof. Eliaquim Timóteo</div></footer>
+<script>
+'use strict';
+/* ==============================================================
+   08. CONTROLES DE ACESSIBILIDADE E VISUALIZAÇÃO
+   ============================================================== */
+const allFolds=()=>Array.from(document.querySelectorAll('details.fold'));
+function setAll(open){allFolds().forEach(item=>item.open=open);}
+document.getElementById('expand-all').addEventListener('click',()=>setAll(true));
+document.getElementById('collapse-all').addEventListener('click',()=>setAll(false));
+function openAncestors(node){for(let el=node;el;el=el.parentElement){if(el.tagName==='DETAILS')el.open=true;}}
+function navigateToSection(id){const node=document.getElementById(id);if(!node)return;openAncestors(node);requestAnimationFrame(()=>node.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}));}
+document.querySelectorAll('.jump-links a').forEach(link=>link.addEventListener('click',event=>{const id=link.getAttribute('href').slice(1);event.preventDefault();history.replaceState(null,'','#'+id);navigateToSection(id)}));
+if(location.hash){const id=decodeURIComponent(location.hash.slice(1));requestAnimationFrame(()=>navigateToSection(id));}
+/* ==============================================================
+   09. TEMA: PREFERÊNCIA SALVA NO NAVEGADOR
+   ============================================================== */
+const themeBtn=document.getElementById('theme-toggle');
+function applyTheme(theme){const dark=theme==='dark';document.documentElement.dataset.theme=dark?'dark':'light';themeBtn.textContent=dark?'☀':'☾';themeBtn.setAttribute('aria-label',dark?'Ativar modo claro':'Ativar modo escuro');document.querySelector('meta[name="theme-color"]').content=dark?'#131a21':'#f9f9f8';}
+let storedTheme='light';try{storedTheme=localStorage.getItem('dicionario-theme')||'light'}catch(e){}
+applyTheme(storedTheme);
+themeBtn.addEventListener('click',()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';applyTheme(t);try{localStorage.setItem('dicionario-theme',t)}catch(e){}});
+/* ==============================================================
+   10. IMPRESSÃO: ABRIR SEÇÕES TEMPORARIAMENTE
+   ============================================================== */
+let previousOpen=[];
+window.addEventListener('beforeprint',()=>{previousOpen=allFolds().map(x=>x.open);setAll(true)});
+window.addEventListener('afterprint',()=>{allFolds().forEach((x,i)=>x.open=previousOpen[i]||false)});
+</script>
 </body>
 </html>

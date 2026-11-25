@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ecebe4">
+  <meta name="description" content="Questão-modelo de Sociologia III sobre o movimento Diretas Já, com fonte visual, dados históricos, cinco alternativas e gabarito comentado.">
+  <title>Questão-modelo | Diretas Já | Sociologia III</title>
+  <style>
+    /* ============================================================
+       01. IDENTIDADE EDITORIAL E CORES
+       ============================================================ */
+    :root {
+      color-scheme: light;
+      --page: #eeeee8;
+      --paper: #fbfaf7;
+      --surface: #f3f3ed;
+      --ink: #222c28;
+      --muted: #58645d;
+      --line: #d1d9d0;
+      --green: #31564d;
+      --green-light: #e4ede6;
+      --wine: #823f46;
+      --wine-light: #f4eae9;
+      --focus: #966f34;
+      --shadow: 0 18px 55px rgba(39,51,44,.07);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    }
+    body.dark {
+      color-scheme: dark;
+      --page: #141a19;
+      --paper: #1d2623;
+      --surface: #26332e;
+      --ink: #f3f3e9;
+      --muted: #c4cec6;
+      --line: #475850;
+      --green: #b8d6c1;
+      --green-light: #344e41;
+      --wine: #e8b1b2;
+      --wine-light: #51383a;
+      --focus: #e8c27b;
+      --shadow: none;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--sans); line-height: 1.68; }
+    a { color: var(--green); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    button, input { font: inherit; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .layout { max-width: 990px; margin: 28px auto 48px; padding: 0 16px; }
+    .sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+    .section { padding: 34px 48px; }
+    .section + .section { border-top: 1px solid var(--line); }
+    .eyebrow { font-size: .74rem; font-weight: 750; text-transform: uppercase; letter-spacing: .15em; color: var(--green); }
+    .intro { background: linear-gradient(112deg, var(--paper), var(--green-light)); border-bottom: 1px solid var(--line); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.2; }
+    h1 { margin: 12px 0 11px; font-size: clamp(2.2rem, 5vw, 3.3rem); letter-spacing: -.035em; }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 0 0 14px; }
+    h3 { font-size: 1.17rem; margin: 0 0 12px; }
+    p { margin: 0 0 13px; }
+    p:last-child { margin-bottom: 0; }
+    .subhead { max-width: 660px; color: var(--muted); font-size: 1.05rem; }
+    .header-row, .actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .tokens { display: flex; gap: 8px; flex-wrap: wrap; }
+    .token { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: .77rem; font-weight: 650; background: var(--paper); }
+    .token.level { border-color: var(--green); color: var(--green); }
+    .minor-button { cursor: pointer; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 7px 11px; font-size: .85rem; }
+    .minor-button:hover { background: var(--surface); }
+    .section-index { margin: 0 0 15px; font-weight: 750; text-transform: uppercase; font-size: .74rem; letter-spacing: .13em; color: var(--wine); }
+    .photo-frame { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; overflow: hidden; margin: 0; }
+    .photo-frame img { display: block; width: 100%; height: auto; max-height: 530px; object-fit: contain; background: #e9e6e1; }
+    .photo-frame figcaption { padding: 12px 17px 15px; font-size: .83rem; line-height: 1.55; color: var(--muted); }
+    .image-fallback { padding: 12px 17px; font-size: .85rem; display: none; }
+    .photo-frame.is-missing .image-fallback { display: block; }
+    .photo-frame.is-missing img { display: none; }
+    .document { font-size: 1rem; }
+    .document-label { color: var(--green); font-weight: 700; letter-spacing: .035em; font-size: .86rem; margin-bottom: 11px; }
+    .data-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin: 22px 0 12px; }
+    .stat { border: 1px solid var(--line); border-radius: 10px; padding: 18px 10px 14px; text-align: center; background: var(--surface); }
+    .stat .number { font: 500 clamp(1.65rem, 4vw, 2.4rem) /1.1 var(--serif); color: var(--green); font-variant-numeric: tabular-nums; }
+    .stat .name { display: block; font-size: .8rem; line-height: 1.4; color: var(--muted); margin-top: 9px; }
+    .source { margin-top: 13px; font-size: .82rem; line-height: 1.55; color: var(--muted); }
+    .question { padding-top: 34px; }
+    .command { font: 500 1.22rem/1.55 var(--serif); margin-bottom: 24px; }
+    .options { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .option { display: grid; grid-template-columns: 23px 33px 1fr; align-items: start; gap: 12px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 11px; cursor: pointer; transition: border-color .15s, background .15s; background: var(--paper); }
+    .option:hover { background: var(--surface); }
+    .option:has(input:checked) { border-color: var(--green); background: var(--green-light); }
+    .option input { accent-color: var(--green); margin: 5px 0 0; inline-size: 17px; block-size: 17px; }
+    .letter { font-weight: 750; color: var(--green); }
+    .option-text { font-size: .96rem; line-height: 1.57; }
+    .actions { justify-content: flex-start; margin-top: 21px; }
+    .primary { border: none; border-radius: 9px; background: #31564d; color: #fff; padding: 12px 19px; font-weight: 700; cursor: pointer; }
+    .primary:hover { background: #23463d; }
+    .assistive { font-size: .86rem; color: var(--muted); }
+    #feedback { display: none; margin-top: 17px; border-left: 4px solid var(--green); background: var(--green-light); padding: 13px 18px; border-radius: 0 7px 7px 0; }
+    #feedback.visible { display: block; }
+    #feedback.incorrect { background: var(--wine-light); border-color: var(--wine); }
+    .feedback-title { font-weight: 800; margin-bottom: 4px; }
+    details { border: 1px solid var(--line); border-radius: 11px; overflow: hidden; }
+    details summary { cursor: pointer; padding: 16px 19px; font-size: 1rem; font-weight: 750; background: var(--surface); }
+    details[open] summary { border-bottom: 1px solid var(--line); }
+    .explanation { padding: 23px 20px 19px; }
+    .answer-pill { display: inline-block; color: var(--green); background: var(--green-light); padding: 5px 10px; border-radius: 5px; font-weight: 700; margin-bottom: 12px; font-size: .9rem; }
+    .table-wrap { overflow-x: auto; margin-top: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th,td { padding: 11px 13px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--green); background: var(--surface); font-weight: 700; }
+    th:first-child,td:first-child { width: 70px; }
+    tr:last-child td { border-bottom: 0; }
+    tr.correct td { background: var(--green-light); }
+    .criteria { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+    .criterion { border: 1px solid var(--line); border-radius: 8px; padding: 11px 14px; font-size: .87rem; }
+    .criterion strong { color: var(--green); display: block; }
+    .footer { text-align: center; color: var(--muted); font-size: .81rem; padding: 17px; }
+    @media (max-width: 650px) {
+      .layout { margin: 0 auto 22px; padding: 0; }
+      .sheet { border-radius: 0; border-left: 0; border-right: 0; }
+      .section { padding: 25px 19px; }
+      .header-row { align-items: flex-start; }
+      .option { grid-template-columns: 20px 23px 1fr; gap: 8px; padding: 13px 12px; }
+      .option-text { font-size: .91rem; }
+      .data-strip { gap: 6px; }
+      .stat { padding: 13px 5px; }
+      .stat .name { font-size: .71rem; }
+      .criteria { grid-template-columns: 1fr; }
+      .primary { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .option { transition: none; } }
+    @media print {
+      @page { size: A4 portrait; margin: 1.5cm; }
+      :root { color-scheme: light; }
+      body,body.dark {
+        --page: #ffffff; --paper: #ffffff; --surface: #f3f3ed;
+        --ink: #161b17; --muted: #4f5851; --line: #c7cec6;
+        --green: #31564d; --green-light: #e4ede6;
+        background: white !important; color: #161b17 !important;
+      }
+      .layout { margin: 0; padding: 0; max-width: unset; }
+      .sheet { box-shadow: none; border: 0; border-radius: 0; }
+      .section { padding: 15px 0; }
+      .intro { background: white; }
+      h1 { font-size: 25pt; }
+      h2 { font-size: 17pt; }
+      .no-print { display: none !important; }
+      .photo-frame img { max-height: 210px; }
+      .photo-frame { break-inside: avoid; }
+      .data-strip, .option, .criterion, .stat { break-inside: avoid; }
+      .option { padding: 7px 12px; }
+      details, details .explanation { display: block !important; }
+      details > summary { display: none !important; }
+      #feedback { display: none !important; }
+      a { color: #263e34; }
+      .explanation { padding: 10px 0; }
+      .section + .section { border-top: 1px solid #aaa; }
+      .criteria { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body id="topo">
+  <!-- ============================================================
+       02. CABEÇALHO E IDENTIDADE DA QUESTÃO
+       ============================================================ -->
+  <div class="layout">
+    <main class="sheet">
+      <header class="section intro">
+        <div class="header-row">
+          <span class="eyebrow">Sociologia III · Questão-modelo</span>
+          <button type="button" class="minor-button no-print" id="themeButton" aria-pressed="false">Modo escuro</button>
+        </div>
+        <h1>A rua e o Parlamento</h1>
+        <p class="subhead">O movimento Diretas Já e os limites entre mobilização popular, decisão institucional e transformação política.</p>
+        <div class="tokens" style="margin-top:19px">
+          <span class="token level">Dificuldade alta</span>
+          <span class="token">Democracia</span>
+          <span class="token">Movimentos sociais</span>
+          <span class="token">Documentos históricos</span>
+        </div>
+      </header>
+
+      <!-- ============================================================
+           03. DOCUMENTO I: FOTOGRAFIA ORIGINAL
+           ============================================================ -->
+      <section class="section" aria-labelledby="documento-1">
+        <p class="section-index">Documento I · Fonte visual</p>
+        <h2 id="documento-1">O movimento Diretas Já, 1984</h2>
+        <figure class="photo-frame" id="photoFrame">
+          <img
+            src="https://m-lingua-portuguesa.s3.sa-east-1.amazonaws.com/bc647ca2328d619326f56592ed316707.jpeg"
+            alt="Vista de uma multidão reunida no comício das Diretas Já, na Praça da Sé, em São Paulo, com faixas, bandeiras e cartazes reivindicando eleições diretas."
+            width="900" height="600" loading="eager"
+          >
+          <div class="image-fallback" role="note">A fotografia não pôde ser carregada. <a href="https://acervo.museudalinguaportuguesa.org.br/acervos/8675/comicio-diretas-ja" target="_blank" rel="noopener noreferrer">Abra o registro no Museu da Língua Portuguesa</a>.</div>
+          <figcaption>
+            <strong>Juca Martins.</strong> Comício das Diretas Já, Praça da Sé, São Paulo, 1984.
+            Acervo do Museu da Língua Portuguesa, sob licenciamento do acervo.
+            <a href="https://acervo.museudalinguaportuguesa.org.br/acervos/8675/comicio-diretas-ja" target="_blank" rel="noopener noreferrer">Consultar fotografia e ficha documental</a>.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============================================================
+           04. DOCUMENTO II: CONTEXTO E DADOS
+           ============================================================ -->
+      <section class="section document" aria-labelledby="documento-2">
+        <p class="section-index">Documento II · Fonte histórica</p>
+        <h2 id="documento-2">A mobilização popular e a decisão parlamentar</h2>
+        <p>Em 1983 e 1984, o movimento Diretas Já reuniu manifestações em diferentes cidades brasileiras, reivindicando o restabelecimento das eleições diretas para presidente da República durante o processo de encerramento da ditadura militar.</p>
+        <p>Apesar da mobilização, a proposta de emenda constitucional apresentada pelo deputado Dante de Oliveira não alcançou os votos necessários na Câmara dos Deputados, em 25 de abril de 1984.</p>
+        <div class="data-strip" aria-label="Votação da Emenda Dante de Oliveira em 1984">
+          <div class="stat"><div class="number">298</div><span class="name">Votos favoráveis</span></div>
+          <div class="stat"><div class="number">320</div><span class="name">Votos necessários</span></div>
+          <div class="stat"><div class="number">22</div><span class="name">Votos que faltaram</span></div>
+        </div>
+        <p>A eleição presidencial de 1985 ocorreu indiretamente, por meio de um Colégio Eleitoral. A população brasileira voltou a votar diretamente para presidente em 1989.</p>
+        <p class="source">Fontes: Câmara dos Deputados, <a href="https://www2.camara.leg.br/atividade-legislativa/plenario/discursos/escrevendohistoria/diretas-ja" target="_blank" rel="noopener noreferrer">Diretas Já: documentos históricos</a> e <a href="https://www.camara.leg.br/radio/radioagencia/431500-ha-30-anos-a-camara-estava-reunida-para-votar-a-emenda-dante-de-oliveira/" target="_blank" rel="noopener noreferrer">reconstituição da votação de 1984</a>. Texto adaptado para fins didáticos.</p>
+      </section>
+
+      <!-- ============================================================
+           05. QUESTÃO COM SELEÇÃO INTERATIVA
+           ============================================================ -->
+      <section class="section question" aria-labelledby="comando">
+        <p class="section-index">Questão · Interpretação sociológica</p>
+        <h2 id="comando">Qual interpretação é mais consistente?</h2>
+        <p class="command">Considerando a manifestação documentada na fotografia, o resultado da votação parlamentar e as relações entre movimentos sociais e instituições políticas, qual interpretação explica mais adequadamente o papel da participação popular no processo de democratização brasileira?</p>
+        <form id="questionForm">
+          <fieldset class="options" aria-label="Alternativas da questão">
+            <label class="option"><input type="radio" name="answer" value="A"><span class="letter">A)</span><span class="option-text">A mobilização expressou oposição ao regime militar, mas a rejeição da emenda demonstra que as manifestações não exerceram influência sobre a transformação posterior das instituições políticas.</span></label>
+            <label class="option"><input type="radio" name="answer" value="B"><span class="letter">B)</span><span class="option-text">A participação popular representada na fotografia constituiu uma forma de soberania direta que deveria prevalecer juridicamente sobre a votação parlamentar, tornando a rejeição da emenda incompatível com as regras constitucionais.</span></label>
+            <label class="option"><input type="radio" name="answer" value="C"><span class="letter">C)</span><span class="option-text">A derrota da emenda demonstra que o movimento permaneceu restrito à mobilização simbólica, pois a capacidade de transformação política dos movimentos sociais depende de suas reivindicações serem imediatamente aprovadas.</span></label>
+            <label class="option"><input type="radio" name="answer" value="D"><span class="letter">D)</span><span class="option-text">A manifestação expressou pressão política organizada fora dos procedimentos parlamentares, enquanto a votação revelou limites à transformação imediata dessa reivindicação em norma constitucional, sem eliminar seus efeitos no processo mais amplo de democratização.</span></label>
+            <label class="option"><input type="radio" name="answer" value="E"><span class="letter">E)</span><span class="option-text">A mobilização popular consolidou o reconhecimento institucional do voto direto, embora a rejeição da emenda tenha adiado somente sua regulamentação, mantendo assegurada a eleição presidencial direta de 1985.</span></label>
+          </fieldset>
+          <div class="actions no-print">
+            <button class="primary" type="submit">Conferir resposta</button>
+            <button class="minor-button" type="reset" id="resetButton">Recomeçar</button>
+            <span class="assistive">Selecione uma alternativa antes de conferir.</span>
+          </div>
+          <div id="feedback" role="status" aria-live="polite" tabindex="-1">
+            <p class="feedback-title" id="feedbackTitle"></p>
+            <p id="feedbackText"></p>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============================================================
+           06. GABARITO E JUSTIFICATIVAS
+           ============================================================ -->
+      <section class="section" aria-labelledby="gabarito-titulo">
+        <p class="section-index">Correção · Gabarito comentado</p>
+        <h2 id="gabarito-titulo">Por que uma alternativa está correta?</h2>
+        <details id="answerDetails">
+          <summary>Mostrar o gabarito comentado e a análise de cada alternativa</summary>
+          <div class="explanation">
+            <div class="answer-pill">Resposta correta: D</div>
+            <p>A fotografia documenta uma mobilização coletiva pela eleição presidencial direta. O texto histórico indica que essa reivindicação encontrou obstáculos no processo legislativo: a Emenda Dante de Oliveira não alcançou o número necessário de votos em 1984.</p>
+            <p>A rejeição parlamentar impediu a mudança constitucional naquele momento, mas não significa que o movimento tenha sido politicamente irrelevante. Uma mobilização social pode influenciar debates públicos e relações de poder sem conquistar imediatamente sua principal reivindicação.</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th scope="col">Alternativa</th><th scope="col">Justificativa</th></tr></thead>
+                <tbody>
+                  <tr><td>A</td><td>Confunde derrota legislativa com ausência de influência política sobre um processo histórico mais amplo.</td></tr>
+                  <tr><td>B</td><td>Uma mobilização possui legitimidade política, mas não substitui automaticamente os procedimentos jurídicos de alteração constitucional.</td></tr>
+                  <tr><td>C</td><td>Reduz a atuação de movimentos sociais à aprovação imediata de suas reivindicações, ignorando outras formas de influência.</td></tr>
+                  <tr class="correct"><td><strong>D</strong></td><td><strong>Correta.</strong> Relaciona mobilização coletiva, decisão parlamentar e mudança política, distinguindo efeitos imediatos e históricos.</td></tr>
+                  <tr><td>E</td><td>A rejeição da emenda impediu a eleição presidencial direta naquele momento. Em 1985, a escolha presidencial foi indireta.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- ============================================================
+           07. CRITÉRIOS EXEMPLIFICADOS
+           ============================================================ -->
+      <section class="section" aria-labelledby="criterios-titulo">
+        <p class="section-index">O que esta questão avalia?</p>
+        <h2 id="criterios-titulo">Quatro operações intelectuais</h2>
+        <div class="criteria">
+          <div class="criterion"><strong>Interpretação visual</strong>Reconhecer a fotografia como evidência de mobilização coletiva.</div>
+          <div class="criterion"><strong>Análise documental</strong>Relacionar reivindicações populares ao resultado da votação.</div>
+          <div class="criterion"><strong>Aplicação conceitual</strong>Distinguir ação coletiva, participação e decisão institucional.</div>
+          <div class="criterion"><strong>Raciocínio crítico</strong>Não confundir derrota imediata com ausência de efeitos políticos.</div>
+        </div>
+      </section>
+    </main>
+    <div class="footer">
+      Questão-modelo de Sociologia III · Uso didático · <button type="button" id="printButton" class="minor-button no-print">Imprimir página com gabarito</button> · <a href="#topo" class="no-print">Voltar ao topo</a>
+      <div style="margin-top:10px">A fotografia é carregada do acervo do Museu da Língua Portuguesa e requer conexão com a internet. O restante da página funciona offline.</div>
+    </div>
+  </div>
+  <script>
+    /* ============================================================
+       08. FUNCIONALIDADES: SELEÇÃO, CORREÇÃO, IMPRESSÃO E TEMA
+       ============================================================ */
+    (() => {
+      'use strict';
+      const form = document.getElementById('questionForm');
+      const answerDetails = document.getElementById('answerDetails');
+      const feedback = document.getElementById('feedback');
+      const feedbackTitle = document.getElementById('feedbackTitle');
+      const feedbackText = document.getElementById('feedbackText');
+      const themeButton = document.getElementById('themeButton');
+      const photo = document.querySelector('#photoFrame img');
+      const photoFrame = document.getElementById('photoFrame');
+      let openedBeforePrint = false;
+
+      function clearFeedback() {
+        feedback.className = '';
+        feedbackTitle.textContent = '';
+        feedbackText.textContent = '';
+      }
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const chosen = form.querySelector('input[name="answer"]:checked');
+        if (!chosen) {
+          feedback.className = 'visible incorrect';
+          feedbackTitle.textContent = 'Selecione uma alternativa.';
+          feedbackText.textContent = 'Escolha A, B, C, D ou E para conferir seu raciocínio.';
+          feedback.focus();
+          return;
+        }
+        const correct = chosen.value === 'D';
+        feedback.className = 'visible' + (correct ? '' : ' incorrect');
+        feedbackTitle.textContent = correct ? 'Resposta correta: alternativa D.' : 'A alternativa correta é D.';
+        feedbackText.textContent = 'A mobilização pelas Diretas Já ultrapassou a votação de 1984: a rejeição parlamentar impediu a emenda naquele momento, mas não tornou irrelevante a pressão política exercida pelo movimento.';
+        answerDetails.open = true;
+        feedback.focus();
+      });
+      form.addEventListener('reset', () => { clearFeedback(); answerDetails.open = false; });
+      form.querySelectorAll('input[name="answer"]').forEach((radio) => radio.addEventListener('change', clearFeedback));
+      themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const dark = document.body.classList.contains('dark');
+        themeButton.textContent = dark ? 'Modo claro' : 'Modo escuro';
+        themeButton.setAttribute('aria-pressed', String(dark));
+      });
+      photo.addEventListener('error', () => photoFrame.classList.add('is-missing'));
+      document.getElementById('printButton').addEventListener('click', () => window.print());
+      window.addEventListener('beforeprint', () => { openedBeforePrint = answerDetails.open; answerDetails.open = true; });
+      window.addEventListener('afterprint', () => { answerDetails.open = openedBeforePrint; });
+    })();
+  </script>
+</body>
+</html>
